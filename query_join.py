@@ -61,7 +61,7 @@ FROM
   community_species 
   LEFT JOIN communities ON community_species.community_key = communities.community_key
   LEFT JOIN species ON community_species.species_key = species.species_key
-WHERE commcode = 'H1e';
+WHERE commcode = 'W16a';
 """
 
 list_communities_species_join = """
