@@ -19,7 +19,7 @@ def load_database():
         # iterate over community file
         for row in reader:
             print(', '.join(row))
-            res = cur.execute("INSERT INTO communities(?, ?, ?, ?)", row)
+            cur.execute("INSERT INTO communities VALUES(?, ?, ?, ?)", row)
             con.commit()
 
 
@@ -30,7 +30,7 @@ def load_database():
         # iterate over species file
         for row in reader:
             print(', '.join(row))
-            res = cur.execute("INSERT INTO community_species(?, ?)", row)
+            cur.execute("INSERT INTO species VALUES(?, ?)", row)
             con.commit()
 
 
@@ -41,7 +41,7 @@ def load_database():
         # iterate over community_species file
         for row in reader:
             print(', '.join(row))
-            res = cur.execute("INSERT INTO species(?, ?, ?, ?, ?)", row)
+            cur.execute("INSERT INTO community_species VALUES(?, ?, ?, ?, ?)", row)
             con.commit()
     
     con.commit()
