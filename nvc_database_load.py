@@ -12,15 +12,18 @@ def load_database():
     # create cursor
     cur = con.cursor()
 
+
     # open community_csv
     print("Loading community_csv")
     with open('community_csv.csv') as community_file:
         reader = csv.reader(community_file)
         # iterate over community file
         for row in reader:
-            print(', '.join(row))
+            # print(', '.join(row))
             cur.execute("INSERT INTO communities VALUES(?, ?, ?, ?)", row)
             con.commit()
+    for row in cur.execute("select count(*) from communities"):
+        print(row, "records")
 
 
     # open species_csv
@@ -29,9 +32,11 @@ def load_database():
         reader = csv.reader(species_file)
         # iterate over species file
         for row in reader:
-            print(', '.join(row))
+            # print(', '.join(row))
             cur.execute("INSERT INTO species VALUES(?, ?)", row)
             con.commit()
+    for row in cur.execute("select count(*) from species"):
+        print(row, "records")
 
 
     # open community_species_csv
@@ -40,10 +45,13 @@ def load_database():
         reader = csv.reader(community_species_file)
         # iterate over community_species file
         for row in reader:
-            print(', '.join(row))
+            # print(', '.join(row))
             cur.execute("INSERT INTO community_species VALUES(?, ?, ?, ?, ?)", row)
             con.commit()
-    
+    for row in cur.execute("select count(*) from community_species"):
+        print(row, "records")
+
+
     con.commit()
     con.close()
 
