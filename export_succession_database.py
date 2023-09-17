@@ -15,7 +15,8 @@ export_succession_query = """
 SELECT
   succession.succession_key,
   succession.from_community_key,
-  succession.to_community_key
+  succession.to_community_key,
+  succession.probability
  FROM 
   succession
 """

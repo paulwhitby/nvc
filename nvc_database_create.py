@@ -14,7 +14,7 @@ def create_nvc_database():
 def create_succession_database():
     con = sqlite3.connect("nvc.db")
     cur = con.cursor()
-    cur.execute("CREATE TABLE succession(succession_key, from_community_key, to_community_key)")
+    cur.execute("CREATE TABLE succession(succession_key, from_community_key, to_community_key, probability)")
     cur.execute("CREATE TABLE conditions(condition_key, condition_name)")
     cur.execute("CREATE TABLE succession_conditions(succession_key, condition_key)")
     con.commit()
