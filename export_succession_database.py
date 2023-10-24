@@ -11,6 +11,16 @@ import export_table_to_csv
 # succession_conditions(succession_key, condition_key)")
 
 
+export_communities_query = """
+SELECT
+  communities.community_key,
+  communities.community_code,
+  communities.community_name,
+  communities.community_level_code
+FROM
+  communities
+"""
+
 export_succession_query = """
 SELECT
   succession.succession_key,
@@ -46,6 +56,10 @@ SELECT
 #     con.close()
 
 
+def export_communities_database():
+    export_table_to_csv.export_table_from_database("nvc.db", "export_communities.csv", export_communities_query)
+
+
 def export_succession_database():
     export_table_to_csv.export_table_from_database("nvc.db", "export_succession.csv", export_succession_query)
 
@@ -54,5 +68,6 @@ def export_community_species_database():
     export_table_to_csv.export_table_from_database("nvc.db", "dumptest_community_species.csv", export_community_species)
 
 
+# export_communities_database()
 export_succession_database()
 export_community_species_database()
