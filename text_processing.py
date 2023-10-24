@@ -32,20 +32,12 @@ def load_table_from_database(database_name, export_query):
 
     con.close()
 
-    for community in communities:
-        print(community)
-    #     print(community[0], community[1],community[2])
+    # for community in communities:
+    #     print(community)
+    # #     print(community[0], community[1],community[2])
 
 
-# mg1_lower = mg1.lower()
-# mg1_split = mg1_lower.split(" ")
 mg1_lower_split = mg1_text.lower().split(" ")
-# print(type(mg1_lower_split))
-
-# print(mg1)
-# print(mg1_lower)
-# print(mg1_split)
-
 # print(type(mg1_lower_split))
 # for token in mg1_lower_split:
 #     print(token)
@@ -57,3 +49,9 @@ load_table_from_database("nvc.db", mg1_query)
 # so now, iterate over the list mg1_lower_split, using the current word to search the community names
 # for the matching first word - then cycle through the next words for each looking for a match
 # maybe pre-prepare the community names in the same way by splitting them by " "
+
+for word in mg1_lower_split:
+    for community in communities:
+        if community[3][0] == word:
+            print("Bingo!", word)
+
