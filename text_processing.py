@@ -36,11 +36,17 @@ def load_table_from_database(database_name, export_query):
     #     print(community)
     # #     print(community[0], community[1],community[2])
 
+def mapstrip(s):
+    return s.strip(".,:() ")
 
-mg1_lower_split = mg1_text.lower().split(" ")
-# print(type(mg1_lower_split))
+# mg1_lower_split = mg1_text.lower().split(" ")
+# mg1_list = map(mapstrip, mg1_lower_split)
+mg1_list = list(map(mapstrip,mg1_text.lower().split(" ")))
 # for token in mg1_lower_split:
-#     print(token)
+#     mg1_list.append(token.strip(".,:() "))
+
+for word in mg1_list:
+    print(word)
 
 load_table_from_database("nvc.db", mg1_query)
 
@@ -50,7 +56,7 @@ load_table_from_database("nvc.db", mg1_query)
 # for the matching first word - then cycle through the next words for each looking for a match
 # maybe pre-prepare the community names in the same way by splitting them by " "
 
-for word in mg1_lower_split:
+for word in mg1_list:
     for community in communities:
         if community[3][0] == word:
             print("Bingo!", word)
