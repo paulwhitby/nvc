@@ -45,8 +45,8 @@ mg1_list = list(map(mapstrip,mg1_text.lower().split(" ")))
 # for token in mg1_lower_split:
 #     mg1_list.append(token.strip(".,:() "))
 
-for word in mg1_list:
-    print(word)
+# for word in mg1_list:
+#     print(word)
 
 load_table_from_database("nvc.db", mg1_query)
 
@@ -56,8 +56,24 @@ load_table_from_database("nvc.db", mg1_query)
 # for the matching first word - then cycle through the next words for each looking for a match
 # maybe pre-prepare the community names in the same way by splitting them by " "
 
-for word in mg1_list:
-    for community in communities:
-        if community[3][0] == word:
-            print("Bingo!", word)
+# print("Start")
 
+# for word in mg1_list:
+#     for community in communities:
+#         if community[3][0] == word:
+#             print("Found", word)
+
+# print("-----------------------------------------------------")
+
+communities_iterator = communities.__iter__()
+# community_iterator = community.__iter__()
+for community in communities_iterator:
+    mg1_iterator = mg1_list.__iter__()
+    for word in mg1_iterator:
+      subcommander = 0
+      while ((subcommander < len(community[3])) and (community[3][subcommander] == word)):
+          print("Found", subcommander, word)
+          subcommander = subcommander + 1
+          word = mg1_iterator.__next__()
+
+# print("End")
