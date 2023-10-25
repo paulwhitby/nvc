@@ -15,6 +15,12 @@ FROM
   communities
 """
 
+community_level_code_index = 0
+community_code_index = 1
+community_name_index = 2
+community_name_list_index = 3
+
+
 communities = list()
 
 def load_table_from_database(database_name, export_query):
@@ -25,7 +31,7 @@ def load_table_from_database(database_name, export_query):
         # print(row[0], row[1], row[2])
         current_row = list(row)
 
-        community_name = current_row[2]
+        community_name = current_row[community_name_index]
         community_name_list = community_name.lower().split(" ")
         current_row.append(community_name_list)
         communities.append(current_row)
@@ -71,7 +77,7 @@ for community in communities_iterator:
     mg1_iterator = mg1_list.__iter__()
     for word in mg1_iterator:
       subcommander = 0
-      while ((subcommander < len(community[3])) and (community[3][subcommander] == word)):
+      while ((subcommander < len(community[community_name_list_index])) and (community[community_name_list_index][subcommander] == word)):
           print("Found", subcommander, word)
           subcommander = subcommander + 1
           word = mg1_iterator.__next__()
