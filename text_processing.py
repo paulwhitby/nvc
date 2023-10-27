@@ -46,44 +46,37 @@ def load_table_from_database(database_name, export_query):
     #     print(community)
     # #     print(community[0], community[1],community[2])
 
+
+def find_communities():
+  # now we have the community names and codes loaded into the list communities
+  # and the succession text for mg1 broken into the list mg1_lower_split
+  # so now, iterate over the list mg1_lower_split, using the current word to search the community names
+  # for the matching first word - then cycle through the next words for each looking for a match
+  # maybe pre-prepare the community names in the same way by splitting them by " "
+
+  communities_iterator = communities.__iter__()
+  # community_iterator = community.__iter__()
+  for community in communities_iterator:
+      mg1_iterator = mg1_list.__iter__()
+      for word in mg1_iterator:
+        subcommander = 0
+        while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
+            # print("Found", subcommander, community['code'], word)
+            if (subcommander > 0):
+              print("Recognised", subcommander, community['community'], community['code'], community['name'])
+            subcommander = subcommander + 1
+            word = mg1_iterator.__next__()
+
+
 def mapstrip(s):
     return s.strip(".,:() ")
 
-# mg1_lower_split = mg1_text.lower().split(" ")
-# mg1_list = map(mapstrip, mg1_lower_split)
-mg1_list = list(map(mapstrip,mg1_text.lower().split(" ")))
-# for token in mg1_lower_split:
-#     mg1_list.append(token.strip(".,:() "))
 
+mg1_list = list(map(mapstrip,mg1_text.lower().split(" ")))
 # for word in mg1_list:
 #     print(word)
 
 load_table_from_database("nvc.db", mg1_query)
 
-# now we have the community names and codes loaded into the list communities
-# and the succession text for mg1 broken into the list mg1_lower_split
-# so now, iterate over the list mg1_lower_split, using the current word to search the community names
-# for the matching first word - then cycle through the next words for each looking for a match
-# maybe pre-prepare the community names in the same way by splitting them by " "
+find_communities()
 
-# print("Start")
-
-# for word in mg1_list:
-#     for community in communities:
-#         if community[3][0] == word:
-#             print("Found", word)
-
-# print("-----------------------------------------------------")
-
-communities_iterator = communities.__iter__()
-# community_iterator = community.__iter__()
-for community in communities_iterator:
-    mg1_iterator = mg1_list.__iter__()
-    for word in mg1_iterator:
-      subcommander = 0
-      while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
-          print("Found", subcommander, word)
-          subcommander = subcommander + 1
-          word = mg1_iterator.__next__()
-
-# print("End")
