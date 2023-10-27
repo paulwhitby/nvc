@@ -20,7 +20,7 @@ community_code_index = 1
 community_name_index = 2
 community_name_list_index = 3
 
-column_names = ['community', 'code', 'name', 'list']
+column_names = ['community', 'code', 'name', 'list', 'succession']
 
 communities = list()
 
@@ -31,7 +31,8 @@ def load_table_from_database(database_name, export_query):
     for row in cur.execute(export_query):
         # print(row[0], row[1], row[2])
         current_row_list = list(row)
-        current_row_list.append(list())
+        current_row_list.append(list()) # names list
+        current_row_list.append(list()) # succession pathways
         current_row = dict(zip(column_names, current_row_list))
 
         community_name = current_row['name']
@@ -54,6 +55,8 @@ def find_communities():
   # for the matching first word - then cycle through the next words for each looking for a match
   # maybe pre-prepare the community names in the same way by splitting them by " "
 
+  recognised_communities = list()
+
   communities_iterator = communities.__iter__()
   # community_iterator = community.__iter__()
   for community in communities_iterator:
@@ -62,10 +65,16 @@ def find_communities():
         subcommander = 0
         while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
             # print("Found", subcommander, community['code'], word)
-            if (subcommander > 0):
-              print("Recognised", subcommander, community['community'], community['code'], community['name'])
+            if (subcommander > 1):
+              # print("Recognised", word, subcommander, community['community'], community['code'], community['name'])
+              print("Record MG1 succeeds to", community['community'])
+              if (community['community'] not in recognised_communities):
+                 recognised_communities.append(community['community'])
+
             subcommander = subcommander + 1
             word = mg1_iterator.__next__()
+  
+  print("Recognised succession communities", recognised_communities)
 
 
 def mapstrip(s):
