@@ -33,27 +33,27 @@ column_names = ['community', 'code', 'name', 'list', 'succession']
 communities = list()
 
 def load_table_from_database(database_name, query_string):
-    con = sqlite3.connect(database_name)
-    cur = con.cursor()
+  con = sqlite3.connect(database_name)
+  cur = con.cursor()
 
-    for row in cur.execute(query_string):
-        # print(row[0], row[1], row[2])
-        current_row_list = list(row)
-        current_row_list.append(list()) # names list
-        current_row_list.append(list()) # succession pathways
-        current_row = dict(zip(column_names, current_row_list))
+  for row in cur.execute(query_string):
+    # print(row[0], row[1], row[2])
+    current_row_list = list(row)
+    current_row_list.append(list()) # names list
+    current_row_list.append(list()) # succession pathways
+    current_row = dict(zip(column_names, current_row_list))
 
-        community_name = current_row['name']
-        community_name_list = community_name.lower().split(" ")
-        current_row['list'] = community_name_list
-        # print(current_row)
-        communities.append(current_row)
+    community_name = current_row['name']
+    community_name_list = community_name.lower().split(" ")
+    current_row['list'] = community_name_list
+    # print(current_row)
+    communities.append(current_row)
 
-    con.close()
+  con.close()
 
-    # for community in communities:
-    #     print(community)
-    # #     print(community[0], community[1],community[2])
+  # for community in communities:
+  #     print(community)
+  # #     print(community[0], community[1],community[2])
 
 
 def mapstrip(s):
@@ -72,19 +72,19 @@ def find_communities(key, succession_string_list):
   communities_iterator = communities.__iter__()
   # community_iterator = community.__iter__()
   for community in communities_iterator:
-      word_iterator = succession_string_list.__iter__()
-      for word in word_iterator:
-        subcommander = 0
-        while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
-            # print("Found", subcommander, community['code'], word)
-            if (subcommander > 1):
-              # print("Recognised", word, subcommander, community['community'], community['code'], community['name'])
-              # print("Record", key, "succeeds to", community['community'])
-              if (community['community'] not in recognised_communities):
-                 recognised_communities.append(community['community'])
+    word_iterator = succession_string_list.__iter__()
+    for word in word_iterator:
+      subcommander = 0
+      while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
+        # print("Found", subcommander, community['code'], word)
+        if (subcommander > 1):
+          # print("Recognised", word, subcommander, community['community'], community['code'], community['name'])
+          # print("Record", key, "succeeds to", community['community'])
+          if (community['community'] not in recognised_communities):
+            recognised_communities.append(community['community'])
 
-            subcommander = subcommander + 1
-            word = word_iterator.__next__()
+          subcommander = subcommander + 1
+          word = word_iterator.__next__()
   
   # print("Recognised succession communities", recognised_communities)
   return(recognised_communities)
