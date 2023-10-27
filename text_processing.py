@@ -20,6 +20,7 @@ community_code_index = 1
 community_name_index = 2
 community_name_list_index = 3
 
+column_names = ['community', 'code', 'name', 'list']
 
 communities = list()
 
@@ -29,11 +30,14 @@ def load_table_from_database(database_name, export_query):
 
     for row in cur.execute(export_query):
         # print(row[0], row[1], row[2])
-        current_row = list(row)
+        current_row_list = list(row)
+        current_row_list.append(list())
+        current_row = dict(zip(column_names, current_row_list))
 
-        community_name = current_row[community_name_index]
+        community_name = current_row['name']
         community_name_list = community_name.lower().split(" ")
-        current_row.append(community_name_list)
+        current_row['list'] = community_name_list
+        print(current_row)
         communities.append(current_row)
 
     con.close()
@@ -77,7 +81,7 @@ for community in communities_iterator:
     mg1_iterator = mg1_list.__iter__()
     for word in mg1_iterator:
       subcommander = 0
-      while ((subcommander < len(community[community_name_list_index])) and (community[community_name_list_index][subcommander] == word)):
+      while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
           print("Found", subcommander, word)
           subcommander = subcommander + 1
           word = mg1_iterator.__next__()
