@@ -37,7 +37,7 @@ def load_table_from_database(database_name, export_query):
         community_name = current_row['name']
         community_name_list = community_name.lower().split(" ")
         current_row['list'] = community_name_list
-        print(current_row)
+        # print(current_row)
         communities.append(current_row)
 
     con.close()
