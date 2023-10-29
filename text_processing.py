@@ -135,23 +135,23 @@ def find_communities(key, succession_string_list):
                 subcommander += 1
                 word = word_iterator.__next__()
         
-    compressed_communities_iterator = compressed_communities.__iter__()
-    for community in compressed_communities_iterator:
-        word_iterator = succession_string_list.__iter__()
-        for word in word_iterator:
-            subcommander = 0
-            print(community)
-            if community['list'] != None:
-                while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
-                    # print("Found", subcommander, community['code'], word)
-                    if (subcommander > 1):
-                        # print("Recognised", word, subcommander, community['community'], community['code'], community['name'])
-                        # print("Record", key, "succeeds to", community['community'])
-                        if (community['community'] not in recognised_communities):
-                            recognised_communities.append(community['community'])
+    # compressed_communities_iterator = compressed_communities.__iter__()
+    # for community in compressed_communities_iterator:
+    #     if community['list'] != None:
+    #         word_iterator = succession_string_list.__iter__()
+    #         for word in word_iterator:
+    #             subcommander = 0
+    #             print(community)
+    #             while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
+    #                 # print("Found", subcommander, community['code'], word)
+    #                 if (subcommander > 1):
+    #                     # print("Recognised", word, subcommander, community['community'], community['code'], community['name'])
+    #                     # print("Record", key, "succeeds to", community['community'])
+    #                     if (community['community'] not in recognised_communities):
+    #                         recognised_communities.append(community['community'])
 
-                    subcommander += 1
-                    word = word_iterator.__next__()
+    #                 subcommander += 1
+    #                 word = word_iterator.__next__()
 
     # print("For", key, "recognised succession communities", recognised_communities)
     return (recognised_communities)
