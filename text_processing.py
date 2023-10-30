@@ -64,9 +64,10 @@ def find_compressed_community_names(name, name_list):
                 ccn.append(split_name_list.pop(0))
             # print(ccn)
 
-        compressed_community_name = ccn.pop(0)
-        for i in ccn:
-            compressed_community_name += "-" + i
+        if len(ccn) > 1:
+            compressed_community_name = ccn.pop(0)
+            for i in ccn:
+                compressed_community_name += "-" + i
 
         # print(compressed_community_name)
         return(compressed_community_name)
@@ -80,8 +81,8 @@ def process_compressed_community_names():
         # print(v)
         if found_compressed_community_name != "":
             # append the newly found community name to a list of compressed names
-            fccn = { 'community': v['community'], 'code': v['code'], 'name': v['name'], 'list': found_compressed_community_name }
-            print(fccn)
+            fccn = { 'community': v['community'], 'code': v['code'], 'name': v['name'], 'ccn': found_compressed_community_name }
+            # print(fccn)
             compressed_communities.append(fccn)
 
 
@@ -134,24 +135,13 @@ def find_communities(key, succession_string_list):
 
                 subcommander += 1
                 word = word_iterator.__next__()
-        
-    # compressed_communities_iterator = compressed_communities.__iter__()
-    # for community in compressed_communities_iterator:
-    #     if community['list'] != None:
-    #         word_iterator = succession_string_list.__iter__()
-    #         for word in word_iterator:
-    #             subcommander = 0
-    #             print(community)
-    #             while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
-    #                 # print("Found", subcommander, community['code'], word)
-    #                 if (subcommander > 1):
-    #                     # print("Recognised", word, subcommander, community['community'], community['code'], community['name'])
-    #                     # print("Record", key, "succeeds to", community['community'])
-    #                     if (community['community'] not in recognised_communities):
-    #                         recognised_communities.append(community['community'])
 
-    #                 subcommander += 1
-    #                 word = word_iterator.__next__()
+    for word in succession_string_list:
+        for community in compressed_communities:
+            if community['ccn'] == word:
+                # print("Found compressed", word, "in", community['community'])
+                if community['community'] not in recognised_communities:
+                    recognised_communities.append(community['community'])
 
     # print("For", key, "recognised succession communities", recognised_communities)
     return (recognised_communities)
