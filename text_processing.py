@@ -2,7 +2,8 @@ import sqlite3
 import copy
 
 # text processing
-
+copyright_text = """Rodwell, John S.. British Plant Communities: Volume 3, Grasslands and Montane Communities . Cambridge University Press. Kindle Edition."""
+# Rodwell, John S.. British Plant Communities: Volume 3, Grasslands and Montane Communities . Cambridge University Press. Kindle Edition.
 
 # here's the experimental data set
 succession_texts = {
