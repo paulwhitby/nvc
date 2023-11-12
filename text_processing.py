@@ -39,6 +39,8 @@ succession_texts = {
     'u3':   """"""
 }
 
+succession_drivers = ['grazing-stopped', 'grazing-started', 'ploughing-stopped', 'ploughing-started']
+
 # here's the query to load communities data from the nvc sqlite database
 load_communities_query = """
 SELECT
@@ -94,7 +96,6 @@ def find_compressed_community_names(name, name_list):
 
 
 def process_compressed_community_names():
-
     for v in communities:
         found_compressed_community_name = find_compressed_community_names(v['name'], v['list'])
         # v['list'].append(found_compressed_community_name)
@@ -139,12 +140,15 @@ def find_communities(key, succession_string_list):
 
     recognised_communities = list()
 
-    communities_iterator = communities.__iter__()
+    # print('processing', succession_string_list)
+
+    # communities_iterator = communities.__iter__()
     # community_iterator = community.__iter__()
-    for community in communities_iterator:
+    for community in communities:    # communities_iterator:
         word_iterator = succession_string_list.__iter__()
-        for word in word_iterator:
+        for word in succession_string_list: # word_iterator:
             subcommander = 0
+            # print(word)
             while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
                 # print("Found", subcommander, community['code'], word)
                 if (subcommander > 1):
@@ -152,9 +156,10 @@ def find_communities(key, succession_string_list):
                     # print("Record", key, "succeeds to", community['community'])
                     if (community['community'] not in recognised_communities):
                         recognised_communities.append(community['community'])
-
                 subcommander += 1
+                # print('word before:', word)
                 word = word_iterator.__next__()
+                # print('word after:', word)
 
     for word in succession_string_list:
         for community in compressed_communities:
@@ -170,11 +175,30 @@ def find_communities(key, succession_string_list):
 def find_succession_pathways():
     for k, v in succession_texts.items():
         # print(k.upper())
-        found = find_communities(k.upper(), list(map(mapstrip, v.lower().split(" "))))
+        found = list()
+        by_sentence_list = v.split(".")
+        # print(by_sentence_list)
+
+        for sentence in by_sentence_list:
+            # print(sentence)
+            sentence_list = list(map(mapstrip, sentence.strip(" ").lower().split(" ")))
+            # print(k, sentence_list)
+            find = find_communities(k.upper(), sentence_list)
+            for f in find:
+                if f not in found:
+                    found.append(f)  # s.split(" ") --> v.lower().split(" ")
+
         if len(found) > 0:
             print("Recognised", k.upper(), "successes to", found)
         else:
             print(k.upper(), "does not success")
+
+
+def process_by_paragraph(mytext):
+    mytext_list = mytext.lower().split(".")
+    # print(mytext_list)
+    for t in mytext_list:
+        print(t.strip(" "))
 
 
 load_table_from_database("nvc.db", load_communities_query)
@@ -182,3 +206,5 @@ load_table_from_database("nvc.db", load_communities_query)
 process_compressed_community_names()
 
 find_succession_pathways()
+
+# process_by_paragraph(succession_texts['mg1'])
