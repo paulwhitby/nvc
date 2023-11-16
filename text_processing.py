@@ -182,12 +182,12 @@ def find_communities(c, cc, key, succession_string_list):
                 subcommander += 1
             word = next(word_iterator, None)
 
-    # for word in succession_string_list:
-    #     for community in cc:
-    #         if community['ccn'] == word:
-    #             print("Found compressed", word, "in", community['community'])
-    #             if community['community'] not in recognised_communities:
-    #                 recognised_communities.append(community['community'])
+    for word in succession_string_list:
+        for community in cc:
+            if community['ccn'] == word:
+                # print("Found compressed", word, "in", community['community'])
+                if community['community'] not in recognised_communities:
+                    recognised_communities.append(community['community'])
 
     # print("For", key, "recognised succession communities", recognised_communities)
     return (recognised_communities)
