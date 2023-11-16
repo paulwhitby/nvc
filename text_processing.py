@@ -1,9 +1,29 @@
 import sqlite3
+# import unittest
 import copy
+
+
+# TODO
+# Add alternative community names into the searchable names, e.g., "Filipendulo-Arrhenatheretum"
+
 
 # text processing
 copyright_text = """Rodwell, John S.. British Plant Communities: Volume 3, Grasslands and Montane Communities . Cambridge University Press. Kindle Edition."""
 # Rodwell, John S.. British Plant Communities: Volume 3, Grasslands and Montane Communities . Cambridge University Press. Kindle Edition.
+
+# test data set
+succession_text_tests = {
+    'test1':    """Anthoxanthum-Geranium""",
+    'test2':    """Festuca-Hieracium-Thymus""",
+    'test3':    """Festuca rubra-Agrostis stolonifera-Potentilla anserina""",
+    'test4':    """Agrostis stolonifera-Alopecurus geniculatus""",
+    'test5':    """Arrhenatheretum""",
+    'test6':    """The community very commonly occurs in mosaics related to patterns of soil moisture.""",
+    'test7':    """Spatial transitions between the Filipendulo-Arrhenatheretum and other vegetation types are partly controlled by the sharpness of local topographic discontinuities. Stands are often small and fragmentary and confined to ledges and embayments, giving way abruptly on less sheltered, sunnier slopes to the local form of calcicolous grassland.""",
+    'test8':    """Enclosed stands of the community in riverside pastures may be subject to uniform treatment and show no zonations to other vegetation types. In some cases, however, improvement and management have been restricted by difficult topography and an inability to prevent flooding.""",
+    'test9':    """Stands of the Anthoxanthum-Geranium community occur most frequently in fields bounded by walls or fences and each subject to a more or less uniform treatment regime. Spatial zonations between the sub-communities are therefore infrequent, although neglected corners and margins of fields with either the Briza or the Bromus sub-community may show a narrow transition to the Arrhenatherum sub-community.""",
+    'test10':   """"""
+}
 
 # here's the experimental data set
 succession_texts = {
@@ -131,7 +151,7 @@ def mapstrip(s):
     return s.strip(".,:() ")
 
 
-def find_communities(key, succession_string_list):
+def find_communities(c, cc, key, succession_string_list):
     # now we have the community names and codes loaded into the list communities
     # and the succession text for a community broken into the list succession_string_list
     # so now, iterate over the list succession_string_list, using the current word to search the community names
@@ -142,48 +162,49 @@ def find_communities(key, succession_string_list):
 
     # print('processing', succession_string_list)
 
-    # communities_iterator = communities.__iter__()
-    # community_iterator = community.__iter__()
-    for community in communities:    # communities_iterator:
-        word_iterator = succession_string_list.__iter__()
-        for word in succession_string_list: # word_iterator:
+    for community in c:    # communities_iterator:
+        word_iterator = iter(succession_string_list)
+        word = next(word_iterator, None)
+        while word != None:
+            # print("Processing", word, "against", community['list'])
             subcommander = 0
             # print(word)
             while ((subcommander < len(community['list'])) and (community['list'][subcommander] == word)):
-                # print("Found", subcommander, community['code'], word)
+                # print("Found", subcommander, community['code'], word, "in", community['list'][subcommander])
                 if (subcommander > 1):
                     # print("Recognised", word, subcommander, community['community'], community['code'], community['name'])
                     # print("Record", key, "succeeds to", community['community'])
                     if (community['community'] not in recognised_communities):
                         recognised_communities.append(community['community'])
+                # print('current word:', word)
+                word = next(word_iterator, None)
+                # print('next word:', word)
                 subcommander += 1
-                # print('word before:', word)
-                word = word_iterator.__next__()
-                # print('word after:', word)
+            word = next(word_iterator, None)
 
-    for word in succession_string_list:
-        for community in compressed_communities:
-            if community['ccn'] == word:
-                # print("Found compressed", word, "in", community['community'])
-                if community['community'] not in recognised_communities:
-                    recognised_communities.append(community['community'])
+    # for word in succession_string_list:
+    #     for community in cc:
+    #         if community['ccn'] == word:
+    #             print("Found compressed", word, "in", community['community'])
+    #             if community['community'] not in recognised_communities:
+    #                 recognised_communities.append(community['community'])
 
     # print("For", key, "recognised succession communities", recognised_communities)
     return (recognised_communities)
 
 
-def find_succession_pathways():
-    for k, v in succession_texts.items():
-        # print(k.upper())
+def find_succession_pathways(c, cc, t):
+    for k, v in t.items():
+        # print("Community", k.upper())
         found = list()
         by_sentence_list = v.split(".")
-        # print(by_sentence_list)
+        # print("By sentence list", by_sentence_list)
 
         for sentence in by_sentence_list:
-            # print(sentence)
+            # print("Sentence", sentence)
             sentence_list = list(map(mapstrip, sentence.strip(" ").lower().split(" ")))
-            # print(k, sentence_list)
-            find = find_communities(k.upper(), sentence_list)
+            # print("Key", k, "Sentence list", sentence_list)
+            find = find_communities(c, cc, k.upper(), sentence_list)
             for f in find:
                 if f not in found:
                     found.append(f)  # s.split(" ") --> v.lower().split(" ")
@@ -192,6 +213,8 @@ def find_succession_pathways():
             print("Recognised", k.upper(), "successes to", found)
         else:
             print(k.upper(), "does not success")
+
+        print()
 
 
 def process_by_paragraph(mytext):
@@ -205,6 +228,6 @@ load_table_from_database("nvc.db", load_communities_query)
 
 process_compressed_community_names()
 
-find_succession_pathways()
+find_succession_pathways(communities, compressed_communities, succession_texts)
 
 # process_by_paragraph(succession_texts['mg1'])
