@@ -61,8 +61,12 @@ succession_texts = {
 
 
 alternative_names = {
-    'an1':  """Filipendulo-Arrhenatheretum""",
-    'an2':  """Cynosurus-Caltha"""
+    'mg2':  """Filipendulo-Arrhenatheretum""",
+    'mg5':  """Cynosurus-Caltha""",
+    'mg6':  """Lolio-Cynosuretum""",
+    'mg7':  """Lolio-Plantaginion""",
+    'mg10': """Holco-Juncetum""",
+    'mg12': """Potentillo-Festucetum"""
 }
 
 
