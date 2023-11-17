@@ -62,7 +62,7 @@ succession_texts = {
 
 alternative_names = {
     'an1':  """Filipendulo-Arrhenatheretum""",
-    'mg2':  """Cynosurus-Caltha"""
+    'an2':  """Cynosurus-Caltha"""
 }
 
 
@@ -134,7 +134,7 @@ def process_compressed_community_names():
             compressed_communities.append(fccn)
 
     for k, v in alternative_names.items():
-        fccn = {'community': k, 'code': k, 'name': v, 'ccn': v}
+        fccn = {'community': k.upper(), 'code': k.upper(), 'name': v.lower(), 'ccn': v.lower()}
         compressed_communities.append(fccn)
 
 
