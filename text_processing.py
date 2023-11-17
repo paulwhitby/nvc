@@ -59,6 +59,13 @@ succession_texts = {
     'u3':   """"""
 }
 
+
+alternative_names = {
+    'an1':  """Filipendulo-Arrhenatheretum""",
+    'mg2':  """Cynosurus-Caltha"""
+}
+
+
 succession_drivers = ['grazing-stopped', 'grazing-started', 'ploughing-stopped', 'ploughing-started']
 
 # here's the query to load communities data from the nvc sqlite database
@@ -125,6 +132,10 @@ def process_compressed_community_names():
             fccn = { 'community': v['community'], 'code': v['code'], 'name': v['name'], 'ccn': found_compressed_community_name }
             # print(fccn)
             compressed_communities.append(fccn)
+
+    for k, v in alternative_names.items():
+        fccn = {'community': k, 'code': k, 'name': v, 'ccn': v}
+        compressed_communities.append(fccn)
 
 
 def load_table_from_database(database_name, query_string):
@@ -217,16 +228,18 @@ def find_succession_pathways(c, cc, t):
         print()
 
 
-def process_by_paragraph(mytext):
-    mytext_list = mytext.lower().split(".")
-    # print(mytext_list)
-    for t in mytext_list:
-        print(t.strip(" "))
+# def process_by_paragraph(mytext):
+#     mytext_list = mytext.lower().split(".")
+#     # print(mytext_list)
+#     for t in mytext_list:
+#         print(t.strip(" "))
 
 
 load_table_from_database("nvc.db", load_communities_query)
 
 process_compressed_community_names()
+# for x in compressed_communities:
+#     print(x)
 
 find_succession_pathways(communities, compressed_communities, succession_texts)
 
