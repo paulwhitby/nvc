@@ -143,4 +143,3 @@ for k, v in found_pathways.items():
     s = set(v)
     print(k, v, s)
 
-# process_by_paragraph(succession_texts['mg1'])
