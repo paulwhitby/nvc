@@ -3,11 +3,7 @@ import sqlite3
 import copy
 
 
-# TODO
-# Add alternative community names into the searchable names, e.g., "Filipendulo-Arrhenatheretum"
-
-
-# text processing
+# text processing - copyright of succession text (c)
 copyright_text = """Rodwell, John S.. British Plant Communities: Volume 3, Grasslands and Montane Communities . Cambridge University Press. Kindle Edition."""
 # Rodwell, John S.. British Plant Communities: Volume 3, Grasslands and Montane Communities . Cambridge University Press. Kindle Edition.
 
@@ -26,6 +22,7 @@ succession_text_tests = {
 }
 
 # here's the experimental data set
+# probably should be added to a new column in the communities database
 succession_texts = {
     'mg1': """Some of the most frequent zonations involving Arrhenatheretum stands are the often sharp juxtapositions of the various sub-communities and variants with one another or with other vegetation types along road margins. Such patterns are very varied and sometimes reflect long, local traditions of boundary construction and maintenance. Where stands are not maintained by cutting, zonations are generally a reflection of stages in succession to mixed deciduous woodland. This succession is most often mediated by grazing. Arrhenatherum is a ready invader of soils and calcareous talus exposed by landslip, construction work or the abandonment of ploughed land. It can also spread into and increase in certain other grassland types where grazing is absent or withdrawn or where there is injudicious pastoral treatment. Resumption of grazing can once more reduce its cover. Hope-Simpson (1940b) noted that, within four years of the removal of rabbits from a primitive Festuca ovina-Avenula pratensis sward at War Down, Hampshire, Arrhenatherum previously no more than occasional, had become very abundant. Within seven years of the resumption of grazing by sheep and rabbits on an Arrhenatheretum at nearby Coulter’s Dean Wasteland, the vegetation had been converted to a Festuca ovina-Avenula pratensis grassland with no Arrhenatherum (Hope-Simpson 1940b). Thomas (1960, 1963) showed that, after the virtual elimination of rabbits by myxomatosis, the coarser grasses characteristic of the Arrhenatheretum were among those species which spread in grasslands and heaths on chalk. These had previously been present in small amounts and had provided a valuable winter-green bite for the rabbits. They were reduced in cover when rabbit numbers rose again. Arrhenatherum can also spread into seeded verges and some of the floristic variation within the Festuca rubra sub-community (see above) is attributable to this advance. Increase of Arrhenatherum in Centaureo-Cynosuretum grasslands seems to follow careless grazing, perhaps by the use of such grasslands as horse-paddocks, and the Centaurea nigra sub-community of the Arrhenatheretum may originate partly in this way. Ploughing and subsequent abandonment of land after unsuccessful arable cultivation seems to have been a fairly widespread factor in the development of some of the more extensive stands of the community, especially on deeper soils over chalk. The Arrhenatheretum at Coulter’s Dean Wasteland had developed on land ploughed and abandoned some 30 years before (Tansley & Adamson 1925). Brenchley & Adam (1915) had reported a similar occurrence of the community on the abandoned and ungrazed Broadbalk Wilderness at Rothamsted. Several subsequent studies (Lloyd & Pigott 1967 in the Chilterns, Grubb et al. 1969 at Lullington Heath, Sussex and Wells et al. 1976 at Porton Down on the Hampshire/Wiltshire border) have confirmed the view that the Arrhenatheretum is one of the communities dominated by coarse grasses which can, in the absence of grazing, develop naturally on the chalk without the prior development of a Festuca ovina-Avenula pratensis sward. The Arrhenathereta described in these studies are of the kind classified here as the Pastinaca and Centaurea nigra sub-communities but the lists provided are generally insufficiently precise to allocate stands unequivocally to one or the other. The available data suggest that the Pastinaca sub-community develops on the more calcareous and oligotrophic soils where these have been exposed by ploughing or where there has been a relaxation of grazing of calcicolous grassland. This sub-community is most common on the chalk of the south and east where P. sativa has its centre of distribution in Britain and where there has been a history of unsuccessful arable cultivation of marginal chalkland and pastoral neglect (see, for example, Smith 1980). The Centaurea sub-community is more widespread and seems to develop on more mesotrophic soils which are generally less calcareous. It is perhaps the more natural sub-community on deeper soils over chalk, such as those derived from superficial deposits, but it may also develop by the relaxation of grazing of mesotrophic grasslands throughout the lowlands, especially where this has been combined with application of fertilisers. Similar differences in the trophic state of soils may be an important factor in controlling whether it is Arrhenatheretum (of any kind) or grassland dominated by other coarse species such as Avenula pubescens, Festuca rubra, Bromus erectus and Brachypodium pinnatum which develops in any given situation. Wells et al. (1976) showed that, at Porton, the Arrhenatheretum occurred on land ploughed relatively recently where, they suggested, there was still a comparatively small accumulation of organic matter and mineral nutrients. Other coarse grassland types had developed on soils ploughed less recently which were consequently richer. If any kind of Arrhenatheretum remains ungrazed and uncut it eventually develops a pronounced tussock physiognomy and litter accumulation depresses species-richness. Shrubs invade and the frequently close hedgerows and field boundaries provide a seed source. Foremost among the invaders is Crataegus monogyna with Prunus spinosa, Sambucus nigra (especially where there has been disturbance and soil eutrophication), Rubus fruticosus agg., Rosa spp. and, on the more calcareous soils, Cornus sanguinea, Viburnum lantana and Ligustrum vulgare. Clematis vitabla may form a tangle among the developing scrub. Eventually, succession progresses to some form of mixed deciduous woodland but even very coarse and scrubby Arrhenatheretum can be converted to a low sward by grazing. At Aston Rowant NNR, Oxfordshire, four years of sheep-grazing in winter and spring drastically reduced the height of a scrubby Arrhenatheretum and converted A. elatius itself from large tussocks to small scattered shoots in a ground of Festuca ovina (Wells 1969: compare especially Figures 1 and 2).""",
     'mg2': """Spatial transitions between the Filipendulo-Arrhenatheretum and other vegetation types are partly controlled by the sharpness of local topographic discontinuities. Stands are often small and fragmentary and confined to ledges and embayments, giving way abruptly on less sheltered, sunnier slopes to the local form of calcicolous grassland. Where the vegetation is open to stock, grazing may blur the zonation. There is sometimes a gradation to mixed deciduous woodland of the Fraxinus-Acer-Mercurialis or Fraxinus-Sorbus-Mecurialis types. However, although many sites may formerly have had a more extensive local woodland cover, the broken terrain on which the community is typically found could never have been densely wooded (Pigott 1958). The Filipendulo-Arrhenatheretum should therefore be regarded as a persistent woodland margin community rather than a serai precursor. The occasional association of the community with old mixed hedgerows is interesting in this respect.""",
@@ -62,7 +59,7 @@ succession_texts = {
     'u6':   """"""
 }
 
-
+# alternative community names - these need to be added to the communities database in a new column
 alternative_names = {
     'mg2':  """Filipendulo-Arrhenatheretum""",
     'mg5':  """Cynosurus-Caltha""",
@@ -72,8 +69,9 @@ alternative_names = {
     'mg12': """Potentillo-Festucetum"""
 }
 
-
+# reasons why succession might take place. To be extended
 succession_drivers = ['grazing-stopped', 'grazing-started', 'ploughing-stopped', 'ploughing-started']
+
 
 # here's the query to load communities data from the nvc sqlite database
 load_communities_query = """
@@ -91,6 +89,28 @@ column_names = ['community', 'code', 'name', 'list', 'succession']
 # empty communities list, to be loaded up with dictionaries of zipped up field names with database rows
 communities = list()
 compressed_communities = list()
+
+
+def load_communities_table_from_database(database_name, query_string):
+    load_communities = list()
+    con = sqlite3.connect(database_name)
+    cur = con.cursor()
+
+    for row in cur.execute(query_string):
+        # print(row[0], row[1], row[2])
+        current_row_list = list(row)
+        current_row_list.append(list())  # names list
+        current_row_list.append(list())  # succession pathways
+        current_row = dict(zip(column_names, current_row_list))
+
+        community_name = current_row['name']
+        community_name_list = community_name.lower().split(" ")
+        current_row['list'] = community_name_list
+        # print(current_row)
+        load_communities.append(current_row)
+
+    con.close()
+    return(load_communities)
 
 
 def find_compressed_community_names(name, name_list):
@@ -143,26 +163,6 @@ def process_compressed_community_names():
     for k, v in alternative_names.items():
         fccn = {'community': k.upper(), 'code': k.upper(), 'name': v.lower(), 'ccn': v.lower()}
         compressed_communities.append(fccn)
-
-
-def load_table_from_database(database_name, query_string):
-    con = sqlite3.connect(database_name)
-    cur = con.cursor()
-
-    for row in cur.execute(query_string):
-        # print(row[0], row[1], row[2])
-        current_row_list = list(row)
-        current_row_list.append(list())  # names list
-        current_row_list.append(list())  # succession pathways
-        current_row = dict(zip(column_names, current_row_list))
-
-        community_name = current_row['name']
-        community_name_list = community_name.lower().split(" ")
-        current_row['list'] = community_name_list
-        # print(current_row)
-        communities.append(current_row)
-
-    con.close()
 
 
 def mapstrip(s):
@@ -244,7 +244,7 @@ def find_succession_pathways(c, cc, t):
 #         print(t.strip(" "))
 
 
-load_table_from_database("nvc.db", load_communities_query)
+communities = load_communities_table_from_database("nvc.db", load_communities_query)
 
 process_compressed_community_names()
 # for x in compressed_communities:
