@@ -143,4 +143,4 @@ found_pathways = find_succession_pathways(communities, compressed_communities, l
 # succession text has been captured
 for k, v in found_pathways.items():
     s = set(v)
-    print(k, v, s)
+    print(k.upper(), v, s)
