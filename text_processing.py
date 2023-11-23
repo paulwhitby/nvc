@@ -139,7 +139,8 @@ process_compressed_community_names()
 #     print(x)
 
 found_pathways = find_succession_pathways(communities, compressed_communities, load_community_data.succession_texts)
+# the found_pathways (dict) contains the succession pathways (list) for each community for which
+# succession text has been captured
 for k, v in found_pathways.items():
     s = set(v)
     print(k, v, s)
-
