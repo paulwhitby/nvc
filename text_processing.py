@@ -4,15 +4,16 @@ import copy
 import load_community_data
 
 
-# empty communities list, to be loaded up with dictionaries of zipped up field names with database rows
-communities = list()
-compressed_communities = list()
+# empty communities list, to be loaded up with dictionaries of
+# zipped up field names with database rows
+communities = []
+compressed_communities = []
 
 
 def find_compressed_community_names(name, name_list):
     """process community names to construct 'compressed community names'"""
     compressed_community_name = ""
-    ccn = list()
+    ccn = []
     name_list_copy = copy.deepcopy(name_list)
     hyphens = name.count("-")
     if hyphens > 0:
@@ -61,7 +62,7 @@ def process_compressed_community_names():
             # print(fccn)
             compressed_communities.append(fccn)
 
-    for cmnty_key, cmnty in load_community_data.alternative_names.items():
+    for cmnty_key, cmnty in load_community_data.ALTERNATIVE_NAMES.items():
         fccn = {'community': cmnty_key.upper(), 'code': cmnty_key.upper(),
                 'name': cmnty.lower(), 'ccn': cmnty.lower()}
         compressed_communities.append(fccn)
@@ -77,8 +78,10 @@ def find_communities(c, cc, key, succession_string_list):
         named in each succession text"""
     # now we have the community names and codes loaded into the list communities
     # and the succession text for a community broken into the list succession_string_list
-    # so now, iterate over the list succession_string_list, using the current word to search the community names
-    # for the matching first word - then cycle through the next words for each looking for a match
+    # so now, iterate over the list succession_string_list,
+    # using the current word to search the community names
+    # for the matching first word - then cycle through the next words for each
+    # looking for a match
     # use pre-prepared community names split into a list by " "
 
     recognised_communities = []
@@ -94,9 +97,11 @@ def find_communities(c, cc, key, succession_string_list):
             # print(word)
             while ((subcommander < len(community['list']))
                 and (community['list'][subcommander] == word)):
-                # print("Found", subcommander, community['code'], word, "in", community['list'][subcommander])
+                # print("Found", subcommander, community['code'],
+                #   word, "in", community['list'][subcommander])
                 if subcommander > 1:
-                    # print("Recognised", word, subcommander, community['community'], community['code'], community['name'])
+                    # print("Recognised", word, subcommander, community['community'],
+                    #   community['code'], community['name'])
                     # print("Record", key, "succeeds to", community['community'])
                     if community['community'] not in recognised_communities:
                         recognised_communities.append(community['community'])
@@ -147,16 +152,16 @@ def find_succession_pathways(c, cc, t):
 
 
 communities = load_community_data.load_communities_table_from_database(
-    "nvc.db", load_community_data.LOAD_COMMUNITIES_QUERY)
+    load_community_data.NVC_DATABASE_NAME, load_community_data.LOAD_COMMUNITIES_QUERY)
 
 process_compressed_community_names()
 # for x in compressed_communities:
 #     print(x)
 
 found_pathways = find_succession_pathways(
-    communities, compressed_communities, load_community_data.succession_texts)
+    communities, compressed_communities, load_community_data.SUCCESSION_TEXTS)
 # the found_pathways (dict) contains the succession pathways (list) for each community for which
 # succession text has been captured
 for community_key, community_succession_values in found_pathways.items():
-    succession_set = set(community_succession_values)
-    print(community_key.upper(), community_succession_values, succession_set)
+    S = set(community_succession_values)
+    print(community_key.upper(), community_succession_values, S)
