@@ -1,9 +1,14 @@
-# load community data
+"""
+    either loads from source or loads from database, the necessary datasets to be processed
+    to find succession pathways for NVC communities
+"""
 import sqlite3
 
 # text processing - copyright of succession text (c)
-copyright_text = """Rodwell, John S.. British Plant Communities: Volume 3, Grasslands and Montane Communities . Cambridge University Press. Kindle Edition."""
-# Rodwell, John S.. British Plant Communities: Volume 3, Grasslands and Montane Communities . Cambridge University Press. Kindle Edition.
+COPYRIGHT_TEXT = """
+    Rodwell, John S.. 
+    British Plant Communities: Volume 3, Grasslands and Montane Communities . 
+    Cambridge University Press. Kindle Edition."""
 
 # test data set
 succession_text_tests = {
@@ -68,11 +73,12 @@ alternative_names = {
 }
 
 # reasons why succession might take place. To be extended
-succession_drivers = ['grazing-stopped', 'grazing-started', 'ploughing-stopped', 'ploughing-started']
+succession_drivers = ['grazing-stopped', 'grazing-started',
+                      'ploughing-stopped', 'ploughing-started']
 
 
 # here's the query to load communities data from the nvc sqlite database
-load_communities_query = """
+LOAD_COMMUNITIES_QUERY = """
 SELECT
   communities.community_level_code,
   communities.community_code,
@@ -84,7 +90,10 @@ FROM
 # column names to zip up with returned database columns to make them into dictionaries
 column_names = ['community', 'code', 'name', 'list', 'succession']
 
+
 def load_communities_table_from_database(database_name, query_string):
+    """loads the communities list from the communities database, 
+    using the suppled database_name and SQL query_string"""
     load_communities = list()
     con = sqlite3.connect(database_name)
     cur = con.cursor()
@@ -103,5 +112,4 @@ def load_communities_table_from_database(database_name, query_string):
         load_communities.append(current_row)
 
     con.close()
-    return(load_communities)
-
+    return load_communities
