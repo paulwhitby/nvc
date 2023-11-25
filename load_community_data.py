@@ -79,7 +79,6 @@ SUCCESSION_DRIVERS = ('grazing-stopped', 'grazing-started',
                       'ploughing-stopped', 'ploughing-started',
                       'wetting', 'drying', 'fire')
 
-
 # here's the query to load communities data from the nvc sqlite database
 LOAD_COMMUNITIES_QUERY = """
 SELECT
@@ -91,22 +90,22 @@ FROM
 """
 
 # column names to zip up with returned database columns to make them into dictionaries
-column_names = ['community', 'code', 'name', 'list', 'succession']
+COLUMN_NAMES = ['community', 'code', 'name', 'list', 'succession']
 
 
 def load_communities_table_from_database(database_name, query_string):
     """loads the communities list from the communities database, 
     using the suppled database_name and SQL query_string"""
-    load_communities = list()
+    load_communities = []
     con = sqlite3.connect(database_name)
     cur = con.cursor()
 
     for row in cur.execute(query_string):
         # print(row[0], row[1], row[2])
         current_row_list = list(row)
-        current_row_list.append(list())  # names list
-        current_row_list.append(list())  # succession pathways
-        current_row = dict(zip(column_names, current_row_list))
+        current_row_list.append([])  # names list
+        current_row_list.append([])  # succession pathways
+        current_row = dict(zip(COLUMN_NAMES, current_row_list))
 
         community_name = current_row['name']
         community_name_list = community_name.lower().split(" ")
