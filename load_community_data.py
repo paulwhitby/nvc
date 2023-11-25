@@ -103,8 +103,8 @@ def load_communities_table_from_database(database_name, query_string):
     for row in cur.execute(query_string):
         # print(row[0], row[1], row[2])
         current_row_list = list(row)
-        current_row_list.append([])  # names list
-        current_row_list.append([])  # succession pathways
+        current_row_list.append([])  # placeholder for names list
+        current_row_list.append([])  # placeholder for succession pathways
         current_row = dict(zip(COLUMN_NAMES, current_row_list))
 
         community_name = current_row['name']
