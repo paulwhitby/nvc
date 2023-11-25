@@ -75,8 +75,9 @@ ALTERNATIVE_NAMES = {
 }
 
 # reasons why succession might take place. To be extended
-SUCCESSION_DRIVERS = ['grazing-stopped', 'grazing-started',
-                      'ploughing-stopped', 'ploughing-started']
+SUCCESSION_DRIVERS = ('grazing-stopped', 'grazing-started',
+                      'ploughing-stopped', 'ploughing-started',
+                      'wetting', 'drying', 'fire')
 
 
 # here's the query to load communities data from the nvc sqlite database
