@@ -163,3 +163,14 @@ found_pathways = find_succession_pathways(
 for community_key, community_succession_values in found_pathways.items():
     S = set(community_succession_values)
     print(community_key.upper(), community_succession_values, S)
+
+for cmnty in communities:
+    # print("checking", cmnty['community'].lower(), "for succession pathway")
+    if cmnty['community'].lower() in found_pathways:
+        # print(cmnty['community'], "found pathway")
+        cmnty['succession'] = found_pathways[cmnty['community'].lower()]
+        # print(cmnty['community'], "pathway", cmnty['succession'])
+
+for cmnty in communities:
+    if cmnty['succession'] != []:
+        print(cmnty['name'], cmnty['succession'])
