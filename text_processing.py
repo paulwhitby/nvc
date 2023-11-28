@@ -42,7 +42,7 @@ def find_compressed_community_names(name, name_list):
             for i in ccn:
                 compressed_community_name += "-" + i
 
-    # print(compressed_community_name)
+    # print("compressed community name", compressed_community_name)
     return compressed_community_name
 
 
@@ -149,21 +149,27 @@ def find_succession_pathways(c, cc, t):
     return found_dict
 
 
+## Text Processing
+
+## Load communities from NVC database
 communities = load_community_data.load_communities_table_from_database(
     load_community_data.NVC_DATABASE_NAME, load_community_data.LOAD_COMMUNITIES_QUERY)
 
+## Find the commpressed (shortform) community names
 compressed_communities = process_compressed_community_names()
 # for x in compressed_communities:
 #     print(x)
 
+## Process the Zonation and succession text to find the communities successed to
 found_pathways = find_succession_pathways(
     communities, compressed_communities, load_community_data.SUCCESSION_TEXTS)
 # the found_pathways (dict) contains the succession pathways (list) for each community for which
 # succession text has been captured
-for community_key, community_succession_values in found_pathways.items():
-    S = set(community_succession_values)
-    print(community_key.upper(), community_succession_values, S)
+# for community_key, community_succession_values in found_pathways.items():
+#     S = set(community_succession_values)
+#     print(community_key.upper(), community_succession_values, S)
 
+## Add the list of succession communities for each community back into the communities list
 for cmnty in communities:
     # print("checking", cmnty['community'].lower(), "for succession pathway")
     if cmnty['community'].lower() in found_pathways:
@@ -171,6 +177,7 @@ for cmnty in communities:
         cmnty['succession'] = found_pathways[cmnty['community'].lower()]
         # print(cmnty['community'], "pathway", cmnty['succession'])
 
+## DEBUG print it out
 for cmnty in communities:
     if cmnty['succession'] != []:
-        print(cmnty['name'], cmnty['succession'])
+        print(cmnty['community'], cmnty['name'], cmnty['succession'])
