@@ -13,19 +13,6 @@ COPYRIGHT_TEXT = """
     British Plant Communities: Volume 3, Grasslands and Montane Communities . 
     Cambridge University Press. Kindle Edition."""
 
-# test data set
-SUCCESSION_TEXT_TESTS = {
-    'test1':    """Anthoxanthum-Geranium""",
-    'test2':    """Festuca-Hieracium-Thymus""",
-    'test3':    """Festuca rubra-Agrostis stolonifera-Potentilla anserina""",
-    'test4':    """Agrostis stolonifera-Alopecurus geniculatus""",
-    'test5':    """Arrhenatheretum""",
-    'test6':    """The community very commonly occurs in mosaics related to patterns of soil moisture.""",
-    'test7':    """Spatial transitions between the Filipendulo-Arrhenatheretum and other vegetation types are partly controlled by the sharpness of local topographic discontinuities. Stands are often small and fragmentary and confined to ledges and embayments, giving way abruptly on less sheltered, sunnier slopes to the local form of calcicolous grassland.""",
-    'test8':    """Enclosed stands of the community in riverside pastures may be subject to uniform treatment and show no zonations to other vegetation types. In some cases, however, improvement and management have been restricted by difficult topography and an inability to prevent flooding.""",
-    'test9':    """Stands of the Anthoxanthum-Geranium community occur most frequently in fields bounded by walls or fences and each subject to a more or less uniform treatment regime. Spatial zonations between the sub-communities are therefore infrequent, although neglected corners and margins of fields with either the Briza or the Bromus sub-community may show a narrow transition to the Arrhenatherum sub-community.""",
-    'test10':   """"""
-}
 
 SUCCESSION_TEXTS = {}
 SUCCESSION_TEXTS_FILENAME = "succession_text.csv"
