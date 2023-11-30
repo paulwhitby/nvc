@@ -6,14 +6,6 @@ import sqlite3
 import csv
 
 NVC_DATABASE_NAME = "nvc.db"
-
-# text processing - copyright of succession text (c)
-COPYRIGHT_TEXT = """
-    Rodwell, John S.. 
-    British Plant Communities: Volume 3, Grasslands and Montane Communities . 
-    Cambridge University Press. Kindle Edition."""
-
-
 SUCCESSION_TEXTS = {}
 SUCCESSION_TEXTS_FILENAME = "succession_text.csv"
 
@@ -87,7 +79,6 @@ def load_succession_text_from_csv(csv_filename):
         for row in reader:
             # print(', '.join(row))
             succession_texts[row[0]] = row[1]
-            # pass
     return succession_texts
 
 
