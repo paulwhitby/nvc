@@ -1,3 +1,4 @@
+"""load nvc sqlite database tables from CSV files"""
 import sqlite3
 import csv
 
@@ -29,6 +30,7 @@ def load_table(database_name, csv_file_name, query_string, check_string):
 
 
 def load_database_old():
+    """old version of load_database"""
     # open database
     con = sqlite3.connect("nvc.db")
 

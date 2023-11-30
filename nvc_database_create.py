@@ -1,3 +1,4 @@
+"""Create nvc database tables"""
 import sqlite3
 
 def create_nvc_database():

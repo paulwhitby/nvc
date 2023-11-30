@@ -125,9 +125,10 @@ def find_succession_pathways(c, cc, t):
     """by sentence, find the community names and hence succession pathways
         in each community's succession text"""
     found_dict = {}
-    for text_key, text in t.items():
+    for text_key, full_text in t.items():
         # print("Community", k.upper())
         found = []
+        text = load_community_data.remove_carriage_returns(full_text)
         by_sentence_list = text.split(".")
         # print("By sentence list", by_sentence_list)
 
@@ -159,6 +160,8 @@ communities = load_community_data.load_communities_table_from_database(
 compressed_communities = process_compressed_community_names()
 # for x in compressed_communities:
 #     print(x)
+
+load_community_data.SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(load_community_data.SUCCESSION_TEXTS_FILENAME)
 
 ## Process the Zonation and succession text to find the communities successed to
 found_pathways = find_succession_pathways(
