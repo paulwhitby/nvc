@@ -66,9 +66,9 @@ def load_communities_table_from_database(database_name, query_string):
 def remove_carriage_returns(text_to_clean):
     """strips carriage_returns and asterisks from text string 
     and replaces with spaces and nothing"""
-    cleaned_text_1 = text_to_clean.replace("\n", " ")
-    cleaned_text_2 = cleaned_text_1.replace("*", "")
-    return cleaned_text_2
+    cleaned_text = text_to_clean.replace("*", " ").replace("\n", "")
+    # cleaned_text_2 = cleaned_text_1.replace("\n", "")
+    return cleaned_text
 
 
 def load_succession_text_from_csv(csv_filename):
