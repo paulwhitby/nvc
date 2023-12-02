@@ -17,7 +17,14 @@ ALTERNATIVE_NAMES = {
     'mg6':  """Lolio-Cynosuretum""",
     'mg7':  """Lolio-Plantaginion""",
     'mg10': """Holco-Juncetum""",
-    'mg12': """Potentillo-Festucetum"""
+    'mg12': """Potentillo-Festucetum""",
+    'm18':  """Erico-Sphagnion""",
+    'w2':   """Rhamno-franguletum""",
+    'w6':   """Betulo-Alnetum""",
+    'w7':   """Pellio-Alnetum""",
+    'w8':   """Querco-Fraxinetum""",
+    'w9':   """Corylo-Fraxinetum""",
+    'w10':  """Querco-Betuletum"""
 }
 
 # reasons why succession might take place. To be extended
@@ -66,7 +73,7 @@ def load_communities_table_from_database(database_name, query_string):
 def remove_carriage_returns(text_to_clean):
     """strips carriage_returns and asterisks from text string 
     and replaces with spaces and nothing"""
-    cleaned_text = text_to_clean.replace("*", " ").replace("\n", "")
+    cleaned_text = text_to_clean.replace("*", " ").replace("  ", " ").replace("\n", "").replace("\n", "")
     # cleaned_text_2 = cleaned_text_1.replace("\n", "")
     return cleaned_text
 
