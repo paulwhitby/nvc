@@ -2,6 +2,7 @@
 import sqlite3
 
 def create_nvc_database():
+    """create the database tables for storing nvc data"""
     con = sqlite3.connect("nvc.db")
     cur = con.cursor()
     cur.execute("CREATE TABLE communities(community_key, community_code, community_name, community_level_code)")
@@ -13,6 +14,7 @@ def create_nvc_database():
     con.close()
 
 def create_succession_database():
+    """create the database tables for storing succession data"""
     con = sqlite3.connect("nvc.db")
     cur = con.cursor()
     cur.execute("CREATE TABLE succession(succession_key, from_community_key, to_community_key, probability)")

@@ -8,6 +8,7 @@ import csv
 
 
 def load_table(database_name, csv_file_name, query_string, check_string):
+    """loads a database table from a csv file"""
     # open database
     con = sqlite3.connect(database_name)
 
@@ -82,6 +83,7 @@ def load_database_old():
 
 
 def load_database():
+    """applications of load_table() for different nvc datasets"""
     load_table("nvc.db", "community_csv.csv", "INSERT INTO communities VALUES(?, ?, ?, ?)", "select count(*) from communities")
     load_table("nvc.db", "Loading species_csv", "INSERT INTO species VALUES(?, ?)", "select count(*) from species")
     load_table("nvc.db", "Loading community_species_csv", "INSERT INTO community_species VALUES(?, ?, ?, ?, ?)", "select count(*) from community_species")

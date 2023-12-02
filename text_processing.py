@@ -1,6 +1,7 @@
 """Process NVC succession text to find succession pathways for each"""
 import copy
 import load_community_data
+import save_succession_data
 
 
 # empty communities list, to be loaded up with dictionaries of
@@ -181,6 +182,11 @@ for cmnty in communities:
         # print(cmnty['community'], "pathway", cmnty['succession'])
 
 ## DEBUG print it out
+print("computed succession data")
 for cmnty in communities:
     if cmnty['succession'] != []:
-        print(cmnty['community'], cmnty['name'], cmnty['succession'])
+        # print(cmnty['community'], cmnty['name'], cmnty['succession'])
+        print(cmnty)
+
+print("write computed succession data to nvc database")
+save_succession_data.save_succession_data(communities)
