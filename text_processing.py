@@ -1,4 +1,7 @@
 """Process NVC succession text to find succession pathways for each"""
+
+# pylint: disable=line-too-long
+
 import copy
 import load_community_data
 import save_succession_data
@@ -185,8 +188,7 @@ for cmnty in communities:
 print("computed succession data")
 for cmnty in communities:
     if cmnty['succession'] != []:
-        # print(cmnty['community'], cmnty['name'], cmnty['succession'])
-        print(cmnty)
+        print(cmnty['community'], cmnty['name'], cmnty['succession'])
+        # print(cmnty)
 
-# print("write computed succession data to nvc database")
-# save_succession_data.save_succession_data(communities)
+save_succession_data.save_succession_data(communities)

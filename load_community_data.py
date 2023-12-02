@@ -2,6 +2,9 @@
     either loads from source or loads from database, the necessary datasets to be processed
     to find succession pathways for NVC communities
 """
+
+# pylint: disable=line-too-long
+
 import sqlite3
 import csv
 
