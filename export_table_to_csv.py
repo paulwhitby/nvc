@@ -1,3 +1,4 @@
+"""helper function to export any table to any csv file using the supplied SQL query"""
 import sqlite3
 import csv
 
@@ -15,6 +16,7 @@ import csv
 
 
 def export_table_from_database(database_name, export_file_name, export_query):
+    """helper function to export any table from any database to any csv file using the supplied SQL query"""
     con = sqlite3.connect(database_name)
     cur = con.cursor()
 

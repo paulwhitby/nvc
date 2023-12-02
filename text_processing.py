@@ -188,5 +188,5 @@ for cmnty in communities:
         # print(cmnty['community'], cmnty['name'], cmnty['succession'])
         print(cmnty)
 
-print("write computed succession data to nvc database")
-save_succession_data.save_succession_data(communities)
+# print("write computed succession data to nvc database")
+# save_succession_data.save_succession_data(communities)
