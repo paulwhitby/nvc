@@ -13,7 +13,7 @@ communities = []
 compressed_communities = []
 
 
-def find_compressed_community_names(name, name_list):
+def find_compressed_community_names(name, name_list, verbose=False):
     """process community names to construct 'compressed community names'"""
     compressed_community_name = ""
     ccn = []
@@ -33,6 +33,8 @@ def find_compressed_community_names(name, name_list):
             hyphens -= 1
 
         for h in range(0, hyphens):
+            if verbose:
+                print(h)    # shut up pylint about unused variable h
             split_name = name_list_copy.pop(0)
             if "-" in split_name:
                 split_name_list = split_name.split("-")
@@ -54,23 +56,23 @@ def process_compressed_community_names():
     """search community names and process compressed names
         then add in pre-identified alternative names"""
     found_compressed_communities = []
-    for cmnty in communities:
+    for cm in communities:
         found_compressed_community_name = find_compressed_community_names(
-            cmnty['name'], cmnty['list'])
-        # cmnty['list'].append(found_compressed_community_name)
-        # print(cmnty)
+            cm['name'], cm['list'])
+        # cm['list'].append(found_compressed_community_name)
+        # print(cm)
         if found_compressed_community_name != "":
             # append the newly found community name to a list of compressed names
-            fccn = {'community': cmnty['community'], 'code': cmnty['code'],
-                    'name': cmnty['name'], 'ccn': found_compressed_community_name}
+            fccn = {'community': cm['community'], 'code': cm['code'],
+                    'name': cm['name'], 'ccn': found_compressed_community_name}
             # print(fccn)
             found_compressed_communities.append(fccn)
 
-    for cmnty_key, cmnty in load_community_data.ALTERNATIVE_NAMES.items():
+    for cmnty_key, cmnty_val in load_community_data.ALTERNATIVE_NAMES.items():
         fccn = {'community': cmnty_key.upper(), 'code': cmnty_key.upper(),
-                'name': cmnty.lower(), 'ccn': cmnty.lower()}
+                'name': cmnty_val.lower(), 'ccn': cmnty_val.lower()}
         found_compressed_communities.append(fccn)
-    
+
     return found_compressed_communities
 
 
@@ -79,7 +81,7 @@ def mapstrip(string_to_strip):
     return string_to_strip.strip(".,:() ")
 
 
-def find_communities(c, cc, key, succession_string_list):
+def find_communities(c, cc, key, succession_string_list, verbose=False):
     """process each community succession text and each community name to find the communities
         named in each succession text"""
     # now we have the community names and codes loaded into the list communities
@@ -92,7 +94,8 @@ def find_communities(c, cc, key, succession_string_list):
 
     recognised_communities = []
 
-    # print('processing', succession_string_list)
+    if verbose:
+        print(key, 'processing', succession_string_list)
 
     for community in c:    # communities_iterator:
         word_iterator = iter(succession_string_list)

@@ -86,7 +86,7 @@ def remove_carriage_returns(text_to_clean):
 def load_succession_text_from_csv(csv_filename):
     """read zonation and succession text from CSV file"""
     succession_texts = {}
-    with open(csv_filename) as csv_file:
+    with open(csv_filename, encoding="utf-8") as csv_file:
         reader = csv.reader(csv_file)
         for row in reader:
             # print(', '.join(row))
