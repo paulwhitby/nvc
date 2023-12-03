@@ -10,7 +10,7 @@ import csv
 
 NVC_DATABASE_NAME = "nvc.db"
 SUCCESSION_TEXTS = {}
-SUCCESSION_TEXTS_FILENAME = "succession_text.csv"
+SUCCESSION_TEXTS_FILENAME = "txts/all_processed_succession_text.csv"  #"succession_text.csv"
 
 
 # alternative community names - these need to be added to the communities database in a new column

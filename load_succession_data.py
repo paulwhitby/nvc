@@ -110,6 +110,6 @@ DEBUG_FLAG = True
 
 sl = load_succession_into_reverse_dict(DEBUG_FLAG)
 if DEBUG_FLAG:
-    print("\nDictionary\n")
+    print("\nReverse Succession Dictionary\n")
     for k, v in sl.items():
         print(k, v)
