@@ -203,4 +203,4 @@ GRAPH_NODES = make_graph_nodes(forward_sl, reverse_sl, DEBUG_FLAG_2)
 if DEBUG_FLAG_2:
     print("\nGraph nodes\n")
     for k, v in GRAPH_NODES.items():
-        print(k, "successes to", v['fwd'], "and successes from", v['rev'])
+        print(k, "-->", v['fwd'], "& <--", v['rev'])
