@@ -199,7 +199,7 @@ if DEBUG_FLAG_1:
     for k, v in forward_sl.items():
         print(k, "succeeds TO", v)
 
-GRAPH_NODES = make_graph_nodes(forward_sl, reverse_sl, DEBUG_FLAG_2)
+GRAPH_NODES = make_graph_nodes(forward_sl, reverse_sl, False)
 if DEBUG_FLAG_2:
     print("\nGraph nodes\n")
     for k, v in GRAPH_NODES.items():
