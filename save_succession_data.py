@@ -50,6 +50,14 @@ def _save_succession_data(database_name, query_string, communities, check_string
                     print(insert_row)
                 cur.execute(query_string, insert_row)
                 con.commit()
+        else:
+            succession_key = community['community'].upper()+":"+community['code'].upper()+":"
+            insert_row = (succession_key, community['code'], "", '0.0')
+            if verbose:
+                print(insert_row)
+            cur.execute(query_string, insert_row)
+            con.commit()
+
     if verbose:
         for row in cur.execute(check_string):
             print(row, "records")
