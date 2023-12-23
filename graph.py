@@ -19,14 +19,18 @@ if __name__ == "__main__":
     DEBUG_ON = True
 
     edge_df = load_succession_data.load_succession_graph_edges(DEBUG_ON)
+    edge_df["explore"] = 0
     # node_df = load_community_data.load_communities_graph_nodes(DEBUG_ON)
     node_df = load_succession_data.make_df_from_graph_nodes(load_succession_data.load_succession_into_forward_dict(verbose=DEBUG_ON), load_succession_data.load_succession_into_reverse_dict(verbose=DEBUG_ON), verbose=DEBUG_ON)
 
     print(edge_df)
-    print(node_df)
-    Jaal(edge_df, node_df).plot(directed=True)
-    # Jaal(edge_df).plot()
+    # print(node_df)
+    Jaal(edge_df, node_df).plot(directed=True, vis_opts={'height': '2000px'})
+    # Jaal(edge_df).plot(directed=True)
 
 """
 to=='MG6' or to=='CG10' or to=='CG14' or to=='OV40' or to=='W20' or to=='M11' or to=='U16' or to=='W17' or to=='H8'
+
+fwd_count>0 and rev_count==0
+
 """

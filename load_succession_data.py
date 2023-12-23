@@ -35,6 +35,7 @@ ORDER BY succession.from_community_key
 
 LOAD_SUCCESSION_QUERY_ORDER_BY_TO = """
 SELECT
+    succession.succession_key, 
     succession.from_community_key, 
     succession.to_community_key, 
     succession.probability 
@@ -108,23 +109,27 @@ def _load_succession_into_reverse_dict(database_name=DATABASE_NAME, query_string
     load_succession_model = {}
     current_community = ""
     previous_community = ""
-    current_from_list = []
+    current_to_list = []
+
+    if verbose:
+        print("\n_load_succession_into_reverse_dict\n")
 
     for row in cur.execute(query_string):
         d = dict(zip(column_names, list(row)))
+        # SUCCESSION_COLUMN_NAMES = ('succession_key', 'from_community_key', 'to_community_key', 'probability')
         current_community = d['to_community_key']
 
         if verbose:
-            print("C", current_community, "P", previous_community, "L", current_from_list)
+            print("C", current_community, "P", previous_community, "L", current_to_list)
             print("R", d)
 
         if current_community != previous_community:
             if previous_community != "":
-                load_succession_model[previous_community] = current_from_list
-            current_from_list = []
+                load_succession_model[previous_community] = current_to_list
+            current_to_list = []
             previous_community = current_community
 
-        current_from_list.append(d['from_community_key'])
+        current_to_list.append(d['from_community_key'])
 
     con.close()
 
@@ -144,8 +149,12 @@ def _load_succession_into_forward_dict(database_name=DATABASE_NAME, query_string
     previous_community = ""
     current_from_list = []
 
+    if verbose:
+        print("\n_load_succession_into_forward_dict\n")
+
     for row in cur.execute(query_string):
         d = dict(zip(column_names, list(row)))
+        # SUCCESSION_COLUMN_NAMES = ('succession_key', 'from_community_key', 'to_community_key', 'probability')
         current_community = d['from_community_key']
 
         if verbose:
@@ -168,9 +177,11 @@ def _load_succession_into_forward_dict(database_name=DATABASE_NAME, query_string
     return load_succession_model
 
 
-def _compose_new_graph_node(the_fwd_list, the_rev_list):
+def _compose_new_graph_node(the_fwd_list, the_rev_list, verbose=False):
     """helper function to compose a node entry"""
     a_node = {"fwd": the_fwd_list, "rev": the_rev_list, "fwd_count": len(the_fwd_list), "rev_count": len(the_rev_list)}
+    if verbose:
+        print("new node", a_node)
     return a_node
 
 
@@ -183,6 +194,7 @@ def _make_df_from_graph(a_graph: dict, verbose=False) -> pd.DataFrame:
         new_entry["id"] = graph_key
         new_entry["fwd_count"] = graph_val["fwd_count"]
         new_entry["rev_count"] = graph_val["rev_count"]
+        new_entry["explore"] = 0
         a_list.append(new_entry)
     a_df = pd.DataFrame(a_list)
     if verbose:
@@ -203,7 +215,7 @@ def _make_graph_nodes(forward_dict, reverse_dict, verbose=False) -> dict:
             if verbose:
                 print(community_key, "not in reverse list")
             rev_list = []
-        new_node = _compose_new_graph_node(fwd_list, rev_list)
+        new_node = _compose_new_graph_node(fwd_list, rev_list, verbose)
         graph[community_key] = new_node
         if verbose:
             print(community_key, graph[community_key])
@@ -216,7 +228,7 @@ def _make_graph_nodes(forward_dict, reverse_dict, verbose=False) -> dict:
             if verbose:
                 print(community_key, "not in forward list")
             fwd_list = []
-        new_node = _compose_new_graph_node(fwd_list, rev_list)
+        new_node = _compose_new_graph_node(fwd_list, rev_list, verbose)
         graph[community_key] = new_node
         if verbose:
             print(community_key, graph[community_key])
