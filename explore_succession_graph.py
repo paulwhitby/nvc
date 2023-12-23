@@ -7,7 +7,7 @@ work backwards from field survey community results to possible starting position
 # from jaal import Jaal
 # import pandas as pd
 import load_succession_data
-import load_community_data
+# import load_community_data
 
 MAVIS_TEXT = """
 Report dated Sun Oct 08 18:26:36 2023
@@ -76,6 +76,8 @@ MODIFIED_MAVIS_OUTPUT = {
 
 def remove_subcommunities(current_community_name, community_list, verbose=False):
     """process list of community names and remove subcommunities, leaving only main communities"""
+    if verbose:
+        print("remove subcommunities")
     new_community_list = []
     for i in community_list:
         if i != current_community_name:
@@ -137,11 +139,13 @@ def breadth_first_recursive_search(nodes, g, p, verbose=False):
                 print(n, "has no reverse succession")
             else:
                 pass
-    return (len(p)-size_of_p)   # number of new communities in list PATHS (p)
+    return len(p) - size_of_p   # number of new communities in list PATHS (p)
 
 
 def remove_duplicates(child_nodes, p, verbose=False):
     """remove entries from child_nodes already in p"""
+    if verbose:
+        print("remove duplicates")
     new_kids = []
     for c in child_nodes:
         if c not in p:
