@@ -3,6 +3,7 @@
 Documentation here: https://pypdf.readthedocs.io/en/stable/user/extract-text.html"""
 
 # pylint: disable=line-too-long
+# pylint: disable=broad-exception-caught
 
 # import pypdf
 from pypdf import PdfReader
@@ -100,7 +101,7 @@ def find_succession_text(text, verbose=False) -> str:
     if verbose:
         print(zs_str, zs, ds_str, ds)
 
-    if zs != -1 and ds != 1:
+    if zs != -1 and ds != -1:
         first_partition = text.partition(zs_str)
         zs_subtext = first_partition[1] + first_partition[2]
         second_partition = zs_subtext.partition(ds_str)
@@ -157,5 +158,6 @@ def process_batch_pdf_extractions(pdf_names, verbose=False):
     return extracted
 
 
-TEXT_EXTRACTED = process_batch_pdf_extractions(FILES_TO_PROCESS, False)
-write_dict_to_csv(TEXT_EXTRACTED, "txts/all_processed_succession_text.csv", False)
+if __name__ == "__main__":
+    TEXT_EXTRACTED = process_batch_pdf_extractions(FILES_TO_PROCESS, False)
+    write_dict_to_csv(TEXT_EXTRACTED, "txts/all_processed_succession_text.csv", False)
