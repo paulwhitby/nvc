@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     print(edge_df)
     # print(node_df)
-    Jaal(edge_df, node_df).plot(directed=True, vis_opts={'height': '2000px'})
+    Jaal(edge_df, node_df).plot(directed=True, vis_opts={'height': '4000px'})
     # Jaal(edge_df).plot(directed=True)
 
 """
