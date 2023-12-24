@@ -86,29 +86,6 @@ def remove_subcommunities(current_community_name, community_list, verbose=False)
     return new_community_list
 
 
-def recursive_graph_traverse(node, g, p, verbose=False):
-    """find all the nodes in the reverse succession path for node in the graph g
-    and call recursive_graph_traverse() for each
-    stop when rev_count == 0 for a node
-    return with list of nodes touched"""
-    if verbose:
-        print("\nrecursive graph traverse of node", node)
-   
-    if node not in p:
-        if g[node]["rev_count"] > 0:
-            rev_list = remove_subcommunities(node, g[node]["rev"])
-            for rev in rev_list:
-                found_in_subnode = recursive_graph_traverse(rev, g, p, verbose)
-                if verbose:
-                    print("For", rev, "found", found_in_subnode)
-                p += found_in_subnode
-            return p
-        # else:
-        #     return []
-
-    return []
-
-
 def find_all_child_nodes(nodes, g, verbose=False):
     """return a concatenated list of all the child nodes of the nodes in nodes"""
     found = []
@@ -117,29 +94,6 @@ def find_all_child_nodes(nodes, g, verbose=False):
     if verbose:
         print("\nfor", nodes, "found", found)
     return found
-
-
-def breadth_first_recursive_search(nodes, g, p, verbose=False):
-    """shallow, breadth-first graph traversal to ensure elimination of infinite recursion 
-    due to circular dependencies between NVC successions"""
-    size_of_p = len(p)
-    if verbose:
-        print("\nbreadth first recursive search")
-    for n in nodes:
-        if verbose:
-            print("searching", n)
-        if g[n]["rev_count"] > 0:
-            reduced_revs = remove_subcommunities(n, g[n]["rev"], verbose)
-            p += reduced_revs
-            if verbose:
-                print(n, "revs", reduced_revs)
-                print("accumulated path", p)
-        else:
-            if verbose:
-                print(n, "has no reverse succession")
-            else:
-                pass
-    return len(p) - size_of_p   # number of new communities in list PATHS (p)
 
 
 def remove_duplicates(child_nodes, p, verbose=False):
@@ -169,19 +123,6 @@ if __name__ == "__main__":
     nodelist = []
     for mavis_community, mavis_probability in MODIFIED_MAVIS_OUTPUT.items():
         nodelist.append(mavis_community)
-        # P = recursive_graph_traverse(mavis_community, GRAPH, PATHS, True)
-        # PATHS.append(P)
-        # if EXPLORE_DEBUG_FLAG:
-        #     print("\n", mavis_community, mavis_probability)
-        #     print(GRAPH[mavis_community])
-        
-        # if GRAPH[mavis_community]['rev_count'] > 0:
-            # rev_list = remove_subcommunities(GRAPH[mavis_community]["rev"])
-            # if EXPLORE_DEBUG_FLAG:
-            #     print("\nFor", mavis_community, "%", mavis_probability, "following reverse paths", rev_list)
-            # for r in rev_list:
-            #     if r not in PATHS:
-            #         PATHS.append(r)
     
     PATHS += nodelist
     children = find_all_child_nodes(nodelist, GRAPH, True)
@@ -191,22 +132,9 @@ if __name__ == "__main__":
         children = find_all_child_nodes(children, GRAPH, True)
         children = remove_duplicates(children, PATHS, True)
         PATHS += children
-    
-
-    # grandchildren = find_all_child_nodes(children, GRAPH, True)
-    # PATHS += grandchildren
-
-
-    # cmnties_found = breadth_first_recursive_search(nodelist, GRAPH, PATHS, True)
-
-    # while cmnties_found > 0:
-    #     cmnties_found = breadth_first_recursive_search(PATHS, GRAPH, PATHS, True)
         
     pathset = set(PATHS)
     new_paths = list(pathset)
 
     print("\n\nThere are", len(pathset), "nodes")
     print("\n\nPaths\n\n", pathset)
-    # print("\nPaths")
-    # for p in PATHS:
-    #     print(p)
