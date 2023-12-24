@@ -96,6 +96,11 @@ def find_all_child_nodes(nodes, g, verbose=False):
     return found
 
 
+def dedupe_list(a_list):
+    """de-dupe list entries by converting to a set and back again"""
+    return (list(set(a_list)))
+
+
 def remove_duplicates(child_nodes, p, verbose=False):
     """remove entries from child_nodes already in p"""
     if verbose:
@@ -104,7 +109,8 @@ def remove_duplicates(child_nodes, p, verbose=False):
     for c in child_nodes:
         if c not in p:
             new_kids.append(c)
-    return new_kids
+    new_kids_set = set(new_kids)
+    return list(new_kids_set)
 
 
 if __name__ == "__main__":
@@ -117,24 +123,27 @@ if __name__ == "__main__":
     MAVIS_GRAPH_NODES = {}
 
     if EXPLORE_DEBUG_FLAG:
-        print("\nMAVIS output\n")
+        print("\nExplore MAVIS output\n")
+        print(len(GRAPH), "nodes in entire graph")
 
 
     nodelist = []
     for mavis_community, mavis_probability in MODIFIED_MAVIS_OUTPUT.items():
         nodelist.append(mavis_community)
     
-    PATHS += nodelist
+    PATHS = nodelist
     children = find_all_child_nodes(nodelist, GRAPH, True)
-    # print("\nchildren of", nodelist, "are", children)
+    children = dedupe_list(children)
+    print("\nchildren of", nodelist, "are", children)
+
     PATHS += children
+
     while len(children) > 0:
         children = find_all_child_nodes(children, GRAPH, True)
         children = remove_duplicates(children, PATHS, True)
         PATHS += children
         
-    pathset = set(PATHS)
-    new_paths = list(pathset)
+    new_paths = dedupe_list(PATHS)
 
-    print("\n\nThere are", len(pathset), "nodes")
-    print("\n\nPaths\n\n", pathset)
+    print("\n\nThere are", len(new_paths), "nodes")
+    print("\n\nPaths\n\n", new_paths)
