@@ -4,3 +4,4 @@ succession_text.csv
 pdfs/*
 txts/*
 .DS_Store
+.DS_Store/*
