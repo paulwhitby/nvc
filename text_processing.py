@@ -1,6 +1,7 @@
 """Process NVC succession text to find succession pathways for each"""
 
 # pylint: disable=line-too-long
+# pylint: disable=unused-import
 
 import copy
 import load_community_data
@@ -93,6 +94,7 @@ def find_communities(c, cc, key, succession_string_list, verbose=False):
     # use pre-prepared community names split into a list by " "
 
     recognised_communities = []
+    # found_drivers = []
 
     if verbose:
         print(key, 'processing', succession_string_list)
@@ -124,6 +126,17 @@ def find_communities(c, cc, key, succession_string_list, verbose=False):
                 if community['community'] not in recognised_communities:
                     recognised_communities.append(community['community'])
 
+    #     for driver_code, driver_list in load_community_data.SUCCESSION_DRIVERS.items():
+    #         for d in driver_list:
+    #             if word == d:
+    #                 load_community_data.COMMUNITY_SUCCESSION_DRIVERS[key].append(driver_code)
+    #                 if verbose:
+    #                     print("found succession driver", d)
+
+    # # load_community_data.COMMUNITY_SUCCESSION_DRIVERS[key].append(found_drivers)
+    # if verbose:
+    #     print("\nfor key", key, "found drivers", load_community_data.COMMUNITY_SUCCESSION_DRIVERS[key])
+
     # print("For", key, "recognised succession communities", recognised_communities)
     return recognised_communities
 
@@ -143,7 +156,7 @@ def find_succession_pathways(c, cc, t):
             # print("Sentence", sentence)
             sentence_list = list(map(mapstrip, sentence.strip(" ").lower().split(" ")))
             # print("Key", k, "Sentence list", sentence_list)
-            find = find_communities(c, cc, text_key.upper(), sentence_list)
+            find = find_communities(c, cc, text_key.upper(), sentence_list, False)
             for f in find:
                 if f not in found:
                     found.append(f)  # s.split(" ") --> v.lower().split(" ")
@@ -189,10 +202,13 @@ if __name__ == "__main__":
             # print(cmnty['community'], "pathway", cmnty['succession'])
 
     ## DEBUG print it out
-    print("computed succession data")
-    for cmnty in communities:
-        if cmnty['succession'] != []:
-            print(cmnty['community'], cmnty['name'], cmnty['succession'])
-            # print(cmnty)
+    # print("computed succession data")
+    # for cmnty in communities:
+    #     if cmnty['succession'] != []:
+    #         print(cmnty['community'], cmnty['name'], cmnty['succession'])
+    #         # print("Succession drivers", load_community_data.COMMUNITY_SUCCESSION_DRIVERS[cmnty], "\n\n")
+    #         # print(cmnty)
+
+    # print(load_community_data.COMMUNITY_SUCCESSION_DRIVERS)
 
     save_succession_data.save_succession_data(communities)

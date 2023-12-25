@@ -34,10 +34,20 @@ ALTERNATIVE_NAMES = {
 }
 
 # reasons why succession might take place. To be extended
-SUCCESSION_DRIVERS = ('grazing-stopped', 'grazing-started',
-                      'ploughing-stopped', 'ploughing-started',
-                      'wetting', 'drying', 'fire',
-                      'mowing-stopped', 'abandonment', 'myxomatosis')
+SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
+                      'grazing-started': ["introduction of grazing"],
+                      'ploughing-stopped': ["abandonment of ploughing"],
+                      'ploughing-started': ["introduction of ploughing"],
+                      'wetting': ["wetting"],
+                      'drying': ["drying"],
+                      'fire': ["fire"],
+                      'mowing-stopped': ["abandonment of mowing"],
+                      'abandonment': ["abandonment"],
+                      'myxomatosis': ["myxomatosis"]
+                      }
+
+COMMUNITY_SUCCESSION_DRIVERS = {}
+
 
 # here's the query to load communities data from the nvc sqlite database
 LOAD_COMMUNITIES_QUERY = """
