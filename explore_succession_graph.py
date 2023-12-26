@@ -7,7 +7,7 @@ work backwards from field survey community results to possible starting position
 # from jaal import Jaal
 # import pandas as pd
 import load_succession_data
-# import load_community_data
+import load_community_data
 
 MAVIS_TEXT = """
 Report dated Sun Oct 08 18:26:36 2023
@@ -113,7 +113,10 @@ def remove_duplicates(child_nodes, p, verbose=False):
     return list(new_kids_set)
 
 
-if __name__ == "__main__":
+def find_all_connected_nodes():
+    """from the set of MAVIS-output communities, work back through the graph of 
+    succession nodes to find the complete connected set"""
+
     EXPLORE_DEBUG_FLAG = True
     LOAD_DEBUG_FLAG = False
     FD = load_succession_data.load_succession_into_forward_dict(LOAD_DEBUG_FLAG)
@@ -147,3 +150,33 @@ if __name__ == "__main__":
 
     print("\n\nThere are", len(new_paths), "nodes")
     print("\n\nPaths\n\n", new_paths)
+
+
+if __name__ == "__main__":
+    # find_all_connected_nodes()
+    EXPLORE_DEBUG_FLAG = True
+    LOAD_DEBUG_FLAG = False
+    FD = load_succession_data.load_succession_into_forward_dict(LOAD_DEBUG_FLAG)
+    RD = load_succession_data.load_succession_into_reverse_dict(LOAD_DEBUG_FLAG)
+    GRAPH = load_succession_data.make_graph_nodes(FD, RD, LOAD_DEBUG_FLAG)
+    load_community_data.SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(load_community_data.SUCCESSION_TEXTS_FILENAME)
+
+    print(MODIFIED_MAVIS_OUTPUT)
+
+    s = ""
+    s_list = []
+    while s != "q":
+        s = input("> ")
+        if s != "q":
+            if s == "c":
+                s_list = []
+            else:
+                if s == "t":
+                    t = input("community>")
+                    print(load_community_data.SUCCESSION_TEXTS[t.lower()])
+                else:
+                    s_list.append(s.upper())
+                    child_nodes = find_all_child_nodes(s_list, GRAPH, False)
+                    print(s.upper(), "child nodes are", child_nodes)
+                    for n in child_nodes:
+                        print(n, GRAPH[n]["rev"])
