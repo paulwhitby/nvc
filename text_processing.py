@@ -13,6 +13,80 @@ import save_succession_data
 communities = []
 compressed_communities = []
 
+NAME_END_WORDS = ["community", "grassland", "grass-heath", "sedge-heath","rush-heath","heath",
+                  "dwarf-herb", "nana heath", "mire", "wet heath", "blanket mire", "blanket and raised mire",
+                  "valley mire", "bog pool community", "fen-meadow", "rush-pasture", "soakway", 
+                  "spring", "flush", "maritime rock-crevice community", "maritime grassland",
+                  "maritime bluebell community", "maritime cliff-ledge community", 
+                  "maritime therophyte community", "maritime sea-bird cliff community", 
+                  "swamp", "swamp and sedge-beds", "water-margin vegetation", "other water-margin vegetation", "tall-herb fen",
+                  "shingle community", "dune community", "dune grassland", "dune-slack community",
+                  "dune scrub", "dune annual community", "strandline community", "foredune community",
+                  "mobile dune community", "semi-fixed dune community", "salt-marsh community",
+                  "drift-line commmunity", "stands", "moss-heath", "snow-bed", "banks",
+                  "woodland", "scrub", "underscrub"]
+
+
+def mapstrip(string_to_strip):
+    """strips characters from each entry in a list of words, originally separated by split()"""
+    return string_to_strip.strip(".,:() ")
+
+
+def find_full_community_names(verbose=False):
+    """go through community names and find substring ending in words in NAME_END_WORDS"""
+    for com in communities:
+        # print(com)
+        c = com['community']
+        sc = com['code']
+        n = com['name'].lower()
+        if c == sc: # only work on top-level communities, not sub-communities
+            found_name_end_words = []
+            for i in NAME_END_WORDS:
+                if n.find(i) >= 0:
+                    # print(c, ":", n, "->", i)
+                    found_name_end_words.append(i)
+            if len(found_name_end_words) > 0:
+                fn = ""
+                fnlen = 0
+                for f in found_name_end_words:
+                    if len(f) > fnlen:
+                        fn = f
+                        fnlen = len(fn)
+                com['found_end'] = fn
+                com['actual_name'] = n.partition(fn)[0].strip(" ")
+
+    if verbose:
+        print("\n\n")
+        for com in communities:
+            if com['community'] == com['code']:
+                print(com)
+
+
+def find_actual_names_in_text(c, key, sentence, verbose=False):
+    """whizz through communities looking for actual_name in text"""
+    recognised_communities = []
+    for community in c:
+        if community['community'] == community['code']:
+            if 'actual_name' in community:
+                an = community['actual_name']
+                if sentence.find(an) > 0:
+                    recognised_communities.append(community['community'])
+
+    if verbose:
+        print("For", key, "recognised", recognised_communities)
+
+    return recognised_communities
+
+
+def find_succession_with_actual_names(c, t, verbose=False):
+    """whizz through texts to find actual community names"""
+    found = {}
+    for text_key, full_text in t.items():
+        found[text_key] = find_actual_names_in_text(c, text_key, full_text, verbose)
+        if verbose:
+            print(found[text_key])
+    return found
+
 
 def find_compressed_community_names(name, name_list, verbose=False):
     """process community names to construct 'compressed community names'"""
@@ -75,11 +149,6 @@ def process_compressed_community_names():
         found_compressed_communities.append(fccn)
 
     return found_compressed_communities
-
-
-def mapstrip(string_to_strip):
-    """strips characters from each entry in a list of words, originally separated by split()"""
-    return string_to_strip.strip(".,:() ")
 
 
 def find_communities(c, cc, key, succession_string_list, verbose=False):
@@ -172,7 +241,6 @@ def find_succession_pathways(c, cc, t):
 
 if __name__ == "__main__":
     ## Text Processing
-
     ## Load communities from NVC database
     communities = load_community_data.load_communities_table_from_database(
         load_community_data.NVC_DATABASE_NAME, load_community_data.LOAD_COMMUNITIES_QUERY)
@@ -185,13 +253,24 @@ if __name__ == "__main__":
     load_community_data.SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(load_community_data.SUCCESSION_TEXTS_FILENAME)
 
     ## Process the Zonation and succession text to find the communities successed to
-    found_pathways = find_succession_pathways(
-        communities, compressed_communities, load_community_data.SUCCESSION_TEXTS)
+
+    ###
+    ### temporary comment-out
+    found_pathways = {}
+    found_pathways = find_succession_pathways(communities, compressed_communities, load_community_data.SUCCESSION_TEXTS)
+    ### end temporary comment-out
+    ###
     # the found_pathways (dict) contains the succession pathways (list) for each community for which
     # succession text has been captured
     # for community_key, community_succession_values in found_pathways.items():
     #     S = set(community_succession_values)
     #     print(community_key.upper(), community_succession_values, S)
+
+
+    ## abortive attempt to find community names another way
+    # find_full_community_names(verbose=True)
+    # found_pathways = find_succession_with_actual_names(communities, load_community_data.SUCCESSION_TEXTS, True)
+
 
     ## Add the list of succession communities for each community back into the communities list
     for cmnty in communities:
@@ -211,4 +290,8 @@ if __name__ == "__main__":
 
     # print(load_community_data.COMMUNITY_SUCCESSION_DRIVERS)
 
-    save_succession_data.save_succession_data(communities)
+    ###
+    ### temporary comment-out
+    # save_succession_data.save_succession_data(communities)
+    ### end temporary comment-out
+    ###

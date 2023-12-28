@@ -8,6 +8,8 @@ work backwards from field survey community results to possible starting position
 # import pandas as pd
 import load_succession_data
 import load_community_data
+import read_pdf
+import text_processing
 
 MAVIS_TEXT = """
 Report dated Sun Oct 08 18:26:36 2023
@@ -160,6 +162,9 @@ if __name__ == "__main__":
     RD = load_succession_data.load_succession_into_reverse_dict(LOAD_DEBUG_FLAG)
     GRAPH = load_succession_data.make_graph_nodes(FD, RD, LOAD_DEBUG_FLAG)
     load_community_data.SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(load_community_data.SUCCESSION_TEXTS_FILENAME)
+    communities = load_community_data.load_communities_table_from_database(
+        load_community_data.NVC_DATABASE_NAME, load_community_data.LOAD_COMMUNITIES_QUERY)
+    compressed_communities = text_processing.process_compressed_community_names()
 
     print(MODIFIED_MAVIS_OUTPUT)
 
@@ -173,10 +178,20 @@ if __name__ == "__main__":
             else:
                 if s == "t":
                     t = input("community>")
-                    print(load_community_data.SUCCESSION_TEXTS[t.lower()])
+                    print(read_pdf.clean_text(load_community_data.SUCCESSION_TEXTS[t.lower()]))
                 else:
-                    s_list.append(s.upper())
-                    child_nodes = find_all_child_nodes(s_list, GRAPH, False)
-                    print(s.upper(), "child nodes are", child_nodes)
-                    for n in child_nodes:
-                        print(n, GRAPH[n]["rev"])
+                    if s == "n":
+                        t = input("community>")
+                        print(communities[t.lower()]["name"])
+                    else:
+                        if s == "cc":
+                            t = input("community>")
+                            for cc in compressed_communities:
+                                if cc['community'] == t.lower():
+                                    print(cc)
+                        else:
+                            s_list.append(s.upper())
+                            child_nodes = find_all_child_nodes(s_list, GRAPH, False)
+                            print(s.upper(), "child nodes are", child_nodes)
+                            for n in child_nodes:
+                                print(n, GRAPH[n]["rev"])
