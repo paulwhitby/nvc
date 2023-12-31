@@ -75,6 +75,10 @@ MODIFIED_MAVIS_OUTPUT = {
     "OV10": 36.43
 }
 
+MC9 = {
+    "MC9": 100
+}
+
 
 def remove_subcommunities(current_community_name, community_list, verbose=False):
     """process list of community names and remove subcommunities, leaving only main communities"""
@@ -133,7 +137,7 @@ def find_all_connected_nodes():
 
 
     nodelist = []
-    for mavis_community, mavis_probability in MODIFIED_MAVIS_OUTPUT.items():
+    for mavis_community, mavis_probability in MC9.items():
         nodelist.append(mavis_community)
     
     PATHS = nodelist
@@ -190,8 +194,11 @@ if __name__ == "__main__":
                                 if cc['community'] == t.lower():
                                     print(cc)
                         else:
-                            s_list.append(s.upper())
-                            child_nodes = find_all_child_nodes(s_list, GRAPH, False)
-                            print(s.upper(), "child nodes are", child_nodes)
-                            for n in child_nodes:
-                                print(n, GRAPH[n]["rev"])
+                            if s == "a":
+                                find_all_connected_nodes()
+                            else:
+                                s_list.append(s.upper())
+                                child_nodes = find_all_child_nodes(s_list, GRAPH, False)
+                                print(s.upper(), "child nodes are", child_nodes)
+                                for n in child_nodes:
+                                    print(n, GRAPH[n]["rev"])

@@ -2,5 +2,4 @@ succession_text.csv
 *.pdf
 *.txt
 pdfs/*
-txts/*
 .DS_Store

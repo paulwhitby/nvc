@@ -90,7 +90,7 @@ def _load_succession_graph_edges(database_name, query_string, column_names, verb
         else:
             a = ""
         b = row[0][-1]
-        if (a not in "abcdefgh") and (b not in "abcdefgh") and a != b:    # remove sub-commmunities and reflexive relationships
+        if (a not in "abcdefgh") and (b not in "abcdefgh") and row[0] != row[1]:    # remove sub-commmunities and reflexive relationships
             d = dict(zip(column_names, list(row)))
             if verbose:
                 print(d)
@@ -168,6 +168,7 @@ def _load_succession_into_forward_dict(database_name=DATABASE_NAME, query_string
             previous_community = current_community
 
         current_from_list.append(d['to_community_key'])
+
 
     con.close()
 
