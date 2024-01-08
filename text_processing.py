@@ -5,6 +5,7 @@
 
 import copy
 import load_community_data
+import read_pdf
 import save_succession_data
 
 
@@ -151,6 +152,21 @@ def process_compressed_community_names():
     return found_compressed_communities
 
 
+def find_succession_drivers(text, drivers):
+    """scan for succession drivers in text"""
+    found_drivers = []
+    for driver, driver_texts in drivers.items():
+        found_driver = False
+        for driver_text in driver_texts:
+            x = text.find(driver_text)
+            if x != -1:
+                found_driver = True
+        if found_driver:
+            found_drivers.append(driver)
+
+    return found_drivers
+
+
 def find_communities(c, cc, key, succession_string_list, verbose=False):
     """process each community succession text and each community name to find the communities
         named in each succession text"""
@@ -217,7 +233,8 @@ def find_succession_pathways(c, cc, t):
     for text_key, full_text in t.items():
         # print("Community", k.upper())
         found = []
-        text = load_community_data.remove_carriage_returns(full_text)
+        int_text = load_community_data.remove_carriage_returns(full_text)
+        text = read_pdf.clean_text(int_text)
         by_sentence_list = text.split(".")
         # print("By sentence list", by_sentence_list)
 
@@ -229,6 +246,13 @@ def find_succession_pathways(c, cc, t):
             for f in find:
                 if f not in found:
                     found.append(f)  # s.split(" ") --> v.lower().split(" ")
+
+        # in here put in code to look for succession drivers, at the sentence level, not the word level,
+        # using str.find()
+        # we're looking for a subset of drivers relevant to the MW site
+        succession_drivers = find_succession_drivers(text, load_community_data.SUCCESSION_DRIVERS)
+        if succession_drivers:
+            print("\n\nfor", text_key.upper(), "found", succession_drivers)
 
         # if len(found) > 0:
         #     print("Recognised", k.upper(), "successes to", found)
@@ -280,13 +304,13 @@ if __name__ == "__main__":
             cmnty['succession'] = found_pathways[cmnty['community'].lower()]
             # print(cmnty['community'], "pathway", cmnty['succession'])
 
-    ## DEBUG print it out
-    # print("computed succession data")
-    # for cmnty in communities:
-    #     if cmnty['succession'] != []:
-    #         print(cmnty['community'], cmnty['name'], cmnty['succession'])
-    #         # print("Succession drivers", load_community_data.COMMUNITY_SUCCESSION_DRIVERS[cmnty], "\n\n")
-    #         # print(cmnty)
+    # DEBUG print it out
+    print("computed succession data")
+    for cmnty in communities:
+        if cmnty['succession'] != []:
+            print(cmnty['community'], cmnty['name'], cmnty['succession'])
+            # print("Succession drivers", load_community_data.COMMUNITY_SUCCESSION_DRIVERS[cmnty], "\n\n")
+            # print(cmnty)
 
     # print(load_community_data.COMMUNITY_SUCCESSION_DRIVERS)
 

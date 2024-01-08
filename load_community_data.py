@@ -43,10 +43,14 @@ SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
                       'fire': ["fire"],
                       'mowing-stopped': ["abandonment of mowing"],
                       'abandonment': ["abandonment"],
-                      'myxomatosis': ["myxomatosis"]
+                      'myxomatosis': ["myxomatosis"],
+                      'flooding': ["flooding", "flooded", "flood"]
                       }
 
-COMMUNITY_SUCCESSION_DRIVERS = {}
+MW_COMMUNITY_SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
+                      'grazing-started': ["introduction of grazing"],
+                      'flooding': ["flooding", "flooded", "flood"]
+                      }
 
 
 # here's the query to load communities data from the nvc sqlite database
