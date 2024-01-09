@@ -2,6 +2,7 @@
 
 # pylint: disable=line-too-long
 # pylint: disable=unused-import
+# pylint: disable=too-many-locals
 
 import copy
 import load_community_data
@@ -79,14 +80,15 @@ def find_actual_names_in_text(c, key, sentence, verbose=False):
     return recognised_communities
 
 
-def find_succession_with_actual_names(c, t, verbose=False):
-    """whizz through texts to find actual community names"""
-    found = {}
-    for text_key, full_text in t.items():
-        found[text_key] = find_actual_names_in_text(c, text_key, full_text, verbose)
-        if verbose:
-            print(found[text_key])
-    return found
+## delete this function 
+# def find_succession_with_actual_names(c, t, verbose=False):
+#     """whizz through texts to find actual community names"""
+#     found = {}
+#     for text_key, full_text in t.items():
+#         found[text_key] = find_actual_names_in_text(c, text_key, full_text, verbose)
+#         if verbose:
+#             print(found[text_key])
+#     return found
 
 
 def find_compressed_community_names(name, name_list, verbose=False):
@@ -152,7 +154,7 @@ def process_compressed_community_names():
     return found_compressed_communities
 
 
-def find_succession_drivers(text, drivers):
+def find_succession_drivers(text, drivers, verbose=False):
     """scan for succession drivers in text"""
     found_drivers = []
     for driver, driver_texts in drivers.items():
@@ -163,6 +165,8 @@ def find_succession_drivers(text, drivers):
                 found_driver = True
         if found_driver:
             found_drivers.append(driver)
+            if verbose:
+                print("found driver", driver)
 
     return found_drivers
 
@@ -226,41 +230,44 @@ def find_communities(c, cc, key, succession_string_list, verbose=False):
     return recognised_communities
 
 
-def find_succession_pathways(c, cc, t):
+def find_succession_pathways(c, cc, t, succession_driver_definitions, verbose=False):
     """by sentence, find the community names and hence succession pathways
         in each community's succession text"""
     found_dict = {}
+    found_succession_drivers_dict = {}
     for text_key, full_text in t.items():
-        # print("Community", k.upper())
+        # print("Community", text_key.upper())
         found = []
-        int_text = load_community_data.remove_carriage_returns(full_text)
-        text = read_pdf.clean_text(int_text)
+        text = read_pdf.clean_text(load_community_data.remove_carriage_returns(full_text))
         by_sentence_list = text.split(".")
         # print("By sentence list", by_sentence_list)
 
         for sentence in by_sentence_list:
             # print("Sentence", sentence)
             sentence_list = list(map(mapstrip, sentence.strip(" ").lower().split(" ")))
-            # print("Key", k, "Sentence list", sentence_list)
+            # print("Key", text_key, "Sentence list", sentence_list)
             find = find_communities(c, cc, text_key.upper(), sentence_list, False)
             for f in find:
                 if f not in found:
-                    found.append(f)  # s.split(" ") --> v.lower().split(" ")
+                    found.append(f)
 
         # in here put in code to look for succession drivers, at the sentence level, not the word level,
         # using str.find()
         # we're looking for a subset of drivers relevant to the MW site
-        succession_drivers = find_succession_drivers(text, load_community_data.SUCCESSION_DRIVERS)
+        succession_drivers = find_succession_drivers(text, succession_driver_definitions)
         if succession_drivers:
-            print("\n\nfor", text_key.upper(), "found", succession_drivers)
+            found_succession_drivers_dict[text_key] = succession_drivers
+            if verbose:
+                print("\n\nfor", text_key.upper(), "found", succession_drivers)
 
-        # if len(found) > 0:
-        #     print("Recognised", k.upper(), "successes to", found)
-        # else:
-        #     print(k.upper(), "does not success")
+        if verbose:
+            if len(found) > 0:
+                print("Recognised", text_key.upper(), "successes to", found)
+            else:
+                print(text_key.upper(), "does not success")
 
         found_dict.update({text_key: found})
-    return found_dict
+    return found_dict, found_succession_drivers_dict
 
 
 if __name__ == "__main__":
@@ -278,12 +285,14 @@ if __name__ == "__main__":
 
     ## Process the Zonation and succession text to find the communities successed to
 
-    ###
-    ### temporary comment-out
     found_pathways = {}
-    found_pathways = find_succession_pathways(communities, compressed_communities, load_community_data.SUCCESSION_TEXTS)
-    ### end temporary comment-out
-    ###
+    found_succession_drivers = {}
+    found_pathways, found_succession_drivers = find_succession_pathways(communities,
+                                                                        compressed_communities,
+                                                                        load_community_data.SUCCESSION_TEXTS,
+                                                                        load_community_data.SUCCESSION_DRIVERS,
+                                                                        True)
+
     # the found_pathways (dict) contains the succession pathways (list) for each community for which
     # succession text has been captured
     # for community_key, community_succession_values in found_pathways.items():
@@ -303,19 +312,21 @@ if __name__ == "__main__":
             # print(cmnty['community'], "found pathway")
             cmnty['succession'] = found_pathways[cmnty['community'].lower()]
             # print(cmnty['community'], "pathway", cmnty['succession'])
+        if cmnty['community'].lower() in found_succession_drivers:
+            cmnty['drivers'] = found_succession_drivers[cmnty['community'].lower()]
 
     # DEBUG print it out
     print("computed succession data")
     for cmnty in communities:
         if cmnty['succession'] != []:
-            print(cmnty['community'], cmnty['name'], cmnty['succession'])
+            print(cmnty['community'], cmnty['name'], cmnty['succession'], cmnty['drivers'])
             # print("Succession drivers", load_community_data.COMMUNITY_SUCCESSION_DRIVERS[cmnty], "\n\n")
             # print(cmnty)
 
-    # print(load_community_data.COMMUNITY_SUCCESSION_DRIVERS)
 
     ###
     ### temporary comment-out
     # save_succession_data.save_succession_data(communities)
+    ## THIS WILL NEED EXTENDING TO SAVE THE SUCCESSION DRIVER DATA
     ### end temporary comment-out
     ###
