@@ -1,5 +1,9 @@
 """Create nvc database tables"""
+
+# pylint: disable=line-too-long
+
 import sqlite3
+
 
 def create_nvc_database():
     """create the database tables for storing nvc data"""
@@ -13,6 +17,7 @@ def create_nvc_database():
         print(row)
     con.close()
 
+
 def create_succession_database():
     """create the database tables for storing succession data"""
     con = sqlite3.connect("nvc.db")
@@ -25,4 +30,3 @@ def create_succession_database():
     for row in cur.execute("SELECT * from sqlite_master"):
         print(row)
     con.close()
-
