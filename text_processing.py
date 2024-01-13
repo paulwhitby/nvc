@@ -312,7 +312,7 @@ if __name__ == "__main__":
             # print(cmnty['community'], "found pathway")
             cmnty['succession'] = found_pathways[cmnty['community'].lower()]
             # print(cmnty['community'], "pathway", cmnty['succession'])
-        if cmnty['community'].lower() in found_succession_drivers:
+        if cmnty['community'] == cmnty['code'] and cmnty['community'].lower() in found_succession_drivers:
             cmnty['drivers'] = found_succession_drivers[cmnty['community'].lower()]
         else:
             cmnty['drivers'] = []
@@ -326,9 +326,4 @@ if __name__ == "__main__":
             # print(cmnty)
 
 
-    ###
-    ### temporary comment-out
-    # save_succession_data.save_succession_data(communities)
-    ## THIS WILL NEED EXTENDING TO SAVE THE SUCCESSION DRIVER DATA
-    ### end temporary comment-out
-    ###
+    save_succession_data.save_succession_data(communities)

@@ -15,6 +15,19 @@ SELECT
 FROM succession
 """
 
+LOAD_SUCCESSION_DRIVERS_QUERY = """
+SELECT
+    community_drivers.community_key, 
+    community_drivers.succession_reason
+FROM community_drivers
+"""
+
+LOAD_SUCCESSION_DRIVERS_DISTINCT_LIST_QUERY = """
+SELECT DISTINCT
+    community_drivers.succession_reason
+FROM community_drivers
+"""
+
 LOAD_SUCCESSION_DF_QUERY = """
 SELECT
     succession.from_community_key, 
@@ -45,6 +58,7 @@ ORDER BY succession.to_community_key
 
 # column names to zip up with returned database columns to make them into dictionaries
 SUCCESSION_COLUMN_NAMES = ('succession_key', 'from_community_key', 'to_community_key', 'probability')
+SUCCESSION_DRIVER_COLUMN_NAMES = ('community_key', 'succession_reason')
 SUCCESSION_DF_COLUMN_NAMES = ('from', 'to', 'probability')
 
 GRAPH_NODES = {}
@@ -54,6 +68,36 @@ DATABASE_NAME = "nvc.db"
 # table created with
 # "CREATE TABLE succession(succession_key, from_community_key, to_community_key, probability)"
 
+
+def _load_distinct_succession_drivers(database_name, query_string, verbose=False):
+    """private function to load the distinct succession driver list"""
+    con = sqlite3.connect(database_name)
+    cur = con.cursor()
+    distinct_succession_drivers = []
+
+    for row in cur.execute(query_string):
+        if verbose:
+            print(row)
+        distinct_succession_drivers.append(list(row)[0])
+
+    con.close()
+    return distinct_succession_drivers
+
+
+def _load_succession_drivers_into_list(database_name, query_string, column_names, verbose=False):
+    """private function to load the succession drivers from community_drivers into a list"""
+    con = sqlite3.connect(database_name)
+    cur = con.cursor()
+    succession_drivers_list = []
+
+    for row in cur.execute(query_string):
+        d = dict(zip(column_names, list(row)))
+        if verbose:
+            print(row, d)
+        succession_drivers_list.append(d)
+
+    con.close()
+    return succession_drivers_list
 
 
 def _load_succession_into_list(database_name, query_string, column_names, verbose) -> list:
@@ -79,11 +123,13 @@ def _load_succession_graph_edges(database_name, query_string, column_names, verb
     if verbose:
         print("Load Succession Graph")
 
+    succession_drivers_list = load_succession_drivers_into_list()
+
     con = sqlite3.connect(database_name)
     cur = con.cursor()
 
     load_succession_list = []
- 
+
     for row in cur.execute(query_string):
         if row[1] != "":
             a = row[1][-1]
@@ -97,6 +143,13 @@ def _load_succession_graph_edges(database_name, query_string, column_names, verb
             load_succession_list.append(d)
 
     con.close()
+
+    print("\n\nSuccession drivers", succession_drivers_list, "\n\n")
+    for driver in succession_drivers_list:
+        for succession in load_succession_list:
+            if succession['from'] == driver['community_key']:
+                succession[driver['succession_reason']] = 1
+
     pdf = pd.DataFrame(load_succession_list)
     return pdf
 
@@ -237,9 +290,19 @@ def _make_graph_nodes(forward_dict, reverse_dict, verbose=False) -> dict:
     return graph
 
 
+def load_distinct_succession_drivers(verbose=False):
+    """public function to load the distinct succession driver list"""
+    return _load_distinct_succession_drivers(DATABASE_NAME, LOAD_SUCCESSION_DRIVERS_DISTINCT_LIST_QUERY, verbose)
+
+
 def make_df_from_graph(a_graph: dict, verbose=False) -> pd.DataFrame:
     """convert the graph dict into a pandas dataframe suitable for Jaal"""
     return _make_df_from_graph(a_graph, verbose)
+
+
+def load_succession_drivers_into_list(verbose=False):
+    """load community_drivers table into a list of dicts keyed on community_key"""
+    return _load_succession_drivers_into_list(DATABASE_NAME, LOAD_SUCCESSION_DRIVERS_QUERY, SUCCESSION_DRIVER_COLUMN_NAMES, verbose)
 
 
 def load_succession_into_list(verbose=False):

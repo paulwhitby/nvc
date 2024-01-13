@@ -1,14 +1,15 @@
 """write computed succession data to the nvc database"""
 
 # pylint: disable=line-too-long
+# pylint: disable=too-many-arguments
 
 import sqlite3
 
 
 QUERY_INSERT_STRING = "INSERT INTO succession VALUES(?, ?, ?, ?)"
-QUERY_INSERT_DRIVERS_STRING = "INSERT INTO community_conditions VALUES(?, ?)"
+QUERY_INSERT_DRIVERS_STRING = "INSERT INTO community_drivers VALUES(?, ?)"
 QUERY_CHECK_STRING = "select count(*) from succession"
-QUERY_CHECK_DRIVERS_STRING = "select count(*) from community_conditions"
+QUERY_CHECK_DRIVERS_STRING = "select count(*) from community_drivers"
 DATABASE_NAME = "nvc.db"
 
 
@@ -24,7 +25,7 @@ DATABASE_NAME = "nvc.db"
     'drivers': ['grazing-stopped']
     }"""
 
-def _save_succession_data(database_name, query_string, communities, check_string, verbose):
+def _save_succession_data(database_name, query_string, driver_query_string, communities, check_string, check_drivers_string, verbose):
     """write succession data from communities list to nvc database"""
 
     if verbose:
@@ -62,13 +63,24 @@ def _save_succession_data(database_name, query_string, communities, check_string
             cur.execute(query_string, insert_row)
             con.commit()
 
+        if community['drivers'] != []:
+            for succession_driver in community['drivers']:
+                succession_key = community['community'].upper()     # +":"+community['code'].upper()
+                insert_row = (succession_key, succession_driver)
+                if verbose:
+                    print(insert_row)
+                cur.execute(driver_query_string, insert_row)
+                con.commit()
+
     if verbose:
         for row in cur.execute(check_string):
-            print(row, "records")
+            print(row, "succession records")
+        for row in cur.execute(check_drivers_string):
+            print(row, "succession drivers records")
 
     con.close()
 
 
 def save_succession_data(communities, verbose=False):
     """external interface to _save_succession_data()"""
-    _save_succession_data(DATABASE_NAME, QUERY_INSERT_STRING, communities, QUERY_CHECK_STRING, verbose)
+    _save_succession_data(DATABASE_NAME, QUERY_INSERT_STRING, QUERY_INSERT_DRIVERS_STRING, communities, QUERY_CHECK_STRING, QUERY_CHECK_DRIVERS_STRING, verbose)
