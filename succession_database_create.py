@@ -1,4 +1,5 @@
-import sqlite3
+"""helper function for creating succession database"""
+# import sqlite3
 # import csv
 import nvc_database_create
 # import nvc_database_load
