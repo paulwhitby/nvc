@@ -314,6 +314,8 @@ if __name__ == "__main__":
             # print(cmnty['community'], "pathway", cmnty['succession'])
         if cmnty['community'].lower() in found_succession_drivers:
             cmnty['drivers'] = found_succession_drivers[cmnty['community'].lower()]
+        else:
+            cmnty['drivers'] = []
 
     # DEBUG print it out
     print("computed succession data")
