@@ -20,6 +20,7 @@ def create_succession_database():
     cur.execute("CREATE TABLE succession(succession_key, from_community_key, to_community_key, probability)")
     cur.execute("CREATE TABLE conditions(condition_key, condition_name)")
     cur.execute("CREATE TABLE succession_conditions(succession_key, condition_key)")
+    cur.execute("CREATE TABLE community_conditions(community_key, succession_reason)")
     con.commit()
     for row in cur.execute("SELECT * from sqlite_master"):
         print(row)
