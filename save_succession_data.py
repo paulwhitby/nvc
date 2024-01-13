@@ -6,7 +6,9 @@ import sqlite3
 
 
 QUERY_INSERT_STRING = "INSERT INTO succession VALUES(?, ?, ?, ?)"
+QUERY_INSERT_DRIVERS_STRING = "INSERT INTO community_conditions VALUES(?, ?)"
 QUERY_CHECK_STRING = "select count(*) from succession"
+QUERY_CHECK_DRIVERS_STRING = "select count(*) from community_conditions"
 DATABASE_NAME = "nvc.db"
 
 
@@ -19,6 +21,7 @@ DATABASE_NAME = "nvc.db"
     'name': 'Fraxinus excelsior-Sorbus aucuparia-Mercurialis perennis woodland, Crepis paludosa sub-community', 
     'list': ['fraxinus', 'excelsior-sorbus', 'aucuparia-mercurialis', 'perennis', 'woodland,', 'crepis', 'paludosa', 'sub-community'], 
     'succession': ['W9', 'W11', 'W17', 'W7', 'W8', 'CG10', 'CG9', 'CG13', 'M10', 'MG3']
+    'drivers': ['grazing-stopped']
     }"""
 
 def _save_succession_data(database_name, query_string, communities, check_string, verbose):
@@ -37,6 +40,7 @@ def _save_succession_data(database_name, query_string, communities, check_string
     # https://www.techonthenet.com/sqlite/truncate.php
 
     cur.execute("DELETE FROM succession")
+    cur.execute("DELETE FROM community_drivers")
     con.commit()
 
     for community in communities:
