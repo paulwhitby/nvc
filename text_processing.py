@@ -372,8 +372,6 @@ if __name__ == "__main__":
     for cmnty in communities:
         if cmnty['succession'] != []:
             print(cmnty['community'], cmnty['name'], "successes to", cmnty['succession'], "because of", cmnty['drivers'])
-            # print("Succession drivers", load_community_data.COMMUNITY_SUCCESSION_DRIVERS[cmnty], "\n\n")
-            # print(cmnty)
 
     ## TODO - remove this temporary comment to restore saving community succession data
     # save_succession_data.save_succession_data(communities)
