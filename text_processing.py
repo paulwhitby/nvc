@@ -63,7 +63,8 @@ SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
                       'mowing-stopped': ["abandonment of mowing"],
                       'abandonment': ["abandonment"],
                       'myxomatosis': ["myxomatosis"],
-                      'flooding': ["flooding", "flooded", "flood"]
+                      'flooding': ["flooding", "flooded", "flood"],
+                      'clearance': ['clearance']
                       }
 
 MW_COMMUNITY_SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
