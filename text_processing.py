@@ -198,7 +198,7 @@ def process_compressed_community_names():
 
 
 def find_succession_drivers(text, drivers, verbose=False):
-    """scan for succession drivers in text"""
+    """scan for succession drivers in text, and return list of drivers found"""
     found_drivers = []
     for driver, driver_texts in drivers.items():
         found_driver = False
@@ -294,14 +294,12 @@ def find_succession_pathways(c, cc, t, succession_driver_definitions, verbose=Fa
                 if f not in found:
                     found.append(f)
 
-        # in here put in code to look for succession drivers, at the sentence level, not the word level,
-        # using str.find()
-        # we're looking for a subset of drivers relevant to the MW site
-        succession_drivers = find_succession_drivers(text, succession_driver_definitions)
-        if succession_drivers:
-            found_succession_drivers_dict[text_key] = succession_drivers
-            if verbose:
-                print("\n\nfor", text_key.upper(), "found", succession_drivers)
+            # we're looking for a subset of drivers relevant to the MW site
+            succession_drivers = find_succession_drivers(sentence, succession_driver_definitions)
+            if succession_drivers:
+                found_succession_drivers_dict[text_key] = succession_drivers
+                if verbose:
+                    print("\n\nfor", text_key.upper(), "found", succession_drivers, "for", find)
 
         if verbose:
             if len(found) > 0:
@@ -324,7 +322,7 @@ if __name__ == "__main__":
     # for x in compressed_communities:
     #     print(x)
 
-    load_community_data.SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(SUCCESSION_TEXTS_FILENAME)
+    SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(SUCCESSION_TEXTS_FILENAME)
 
     ## Process the Zonation and succession text to find the communities successed to
 
@@ -368,5 +366,6 @@ if __name__ == "__main__":
             # print("Succession drivers", load_community_data.COMMUNITY_SUCCESSION_DRIVERS[cmnty], "\n\n")
             # print(cmnty)
 
-
-    save_succession_data.save_succession_data(communities)
+    ## TODO - remove this temporary comment to restore saving community succession data
+    # save_succession_data.save_succession_data(communities)
+    ##
