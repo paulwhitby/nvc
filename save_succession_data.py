@@ -42,6 +42,7 @@ def _save_succession_data(database_name, query_string, driver_query_string, comm
 
     cur.execute("DELETE FROM succession")
     cur.execute("DELETE FROM community_drivers")
+    cur.execute("DELETE FROM succession_drivers")
     con.commit()
 
     for community in communities:
