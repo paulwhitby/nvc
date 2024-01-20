@@ -53,8 +53,8 @@ ALTERNATIVE_NAMES = {
 }
 
 # reasons why succession might take place. To be extended
-SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
-                      'grazing-started': ["introduction of grazing"],
+SUCCESSION_DRIVERS = {'grazing-stopped': ["abandonment of grazing"],
+                      'grazing-started': ["grazing", "introduction of grazing"],
                       'ploughing-stopped': ["abandonment of ploughing"],
                       'ploughing-started': ["introduction of ploughing"],
                       'wetting': ["wetting"],
@@ -67,10 +67,10 @@ SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
                       'clearance': ['clearance']
                       }
 
-MW_COMMUNITY_SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
-                      'grazing-started': ["introduction of grazing"],
-                      'flooding': ["flooding", "flooded", "flood"]
-                      }
+# MW_COMMUNITY_SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
+#                       'grazing-started': ["introduction of grazing"],
+#                       'flooding': ["flooding", "flooded", "flood"]
+#                       }
 
 
 def mapstrip(string_to_strip):
@@ -279,9 +279,11 @@ def find_succession_pathways(c, cc, t, succession_driver_definitions, verbose=Fa
         in each community's succession text"""
     found_dict = {}
     found_succession_drivers_dict = {}
+ 
     for text_key, full_text in t.items():
         # print("Community", text_key.upper())
         found = []
+        found_succession_drivers_dict[text_key] = []
         text = read_pdf.clean_text(load_community_data.remove_carriage_returns(full_text))
         by_sentence_list = text.split(".")
         # print("By sentence list", by_sentence_list)
@@ -296,11 +298,17 @@ def find_succession_pathways(c, cc, t, succession_driver_definitions, verbose=Fa
                     found.append(f)
 
             # we're looking for a subset of drivers relevant to the MW site
-            succession_drivers = find_succession_drivers(sentence, succession_driver_definitions)
+            succession_drivers = find_succession_drivers(sentence, succession_driver_definitions, False)
             if succession_drivers:
-                found_succession_drivers_dict[text_key] = succession_drivers
+                # found_succession_drivers_dict[text_key] = succession_drivers
+                # found_succession_drivers_dict[text_key] = []
+                for f in find:
+                    found_succession_drivers_dict[text_key].append({f: succession_drivers})
+                # if found_succession_drivers_dict[text_key]:
+                    # found_succession_drivers_dict[text_key] += succession_drivers
                 if verbose:
                     print("\n\nfor", text_key.upper(), "found", succession_drivers, "for", find)
+                    print(found_succession_drivers_dict[text_key])
 
         if verbose:
             if len(found) > 0:
@@ -363,7 +371,7 @@ if __name__ == "__main__":
     print("computed succession data")
     for cmnty in communities:
         if cmnty['succession'] != []:
-            print(cmnty['community'], cmnty['name'], cmnty['succession'], cmnty['drivers'])
+            print(cmnty['community'], cmnty['name'], "successes to", cmnty['succession'], "because of", cmnty['drivers'])
             # print("Succession drivers", load_community_data.COMMUNITY_SUCCESSION_DRIVERS[cmnty], "\n\n")
             # print(cmnty)
 
