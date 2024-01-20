@@ -95,8 +95,8 @@ def remove_subcommunities(current_community_name, community_list, verbose=False)
 def find_all_child_nodes(nodes, g, verbose=False):
     """return a concatenated list of all the child nodes of the nodes in nodes"""
     found = []
-    for n in nodes:
-        found += remove_subcommunities(n, g[n]["rev"], verbose)
+    for node in nodes:
+        found += remove_subcommunities(node, g[node]["rev"], verbose)
     if verbose:
         print("\nfor", nodes, "found", found)
     return found
@@ -107,12 +107,12 @@ def dedupe_list(a_list):
     return (list(set(a_list)))
 
 
-def remove_duplicates(child_nodes, p, verbose=False):
+def remove_duplicates(_child_nodes, p, verbose=False):
     """remove entries from child_nodes already in p"""
     if verbose:
         print("remove duplicates")
     new_kids = []
-    for c in child_nodes:
+    for c in _child_nodes:
         if c not in p:
             new_kids.append(c)
     new_kids_set = set(new_kids)
@@ -123,36 +123,35 @@ def find_all_connected_nodes():
     """from the set of MAVIS-output communities, work back through the graph of 
     succession nodes to find the complete connected set"""
 
-    EXPLORE_DEBUG_FLAG = True
-    LOAD_DEBUG_FLAG = False
-    FD = load_succession_data.load_succession_into_forward_dict(LOAD_DEBUG_FLAG)
-    RD = load_succession_data.load_succession_into_reverse_dict(LOAD_DEBUG_FLAG)
-    GRAPH = load_succession_data.make_graph_nodes(FD, RD, LOAD_DEBUG_FLAG)
+    _EXPLORE_DEBUG_FLAG = True
+    _LOAD_DEBUG_FLAG = False
+    _FD = load_succession_data.load_succession_into_forward_dict(_LOAD_DEBUG_FLAG)
+    _RD = load_succession_data.load_succession_into_reverse_dict(_LOAD_DEBUG_FLAG)
+    _GRAPH = load_succession_data.make_graph_nodes(_FD, _RD, _LOAD_DEBUG_FLAG)
 
-    MAVIS_GRAPH_NODES = {}
+    # MAVIS_GRAPH_NODES = {}
 
-    if EXPLORE_DEBUG_FLAG:
+    if _EXPLORE_DEBUG_FLAG:
         print("\nExplore MAVIS output\n")
-        print(len(GRAPH), "nodes in entire graph")
-
+        print(len(_GRAPH), "nodes in entire graph")
 
     nodelist = []
-    for mavis_community, mavis_probability in MC9.items():
+    for mavis_community in MC9:
         nodelist.append(mavis_community)
     
-    PATHS = nodelist
-    children = find_all_child_nodes(nodelist, GRAPH, True)
+    _PATHS = nodelist
+    children = find_all_child_nodes(nodelist, _GRAPH, True)
     children = dedupe_list(children)
     print("\nchildren of", nodelist, "are", children)
 
-    PATHS += children
+    _PATHS += children
 
     while len(children) > 0:
-        children = find_all_child_nodes(children, GRAPH, True)
-        children = remove_duplicates(children, PATHS, True)
-        PATHS += children
+        children = find_all_child_nodes(children, _GRAPH, True)
+        children = remove_duplicates(children, _PATHS, True)
+        _PATHS += children
         
-    new_paths = dedupe_list(PATHS)
+    new_paths = dedupe_list(_PATHS)
 
     print("\n\nThere are", len(new_paths), "nodes")
     print("\n\nPaths\n\n", new_paths)
@@ -182,7 +181,7 @@ if __name__ == "__main__":
             else:
                 if s == "t":
                     t = input("community>")
-                    print(read_pdf.clean_text(load_community_data.SUCCESSION_TEXTS[t.lower()]))
+                    print(read_pdf.clean_text(text_processing.SUCCESSION_TEXTS[t.lower()]))
                 else:
                     if s == "n":
                         t = input("community>")
