@@ -29,6 +29,49 @@ NAME_END_WORDS = ["community", "grassland", "grass-heath", "sedge-heath","rush-h
                   "woodland", "scrub", "underscrub"]
 
 
+SUCCESSION_TEXTS = {}
+SUCCESSION_TEXTS_FILENAME = "txts/all_processed_succession_text.csv"  #"succession_text.csv"
+
+
+# alternative community names - these need to be added to the communities database in a new column
+ALTERNATIVE_NAMES = {
+    'mg2':  """Filipendulo-Arrhenatheretum""",
+    'mg5':  """Cynosurus-Caltha""",
+    'mg6':  """Lolio-Cynosuretum""",
+    'mg7':  """Lolio-Plantaginion""",
+    'mg10': """Holco-Juncetum""",
+    'mg12': """Potentillo-Festucetum""",
+    'm18':  """Erico-Sphagnion""",
+    'w2':   """Rhamno-franguletum""",
+    'w6':   """Betulo-Alnetum""",
+    'w7':   """Pellio-Alnetum""",
+    'w8':   """Querco-Fraxinetum""",
+    'w9':   """Corylo-Fraxinetum""",
+    'w10':  """Querco-Betuletum""",
+    'w11':  """Lonicero-Quercetum""",
+    'w16':  """Querco-Betuletum"""
+}
+
+# reasons why succession might take place. To be extended
+SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
+                      'grazing-started': ["introduction of grazing"],
+                      'ploughing-stopped': ["abandonment of ploughing"],
+                      'ploughing-started': ["introduction of ploughing"],
+                      'wetting': ["wetting"],
+                      'drying': ["drying"],
+                      'fire': ["fire"],
+                      'mowing-stopped': ["abandonment of mowing"],
+                      'abandonment': ["abandonment"],
+                      'myxomatosis': ["myxomatosis"],
+                      'flooding': ["flooding", "flooded", "flood"]
+                      }
+
+MW_COMMUNITY_SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
+                      'grazing-started': ["introduction of grazing"],
+                      'flooding': ["flooding", "flooded", "flood"]
+                      }
+
+
 def mapstrip(string_to_strip):
     """strips characters from each entry in a list of words, originally separated by split()"""
     return string_to_strip.strip(".,:() ")
@@ -80,7 +123,7 @@ def find_actual_names_in_text(c, key, sentence, verbose=False):
     return recognised_communities
 
 
-## delete this function 
+## delete this function
 # def find_succession_with_actual_names(c, t, verbose=False):
 #     """whizz through texts to find actual community names"""
 #     found = {}
@@ -146,7 +189,7 @@ def process_compressed_community_names():
             # print(fccn)
             found_compressed_communities.append(fccn)
 
-    for cmnty_key, cmnty_val in load_community_data.ALTERNATIVE_NAMES.items():
+    for cmnty_key, cmnty_val in ALTERNATIVE_NAMES.items():
         fccn = {'community': cmnty_key.upper(), 'code': cmnty_key.upper(),
                 'name': cmnty_val.lower(), 'ccn': cmnty_val.lower()}
         found_compressed_communities.append(fccn)
@@ -281,7 +324,7 @@ if __name__ == "__main__":
     # for x in compressed_communities:
     #     print(x)
 
-    load_community_data.SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(load_community_data.SUCCESSION_TEXTS_FILENAME)
+    load_community_data.SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(SUCCESSION_TEXTS_FILENAME)
 
     ## Process the Zonation and succession text to find the communities successed to
 
@@ -289,8 +332,8 @@ if __name__ == "__main__":
     found_succession_drivers = {}
     found_pathways, found_succession_drivers = find_succession_pathways(communities,
                                                                         compressed_communities,
-                                                                        load_community_data.SUCCESSION_TEXTS,
-                                                                        load_community_data.SUCCESSION_DRIVERS,
+                                                                        SUCCESSION_TEXTS,
+                                                                        SUCCESSION_DRIVERS,
                                                                         True)
 
     # the found_pathways (dict) contains the succession pathways (list) for each community for which

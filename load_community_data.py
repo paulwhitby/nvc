@@ -10,48 +10,6 @@ import csv
 import pandas as pd
 
 NVC_DATABASE_NAME = "nvc.db"
-SUCCESSION_TEXTS = {}
-SUCCESSION_TEXTS_FILENAME = "txts/all_processed_succession_text.csv"  #"succession_text.csv"
-
-
-# alternative community names - these need to be added to the communities database in a new column
-ALTERNATIVE_NAMES = {
-    'mg2':  """Filipendulo-Arrhenatheretum""",
-    'mg5':  """Cynosurus-Caltha""",
-    'mg6':  """Lolio-Cynosuretum""",
-    'mg7':  """Lolio-Plantaginion""",
-    'mg10': """Holco-Juncetum""",
-    'mg12': """Potentillo-Festucetum""",
-    'm18':  """Erico-Sphagnion""",
-    'w2':   """Rhamno-franguletum""",
-    'w6':   """Betulo-Alnetum""",
-    'w7':   """Pellio-Alnetum""",
-    'w8':   """Querco-Fraxinetum""",
-    'w9':   """Corylo-Fraxinetum""",
-    'w10':  """Querco-Betuletum""",
-    'w11':  """Lonicero-Quercetum""",
-    'w16':  """Querco-Betuletum"""
-}
-
-# reasons why succession might take place. To be extended
-SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
-                      'grazing-started': ["introduction of grazing"],
-                      'ploughing-stopped': ["abandonment of ploughing"],
-                      'ploughing-started': ["introduction of ploughing"],
-                      'wetting': ["wetting"],
-                      'drying': ["drying"],
-                      'fire': ["fire"],
-                      'mowing-stopped': ["abandonment of mowing"],
-                      'abandonment': ["abandonment"],
-                      'myxomatosis': ["myxomatosis"],
-                      'flooding': ["flooding", "flooded", "flood"]
-                      }
-
-MW_COMMUNITY_SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
-                      'grazing-started': ["introduction of grazing"],
-                      'flooding': ["flooding", "flooded", "flood"]
-                      }
-
 
 # here's the query to load communities data from the nvc sqlite database
 LOAD_COMMUNITIES_QUERY = """

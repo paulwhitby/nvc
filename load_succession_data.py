@@ -1,6 +1,7 @@
 """load computed succession data from the nvc database into a graph"""
 
 # pylint: disable=line-too-long
+# pylint: disable=dangerous-default-value
 
 import sqlite3
 import pandas as pd
@@ -65,6 +66,20 @@ GRAPH_NODES = {}
 
 DATABASE_NAME = "nvc.db"
 
+EXPLORE = ['MC9','H7', 'H8', 'MC10', 'MC11', 'MC12', 'MC5', 'MC8', 'SD16',
+           'W21', 'W22', 'W23', 'W25', 'H8', 'SD10', 'SD8', 'SD9', 'U1', 
+           'U20', 'W22', 'W23', 'CG1', 'H7', 'H8', 'MC1', 'MC8', 'U1', 'CG1', 
+           'CG2', 'H5', 'MC4', 'MC5', 'MC8', 'OV41', 'W21', 'CG1', 'CG13', 
+           'H10', 'H5', 'H6', 'H8', 'OV34', 'U20', 'U4', 'W23', 'CG13', 'H7', 
+           'H8', 'MC8', 'MC9', 'W21', 'W23', 'H1', 'H11', 'H2', 'H3', 'H4', 
+           'H5', 'H6', 'H8', 'M16', 'OV27', 'SD11', 'SD12', 'U1', 'U2', 'U20', 
+           'U3', 'U4', 'W24', 'W25', 'CG1', 'H7', 'H8', 'MC1', 'MC10', 'MC2', 
+           'MC3', 'MC4', 'MC5', 'MC6', 'MC9', 'H2', 'H3', 'H4', 'M21', 'OV27', 
+           'OV37', 'U1', 'U2', 'U20', 'U4', 'W16', 'W23', 'SD18', 'SD9', 'W23', 
+           'W24', 'W25', 'H11', 'SD13', 'SD14', 'SD7', 'SD8', 'W1', 'CG2', 'OV23', 
+           'OV25', 'OV27', 'OV37', 'OV38', 'OV39', 'SD18', 'SD9', 'W13', 'W14', 
+           'W23', 'W24', 'W8']
+
 # table created with
 # "CREATE TABLE succession(succession_key, from_community_key, to_community_key, probability)"
 
@@ -117,7 +132,7 @@ def _load_succession_into_list(database_name, query_string, column_names, verbos
     return load_succession_list
 
 
-def _load_succession_graph_edges(database_name, query_string, column_names, verbose=False) -> pd.DataFrame:
+def _load_succession_graph_edges(database_name, query_string, column_names, explore_list=[], verbose=False) -> pd.DataFrame:
     """load up the edges from the succession database and
     return to the calling function as a pandas dataframe"""
     if verbose:
@@ -149,6 +164,11 @@ def _load_succession_graph_edges(database_name, query_string, column_names, verb
         for succession in load_succession_list:
             if succession['from'] == driver['community_key']:
                 succession[driver['succession_reason']] = 1
+
+    if explore_list:
+        for succession in load_succession_list:
+            if succession['from'] in explore_list:
+                succession['explore'] = 1
 
     pdf = pd.DataFrame(load_succession_list)
     return pdf
@@ -248,7 +268,11 @@ def _make_df_from_graph(a_graph: dict, verbose=False) -> pd.DataFrame:
         new_entry["id"] = graph_key
         new_entry["fwd_count"] = graph_val["fwd_count"]
         new_entry["rev_count"] = graph_val["rev_count"]
-        new_entry["explore"] = 0
+        if EXPLORE:
+            if graph_key in EXPLORE:
+                new_entry["explore"] = 1
+            else:
+                new_entry["explore"] = 0
         a_list.append(new_entry)
     a_df = pd.DataFrame(a_list)
     if verbose:
@@ -312,7 +336,7 @@ def load_succession_into_list(verbose=False):
 
 def load_succession_graph_edges(verbose=False):
     """public interface to _load_succession_graph_edges"""
-    return _load_succession_graph_edges(DATABASE_NAME, LOAD_SUCCESSION_DF_QUERY, SUCCESSION_DF_COLUMN_NAMES, verbose)
+    return _load_succession_graph_edges(DATABASE_NAME, LOAD_SUCCESSION_DF_QUERY, SUCCESSION_DF_COLUMN_NAMES, EXPLORE, verbose)
 
 
 def load_succession_into_reverse_dict(verbose=False):
