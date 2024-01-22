@@ -18,22 +18,23 @@ FROM succession
 
 LOAD_SUCCESSION_DRIVERS_QUERY = """
 SELECT
-    community_drivers.community_key, 
-    community_drivers.succession_reason
-FROM community_drivers
+    succession_drivers.succession_key, 
+    succession_drivers.succession_reason
+FROM succession_drivers
 """
 
 LOAD_SUCCESSION_DRIVERS_DISTINCT_LIST_QUERY = """
 SELECT DISTINCT
-    community_drivers.succession_reason
-FROM community_drivers
+    succession_drivers.succession_reason
+FROM succession_drivers
 """
 
 LOAD_SUCCESSION_DF_QUERY = """
 SELECT
     succession.from_community_key, 
     succession.to_community_key, 
-    succession.probability 
+    succession.probability,
+    succession.succession_key
 FROM succession
 """
 
@@ -59,8 +60,8 @@ ORDER BY succession.to_community_key
 
 # column names to zip up with returned database columns to make them into dictionaries
 SUCCESSION_COLUMN_NAMES = ('succession_key', 'from_community_key', 'to_community_key', 'probability')
-SUCCESSION_DRIVER_COLUMN_NAMES = ('community_key', 'succession_reason')
-SUCCESSION_DF_COLUMN_NAMES = ('from', 'to', 'probability')
+SUCCESSION_DRIVER_COLUMN_NAMES = ('succession_key', 'succession_reason')
+SUCCESSION_DF_COLUMN_NAMES = ('from', 'to', 'probability', 'succession_key')
 
 GRAPH_NODES = {}
 
@@ -162,13 +163,13 @@ def _load_succession_graph_edges(database_name, query_string, column_names, expl
     print("\n\nSuccession drivers", succession_drivers_list, "\n\n")
     for driver in succession_drivers_list:
         for succession in load_succession_list:
-            if succession['from'] == driver['community_key']:
-                succession[driver['succession_reason']] = 1
+            if succession['succession_key'] == driver['succession_key']:
+                succession[driver['succession_reason']] = 1.0
 
     if explore_list:
         for succession in load_succession_list:
             if succession['from'] in explore_list:
-                succession['explore'] = 1
+                succession['explore'] = 1.0
 
     pdf = pd.DataFrame(load_succession_list)
     return pdf
@@ -253,7 +254,7 @@ def _load_succession_into_forward_dict(database_name=DATABASE_NAME, query_string
 
 def _compose_new_graph_node(the_fwd_list, the_rev_list, verbose=False):
     """helper function to compose a node entry"""
-    a_node = {"fwd": the_fwd_list, "rev": the_rev_list, "fwd_count": len(the_fwd_list), "rev_count": len(the_rev_list)}
+    a_node = {"fwd": the_fwd_list, "rev": the_rev_list, "fwdcount": len(the_fwd_list), "revcount": len(the_rev_list)}
     if verbose:
         print("new node", a_node)
     return a_node
@@ -266,8 +267,8 @@ def _make_df_from_graph(a_graph: dict, verbose=False) -> pd.DataFrame:
     for graph_key, graph_val in a_graph.items():
         new_entry = {}
         new_entry["id"] = graph_key
-        new_entry["fwd_count"] = graph_val["fwd_count"]
-        new_entry["rev_count"] = graph_val["rev_count"]
+        new_entry["fwdcount"] = graph_val["fwdcount"]
+        new_entry["revcount"] = graph_val["revcount"]
         if EXPLORE:
             if graph_key in EXPLORE:
                 new_entry["explore"] = 1

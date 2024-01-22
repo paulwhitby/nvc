@@ -53,18 +53,18 @@ ALTERNATIVE_NAMES = {
 }
 
 # reasons why succession might take place. To be extended
-SUCCESSION_DRIVERS = {'grazing-stopped': ["abandonment of grazing"],
-                      'grazing-started': ["grazing", "introduction of grazing"],
-                      'ploughing-stopped': ["abandonment of ploughing"],
-                      'ploughing-started': ["introduction of ploughing"],
+SUCCESSION_DRIVERS = {'grazing': ["grazing", "introduction of grazing"],
+                      'ploughingstopped': ["abandonment of ploughing"],
+                      'ploughingstarted': ["introduction of ploughing"],
                       'wetting': ["wetting"],
                       'drying': ["drying"],
                       'fire': ["fire"],
-                      'mowing-stopped': ["abandonment of mowing"],
-                      'abandonment': ["abandonment"],
+                      'mowingstopped': ["abandonment of mowing"],
+                      'abandonment': ["abandonment", "abandon", "abandoned"],
                       'myxomatosis': ["myxomatosis"],
                       'flooding': ["flooding", "flooded", "flood"],
-                      'clearance': ['clearance']
+                      'clearance': ['clearance'],
+                      'improvement': ['improvement', 'improved']
                       }
 
 # MW_COMMUNITY_SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
@@ -373,6 +373,4 @@ if __name__ == "__main__":
         if cmnty['succession'] != []:
             print(cmnty['community'], cmnty['name'], "successes to", cmnty['succession'], "because of", cmnty['drivers'])
 
-    ## TODO - remove this temporary comment to restore saving community succession data
-    # save_succession_data.save_succession_data(communities)
-    ##
+    save_succession_data.save_succession_data(communities, True)

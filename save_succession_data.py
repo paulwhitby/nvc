@@ -7,9 +7,9 @@ import sqlite3
 
 
 QUERY_INSERT_STRING = "INSERT INTO succession VALUES(?, ?, ?, ?)"
-QUERY_INSERT_DRIVERS_STRING = "INSERT INTO community_drivers VALUES(?, ?)"
+QUERY_INSERT_DRIVERS_STRING = "INSERT INTO succession_drivers VALUES(?, ?)"
 QUERY_CHECK_STRING = "select count(*) from succession"
-QUERY_CHECK_DRIVERS_STRING = "select count(*) from community_drivers"
+QUERY_CHECK_DRIVERS_STRING = "select count(*) from succession_drivers"
 DATABASE_NAME = "nvc.db"
 
 
@@ -51,27 +51,30 @@ def _save_succession_data(database_name, query_string, driver_query_string, comm
             for community_succession in community['succession']:
                 # print(', '.join(row))
                 succession_key = community['community'].upper()+":"+community['code'].upper()+":"+community_succession.upper()
-                insert_row = (succession_key, community['code'], community_succession, '0.5')
-                if verbose:
-                    print(insert_row)
-                cur.execute(query_string, insert_row)
-                con.commit()
-        else:
-            succession_key = community['community'].upper()+":"+community['code'].upper()+":"
-            insert_row = (succession_key, community['code'], "", '0.0')
-            if verbose:
-                print(insert_row)
-            cur.execute(query_string, insert_row)
-            con.commit()
+                if community_succession != community['community']                :
+                    insert_row = (succession_key, community['code'], community_succession, '0.5')
+                    if verbose:
+                        print(insert_row)
+                    cur.execute(query_string, insert_row)
+                    con.commit()
 
-        if community['drivers'] != []:
-            for succession_driver in community['drivers']:
-                succession_key = community['community'].upper()     # +":"+community['code'].upper()
-                insert_row = (succession_key, succession_driver)
-                if verbose:
-                    print(insert_row)
-                cur.execute(driver_query_string, insert_row)
-                con.commit()
+                    if community['drivers'] != []:
+                        for succession_driver in community['drivers']:
+                            if community_succession in succession_driver:
+                                for a_driver in succession_driver[community_succession]:
+                                    insert_row = (succession_key, a_driver)
+                                    if verbose:
+                                        print(insert_row)
+                                    cur.execute(driver_query_string, insert_row)
+                                con.commit()
+
+        # else:
+        #     succession_key = community['community'].upper()+":"+community['code'].upper()+":"
+        #     insert_row = (succession_key, community['code'], "", '0.0')
+        #     if verbose:
+        #         print(insert_row)
+        #     cur.execute(query_string, insert_row)
+        #     con.commit()
 
     if verbose:
         for row in cur.execute(check_string):
