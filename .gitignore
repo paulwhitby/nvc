@@ -4,3 +4,4 @@ NVC Assistant/*
 NVC Assistant
 __pycache__/*
 __pycache__
+*.pyc
