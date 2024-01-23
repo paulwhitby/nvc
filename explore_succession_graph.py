@@ -136,7 +136,7 @@ def find_all_connected_nodes():
         print(len(_GRAPH), "nodes in entire graph")
 
     nodelist = []
-    for mavis_community in MC9:
+    for mavis_community in MODIFIED_MAVIS_OUTPUT:
         nodelist.append(mavis_community)
     
     _PATHS = nodelist
