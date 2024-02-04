@@ -164,7 +164,7 @@ if __name__ == "__main__":
     FD = load_succession_data.load_succession_into_forward_dict(LOAD_DEBUG_FLAG)
     RD = load_succession_data.load_succession_into_reverse_dict(LOAD_DEBUG_FLAG)
     GRAPH = load_succession_data.make_graph_nodes(FD, RD, LOAD_DEBUG_FLAG)
-    load_community_data.SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(text_processing.SUCCESSION_TEXTS_FILENAME)
+    text_processing.SUCCESSION_TEXTS = load_community_data.load_succession_text_from_csv(text_processing.SUCCESSION_TEXTS_FILENAME)
     communities = load_community_data.load_communities_table_from_database(
         load_community_data.NVC_DATABASE_NAME, load_community_data.LOAD_COMMUNITIES_QUERY)
     compressed_communities = text_processing.process_compressed_community_names()
@@ -196,8 +196,11 @@ if __name__ == "__main__":
                             if s == "a":
                                 find_all_connected_nodes()
                             else:
-                                s_list.append(s.upper())
-                                child_nodes = find_all_child_nodes(s_list, GRAPH, False)
-                                print(s.upper(), "child nodes are", child_nodes)
-                                for n in child_nodes:
-                                    print(n, GRAPH[n]["rev"])
+                                if s == "?":
+                                    print("""q quit, a all nodes, cc compressed community name, n community name, c  clear, t succession text, ? help""")
+                                else:
+                                    s_list.append(s.upper())
+                                    child_nodes = find_all_child_nodes(s_list, GRAPH, False)
+                                    print(s.upper(), "child nodes are", child_nodes)
+                                    for n in child_nodes:
+                                        print(n, GRAPH[n]["rev"])
