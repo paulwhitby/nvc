@@ -53,13 +53,14 @@ ALTERNATIVE_NAMES = {
 }
 
 # reasons why succession might take place. To be extended
-SUCCESSION_DRIVERS = {'grazing': ["grazing", "introduction of grazing"],
-                      'ploughingstopped': ["abandonment of ploughing"],
+SUCCESSION_DRIVERS = {'grazingstopped':["cessation of grazing", "abandonment of grazing"],
+                      'grazing': ["grazing", "introduction of grazing"],
+                      'ploughingstopped': ["abandonment of ploughing", "cessation of ploughing"],
                       'ploughingstarted': ["introduction of ploughing"],
                       'wetting': ["wetting"],
                       'drying': ["drying"],
-                      'fire': ["fire"],
-                      'mowingstopped': ["abandonment of mowing"],
+                      'fire': ["fire", "wildfire"],
+                      'mowingstopped': ["abandonment of mowing", "cessation of mowing"],
                       'abandonment': ["abandonment", "abandon", "abandoned"],
                       'myxomatosis': ["myxomatosis"],
                       'flooding': ["flooding", "flooded", "flood"],
