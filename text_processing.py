@@ -56,7 +56,7 @@ ALTERNATIVE_NAMES = {
 SUCCESSION_DRIVERS = {'grazingstopped':["cessation of grazing", "abandonment of grazing"],
                       'grazing': ["grazing", "introduction of grazing"],
                       'ploughingstopped': ["abandonment of ploughing", "cessation of ploughing"],
-                      'ploughingstarted': ["introduction of ploughing"],
+                      'ploughingstarted': ["introduction of ploughing", "ploughing"],
                       'wetting': ["wetting"],
                       'drying': ["drying"],
                       'fire': ["fire", "wildfire"],
