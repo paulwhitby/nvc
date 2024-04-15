@@ -58,7 +58,7 @@ ALTERNATIVE_NAMES = {
 
 # reasons why succession might take place. To be extended
 SUCCESSION_DRIVERS = {'grazingstopped':["cessation of grazing", "abandonment of grazing"],
-                      'grazing': ["grazing", "introduction of grazing"],
+                      'grazing': ["grazing", "introduction of grazing", "rabbit-grazing"],
                       'ploughingstopped': ["abandonment of ploughing", "cessation of ploughing"],
                       'ploughingstarted': ["introduction of ploughing", "ploughing"],
                       'wetting': ["wetting"],
