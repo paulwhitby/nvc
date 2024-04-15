@@ -52,7 +52,8 @@ ALTERNATIVE_NAMES = {
     'w16':  """Querco-Betuletum""",
     'm24':  """Cirsio-Molinietum""",
     'm16':  """Ericetum tetralicis""",
-    'm21':  """Narthecio-Sphagnetum"""
+    'm21':  """Narthecio-Sphagnetum""",
+    'm29':  """Hyperico-Potametum"""
 }
 
 # reasons why succession might take place. To be extended
