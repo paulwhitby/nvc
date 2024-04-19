@@ -19,6 +19,8 @@ SELECT
   communities.community_name
 FROM
   communities
+WHERE
+  communities.community_level_code = communities.community_code
 """
 
 LOAD_COMMUNITY_NODES_QUERY = """
@@ -27,6 +29,8 @@ SELECT DISTINCT
   communities.community_name
 FROM
   communities
+WHERE
+  communities.community_level_code = communities.community_code
 """
 
 LOAD_SHORT_COMMUNITY_NODES_QUERY = """
