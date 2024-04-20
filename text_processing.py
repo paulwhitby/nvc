@@ -66,17 +66,13 @@ SUCCESSION_DRIVERS = {'grazingstopped':["cessation of grazing", "abandonment of 
                       'drying': ["drying"],
                       'fire': ["fire", "wildfire", "burning", "burns"],
                       'mowingstopped': ["abandonment of mowing", "cessation of mowing"],
+                      'mowing':["mowing"],
                       'abandonment': ["abandonment", "abandon", "abandoned"],
                       'myxomatosis': ["myxomatosis"],
                       'flooding': ["flooding", "flooded", "flood"],
                       'clearance': ['clearance'],
                       'improvement': ['improvement', 'improved']
                       }
-
-# MW_COMMUNITY_SUCCESSION_DRIVERS = {'grazing-stopped': ["grazing", "abandonment of grazing"],
-#                       'grazing-started': ["introduction of grazing"],
-#                       'flooding': ["flooding", "flooded", "flood"]
-#                       }
 
 
 def mapstrip(string_to_strip):
