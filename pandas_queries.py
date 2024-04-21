@@ -42,8 +42,31 @@ grazing==1 and to in['MG10', 'MG9', 'W1', 'OV26', 'M6', 'M5', 'MG4', 'OV10', 'OV
 
 (grazing==1 or flooding==1) and to in['MG10', 'MG9', 'W1', 'OV26', 'M6', 'M5', 'MG4', 'OV10', 'OV23', 'MG1']
 
+or (to in ['OV8','OV33','OV18'])
+or (to in ['OV21', 'OV12', 'OV20', 'OV24', 'OV19', 'OV25'])
+or (to in ['M28', 'MG5', 'S23', 'OV35', 'S18', 'OV26', 'S27', 'M13', 'W1', 'W10', 'W8', 'MG6', 'SD8', 'W22', 'MG4'])
+or (to in ['SD16', 'SD13', 'SD11', 'H19', 'SD7', 'SD14', 'SD10', 'SD4', 'SD19', 'SD17', 'SD6', 'SD5', 'H11', 'OV4', 'SD9', 'OV27', 'CG8', 'W12','OV37','OV39','MG2','OV38','CG9','SD18','W7','W25','W16','W6','U20','W15','W5','S23','OV26','M13','S18','M16','SD15','M18','H5','M27','W3', 'M23', 'MG8', 'M22', 'M17', 'H4', 'MG13', 'M24', 'MG11', 'MG3', 'U3', 'CG10', 'M28', 'SD3', 'OV41', 'W21', 'W24'])
+
+
+
+ ( (to in['MG10', 'MG9', 'W1', 'OV26', 'M6', 'M5', 'MG4', 'OV10', 'OV23', 'MG1']) or (to in ['OV8','OV33','OV18']) or (to in ['OV21', 'OV12', 'OV20', 'OV24', 'OV19', 'OV25']) or (to in ['M28', 'MG5', 'S23', 'OV35', 'S18', 'OV26', 'S27', 'M13', 'W1', 'W10', 'W8', 'MG6', 'SD8', 'W22', 'MG4']) or (to in ['SD16', 'SD13', 'SD11', 'H19', 'SD7', 'SD14', 'SD10', 'SD4', 'SD19', 'SD17', 'SD6', 'SD5', 'H11', 'OV4', 'SD9', 'OV27', 'CG8', 'W12','OV37','OV39','MG2','OV38','CG9','SD18','W7','W25','W16','W6','U20','W15','W5','S23','OV26','M13','S18','M16','SD15','M18','H5','M27','W3', 'M23', 'MG8', 'M22', 'M17', 'H4', 'MG13', 'M24', 'MG11', 'MG3', 'U3', 'CG10', 'M28', 'SD3', 'OV41', 'W21', 'W24']) )  and (grazing==1 or flooding==1)
+
 
 #grazingabandoned
+
+
+
+or (to in ['W1', 'OV26', 'OV35', 'MG4', 'W8'])
+or (to in ['M6'])
+
+
+
+
+and (grazing==1 or flooding==1 or abandonment==1 or wetting==1 or drying==1 or myxomatosis==1 or mowing==1 or mowingstopped==1 or ploughingstarted==1 or clearance==1 or fire==1 or improvement==1 or grazingstopped==1)
+
+and (grazing==1 and abandonment==1)
+
+
 
 
 """
