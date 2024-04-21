@@ -165,6 +165,8 @@ def _load_succession_graph_edges(database_name, query_string, column_names, expl
         for succession in load_succession_list:
             if succession['succession_key'] == driver['succession_key']:
                 succession[driver['succession_reason']] = 1.0
+            # else:
+            #     succession[driver['succession_reason']] = 0.0
 
     if explore_list:
         for succession in load_succession_list:
@@ -172,6 +174,7 @@ def _load_succession_graph_edges(database_name, query_string, column_names, expl
                 succession['explore'] = 1.0
 
     pdf = pd.DataFrame(load_succession_list)
+    pdf.fillna(0.0)
     return pdf
 
 
