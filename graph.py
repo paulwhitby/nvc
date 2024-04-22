@@ -5,6 +5,7 @@
 # pylint: disable=trailing-whitespace
 # pylint: disable=unused-import
 # pylint: disable=pointless-string-statement
+# pylint: disable=invalid-name
 
 from jaal import Jaal
 import pandas as pd
