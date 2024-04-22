@@ -67,6 +67,19 @@ and (grazing==1 or flooding==1 or abandonment==1 or wetting==1 or drying==1 or m
 and (grazing==1 and abandonment==1)
 
 
+( ( to in['MG10', 'MG9', 'OV10', 'OV23', 'MG1'] )  or (to in ['W1', 'OV26', 'M6', 'M5', 'MG4', 'OV35', 'W8', 'M28']) or (to in ['OV27', 'W10']) or (to in ['W24', 'W14', 'W7', 'W16']) ) and (grazing==1 or flooding==1 or abandonment==1 or wetting==1 or drying==1 or fire==1 or improvement==1 or grazingstopped==1)
+
+
+or (to in ['W24', 'W14', 'W7', 'W16'])
+or (to in ['H9', 'W19'])
+
+( ( to in['MG10', 'MG9', 'OV10', 'OV23', 'MG1'] )  or (to in ['W1', 'OV26', 'M6', 'M5', 'MG4', 'OV35', 'W8', 'M28']) or (to in ['OV27', 'W10']) or (to in ['W24', 'W14', 'W7', 'W16'])  or (to in ['H9', 'W19']) ) and (grazing==1 or flooding==1 or abandonment==1 or wetting==1 or drying==1 or fire==1 or improvement==1 or grazingstopped==1)
+
+
+
+# use the below query to explore PER SUCCESSION REASON the potential succession pathways to the MAVIS communities
+( ( to in['MG10', 'MG9', 'OV10', 'OV23', 'MG1'] )  or (to in ['W1', 'OV26', 'M6', 'M5', 'MG4', 'OV35', 'W8', 'M28']) or (to in ['OV27', 'W10']) or (to in ['W24', 'W14', 'W7', 'W16'])  or (to in ['H9', 'W19']) ) and (grazing==1 or flooding==1 or abandonment==1 or wetting==1 or drying==1 or fire==1 or improvement==1 or grazingstopped==1)
+
 
 
 """
