@@ -54,7 +54,12 @@ ALTERNATIVE_NAMES = {
     'm16':  """Ericetum tetralicis""",
     'm21':  """Narthecio-Sphagnetum""",
     'm29':  """Hyperico-Potametum""",
-    'sm25': """Elymo pycnanthi-Suaedetum vera"""
+    'sm25': """Elymo pycnanthi-Suaedetum vera""",
+    's27':  """Potentillo-Caricetum""",
+    'm10':  """Pinguiculo-Caricetum""",
+    'm11':  """Carici-Saxifragetum""",
+    'm12':  """Caricetum saxatilis""",
+    'm13':  """Schoenetum nigricantis"""
 }
 
 # reasons why succession might take place. To be extended
