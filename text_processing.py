@@ -71,11 +71,11 @@ ALTERNATIVE_NAMES = {
 }
 
 # reasons why succession might take place. To be extended
-SUCCESSION_DRIVERS = {'grazingstopped':["cessation of grazing", "abandonment of grazing", "grazing is abandoned", "lack of grazing", "grazing is restricted", "grazing is withdrawn", "demise of rabbits", "reduction in rabbit-grazing", "ungrazed"],
-                      'grazing': ["mediated by grazing", "intensive grazing", "heavily grazed", "grazed", "introduction of grazing", "rabbit-grazing", "grazing"],
-                      'ploughingstopped': ["abandonment of ploughing", "cessation of ploughing"],
+SUCCESSION_DRIVERS = {'grazingstopped':["cessation of grazing", "abandonment of grazing", "grazing is abandoned", "lack of grazing", "grazing is restricted", "grazing is withdrawn", "demise of rabbits", "reduction in rabbit-grazing", "ungrazed", "withdrawal of summer grazing"],
+                      'grazing': ["mediated by grazing", "intensive grazing", "heavily grazed", "grazed", "introduction of grazing", "rabbit-grazing", "grazing too severe", "rabbit infestation", "grazing", "over-grazing"],
+                      'ploughingstopped': ["abandonment of ploughing", "cessation of ploughing", "inaccessible to ploughing"],
                       'ploughingstarted': ["introduction of ploughing", "ploughing"],
-                      'wetting': ["wetting", "blockage of drains", "waterlogging", "choking of drains", "resistant to drainage"],
+                      'wetting': ["wetting", "blockage of drains", "waterlogging", "choking of drains", "resistant to drainage", "drainage is less successful"],
                       'drying': ["drying", "drainage"],
                       'fire': ["fire", "wildfire", "burning", "burns"],
                       'mowingstopped': ["abandonment of mowing", "cessation of mowing"],
