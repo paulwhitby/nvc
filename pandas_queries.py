@@ -84,4 +84,89 @@ or (to in ['H9', 'W19'])
 # just for drying-related conditions
 (((wetting==1 or flooding==1) and abandonment==1) or drying==1) and ( (to in ['MG10', 'MG9', 'MG1', 'OV10', 'OV23']) or (to in ['MG6', 'W8', 'W10']) or (to in ['M6', 'W7', 'W14', 'W16']))
 
+
+
+
+--------------------------
+start again with networks 28/4/24
+
+start:  ( (to in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23'])
+
+step 1:
+  or (to in ['OV8', 'OV33', 'OV18', 'OV21', 'OV25', 'OV19', 'OV20', 'OV12', 'OV24', 'OV35', 'S18', 'OV26', 'W1', 'S27', 'W22', 'W10', 'MG4', 'MG6', 'W8', 'SD8', 'M28', 'S23', 'M13', 'S24'])
+
+
+step 2:
+or (to in ['OV31', 'OV29', 'OV8', 'OV9', 'OV22', 'OV3', 'OV41', 'SD3', 'SD9', 'OV4', 'SD14', 'SD5', 'SD17', 'SD19', 'SD7', 'SD6', 'H11', 'SD4', 'SD13', 'SD16', 'SD12', 'SD10', 'SD11', 'SD18', 'W25', 'W6', 'W15', 'W16', 'U20', 'W7', 'MG2', 'CG8', 'OV39', 'OV38', 'OV37', 'CG9', 'M6', 'W5', 'M23', 'M27', 'M18', 'H5', 'M16', 'SD15', 'M22', 'M24', 'U3', 'CG10', 'M17', 'MG8', 'MG11', 'MG13', 'H4', 'MG3', 'S7', 'S3', 'S17', 'A4', 'S5', 'S13', 'M9', 'W2', 'M26', 'W3', 'S1', 'M5', 'S9', 'S12', 'A13', 'A10'])
+
+
+step 3:
+or (to in ['S2', 'A8', 'A7', 'A22', 'A9', 'A12', 'M12', 'M7', 'M32', 'M3', 'H7', 'M15', 'H17', 'H14', 'M35', 'H13', 'CG14', 'H15', 'U17', 'OV40', 'U15', 'U19', 'H10', 'H9', 'U21', 'OV39', 'OV37', 'CG6', 'W13', 'SD4', 'SD13', 'SD14', 'SD19', 'SD6', 'SD5', 'SD2', 'MC6', 'OV3', 'OV11', 'OV17', 'OV36', 'OV16', 'OV8', 'OV31'])
+
+
+step 4:
+or (to in ['A5', 'A3', 'A11', 'A23', 'A14', 'A24', 'A17', 'M31', 'M34', 'M33', 'U11', 'H16', 'U12', 'U18', 'U9', 'H20', 'U13', 'U14', 'OV40', 'CG13', 'H6', 'OV34', 'CG1', 'CG7', 'OV1', 'SD1', 'S22', 'OV30', 'OV1', 'M31', 'A19', 'CG5', 'CG4', 'CG3'])   )
+
+or (to in [ 'S22', 'OV30', 'OV1', 'M31', 'A19'])
+
+or (to in ['CG5', 'CG4', 'CG3'])
+
+
+-----------------------
+Final query for nodes connecting TO the MAVIS set
+
+( ( to in['MG10', 'MG9', 'OV10', 'OV23', 'MG1'] )  or (to in ['OV8', 'OV33', 'OV18', 'OV19', 'OV21', 'OV25', 'OV20', 'OV12', 'OV24',   'OV35', 'S18', 'OV26', 'W1', 'S27', 'W22', 'W10', 'MG4', 'MG6', 'W8', 'MG5', 'SD8', 'M28', 'S23', 'M13', 'S24'])  or (to in ['OV31', 'OV29', 'OV8', 'OV9', 'OV22', 'OV3', 'OV41', 'SD3', 'SD9', 'OV4', 'SD14', 'SD5', 'SD17', 'SD19', 'SD7', 'SD6', 'H11', 'SD4', 'SD13', 'H19', 'SD16', 'SD12', 'SD10', 'SD11', 'SD18', 'W25', 'W6', 'W15', 'W16', 'U20', 'W7', 'MG2', 'CG8', 'OV39', 'W12', 'OV38', 'OV37', 'CG9', 'M6', 'W5', 'M23', 'M27', 'M18', 'H5', 'M16', 'SD15', 'M22', 'M24', 'U3', 'CG10', 'M17', 'MG8', 'MG11', 'MG13', 'H4', 'MG3', 'S26', 'S7', 'S3', 'S17', 'A4', 'S5', 'S13', 'M9', 'W2', 'W4', 'M26', 'W3', 'S1', 'M5', 'S9', 'S12', 'A13', 'A10']) or (to in ['S2', 'A8', 'A7', 'A22', 'A9', 'A12', 'H3', 'M12', 'M7', 'M8', 'M32', 'M3', 'U10', 'H7', 'M15', 'H17', 'H14', 'M35', 'H22', 'U7', 'H13', 'H18', 'CG12', 'CG14', 'H15', 'U17', 'OV40', 'U15', 'CG11', 'U19', 'W20', 'M38', 'H10', 'H9', 'U21', 'H1', 'OV39', 'OV37', 'H2', 'U1', 'CG6', 'W13', 'SD4', 'SD13', 'SD14', 'SD19', 'SD6', 'SD5', 'SD2', 'MC6', 'OV3', 'OV11', 'OV17', 'OV36', 'OV16', 'OV8', 'OV31'])  or (to in ['A5', 'A3', 'A11', 'A23', 'A14', 'A24', 'A17', 'M31', 'M34', 'M33', 'U11', 'H16', 'U12', 'U18', 'U9', 'H20', 'U13', 'U16', 'U14', 'OV40', 'CG13', 'M37', 'H6', 'OV34', 'CG1', 'CG7', 'OV1', 'SD1'])  or (to in ['CG2', 'S22', 'OV30', 'OV1', 'M31', 'A19'])  or (to in ['CG5', 'CG4', 'CG3'])  )
+
+
+
+
+-------
+Fig 14 MC9 succession pathway
+
+grazing==1 and ( (to in ['MC9'])  or (to in ['W21', 'H8', 'H7', 'MC10'])  or (to in ['H2', 'MC8', 'H3', 'W8'])  )
+
+
+Fig 15 MG1 / CG2 pathway
+
+(grazing==1 or flooding==1 or abandonment==1 or myxomatosis==1 or drying==1 or clearance==1) and ( (to in ['CG2', 'MG1', 'CG4', 'CG3', 'W8', 'CG1', 'CG7', 'U1', 'OV27']) )
+
+
+Fig 16 MG10 pathways
+
+(grazing==1 ) and ( (to in ['MG10', 'W8', 'OV26', '', 'W1', 'OV35', 'W10', 'S24']) or (to in ['W7', 'OV27', 'W14', 'W16', 'M22', 'W2', 'M6', 'M24', '', 'H8', 'U3', 'MG8', 'MG4']) or (to in ['M23', 'M7', 'M5']) or (to in ['M25', 'U4', 'M28', 'M26']) or (to in ['W17', 'W11', 'U5', 'U19', 'OV37', 'H10', 'M10']) or (to in ['U6', 'H7', 'U16', 'H12', 'M27', 'H22', 'H21', 'M35', 'H2']) or (to in ['U18', 'M20', 'U20', 'M13', 'W5', 'W6', 'S25'   ]) )
+
+
+Fig 17 MG9 pathways
+
+( (to in ['MG9', 'MG4', 'MG6', 'W10', 'W22', 'W8', 'MG10' ])  ) and (grazing==1 or flooding==1 or wetting==1 or drying==1)
+
+( (to in ['MG9', 'MG4', 'MG6', 'W10', 'W22', 'W8', 'MG10' ])  ) and (grazing==1)
+
+
+Fig 18
+OV10, OV23
+
+
+
+Fig 19
+
+( to in['MG10', 'MG9', 'OV10', 'OV23', 'MG1'] )
+
+
+Fig 20
+
+( ( to in['MG10', 'MG9', 'OV10', 'OV23', 'MG1'] ) or (to in ['']) )
+
+
+
+
+
+Query for just pathways incoming to MAVIS communities
+
+( (to in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23'])  or (to in ['OV8', 'OV33', 'OV18', 'OV21', 'OV25', 'OV19', 'OV20', 'OV12', 'OV24', 'OV35', 'S18', 'OV26', 'W1', 'S27', 'W22', 'W10', 'MG4', 'MG6', 'W8', 'SD8', 'M28', 'S23', 'M13', 'S24']) or (to in ['OV31', 'OV29', 'OV8', 'OV9', 'OV22', 'OV3', 'OV41', 'SD3', 'SD9', 'OV4', 'SD14', 'SD5', 'SD17', 'SD19', 'SD7', 'SD6', 'H11', 'SD4', 'SD13', 'SD16', 'SD12', 'SD10', 'SD11', 'SD18', 'W25', 'W6', 'W15', 'W16', 'U20', 'W7', 'MG2', 'CG8', 'OV39', 'OV38', 'OV37', 'CG9', 'M6', 'W5', 'M23', 'M27', 'M18', 'H5', 'M16', 'SD15', 'M22', 'M24', 'U3', 'CG10', 'M17', 'MG8', 'MG11', 'MG13', 'H4', 'MG3', 'S7', 'S3', 'S17', 'A4', 'S5', 'S13', 'M9', 'W2', 'M26', 'W3', 'S1', 'M5', 'S9', 'S12', 'A13', 'A10']) or (to in ['S2', 'A8', 'A7', 'A22', 'A9', 'A12', 'M12', 'M7', 'M32', 'M3', 'H7', 'M15', 'H17', 'H14', 'M35', 'H13',  'H15', 'U17', 'OV40', 'U15', 'U19', 'H10', 'H9', 'U21', 'OV39', 'OV37', 'CG6', 'W13', 'SD4', 'SD13', 'SD14', 'SD19', 'SD6', 'SD5', 'SD2', 'MC6', 'OV3', 'OV11', 'OV17', 'OV36', 'OV16', 'OV8', 'OV31']) or (to in ['A5', 'A3', 'A11', 'A23', 'A14', 'A24', 'A17', 'M31', 'M34', 'M33', 'U11', 'H16', 'U12', 'U18', 'U9', 'H20', 'U13', 'U14', 'OV40', 'CG13', 'H6', 'OV34', 'CG1', 'CG7', 'OV1', 'SD1', 'S22', 'OV30', 'OV1', 'M31', 'A19', 'CG5', 'CG4', 'CG3'])   ) and ( grazing==1 or flooding==1  or wetting==1 or drying==1  or grazingstopped==1 or clearance==1 or abandonment==1 or fire==1 or ploughingstopped==1 or myxomatosis==1 or mowing==1 or mowingstopped==1 or improvement==1 )
+
+
+
+
+
 """
