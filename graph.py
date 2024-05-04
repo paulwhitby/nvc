@@ -24,19 +24,7 @@ if __name__ == "__main__":
 
     edge_df = load_succession_data.load_succession_graph_edges(False)
     edge_df = edge_df.fillna(value=0)
-    # edge_df["explore"] = 0
 
-    # add a column in the dataframe for each succession driver
-    # for sd in succession_drivers_list:
-    #     edge_df[sd] = 0
-    
-    # print("\n\nSuccession drivers", succession_drivers_list, "\n\n")
-    # for d in community_succession:
-    #     for edge in edge_df:
-    #         if edge['from'] == d['community_key']:
-    #             edge[d['succession_reason']] = 1
-
-    # node_df = load_community_data.load_communities_graph_nodes(DEBUG_ON)
     node_df = load_succession_data.make_df_from_graph_nodes(load_succession_data.load_succession_into_forward_dict(verbose=DEBUG_ON), load_succession_data.load_succession_into_reverse_dict(verbose=DEBUG_ON), verbose=DEBUG_ON)
     node_df = node_df.fillna(0)
 
