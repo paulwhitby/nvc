@@ -163,9 +163,41 @@ Fig 20
 
 Query for just pathways incoming to MAVIS communities
 
-( (to in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23'])  or (to in ['OV8', 'OV33', 'OV18', 'OV21', 'OV25', 'OV19', 'OV20', 'OV12', 'OV24', 'OV35', 'S18', 'OV26', 'W1', 'S27', 'W22', 'W10', 'MG4', 'MG6', 'W8', 'SD8', 'M28', 'S23', 'M13', 'S24']) or (to in ['OV31', 'OV29', 'OV8', 'OV9', 'OV22', 'OV3', 'OV41', 'SD3', 'SD9', 'OV4', 'SD14', 'SD5', 'SD17', 'SD19', 'SD7', 'SD6', 'H11', 'SD4', 'SD13', 'SD16', 'SD12', 'SD10', 'SD11', 'SD18', 'W25', 'W6', 'W15', 'W16', 'U20', 'W7', 'MG2', 'CG8', 'OV39', 'OV38', 'OV37', 'CG9', 'M6', 'W5', 'M23', 'M27', 'M18', 'H5', 'M16', 'SD15', 'M22', 'M24', 'U3', 'CG10', 'M17', 'MG8', 'MG11', 'MG13', 'H4', 'MG3', 'S7', 'S3', 'S17', 'A4', 'S5', 'S13', 'M9', 'W2', 'M26', 'W3', 'S1', 'M5', 'S9', 'S12', 'A13', 'A10']) or (to in ['S2', 'A8', 'A7', 'A22', 'A9', 'A12', 'M12', 'M7', 'M32', 'M3', 'H7', 'M15', 'H17', 'H14', 'M35', 'H13',  'H15', 'U17', 'OV40', 'U15', 'U19', 'H10', 'H9', 'U21', 'OV39', 'OV37', 'CG6', 'W13', 'SD4', 'SD13', 'SD14', 'SD19', 'SD6', 'SD5', 'SD2', 'MC6', 'OV3', 'OV11', 'OV17', 'OV36', 'OV16', 'OV8', 'OV31']) or (to in ['A5', 'A3', 'A11', 'A23', 'A14', 'A24', 'A17', 'M31', 'M34', 'M33', 'U11', 'H16', 'U12', 'U18', 'U9', 'H20', 'U13', 'U14', 'OV40', 'CG13', 'H6', 'OV34', 'CG1', 'CG7', 'OV1', 'SD1', 'S22', 'OV30', 'OV1', 'M31', 'A19', 'CG5', 'CG4', 'CG3'])   ) and ( grazing==1 or flooding==1  or wetting==1 or drying==1  or grazingstopped==1 or clearance==1 or abandonment==1 or fire==1 or ploughingstopped==1 or myxomatosis==1 or mowing==1 or mowingstopped==1 or improvement==1 )
+( (to in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23'])  or (to in ['OV8', 'OV33', 'OV18', 'OV21', 'OV25', 'OV19', 'OV20', 'OV12', 'OV24', 'OV35', 'S18', 'OV26', 'W1', 'S27', 'W22', 'W10', 'MG4', 'MG6', 'W8', 'SD8', 'M28', 'S23', 'M13', 'S24']) or (to in ['OV31', 'OV29', 'OV8', 'OV9', 'OV22', 'OV3', 'OV41', 'SD3', 'SD9', 'OV4', 'SD14', 'SD5', 'SD17', 'SD19', 'SD7', 'SD6', 'H11', 'SD4', 'SD13', 'SD16', 'SD12', 'SD10', 'SD11', 'SD18', 'W25', 'W6', 'W15', 'W16', 'U20', 'W7', 'MG2', 'CG8', 'OV39', 'OV38', 'OV37', 'CG9', 'M6', 'W5', 'M23', 'M27', 'M18', 'H5', 'M16', 'SD15', 'M22', 'M24', 'U3', 'CG10', 'M17', 'MG8', 'MG11', 'MG13', 'H4', 'MG3', 'S7', 'S3', 'S17', 'A4', 'S5', 'S13', 'M9', 'W2', 'M26', 'W3', 'S1', 'M5', 'S9', 'S12', 'A13', 'A10']) or (to in ['S2', 'A8', 'A7', 'A22', 'A9', 'A12', 'M12', 'M7', 'M32', 'M3', 'H7', 'M15', 'H17', 'H14', 'M35', 'H13',  'H15', 'U17', 'OV40', 'U15', 'U19', 'H10', 'H9', 'U21', 'OV39', 'OV37', 'CG6', 'W13', 'SD4', 'SD13', 'SD14', 'SD19', 'SD6', 'SD5', 'SD2', 'MC6', 'OV3', 'OV11', 'OV17', 'OV36', 'OV16', 'OV8', 'OV31']) or (to in ['A5', 'A3', 'A11', 'A23', 'A14', 'A24', 'A17', 'M31', 'M34', 'M33', 'U11', 'H16', 'U12', 'U18', 'U9', 'H20', 'U13', 'U14', 'OV40', 'CG13', 'H6', 'OV34', 'CG1', 'CG7', 'OV1', 'SD1', 'S22', 'OV30', 'OV1', 'M31', 'A19', 'CG5', 'CG4', 'CG3'])   ) and ( grazing==1 or flooding==1 or wetting==1 or drying==1  or grazingstopped==1 or clearance==1 or abandonment==1 or fire==1 or ploughingstopped==1 or myxomatosis==1 or mowing==1 or mowingstopped==1 or improvement==1 and to not in [])
 
 
+
+--------
+explore grazing to MG10
+
+( (to in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23'])  or (to in ['OV8', 'OV33', 'OV18', 'OV21', 'OV25', 'OV19', 'OV20', 'OV12', 'OV24', 'OV35', 'S18', 'OV26', 'W1', 'S27', 'W22', 'W10', 'MG4', 'MG6', 'W8', 'SD8', 'M28', 'S23', 'M13', 'S24']) or (to in ['OV31', 'OV29', 'OV8', 'OV9', 'OV22', 'OV3', 'OV41', 'SD3', 'SD9', 'OV4', 'SD14', 'SD5', 'SD17', 'SD19', 'SD7', 'SD6', 'H11', 'SD4', 'SD13', 'SD16', 'SD12', 'SD10', 'SD11', 'SD18', 'W25', 'W6', 'W15', 'W16', 'U20', 'W7', 'MG2', 'CG8', 'OV39', 'OV38', 'OV37', 'CG9', 'M6', 'W5', 'M23', 'M27', 'M18', 'H5', 'M16', 'SD15', 'M22', 'M24', 'U3', 'CG10', 'M17', 'MG8', 'MG11', 'MG13', 'H4', 'MG3', 'S7', 'S3', 'S17', 'A4', 'S5', 'S13', 'M9', 'W2', 'M26', 'W3', 'S1', 'M5', 'S9', 'S12', 'A13', 'A10']) or (to in ['S2', 'A8', 'A7', 'A22', 'A9', 'A12', 'M12', 'M7', 'M32', 'M3', 'H7', 'M15', 'H17', 'H14', 'M35', 'H13',  'H15', 'U17', 'OV40', 'U15', 'U19', 'H10', 'H9', 'U21', 'OV39', 'OV37', 'CG6', 'W13', 'SD4', 'SD13', 'SD14', 'SD19', 'SD6', 'SD5', 'SD2', 'MC6', 'OV3', 'OV11', 'OV17', 'OV36', 'OV16', 'OV8', 'OV31']) or (to in ['A5', 'A3', 'A11', 'A23', 'A14', 'A24', 'A17', 'M31', 'M34', 'M33', 'U11', 'H16', 'U12', 'U18', 'U9', 'H20', 'U13', 'U14', 'OV40', 'CG13', 'H6', 'OV34', 'CG1', 'CG7', 'OV1', 'SD1', 'S22', 'OV30', 'OV1', 'M31', 'A19', 'CG5', 'CG4', 'CG3'])  or to in(['U4', 'U5']) ) and ( (grazing==1 and abandonment==0) and grazingstopped==0 and to not in ['U20', 'CG10', 'CG9', 'M15', 'MG6'])
+
+
+-------
+explore grazingstopped to MG9
+
+( (to in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23'])  or (to in ['OV8', 'OV33', 'OV18', 'OV21', 'OV25', 'OV19', 'OV20', 'OV12', 'OV24', 'OV35', 'S18', 'OV26', 'W1', 'S27', 'W22', 'W10', 'MG4', 'MG6', 'W8', 'SD8', 'M28', 'S23', 'M13', 'S24']) or (to in ['OV31', 'OV29', 'OV8', 'OV9', 'OV22', 'OV3', 'OV41', 'SD3', 'SD9', 'OV4', 'SD14', 'SD5', 'SD17', 'SD19', 'SD7', 'SD6', 'H11', 'SD4', 'SD13', 'SD16', 'SD12', 'SD10', 'SD11', 'SD18', 'W25', 'W6', 'W15', 'W16', 'U20', 'W7', 'MG2', 'CG8', 'OV39', 'OV38', 'OV37', 'CG9', 'M6', 'W5', 'M23', 'M27', 'M18', 'H5', 'M16', 'SD15', 'M22', 'M24', 'U3', 'CG10', 'M17', 'MG8', 'MG11', 'MG13', 'H4', 'MG3', 'S7', 'S3', 'S17', 'A4', 'S5', 'S13', 'M9', 'W2', 'M26', 'W3', 'S1', 'M5', 'S9', 'S12', 'A13', 'A10']) or (to in ['S2', 'A8', 'A7', 'A22', 'A9', 'A12', 'M12', 'M7', 'M32', 'M3', 'H7', 'M15', 'H17', 'H14', 'M35', 'H13',  'H15', 'U17', 'OV40', 'U15', 'U19', 'H10', 'H9', 'U21', 'OV39', 'OV37', 'CG6', 'W13', 'SD4', 'SD13', 'SD14', 'SD19', 'SD6', 'SD5', 'SD2', 'MC6', 'OV3', 'OV11', 'OV17', 'OV36', 'OV16', 'OV8', 'OV31']) or (to in ['A5', 'A3', 'A11', 'A23', 'A14', 'A24', 'A17', 'M31', 'M34', 'M33', 'U11', 'H16', 'U12', 'U18', 'U9', 'H20', 'U13', 'U14', 'OV40', 'CG13', 'H6', 'OV34', 'CG1', 'CG7', 'OV1', 'SD1', 'S22', 'OV30', 'OV1', 'M31', 'A19', 'CG5', 'CG4', 'CG3'])   ) and (( (grazing==0 and abandonment==1) or grazingstopped==1 ) and to not in [])
+
+----------
+explore grazing to MG9
+
+( (to in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23'])  or (to in ['OV8', 'OV33', 'OV18', 'OV21', 'OV25', 'OV19', 'OV20', 'OV12', 'OV24', 'OV35', 'S18', 'OV26', 'W1', 'S27', 'W22', 'W10', 'MG4', 'MG6', 'W8', 'SD8', 'M28', 'S23', 'M13', 'S24']) or (to in ['OV31', 'OV29', 'OV8', 'OV9', 'OV22', 'OV3', 'OV41', 'SD3', 'SD9', 'OV4', 'SD14', 'SD5', 'SD17', 'SD19', 'SD7', 'SD6', 'H11', 'SD4', 'SD13', 'SD16', 'SD12', 'SD10', 'SD11', 'SD18', 'W25', 'W6', 'W15', 'W16', 'U20', 'W7', 'MG2', 'CG8', 'OV39', 'OV38', 'OV37', 'CG9', 'M6', 'W5', 'M23', 'M27', 'M18', 'H5', 'M16', 'SD15', 'M22', 'M24', 'U3', 'CG10', 'M17', 'MG8', 'MG11', 'MG13', 'H4', 'MG3', 'S7', 'S3', 'S17', 'A4', 'S5', 'S13', 'M9', 'W2', 'M26', 'W3', 'S1', 'M5', 'S9', 'S12', 'A13', 'A10']) or (to in ['S2', 'A8', 'A7', 'A22', 'A9', 'A12', 'M12', 'M7', 'M32', 'M3', 'H7', 'M15', 'H17', 'H14', 'M35', 'H13',  'H15', 'U17', 'OV40', 'U15', 'U19', 'H10', 'H9', 'U21', 'OV39', 'OV37', 'CG6', 'W13', 'SD4', 'SD13', 'SD14', 'SD19', 'SD6', 'SD5', 'SD2', 'MC6', 'OV3', 'OV11', 'OV17', 'OV36', 'OV16', 'OV8', 'OV31']) or (to in ['A5', 'A3', 'A11', 'A23', 'A14', 'A24', 'A17', 'M31', 'M34', 'M33', 'U11', 'H16', 'U12', 'U18', 'U9', 'H20', 'U13', 'U14', 'OV40', 'CG13', 'H6', 'OV34', 'CG1', 'CG7', 'OV1', 'SD1', 'S22', 'OV30', 'OV1', 'M31', 'A19', 'CG5', 'CG4', 'CG3'])   ) and (( grazing==1  ) and to not in [])
+
+
+-----------
+explore drying to MG9
+
+( (to in ['MG9']) or (to in ['W10', 'MG6', 'M6', 'MG10', 'W7', 'W14', 'W16'])   )
+
+( (to in ['MG9']) or (to in ['W10', 'MG6', 'M6', 'MG10', 'W7', 'W14', 'W16']) and drying==1  )
+
+
+
+------------
+
+explore flooding to MG1, MG9, MG10, OV10, OV23
+
+( (to in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23'])  and (wetting==1 or flooding==1)  )
 
 
 
