@@ -24,6 +24,12 @@ if __name__ == "__main__":
 
     edge_df = load_succession_data.load_succession_graph_edges(False)
     edge_df = edge_df.fillna(value=0)
+    # add edge labels
+    edge_df.loc[:, 'fr'] = edge_df.loc[:, 'from']
+    # fred = pd.DataFrame()
+    # fred.loc[:, 'sum'] = edge_df.loc[:, 'grazing'].abs()
+    edge_df.loc[:, 'sum'] = edge_df.loc[:, 'grazing']+edge_df.loc[:, 'grazingstopped']+edge_df.loc[:, 'flooding']+edge_df.loc[:, 'wetting']+edge_df.loc[:, 'drying']+edge_df.loc[:, 'myxomatosis']+edge_df.loc[:, 'fire']+edge_df.loc[:, 'ploughingstarted']+edge_df.loc[:, 'ploughingstopped']+edge_df.loc[:, 'mowing']+edge_df.loc[:, 'mowingstopped']+edge_df.loc[:, 'clearance']+edge_df.loc[:, 'abandonment']
+    edge_df.loc[:, 'label'] = edge_df.loc[:, 'sum'].astype(str)
 
     node_df = load_succession_data.make_df_from_graph_nodes(load_succession_data.load_succession_into_forward_dict(verbose=DEBUG_ON), load_succession_data.load_succession_into_reverse_dict(verbose=DEBUG_ON), verbose=DEBUG_ON)
     node_df = node_df.fillna(0)
