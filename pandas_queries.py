@@ -202,6 +202,11 @@ explore flooding to MG1, MG9, MG10, OV10, OV23
 
 
 
+------ fig 21
+(( to in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23']) or (to in ['OV35', 'S24', 'OV26', 'W1', 'W10', 'W8', 'MG6', 'MG4',  'S18', 'S27', 'M13', 'M28', 'W22', 'MG5', 'S23', 'M5', 'M7']) or (to in []) ) and ( grazing>0 )
+
+
+
 -----------------
 -----------------
 FROM -- succession away from MAVIS climax communities
