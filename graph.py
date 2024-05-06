@@ -40,13 +40,3 @@ if __name__ == "__main__":
                                       'physics':{'stabilization':{'iterations': 100}}})
     # Jaal(edge_df).plot(directed=True)
 
-"""
-to=='MG6' or to=='CG10' or to=='CG14' or to=='OV40' or to=='W20' or to=='M11' or to=='U16' or to=='W17' or to=='H8'
-
-fwd_count>0 and rev_count==0
-
-
-(to=='MG1' or to=='MG9' or to=='MG10' or to=='OV10' or to=='OV23') or (to=='OV8' or to=='OV33') or (to=='OV28' or to=='OV29' or to=='OV31') or (to=='OV18' or to=='OV19' or to=='OV20' or to=='OV21' or to=='OV24' or to=='OV25')
-
-
-"""
