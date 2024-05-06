@@ -155,7 +155,7 @@ Fig 19
 
 Fig 20
 
-( ( to in['MG10', 'MG9', 'OV10', 'OV23', 'MG1'] ) or (to in ['']) )
+( ( to in['MG10', 'MG9', 'OV10', 'OV23', 'MG1'] ) or (to in ['OV35', 'S24', 'OV26', 'W1', 'W10', 'W8', 'MG6', 'MG4',  'S18', 'S27', 'M13', 'M28', 'W22', 'MG5', 'S23']) )
 
 
 
@@ -204,7 +204,13 @@ explore flooding to MG1, MG9, MG10, OV10, OV23
 
 -----------------
 -----------------
+FROM -- succession away from MAVIS climax communities
 
+
+-------
+Flooding
+
+( (fr in ['MG1', 'MG9', 'MG10', 'OV10', 'OV23'])  or (fr in ['MG6', 'U4', 'M23', 'M25']) ) and ( flooding>0  )
 
 
 
