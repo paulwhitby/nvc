@@ -26,8 +26,6 @@ if __name__ == "__main__":
     edge_df = edge_df.fillna(value=0)
     # add edge labels
     edge_df.loc[:, 'fr'] = edge_df.loc[:, 'from']
-    # fred = pd.DataFrame()
-    # fred.loc[:, 'sum'] = edge_df.loc[:, 'grazing'].abs()
     edge_df.loc[:, 'sum'] = edge_df.loc[:, 'grazing']+edge_df.loc[:, 'grazingstopped']+edge_df.loc[:, 'flooding']+edge_df.loc[:, 'wetting']+edge_df.loc[:, 'drying']+edge_df.loc[:, 'myxomatosis']+edge_df.loc[:, 'fire']+edge_df.loc[:, 'ploughingstarted']+edge_df.loc[:, 'ploughingstopped']+edge_df.loc[:, 'mowing']+edge_df.loc[:, 'mowingstopped']+edge_df.loc[:, 'clearance']+edge_df.loc[:, 'abandonment']
     edge_df.loc[:, 'label'] = edge_df.loc[:, 'sum'].astype(str)
 
@@ -36,7 +34,6 @@ if __name__ == "__main__":
 
     print(edge_df)
     print(node_df)
-    Jaal(edge_df, node_df).plot(directed=True, vis_opts={'height': '4000px', 'interaction':{'hover': False},
+    Jaal(edge_df, node_df).plot(directed=True, vis_opts={'height': '12000px', 'width':'12000px', 'interaction':{'hover': False},
                                       'physics':{'stabilization':{'iterations': 100}}})
     # Jaal(edge_df).plot(directed=True)
-
