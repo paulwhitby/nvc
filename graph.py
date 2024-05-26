@@ -34,6 +34,6 @@ if __name__ == "__main__":
 
     print(edge_df)
     print(node_df)
-    Jaal(edge_df, node_df).plot(directed=True, vis_opts={'height': '12000px', 'width':'12000px', 'interaction':{'hover': False},
+    Jaal(edge_df, node_df).plot(directed=True, vis_opts={'height': '15000px', 'width':'15000px', 'interaction':{'hover': False},
                                       'physics':{'stabilization':{'iterations': 100}}})
     # Jaal(edge_df).plot(directed=True)
