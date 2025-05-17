@@ -32,11 +32,11 @@ if __name__ == "__main__":
     node_df = load_succession_data.make_df_from_graph_nodes(load_succession_data.load_succession_into_forward_dict(verbose=DEBUG_ON), load_succession_data.load_succession_into_reverse_dict(verbose=DEBUG_ON), verbose=DEBUG_ON)
     node_df = node_df.fillna(0)
 
-    # print(edge_df)
-    # print(node_df)
-    # Jaal(edge_df, node_df).plot(directed=True, vis_opts={'height': '1500px', 'width':'1500px', 'interaction':{'hover': False},
-    #                                   'physics':{'stabilization':{'iterations': 100}}})
+    print(edge_df)
+    print(node_df)
+    Jaal(edge_df, node_df).plot(directed=True, vis_opts={'height': '5000px', 'width':'5000px', 'interaction':{'hover': False},
+                                      'physics':{'stabilization':{'iterations': 100}}}, port="8052")
     # Jaal(edge_df).plot(directed=True)
 
-    node_df.to_csv('node_df.csv', index=False)
-    edge_df.to_csv('edge_df.csv', index=False)
+    # node_df.to_csv('node_df.csv', index=False)
+    # edge_df.to_csv('edge_df.csv', index=False)
