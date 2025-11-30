@@ -11,7 +11,7 @@ if "GOOGLE_API_KEY" not in os.environ:
 from langchain_community.document_loaders import PyPDFLoader
 
 # Replace 'your_document.pdf' with the path to your actual PDF file
-pdf_path = "pdfs/ov23.pdf"
+pdf_path = "pdfs/mg10.pdf"
 
 loader = PyPDFLoader(pdf_path)
 docs = loader.load()
@@ -79,7 +79,9 @@ question_answer_chain = create_stuff_documents_chain(llm, prompt)
 rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
 
-query = "What are the main conclusions of this document?"
+query = """As a plant ecologist, what are the main conclusions of this document? 
+Describe the succession pathways from the source community, 
+including the communities successed to and the drivers of succession."""
 
 response = rag_chain.invoke({"input": query})
 
