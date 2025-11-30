@@ -11,7 +11,7 @@ if "GOOGLE_API_KEY" not in os.environ:
 from langchain_community.document_loaders import PyPDFLoader
 
 # Replace 'your_document.pdf' with the path to your actual PDF file
-pdf_path = "pdfs/w8.pdf"
+pdf_path = "pdfs/ov23.pdf"
 
 loader = PyPDFLoader(pdf_path)
 docs = loader.load()
