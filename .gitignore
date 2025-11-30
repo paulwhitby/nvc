@@ -10,5 +10,7 @@ __pycache__/*.pyc
 .venv
 lib/*
 lib64/*
+lib
+lib64
 *.cfg
 
