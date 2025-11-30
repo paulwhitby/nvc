@@ -8,4 +8,7 @@ __pycache__
 __pycache__/*.pyc
 .venv/*
 .venv
+lib/*
+lib64/*
+*.cfg
 
