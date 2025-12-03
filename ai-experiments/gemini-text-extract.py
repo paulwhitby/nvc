@@ -18,9 +18,9 @@ if "GOOGLE_API_KEY" not in os.environ:
 
 
 # Replace 'your_document.pdf' with the path to your actual PDF file
-pdf_path = "pdfs/mg10.pdf"
+PDF_PATH = "pdfs/mg10.pdf"
 
-loader = PyPDFLoader(pdf_path)
+loader = PyPDFLoader(PDF_PATH)
 docs = loader.load()
 
 print(f"Loaded {len(docs)} pages from the PDF.")
@@ -57,7 +57,7 @@ llm = ChatGoogleGenerativeAI(
 
 
 # Define the instructions for the LLM
-system_prompt = (
+SYSTEM_PROMPT = (
     "You are an assistant for question-answering tasks. "
     "Use the following pieces of retrieved context to answer "
     "the question. If you don't know the answer, say that you "
@@ -69,7 +69,7 @@ system_prompt = (
 
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system", system_prompt),
+        ("system", SYSTEM_PROMPT),
         ("human", "{input}"),
     ]
 )
@@ -81,11 +81,11 @@ question_answer_chain = create_stuff_documents_chain(llm, prompt)
 rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
 
-query = """As a plant ecologist, what are the main conclusions of this document? 
+QUERY = """As a plant ecologist, what are the main conclusions of this document? 
 Describe the succession pathways from the source community, 
 including the communities successed to and the drivers of succession."""
 
-response = rag_chain.invoke({"input": query})
+response = rag_chain.invoke({"input": QUERY})
 
 print("--- Answer ---")
 print(response["answer"])
@@ -94,5 +94,3 @@ print(response["answer"])
 print("\n--- Sources ---")
 for doc in response["context"]:
     print(f"Page {doc.metadata['page']}: {doc.page_content[:50]}...")
-
-
