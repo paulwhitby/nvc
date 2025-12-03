@@ -5,8 +5,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 # Set your API Key securely
 if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = "AIzaSyCho6VKFwpzrSI69vbknDTZNqXsVgJXjpI"  
-    # getpass.getpass("Enter your Google API Key: ")
+    os.environ["GOOGLE_API_KEY"] = getpass.getpass("Enter your Google API Key: ")
 
 from langchain_community.document_loaders import PyPDFLoader
 
