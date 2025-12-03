@@ -82,7 +82,7 @@ rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
 
 QUERY = """As a plant ecologist, what are the main conclusions of this document? 
-Describe the succession pathways from the source community. 
+Describe the succession pathways from the source community. The document describes a vegetation community, and describes other communities that it might success to. 
 Extract all the possible succession pathways, drivers of succession, and communities successed to, from the section titled 'Zonation and Succession' and tabulate them in a pandas dataframe. """
 
 response = rag_chain.invoke({"input": QUERY})
