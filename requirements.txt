@@ -2,3 +2,7 @@ sqlite3
 csv
 pypdf
 jaal
+langchain
+langchain-google-genai
+langchain-community
+faiss-cpu
