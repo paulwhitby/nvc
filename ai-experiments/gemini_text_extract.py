@@ -3,6 +3,7 @@
 # pylint: disable=line-too-long
 # pylint: disable=ungrouped-imports
 # pylint: disable=no-name-in-module
+# pylint: disable=trailing-whitespace
 
 import os
 import getpass
