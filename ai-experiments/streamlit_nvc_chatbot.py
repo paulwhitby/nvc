@@ -4,6 +4,7 @@
 # pylint: disable=ungrouped-imports
 # pylint: disable=no-name-in-module
 # pylint: disable=trailing-whitespace
+# pylint: disable=broad-exception-caught
 
 import os
 import getpass
