@@ -331,6 +331,9 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
 
         print(f"[QUERY] Querying {num_docs} documents, {chunks_per_doc} chunks per doc, max {max_chunks} total")
 
+        # Query each document individually to ensure balanced representation
+        all_docs = []
+
         for filename, vectorstore in self.vectorstores.items():
             retriever = vectorstore.as_retriever(search_kwargs={"k": chunks_per_doc})
             docs = retriever.invoke(question)
