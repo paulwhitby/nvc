@@ -19,9 +19,9 @@ from langchain_classic.chains.combine_documents import create_stuff_documents_ch
 from langchain_core.prompts import ChatPromptTemplate
 import streamlit as st
 # Add these to your imports
-from langchain.chains import create_history_aware_retriever
-from langchain_core.prompts import MessagesPlaceholder
-from langchain_core.messages import HumanMessage, AIMessage
+# from langchain.chains import create_history_aware_retriever
+# from langchain_core.prompts import MessagesPlaceholder
+# from langchain_core.messages import HumanMessage, AIMessage
 
 
 # Set your API Key securely
