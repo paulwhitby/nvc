@@ -7,16 +7,27 @@
 # pylint: disable=broad-exception-caught
 
 # multi_pdf_analyzer.py
+import os
+import sys
+
+# Set environment variables before any torch/transformers imports
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
+
 import warnings
 import logging
-warnings.filterwarnings('ignore', category=UserWarning, module='torch')
+
+# Suppress all warnings before imports
+warnings.filterwarnings('ignore', category=UserWarning)
+warnings.filterwarnings('ignore', category=FutureWarning)
+warnings.filterwarnings('ignore', category=DeprecationWarning)
+
 # Suppress Streamlit threading warnings
 logging.getLogger('streamlit.runtime.scriptrunner.script_runner').setLevel(logging.ERROR)
 
-import os
 import time
 from typing import List, Dict, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_anthropic import ChatAnthropic
@@ -49,100 +60,231 @@ Parallel Processing - Load multiple PDFs simultaneously using ThreadPoolExecutor
 Individual & Combined Querying - Query specific documents or search across all
 Document Comparison - Compare how different documents address the same topic
 Batch Summaries - Generate summaries for all documents at once
-Per-Document Metadata - Track source files for each chunk of text"""
-    def __init__(self, api_key: str = None):
-        """Initialize the multi-PDF analyzer."""
+Per-Document Metadata - Track source files for each chunk of text
+Persistent Storage - Save and load vectorstores to disk for large collections"""
+    def __init__(self, api_key: str = None, vectorstore_path: str = None):
+        """Initialize the multi-PDF analyzer.
+
+        Args:
+            api_key: Anthropic API key
+            vectorstore_path: Directory to save/load persistent vectorstores (for large collections)
+        """
         self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
         if not self.api_key:
             raise ValueError("Anthropic API key is required")
-        
+
         self.llm = ChatAnthropic(
             model="claude-sonnet-4-20250514",
             anthropic_api_key=self.api_key,
             temperature=0
         )
-        
+
         self.embeddings = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
-        
+
         self.documents = {}  # Store documents by filename
         self.vectorstores = {}  # Store vectorstores by filename
         self.combined_vectorstore = None
+        self._lock = Lock()  # Thread lock for safe dictionary access
+        self.vectorstore_path = vectorstore_path  # Path for persistent storage
         
-    def load_single_pdf(self, pdf_path: str, progress_callback=None) -> Dict:
+    def load_single_pdf(self, pdf_path: str, progress_callback=None, original_filename=None) -> Dict:
         """Load and process a single PDF."""
-        filename = os.path.basename(pdf_path)
-        
+        filename = original_filename or os.path.basename(pdf_path)
+
         try:
+            print(f"[PDF LOADER] Starting to load {filename}")
             if progress_callback:
                 progress_callback(f"Loading {filename}...")
-            
+
             loader = PyPDFLoader(pdf_path)
             documents = loader.load()
-            
+            print(f"[PDF LOADER] Loaded {len(documents)} pages from {filename}")
+
             if progress_callback:
                 progress_callback(f"Splitting {filename} into chunks...")
-            
+
             text_splitter = RecursiveCharacterTextSplitter(
                 chunk_size=1000,
                 chunk_overlap=200,
                 length_function=len
             )
             chunks = text_splitter.split_documents(documents)
-            
+            print(f"[PDF LOADER] Split into {len(chunks)} chunks")
+
             # Add source metadata
             for chunk in chunks:
                 chunk.metadata['source_file'] = filename
-            
+
             if progress_callback:
                 progress_callback(f"Creating vector store for {filename}...")
-            
+
+            print(f"[PDF LOADER] Creating vector store for {filename}...")
             vectorstore = FAISS.from_documents(chunks, self.embeddings)
-            
-            self.documents[filename] = documents
-            self.vectorstores[filename] = vectorstore
-            
+            print(f"[PDF LOADER] Vector store created for {filename}")
+
+            # Use lock to ensure thread-safe dictionary updates
+            with self._lock:
+                self.documents[filename] = documents
+                self.vectorstores[filename] = vectorstore
+                print(f"[PDF LOADER] Stored {filename}. Total docs: {len(self.documents)}")
+                print(f"[PDF LOADER] Vectorstore keys: {list(self.vectorstores.keys())}")
+
             return {
                 'filename': filename,
                 'status': 'success',
                 'pages': len(documents),
                 'chunks': len(chunks)
             }
-            
+
         except Exception as e:
+            print(f"[PDF LOADER ERROR] {filename}: {str(e)}")
+            import traceback
+            traceback.print_exc()
             return {
                 'filename': filename,
                 'status': 'error',
                 'error': str(e)
             }
     
-    def load_multiple_pdfs(self, pdf_paths: List[str], progress_callback=None) -> List[Dict]:
-        """Load multiple PDFs in parallel."""
+    def load_multiple_pdfs(self, pdf_paths: List[str], filename_mapping=None, progress_callback=None, max_workers=None) -> List[Dict]:
+        """Load multiple PDFs in parallel.
+
+        Args:
+            pdf_paths: List of PDF file paths to load
+            filename_mapping: Optional mapping of temp paths to original filenames
+            progress_callback: Optional callback for progress updates
+            max_workers: Number of parallel workers (default: min(10, cpu_count))
+        """
         results = []
-        
-        with ThreadPoolExecutor(max_workers=3) as executor:
+        filename_mapping = filename_mapping or {}
+
+        # Scale workers based on collection size
+        if max_workers is None:
+            import multiprocessing
+            max_workers = min(10, multiprocessing.cpu_count(), len(pdf_paths))
+
+        print(f"[PDF LOADER] Loading {len(pdf_paths)} PDFs with {max_workers} workers")
+
+        # Don't pass progress_callback to threads - causes NoSessionContext error
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = {
-                executor.submit(self.load_single_pdf, path, progress_callback): path 
+                executor.submit(
+                    self.load_single_pdf,
+                    path,
+                    None,
+                    filename_mapping.get(path)  # Pass original filename
+                ): path
                 for path in pdf_paths
             }
-            
+
             for future in as_completed(futures):
                 results.append(future.result())
-        
-        # Create combined vectorstore
+
+        # Create combined vectorstore - ALWAYS rebuild to avoid metadata corruption
+        # Thread-safe: All individual vectorstores are complete at this point
         if self.vectorstores:
-            if progress_callback:
-                progress_callback("Creating combined search index...")
-            
-            all_vectorstores = list(self.vectorstores.values())
-            self.combined_vectorstore = all_vectorstores[0]
-            
-            for vs in all_vectorstores[1:]:
-                self.combined_vectorstore.merge_from(vs)
-        
+            with self._lock:  # Lock to prevent concurrent reads during rebuild
+                print(f"[PDF LOADER] Building combined vectorstore from {len(self.vectorstores)} stores")
+                print(f"[PDF LOADER] Documents in vectorstores: {list(self.vectorstores.keys())}")
+
+                # Get all documents from all vectorstores
+                all_docs = []
+                for filename, vs in self.vectorstores.items():
+                    docs = vs.docstore._dict.values() if hasattr(vs.docstore, '_dict') else []
+                    print(f"[PDF LOADER] Extracting {len(docs)} docs from {filename}")
+                    all_docs.extend(docs)
+
+                print(f"[PDF LOADER] Creating new combined vectorstore with {len(all_docs)} total documents")
+                # Create completely new vectorstore to ensure clean metadata
+                self.combined_vectorstore = FAISS.from_documents(
+                    all_docs,
+                    self.embeddings
+                )
+
+                print(f"[PDF LOADER] Combined vectorstore ready with {len(self.documents)} documents")
+
         return results
-    
+
+    def save_vectorstores(self, path: str = None):
+        """Save all vectorstores to disk for persistence."""
+        save_path = path or self.vectorstore_path
+        if not save_path:
+            raise ValueError("No vectorstore_path specified")
+
+        os.makedirs(save_path, exist_ok=True)
+
+        print(f"[PERSISTENCE] Saving {len(self.vectorstores)} vectorstores to {save_path}")
+
+        for filename, vs in self.vectorstores.items():
+            # Sanitize filename for filesystem
+            safe_filename = filename.replace('/', '_').replace('\\', '_')
+            vs_path = os.path.join(save_path, safe_filename)
+            vs.save_local(vs_path)
+            print(f"[PERSISTENCE] Saved {filename}")
+
+        # Save combined vectorstore if it exists
+        if self.combined_vectorstore:
+            combined_path = os.path.join(save_path, "_combined")
+            self.combined_vectorstore.save_local(combined_path)
+            print(f"[PERSISTENCE] Saved combined vectorstore")
+
+        # Save document metadata
+        import json
+        metadata_path = os.path.join(save_path, "_metadata.json")
+        with open(metadata_path, 'w') as f:
+            json.dump({
+                'documents': list(self.documents.keys()),
+                'vectorstores': list(self.vectorstores.keys())
+            }, f)
+        print(f"[PERSISTENCE] Saved metadata")
+
+    def load_vectorstores(self, path: str = None):
+        """Load vectorstores from disk."""
+        load_path = path or self.vectorstore_path
+        if not load_path or not os.path.exists(load_path):
+            print(f"[PERSISTENCE] No saved vectorstores found at {load_path}")
+            return False
+
+        print(f"[PERSISTENCE] Loading vectorstores from {load_path}")
+
+        # Load metadata
+        import json
+        metadata_path = os.path.join(load_path, "_metadata.json")
+        if not os.path.exists(metadata_path):
+            print(f"[PERSISTENCE] No metadata file found")
+            return False
+
+        with open(metadata_path, 'r') as f:
+            metadata = json.load(f)
+
+        # Load individual vectorstores
+        for filename in metadata['vectorstores']:
+            safe_filename = filename.replace('/', '_').replace('\\', '_')
+            vs_path = os.path.join(load_path, safe_filename)
+            if os.path.exists(vs_path):
+                self.vectorstores[filename] = FAISS.load_local(
+                    vs_path,
+                    self.embeddings,
+                    allow_dangerous_deserialization=True
+                )
+                self.documents[filename] = True  # Mark as loaded
+                print(f"[PERSISTENCE] Loaded {filename}")
+
+        # Load combined vectorstore
+        combined_path = os.path.join(load_path, "_combined")
+        if os.path.exists(combined_path):
+            self.combined_vectorstore = FAISS.load_local(
+                combined_path,
+                self.embeddings,
+                allow_dangerous_deserialization=True
+            )
+            print(f"[PERSISTENCE] Loaded combined vectorstore")
+
+        print(f"[PERSISTENCE] Loaded {len(self.vectorstores)} vectorstores")
+        return True
+
     def query_single_document(self, filename: str, question: str) -> Dict:
         """Query a specific document."""
         if filename not in self.vectorstores:
@@ -164,32 +306,71 @@ Per-Document Metadata - Track source files for each chunk of text"""
             'source_documents': result['source_documents']
         }
     
-    def query_all_documents(self, question: str) -> Dict:
-        """Query across all loaded documents."""
-        if not self.combined_vectorstore:
+    def query_all_documents(self, question: str, max_chunks=20) -> Dict:
+        """Query across all loaded documents with optimized retrieval for large collections.
+
+        Args:
+            question: Question to ask
+            max_chunks: Maximum total chunks to retrieve (distributed across docs)
+        """
+        if not self.vectorstores:
             return {'error': 'No documents loaded'}
-        
-        qa_chain = RetrievalQA.from_chain_type(
-            llm=self.llm,
-            chain_type="stuff",
-            retriever=self.combined_vectorstore.as_retriever(
-                search_kwargs={"k": 6}
-            ),
-            return_source_documents=True
-        )
-        
-        result = qa_chain.invoke({"query": question})
-        
+
+        num_docs = len(self.vectorstores)
+
+        # Adaptive chunking strategy based on collection size
+        if num_docs <= 10:
+            # Small collection: Get more chunks per doc
+            chunks_per_doc = max(4, max_chunks // num_docs)
+        elif num_docs <= 50:
+            # Medium collection: Balanced approach
+            chunks_per_doc = max(2, max_chunks // num_docs)
+        else:
+            # Large collection (100+): Use combined vectorstore with top-k
+            chunks_per_doc = max(1, max_chunks // min(num_docs, 50))
+
+        print(f"[QUERY] Querying {num_docs} documents, {chunks_per_doc} chunks per doc, max {max_chunks} total")
+
+        for filename, vectorstore in self.vectorstores.items():
+            retriever = vectorstore.as_retriever(search_kwargs={"k": chunks_per_doc})
+            docs = retriever.invoke(question)
+            print(f"[QUERY] Retrieved {len(docs)} chunks from {filename}")
+
+            # Debug: Check metadata
+            for i, doc in enumerate(docs):
+                actual_source = doc.metadata.get('source_file', 'Unknown')
+                print(f"[QUERY]   Chunk {i+1} metadata says source: {actual_source}")
+
+            all_docs.extend(docs)
+
+        # Build context from all retrieved documents
+        context = "\n\n".join([doc.page_content for doc in all_docs])
+
+        # Use LLM to answer based on the balanced context
+        prompt = f"""Based on the following context from multiple documents, please answer the question.
+
+Context:
+{context}
+
+Question: {question}
+
+Answer:"""
+
+        answer = self.llm.invoke(prompt).content
+
         # Group sources by document
         sources_by_doc = {}
-        for doc in result['source_documents']:
+        for doc in all_docs:
             source = doc.metadata.get('source_file', 'Unknown')
             if source not in sources_by_doc:
                 sources_by_doc[source] = []
             sources_by_doc[source].append(doc.page_content[:200])
-        
+
+        print(f"[QUERY] Total chunks retrieved: {len(all_docs)}")
+        print(f"[QUERY] Documents represented: {list(sources_by_doc.keys())}")
+
         return {
-            'answer': result['result'],
+            'answer': answer,
             'sources_by_document': sources_by_doc
         }
     

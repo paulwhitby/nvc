@@ -8,6 +8,18 @@
 
 # app.py
 import os
+import sys
+
+# Set environment variables before any imports
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
+
+import warnings
+import logging
+
+# Suppress all warnings
+warnings.filterwarnings('ignore')
+logging.getLogger('streamlit.runtime.scriptrunner.script_runner').setLevel(logging.ERROR)
+
 import tempfile
 import time
 import streamlit as st
@@ -20,9 +32,15 @@ st.set_page_config(
     layout="wide"
 )
 
+# Use cache_resource for non-serializable analyzer object
+@st.cache_resource
+def get_analyzer(api_key, vectorstore_path=None):
+    """Get or create analyzer instance (cached across reruns)."""
+    return MultiPDFAnalyzer(api_key=api_key, vectorstore_path=vectorstore_path)
+
 # Initialize session state
-if 'analyzer' not in st.session_state:
-    st.session_state.analyzer = None
+if 'analyzer_key' not in st.session_state:
+    st.session_state.analyzer_key = None
 if 'loaded_files' not in st.session_state:
     st.session_state.loaded_files = []
 if 'processing' not in st.session_state:
@@ -83,59 +101,57 @@ with st.sidebar:
     if uploaded_files and api_key:
         if st.button("🚀 Process PDFs", type="primary", use_container_width=True):
             st.session_state.processing = True
-            
+
             # Initialize analyzer
             try:
-                st.session_state.analyzer = MultiPDFAnalyzer(api_key=api_key)
-                
+                analyzer = get_analyzer(api_key)
+                st.session_state.analyzer_key = api_key
+
+                # Clear existing documents to start fresh
+                analyzer.documents.clear()
+                analyzer.vectorstores.clear()
+                analyzer.combined_vectorstore = None
+
                 # Save uploaded files to temp directory
-                temp_paths = []
+                temp_to_original = {}
                 with st.spinner("Saving uploaded files..."):
                     for uploaded_file in uploaded_files:
                         with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
                             tmp_file.write(uploaded_file.getvalue())
-                            temp_paths.append(tmp_file.name)
-                
+                            temp_to_original[tmp_file.name] = uploaded_file.name
+
                 # Process PDFs
-                progress_bar = st.progress(0)
-                status_text = st.empty()
-                
-                def progress_callback(message):
-                    status_text.text(message)
-                
-                results = st.session_state.analyzer.load_multiple_pdfs(
-                    temp_paths,
-                    progress_callback=progress_callback
-                )
-                
-                progress_bar.progress(100)
-                
+                with st.spinner("Processing PDFs..."):
+                    results = analyzer.load_multiple_pdfs(list(temp_to_original.keys()), temp_to_original)
+
                 # Clean up temp files
-                for path in temp_paths:
+                for path in temp_to_original.keys():
                     os.unlink(path)
-                
+
                 # Store results
                 st.session_state.loaded_files = [
                     r for r in results if r['status'] == 'success'
                 ]
-                
+
                 # Show results
                 success_count = sum(1 for r in results if r['status'] == 'success')
                 if success_count > 0:
                     st.success(f"✅ Successfully processed {success_count} document(s)!")
-                
+
                 error_count = sum(1 for r in results if r['status'] == 'error')
                 if error_count > 0:
                     st.error(f"❌ Failed to process {error_count} document(s)")
                     for r in results:
                         if r['status'] == 'error':
                             st.error(f"**{r['filename']}**: {r.get('error', 'Unknown error')}")
-                
+
                 st.session_state.processing = False
                 st.rerun()
-                
+
             except Exception as e:
                 st.error(f"Error: {str(e)}")
+                import traceback
+                st.error(traceback.format_exc())
                 st.session_state.processing = False
     
     # Show loaded documents
@@ -148,7 +164,25 @@ with st.sidebar:
                 st.write(f"**Chunks:** {file_info['chunks']}")
 
 # Main content area
-if not st.session_state.analyzer:
+# Get analyzer if we have an API key
+analyzer = None
+if st.session_state.analyzer_key:
+    analyzer = get_analyzer(st.session_state.analyzer_key)
+
+# Debug info (can be removed later)
+with st.sidebar:
+    if analyzer:
+        st.success(f"✓ Analyzer active")
+        loaded_docs = analyzer.get_loaded_documents()
+        st.write(f"Documents in analyzer: {len(loaded_docs)}")
+        if loaded_docs:
+            for doc in loaded_docs:
+                st.write(f"  - {doc}")
+    else:
+        st.warning("⚠ No analyzer")
+    st.write(f"Loaded files in state: {len(st.session_state.loaded_files)}")
+
+if not analyzer:
     st.info("👈 Upload PDF files using the sidebar to get started")
     
     # Feature showcase
@@ -184,7 +218,7 @@ else:
         if query_scope == "Specific Document":
             selected_doc = st.selectbox(
                 "Select document:",
-                st.session_state.analyzer.get_loaded_documents()
+                analyzer.get_loaded_documents()
             )
         
         question = st.text_input(
@@ -196,7 +230,7 @@ else:
             if question:
                 with st.spinner("Searching documents..."):
                     if query_scope == "All Documents":
-                        result = st.session_state.analyzer.query_all_documents(question)
+                        result = analyzer.query_all_documents(question)
                         
                         if 'error' not in result:
                             st.markdown("### 💬 Answer")
@@ -212,7 +246,7 @@ else:
                         else:
                             st.error(result['error'])
                     else:
-                        result = st.session_state.analyzer.query_single_document(
+                        result = analyzer.query_single_document(
                             selected_doc,
                             question
                         )
@@ -243,20 +277,20 @@ else:
         if summary_option == "Specific Document":
             doc_to_summarize = st.selectbox(
                 "Select document:",
-                st.session_state.analyzer.get_loaded_documents(),
+                analyzer.get_loaded_documents(),
                 key="summarize_select"
             )
             
             if st.button("📝 Generate Summary", type="primary"):
                 with st.spinner(f"Summarizing {doc_to_summarize}..."):
-                    summary = st.session_state.analyzer.summarize_document(doc_to_summarize)
+                    summary = analyzer.summarize_document(doc_to_summarize)
                     
                     st.markdown(f"### Summary of {doc_to_summarize}")
                     st.write(summary)
         else:
             if st.button("📝 Generate All Summaries", type="primary"):
                 with st.spinner("Generating summaries for all documents..."):
-                    summaries = st.session_state.analyzer.summarize_all_documents()
+                    summaries = analyzer.summarize_all_documents()
                     
                     for filename, summary in summaries.items():
                         with st.expander(f"📄 {filename}", expanded=True):
@@ -276,7 +310,7 @@ else:
         if st.button("🔄 Compare", type="primary"):
             if comparison_topic:
                 with st.spinner("Analyzing and comparing documents..."):
-                    comparison = st.session_state.analyzer.compare_documents(comparison_topic)
+                    comparison = analyzer.compare_documents(comparison_topic)
                     
                     st.markdown("### 📊 Comparison Results")
                     st.write(comparison)
@@ -291,13 +325,13 @@ else:
         
         extract_doc = st.selectbox(
             "Select document:",
-            st.session_state.analyzer.get_loaded_documents(),
+            analyzer.get_loaded_documents(),
             key="extract_select"
         )
         
         if st.button("📇 Extract Contacts", type="primary"):
             with st.spinner(f"Extracting contacts from {extract_doc}..."):
-                contacts = st.session_state.analyzer.extract_contacts_from_document(extract_doc)
+                contacts = analyzer.extract_contacts_from_document(extract_doc)
                 
                 if contacts:
                     col1, col2 = st.columns(2)
