@@ -223,6 +223,8 @@ else:
         
         question = st.text_input(
             "Ask a question:",
+            type="default",
+            width="stretch",
             placeholder="What are the main findings discussed in these documents?"
         )
         
