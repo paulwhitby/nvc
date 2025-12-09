@@ -1,0 +1,730 @@
+{
+  "prompt": "As a plant ecologist, for every NVC community, extract all succession pathways and the drivers of succession, and capture in a JSON structure, capturing the source community, the target communities or sub-communities, and the drivers of or reasons for succession.  Some source communities have multiple possible succession targets and drivers of succession - find them all. ",
+  "succession_pathways": {
+    "W1": {
+      "source_community": "W1 Salix cinerea-Galium palustre woodland",
+      "pathways": [
+        {
+          "target": "W2 Salix cinerea-Betula pubescens-Phragmites australis woodland",
+          "drivers": ["natural succession", "canopy development"]
+        },
+        {
+          "target": "W5 Alnus glutinosa-Carex paniculata woodland",
+          "drivers": ["terrestrialisation", "organic matter accumulation"]
+        }
+      ]
+    },
+    "W2": {
+      "source_community": "W2 Salix cinerea-Betula pubescens-Phragmites australis woodland",
+      "pathways": [
+        {
+          "target": "W5 Alnus glutinosa-Carex paniculata woodland",
+          "drivers": ["natural succession", "canopy closure"]
+        }
+      ]
+    },
+    "W5": {
+      "source_community": "W5 Alnus glutinosa-Carex paniculata woodland",
+      "pathways": [
+        {
+          "target": "W6 Alnus glutinosa-Urtica dioica woodland",
+          "drivers": ["eutrophication", "nutrient enrichment"]
+        }
+      ]
+    },
+    "W8": {
+      "source_community": "W8 Fraxinus excelsior-Acer campestre-Mercurialis perennis woodland",
+      "pathways": [
+        {
+          "target": "climax woodland",
+          "drivers": ["natural succession", "canopy maturation"]
+        }
+      ]
+    },
+    "W10": {
+      "source_community": "W10 Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+      "pathways": [
+        {
+          "target": "W8 Fraxinus excelsior-Acer campestre-Mercurialis perennis woodland",
+          "drivers": ["natural succession", "reduced disturbance"]
+        },
+        {
+          "target": "Calluna-dominated heath",
+          "drivers": ["fire", "grazing", "canopy destruction"]
+        }
+      ]
+    },
+    "W11": {
+      "source_community": "W11 Quercus petraea-Betula pubescens-Oxalis acetosella woodland",
+      "pathways": [
+        {
+          "target": "Calluna-Vaccinium heath",
+          "drivers": ["fire", "heavy grazing", "canopy destruction"]
+        }
+      ]
+    },
+    "W14": {
+      "source_community": "W14 Fagus sylvatica-Rubus fruticosus woodland",
+      "pathways": [
+        {
+          "target": "W12 Fagus sylvatica-Mercurialis perennis woodland",
+          "drivers": ["natural succession", "canopy closure", "reduced disturbance"]
+        }
+      ]
+    },
+    "W21": {
+      "source_community": "W21 Crataegus monogyna-Hedera helix scrub",
+      "pathways": [
+        {
+          "target": "W8 Fraxinus excelsior-Acer campestre-Mercurialis perennis woodland",
+          "drivers": ["natural succession", "tree invasion"]
+        },
+        {
+          "target": "W10 Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+          "drivers": ["natural succession", "oak invasion"]
+        }
+      ]
+    },
+    "W22": {
+      "source_community": "W22 Prunus spinosa-Rubus fruticosus scrub",
+      "pathways": [
+        {
+          "target": "W21 Crataegus monogyna-Hedera helix scrub",
+          "drivers": ["natural succession", "canopy development"]
+        },
+        {
+          "target": "woodland",
+          "drivers": ["tree invasion", "natural succession"]
+        }
+      ]
+    },
+    "W23": {
+      "source_community": "W23 Ulex europaeus-Rubus fruticosus scrub",
+      "pathways": [
+        {
+          "target": "W10 Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+          "drivers": ["tree invasion", "natural succession"]
+        },
+        {
+          "target": "Betula-Molinia woodland",
+          "drivers": ["birch invasion", "natural succession"]
+        }
+      ]
+    },
+    "W24": {
+      "source_community": "W24 Rubus fruticosus-Holcus lanatus underscrub",
+      "pathways": [
+        {
+          "target": "W21 Crataegus monogyna-Hedera helix scrub",
+          "drivers": ["natural succession", "shrub invasion"]
+        },
+        {
+          "target": "woodland",
+          "drivers": ["tree invasion", "natural succession"]
+        }
+      ]
+    },
+    "W25": {
+      "source_community": "W25 Pteridium aquilinum-Rubus fruticosus underscrub",
+      "pathways": [
+        {
+          "target": "W10 Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+          "drivers": ["tree invasion", "natural succession"]
+        },
+        {
+          "target": "W11 Quercus petraea-Betula pubescens-Oxalis acetosella woodland",
+          "drivers": ["tree invasion", "natural succession"]
+        }
+      ]
+    },
+    "MG1": {
+      "source_community": "MG1 Arrhenatherum elatius grassland",
+      "pathways": [
+        {
+          "target": "W21 Crataegus monogyna-Hedera helix scrub",
+          "drivers": ["cessation of management", "shrub invasion"]
+        },
+        {
+          "target": "W24 Rubus fruticosus-Holcus lanatus underscrub",
+          "drivers": ["reduced management", "bramble invasion"]
+        }
+      ]
+    },
+    "MG5": {
+      "source_community": "MG5 Centaurea nigra-Cynosurus cristatus grassland",
+      "pathways": [
+        {
+          "target": "MG1 Arrhenatherum elatius grassland",
+          "drivers": ["cessation of mowing", "reduced grazing"]
+        },
+        {
+          "target": "scrub",
+          "drivers": ["cessation of management", "shrub invasion"]
+        }
+      ]
+    },
+    "MG6": {
+      "source_community": "MG6 Lolium perenne-Cynosurus cristatus grassland",
+      "pathways": [
+        {
+          "target": "MG5 Centaurea nigra-Cynosurus cristatus grassland",
+          "drivers": ["reduced fertilisation", "traditional management"]
+        },
+        {
+          "target": "MG10 Holcus lanatus-Juncus effusus rush-pasture",
+          "drivers": ["waterlogging", "drainage impedance"]
+        }
+      ]
+    },
+    "MG8": {
+      "source_community": "MG8 Cynosurus cristatus-Caltha palustris grassland",
+      "pathways": [
+        {
+          "target": "W1 Salix cinerea-Galium palustre woodland",
+          "drivers": ["cessation of management", "willow invasion"]
+        },
+        {
+          "target": "swamp communities",
+          "drivers": ["increased flooding", "waterlogging"]
+        }
+      ]
+    },
+    "MG9": {
+      "source_community": "MG9 Holcus lanatus-Deschampsia cespitosa grassland",
+      "pathways": [
+        {
+          "target": "W1 Salix cinerea-Galium palustre woodland",
+          "drivers": ["cessation of grazing", "willow invasion"]
+        }
+      ]
+    },
+    "MG10": {
+      "source_community": "MG10 Holcus lanatus-Juncus effusus rush-pasture",
+      "pathways": [
+        {
+          "target": "W1 Salix cinerea-Galium palustre woodland",
+          "drivers": ["cessation of grazing", "scrub invasion"]
+        },
+        {
+          "target": "MG6 Lolium perenne-Cynosurus cristatus grassland",
+          "drivers": ["drainage", "improved management"]
+        }
+      ]
+    },
+    "CG2": {
+      "source_community": "CG2 Festuca ovina-Avenula pratensis grassland",
+      "pathways": [
+        {
+          "target": "CG3 Bromus erectus grassland",
+          "drivers": ["cessation of grazing", "reduced management"]
+        },
+        {
+          "target": "W21 Crataegus monogyna-Hedera helix scrub",
+          "drivers": ["cessation of grazing", "scrub invasion"]
+        }
+      ]
+    },
+    "CG3": {
+      "source_community": "CG3 Bromus erectus grassland",
+      "pathways": [
+        {
+          "target": "CG4 Brachypodium pinnatum grassland",
+          "drivers": ["further reduction in grazing", "competitive exclusion"]
+        },
+        {
+          "target": "W21 Crataegus monogyna-Hedera helix scrub",
+          "drivers": ["cessation of grazing", "scrub invasion"]
+        }
+      ]
+    },
+    "CG4": {
+      "source_community": "CG4 Brachypodium pinnatum grassland",
+      "pathways": [
+        {
+          "target": "W21 Crataegus monogyna-Hedera helix scrub",
+          "drivers": ["cessation of management", "scrub invasion"]
+        }
+      ]
+    },
+    "U1": {
+      "source_community": "U1 Festuca ovina-Agrostis capillaris-Rumex acetosella grassland",
+      "pathways": [
+        {
+          "target": "H1 Calluna vulgaris-Festuca ovina heath",
+          "drivers": ["cessation of grazing", "heather invasion"]
+        },
+        {
+          "target": "W23 Ulex europaeus-Rubus fruticosus scrub",
+          "drivers": ["cessation of grazing", "gorse invasion"]
+        }
+      ]
+    },
+    "U2": {
+      "source_community": "U2 Deschampsia flexuosa grassland",
+      "pathways": [
+        {
+          "target": "H9 Calluna vulgaris-Deschampsia flexuosa heath",
+          "drivers": ["cessation of grazing", "heather invasion"]
+        },
+        {
+          "target": "W10 Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+          "drivers": ["tree invasion", "natural succession"]
+        }
+      ]
+    },
+    "U4": {
+      "source_community": "U4 Festuca ovina-Agrostis capillaris-Galium saxatile grassland",
+      "pathways": [
+        {
+          "target": "H9 Calluna vulgaris-Deschampsia flexuosa heath",
+          "drivers": ["cessation of grazing", "burning", "heather invasion"]
+        },
+        {
+          "target": "W11 Quercus petraea-Betula pubescens-Oxalis acetosella woodland",
+          "drivers": ["cessation of grazing", "tree invasion"]
+        }
+      ]
+    },
+    "U5": {
+      "source_community": "U5 Nardus stricta-Galium saxatile grassland",
+      "pathways": [
+        {
+          "target": "H9 Calluna vulgaris-Deschampsia flexuosa heath",
+          "drivers": ["cessation of grazing", "heather invasion"]
+        },
+        {
+          "target": "W11 Quercus petraea-Betula pubescens-Oxalis acetosella woodland",
+          "drivers": ["cessation of grazing", "tree invasion"]
+        }
+      ]
+    },
+    "H1": {
+      "source_community": "H1 Calluna vulgaris-Festuca ovina heath",
+      "pathways": [
+        {
+          "target": "U1 Festuca ovina-Agrostis capillaris-Rumex acetosella grassland",
+          "drivers": ["heavy grazing", "trampling"]
+        },
+        {
+          "target": "W23 Ulex europaeus-Rubus fruticosus scrub",
+          "drivers": ["cessation of management", "gorse invasion"]
+        },
+        {
+          "target": "W10 Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+          "drivers": ["cessation of management", "tree invasion"]
+        }
+      ]
+    },
+    "H2": {
+      "source_community": "H2 Calluna vulgaris-Ulex minor heath",
+      "pathways": [
+        {
+          "target": "H4 Ulex gallii-Agrostis curtisii heath",
+          "drivers": ["burning", "increased moisture"]
+        },
+        {
+          "target": "Betula-Molinia woodland",
+          "drivers": ["cessation of management", "birch invasion"]
+        }
+      ]
+    },
+    "H3": {
+      "source_community": "H3 Ulex minor-Agrostis curtisii heath",
+      "pathways": [
+        {
+          "target": "H2 Calluna vulgaris-Ulex minor heath",
+          "drivers": ["burning", "heather regeneration"]
+        },
+        {
+          "target": "Molinia-dominated grassland",
+          "drivers": ["heavy grazing", "burning"]
+        }
+      ]
+    },
+    "H4": {
+      "source_community": "H4 Ulex gallii-Agrostis curtisii heath",
+      "pathways": [
+        {
+          "target": "M16 Erica tetralix-Sphagnum compactum wet heath",
+          "drivers": ["increased waterlogging", "peat accumulation"]
+        },
+        {
+          "target": "Molinia-Potentilla mire",
+          "drivers": ["burning", "grazing", "drainage"]
+        }
+      ]
+    },
+    "H8": {
+      "source_community": "H8 Calluna vulgaris-Ulex gallii heath",
+      "pathways": [
+        {
+          "target": "H4 Ulex gallii-Agrostis curtisii heath",
+          "drivers": ["burning", "increased moisture"]
+        },
+        {
+          "target": "scrub and woodland",
+          "drivers": ["cessation of management", "tree invasion"]
+        }
+      ]
+    },
+    "H9": {
+      "source_community": "H9 Calluna vulgaris-Deschampsia flexuosa heath",
+      "pathways": [
+        {
+          "target": "U2 Deschampsia flexuosa grassland",
+          "drivers": ["heavy grazing", "heather suppression"]
+        },
+        {
+          "target": "W11 Quercus petraea-Betula pubescens-Oxalis acetosella woodland",
+          "drivers": ["cessation of management", "tree invasion"]
+        }
+      ]
+    },
+    "M16": {
+      "source_community": "M16 Erica tetralix-Sphagnum compactum wet heath",
+      "pathways": [
+        {
+          "target": "H4 Ulex gallii-Agrostis curtisii heath",
+          "drivers": ["drainage", "drying"]
+        },
+        {
+          "target": "M21 Narthecium ossifragum-Sphagnum papillosum valley mire",
+          "drivers": ["increased waterlogging", "peat accumulation"]
+        }
+      ]
+    },
+    "M21": {
+      "source_community": "M21 Narthecium ossifragum-Sphagnum papillosum valley mire",
+      "pathways": [
+        {
+          "target": "W1 Salix cinerea-Galium palustre woodland",
+          "drivers": ["natural succession", "willow invasion"]
+        },
+        {
+          "target": "M16 Erica tetralix-Sphagnum compactum wet heath",
+          "drivers": ["drainage", "surface drying"]
+        }
+      ]
+    },
+    "M22": {
+      "source_community": "M22 Juncus subnodulosus-Cirsium palustre fen-meadow",
+      "pathways": [
+        {
+          "target": "W1 Salix cinerea-Galium palustre woodland",
+          "drivers": ["cessation of mowing", "scrub invasion"]
+        },
+        {
+          "target": "S24 Phragmites australis-Peucedanum palustre tall-herb fen",
+          "drivers": ["cessation of mowing", "increased waterlogging"]
+        }
+      ]
+    },
+    "S2": {
+      "source_community": "S2 Cladium mariscus swamp",
+      "pathways": [
+        {
+          "target": "W5 Alnus glutinosa-Carex paniculata woodland",
+          "drivers": ["terrestrialisation", "natural succession"]
+        }
+      ]
+    },
+    "S3": {
+      "source_community": "S3 Carex paniculata sedge-swamp",
+      "pathways": [
+        {
+          "target": "W5 Alnus glutinosa-Carex paniculata woodland",
+          "drivers": ["natural succession", "alder invasion"]
+        },
+        {
+          "target": "S24 Phragmites australis-Peucedanum palustre tall-herb fen",
+          "drivers": ["natural succession", "terrestrialisation"]
+        }
+      ]
+    },
+    "S4": {
+      "source_community": "S4 Phragmites australis swamp",
+      "pathways": [
+        {
+          "target": "S24 Phragmites australis-Peucedanum palustre tall-herb fen",
+          "drivers": ["terrestrialisation", "natural succession"]
+        },
+        {
+          "target": "W1 Salix cinerea-Galium palustre woodland",
+          "drivers": ["natural succession", "scrub invasion"]
+        }
+      ]
+    },
+    "S24": {
+      "source_community": "S24 Phragmites australis-Peucedanum palustre tall-herb fen",
+      "pathways": [
+        {
+          "target": "W1 Salix cinerea-Galium palustre woodland",
+          "drivers": ["natural succession", "scrub invasion"]
+        },
+        {
+          "target": "W2 Salix cinerea-Betula pubescens-Phragmites australis woodland",
+          "drivers": ["natural succession", "tree invasion"]
+        }
+      ]
+    },
+    "S25": {
+      "source_community": "S25 Phragmites australis-Eupatorium cannabinum tall-herb fen",
+      "pathways": [
+        {
+          "target": "W1 Salix cinerea-Galium palustre woodland",
+          "drivers": ["natural succession", "scrub invasion"]
+        }
+      ]
+    },
+    "SM6": {
+      "source_community": "SM6 Spartina anglica salt-marsh",
+      "pathways": [
+        {
+          "target": "SM13 Puccinellia maritima salt-marsh",
+          "drivers": ["sediment accretion", "natural succession"]
+        },
+        {
+          "target": "SM14 Halimione portulacoides salt-marsh",
+          "drivers": ["sediment accretion", "natural succession"]
+        }
+      ]
+    },
+    "SM13": {
+      "source_community": "SM13 Puccinellia maritima salt-marsh",
+      "pathways": [
+        {
+          "target": "SM14 Halimione portulacoides salt-marsh",
+          "drivers": ["sediment accretion", "natural succession"]
+        },
+        {
+          "target": "SM16 Festuca rubra salt-marsh",
+          "drivers": ["sediment accretion", "reduced salinity"]
+        }
+      ]
+    },
+    "SM14": {
+      "source_community": "SM14 Halimione portulacoides salt-marsh",
+      "pathways": [
+        {
+          "target": "SM24 Elymus pycnanthus salt-marsh",
+          "drivers": ["sediment accretion", "natural succession"]
+        },
+        {
+          "target": "SM28 Elymus repens salt-marsh",
+          "drivers": ["sediment accretion", "reduced salinity"]
+        }
+      ]
+    },
+    "SM16": {
+      "source_community": "SM16 Festuca rubra salt-marsh",
+      "pathways": [
+        {
+          "target": "SM28 Elymus repens salt-marsh",
+          "drivers": ["sediment accretion", "reduced salinity"]
+        },
+        {
+          "target": "MG11 Festuca rubra-Agrostis stolonifera-Potentilla anserina grassland",
+          "drivers": ["freshwater influence", "desalination"]
+        }
+      ]
+    },
+    "SD2": {
+      "source_community": "SD2 Honkenya peploides-Cakile maritima strandline",
+      "pathways": [
+        {
+          "target": "SD4 Elymus farctus foredune",
+          "drivers": ["sand accretion", "dune building"]
+        }
+      ]
+    },
+    "SD4": {
+      "source_community": "SD4 Elymus farctus foredune",
+      "pathways": [
+        {
+          "target": "SD6 Ammophila arenaria mobile dune",
+          "drivers": ["sand accretion", "dune building"]
+        }
+      ]
+    },
+    "SD6": {
+      "source_community": "SD6 Ammophila arenaria mobile dune",
+      "pathways": [
+        {
+          "target": "SD7 Ammophila arenaria-Festuca rubra semi-fixed dune",
+          "drivers": ["sand stabilisation", "natural succession"]
+        }
+      ]
+    },
+    "SD7": {
+      "source_community": "SD7 Ammophila arenaria-Festuca rubra semi-fixed dune",
+      "pathways": [
+        {
+          "target": "SD8 Festuca rubra-Galium verum fixed dune grassland",
+          "drivers": ["sand stabilisation", "natural succession"]
+        },
+        {
+          "target": "SD9 Ammophila arenaria-Arrhenatherum elatius dune grassland",
+          "drivers": ["nutrient enrichment", "reduced grazing"]
+        }
+      ]
+    },
+    "SD8": {
+      "source_community": "SD8 Festuca rubra-Galium verum fixed dune grassland",
+      "pathways": [
+        {
+          "target": "SD9 Ammophila arenaria-Arrhenatherum elatius dune grassland",
+          "drivers": ["nutrient enrichment", "reduced grazing"]
+        },
+        {
+          "target": "scrub and woodland",
+          "drivers": ["cessation of grazing", "natural succession"]
+        }
+      ]
+    },
+    "SD9": {
+      "source_community": "SD9 Ammophila arenaria-Arrhenatherum elatius dune grassland",
+      "pathways": [
+        {
+          "target": "scrub and woodland",
+          "drivers": ["natural succession", "cessation of management"]
+        }
+      ]
+    },
+    "SD12": {
+      "source_community": "SD12 Carex arenaria-Festuca ovina-Agrostis capillaris dune grassland",
+      "pathways": [
+        {
+          "target": "SD11 Carex arenaria dune",
+          "drivers": ["sand mobility", "disturbance"]
+        },
+        {
+          "target": "H1 Calluna vulgaris-Festuca ovina heath",
+          "drivers": ["acidification", "leaching", "cessation of grazing"]
+        }
+      ]
+    },
+    "SD13": {
+      "source_community": "SD13 Sagina nodosa-Bryum pseudotriquetrum dune-slack",
+      "pathways": [
+        {
+          "target": "SD14 Salix repens-Campylium stellatum dune-slack",
+          "drivers": ["natural succession", "willow invasion"]
+        }
+      ]
+    },
+    "SD14": {
+      "source_community": "SD14 Salix repens-Campylium stellatum dune-slack",
+      "pathways": [
+        {
+          "target": "SD15 Salix repens-Calliergon cuspidatum dune-slack",
+          "drivers": ["increased waterlogging", "natural succession"]
+        },
+        {
+          "target": "woodland",
+          "drivers": ["drying", "tree invasion"]
+        }
+      ]
+    },
+    "SD15": {
+      "source_community": "SD15 Salix repens-Calliergon cuspidatum dune-slack",
+      "pathways": [
+        {
+          "target": "woodland",
+          "drivers": ["drying", "natural succession"]
+        }
+      ]
+    },
+    "SD16": {
+      "source_community": "SD16 Salix repens-Holcus lanatus dune-slack",
+      "pathways": [
+        {
+          "target": "SD9 Ammophila arenaria-Arrhenatherum elatius dune grassland",
+          "drivers": ["drying", "natural succession"]
+        },
+        {
+          "target": "woodland",
+          "drivers": ["natural succession", "tree invasion"]
+        }
+      ]
+    },
+    "OV1": {
+      "source_community": "OV1 Viola arvensis-Aphanes microcarpa community",
+      "pathways": [
+        {
+          "target": "OV13 Stellaria media-Capsella bursa-pastoris community",
+          "drivers": ["increased fertility", "disturbance"]
+        }
+      ]
+    },
+    "OV13": {
+      "source_community": "OV13 Stellaria media-Capsella bursa-pastoris community",
+      "pathways": [
+        {
+          "target": "OV23 Lolium perenne-Dactylis glomerata community",
+          "drivers": ["reduced disturbance", "establishment of perennials"]
+        }
+      ]
+    },
+    "OV18": {
+      "source_community": "OV18 Polygonum aviculare-Chamomilla suaveolens community",
+      "pathways": [
+        {
+          "target": "OV19 Poa annua-Senecio vulgaris community",
+          "drivers": ["reduced trampling", "increased fertility"]
+        },
+        {
+          "target": "OV23 Lolium perenne-Dactylis glomerata community",
+          "drivers": ["reduced disturbance", "grass establishment"]
+        }
+      ]
+    },
+    "OV19": {
+      "source_community": "OV19 Poa annua-Senecio vulgaris community",
+      "pathways": [
+        {
+          "target": "OV23 Lolium perenne-Dactylis glomerata community",
+          "drivers": ["reduced disturbance", "grass establishment"]
+        }
+      ]
+    },
+    "OV23": {
+      "source_community": "OV23 Lolium perenne-Dactylis glomerata community",
+      "pathways": [
+        {
+          "target": "MG1 Arrhenatherum elatius grassland",
+          "drivers": ["reduced management", "natural succession"]
+        },
+        {
+          "target": "W24 Rubus fruticosus-Holcus lanatus underscrub",
+          "drivers": ["cessation of management", "bramble invasion"]
+        }
+      ]
+    },
+    "OV25": {
+      "source_community": "OV25 Urtica dioica-Cirsium arvense community",
+      "pathways": [
+        {
+          "target": "W24 Rubus fruticosus-Holcus lanatus underscrub",
+          "drivers": ["natural succession", "bramble invasion"]
+        },
+        {
+          "target": "scrub and woodland",
+          "drivers": ["natural succession", "woody invasion"]
+        }
+      ]
+    },
+    "OV26": {
+      "source_community": "OV26 Epilobium angustifolium community",
+      "pathways": [
+        {
+          "target": "H9 Calluna vulgaris-Deschampsia flexuosa heath",
+          "drivers": ["heather regeneration", "natural succession"]
+        },
+        {
+          "target": "W10 Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+          "drivers": ["tree invasion", "natural succession"]
+        }
+      ]
+    }
+  }
+}
