@@ -13,4 +13,6 @@ lib64/*
 lib
 lib64
 *.cfg
-
+.DS_Store
+.vscode/*
+.vscode
