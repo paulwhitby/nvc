@@ -1,0 +1,118 @@
+{
+  "prompt":"You are an expert plant ecologist. extract all the drivers of succession from the document sections entitled 'Zonation and succession' or 'Zonation and succesion', and capture them in a JSON structure. Some source communities have multiple possible succession targets and drivers of succession - find them all.",
+  "succession_drivers": {
+    "physical_environmental": [
+      "water-table fluctuation",
+      "drainage",
+      "flooding patterns",
+      "soil moisture changes",
+      "sediment accretion",
+      "erosion",
+      "substrate instability",
+      "climate change",
+      "exposure to wind",
+      "snow-lie duration",
+      "frost exposure",
+      "maritime influence",
+      "altitude/elevation changes",
+      "aspect changes",
+      "slope variations",
+      "soil development",
+      "nutrient availability",
+      "base-richness of soils",
+      "pH changes",
+      "salinity levels",
+      "disturbance events"
+    ],
+    "biological": [
+      "grazing pressure",
+      "browsing by herbivores",
+      "trampling by stock",
+      "seed dispersal",
+      "competition between species",
+      "invasion by woody species",
+      "natural regeneration",
+      "colonization by trees and shrubs",
+      "herbivory effects",
+      "pollination changes",
+      "mycorrhizal associations"
+    ],
+    "anthropogenic": [
+      "burning/fire management",
+      "mowing/cutting",
+      "agricultural improvement",
+      "drainage schemes",
+      "fertilization",
+      "ploughing",
+      "abandonment of management",
+      "enclosure",
+      "afforestation",
+      "peat cutting",
+      "turf cutting",
+      "land reclamation",
+      "herbicide treatment",
+      "mechanical disturbance"
+    ],
+    "temporal": [
+      "seasonal variations",
+      "successional time",
+      "age of stands",
+      "management history",
+      "disturbance frequency",
+      "recovery time after disturbance"
+    ]
+  },
+  "succession_pathways": {
+    "aquatic_to_terrestrial": {
+      "driver": "sediment accretion, water-table lowering",
+      "pathway": "open water → swamp → fen → woodland"
+    },
+    "grassland_to_woodland": {
+      "driver": "cessation of grazing, natural colonization",
+      "pathway": "grassland → scrub → woodland"
+    },
+    "heath_to_woodland": {
+      "driver": "cessation of burning and grazing",
+      "pathway": "heath → scrub → woodland"
+    },
+    "agricultural_abandonment": {
+      "driver": "cessation of cultivation",
+      "pathway": "arable → grassland → scrub → woodland"
+    },
+    "mire_succession": {
+      "driver": "peat accumulation, water-table changes",
+      "pathway": "pool → lawn → hummock → bog"
+    },
+    "coastal_succession": {
+      "driver": "sand accretion, stabilization",
+      "pathway": "strandline → mobile dune → fixed dune → grassland/heath"
+    },
+    "disturbance_recovery": {
+      "driver": "natural recolonization after disturbance",
+      "pathway": "bare ground → pioneer species → mature community"
+    }
+  },
+  "succession_modifiers": {
+    "accelerators": [
+      "high propagule pressure",
+      "favorable climate",
+      "nutrient enrichment",
+      "protection from herbivores",
+      "suitable substrate"
+    ],
+    "inhibitors": [
+      "continued disturbance",
+      "extreme climate",
+      "poor soil conditions",
+      "heavy grazing pressure",
+      "competition from established species"
+    ],
+    "deflectors": [
+      "management practices",
+      "selective grazing",
+      "periodic burning",
+      "mowing regimes",
+      "drainage"
+    ]
+  }
+}
