@@ -30,6 +30,8 @@ from langchain_classic.chains.summarize import load_summarize_chain
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
+from langchain.retrievers import ContextualCompressionRetriever
+from langchain.retrievers.document_compressors import LLMChainExtractor
 
 
 # Set environment variables before any torch/transformers imports
@@ -307,50 +309,43 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
         }
     
     def query_all_documents(self, question: str, max_chunks=20) -> Dict:
-        """Query across all loaded documents with optimized retrieval for large collections.
+        """Query across all loaded documents using a contextual compression retriever
+        to maximize accuracy and completeness.
 
         Args:
             question: Question to ask
-            max_chunks: Maximum total chunks to retrieve (distributed across docs)
+            max_chunks: (Not directly used, but kept for signature consistency)
+                        The base retriever will fetch a fixed number of documents (25).
         """
-        if not self.vectorstores:
-            return {'error': 'No documents loaded'}
+        if not self.combined_vectorstore:
+            return {'error': 'No documents loaded or combined vectorstore not created.'}
 
-        num_docs = len(self.vectorstores)
+        print(f"[QUERY] Starting query with ContextualCompressionRetriever.")
 
-        # Adaptive chunking strategy based on collection size
-        if num_docs <= 10:
-            # Small collection: Get more chunks per doc
-            chunks_per_doc = max(4, max_chunks // num_docs)
-        elif num_docs <= 50:
-            # Medium collection: Balanced approach
-            chunks_per_doc = max(2, max_chunks // num_docs)
-        else:
-            # Large collection (100+): Use combined vectorstore with top-k
-            chunks_per_doc = max(1, max_chunks // min(num_docs, 50))
+        # 1. Create a compressor that uses the LLM to extract relevant parts
+        compressor = LLMChainExtractor.from_llm(self.llm)
 
-        print(f"[QUERY] Querying {num_docs} documents, {chunks_per_doc} chunks per doc, max {max_chunks} total")
+        # 2. Set up the base retriever to fetch a larger number of documents
+        base_retriever = self.combined_vectorstore.as_retriever(
+            search_kwargs={"k": 25}
+        )
 
-        # Query each document individually to ensure balanced representation
-        all_docs = []
+        # 3. Create the ContextualCompressionRetriever
+        compression_retriever = ContextualCompressionRetriever(
+            base_compressor=compressor,
+            base_retriever=base_retriever
+        )
 
-        for filename, vectorstore in self.vectorstores.items():
-            retriever = vectorstore.as_retriever(search_kwargs={"k": chunks_per_doc})
-            docs = retriever.invoke(question)
-            print(f"[QUERY] Retrieved {len(docs)} chunks from {filename}")
+        # 4. Retrieve and compress documents. This returns only the relevant, compressed parts.
+        print("[QUERY] Retrieving and compressing relevant documents...")
+        compressed_docs = compression_retriever.invoke(question)
+        print(f"[QUERY] Retrieved {len(compressed_docs)} compressed, relevant chunks.")
 
-            # Debug: Check metadata
-            for i, doc in enumerate(docs):
-                actual_source = doc.metadata.get('source_file', 'Unknown')
-                print(f"[QUERY]   Chunk {i+1} metadata says source: {actual_source}")
+        # 5. Build context from the compressed documents
+        context = "\n\n".join([doc.page_content for doc in compressed_docs])
 
-            all_docs.extend(docs)
-
-        # Build context from all retrieved documents
-        context = "\n\n".join([doc.page_content for doc in all_docs])
-
-        # Use LLM to answer based on the balanced context
-        prompt = f"""Based on the following context from multiple documents, please answer the question.
+        # 6. Use LLM to answer based on the focused, compressed context
+        prompt = f"""Based *only* on the following context from multiple documents, please provide a comprehensive answer to the question. If the context does not contain the answer, state that clearly.
 
 Context:
 {context}
@@ -361,15 +356,16 @@ Answer:"""
 
         answer = self.llm.invoke(prompt).content
 
-        # Group sources by document
+        # 7. Group sources by document for traceability
         sources_by_doc = {}
-        for doc in all_docs:
+        for doc in compressed_docs:
             source = doc.metadata.get('source_file', 'Unknown')
             if source not in sources_by_doc:
                 sources_by_doc[source] = []
-            sources_by_doc[source].append(doc.page_content[:200])
+            # Store the compressed content that was used for the answer
+            sources_by_doc[source].append(doc.page_content)
 
-        print(f"[QUERY] Total chunks retrieved: {len(all_docs)}")
+        print(f"[QUERY] Total chunks used for answer: {len(compressed_docs)}")
         print(f"[QUERY] Documents represented: {list(sources_by_doc.keys())}")
 
         return {
