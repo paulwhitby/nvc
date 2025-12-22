@@ -1,0 +1,2015 @@
+{
+  "prompt":"As a plant ecologist, for every NVC community, extract all succession pathways and the drivers of succession from the document sections entitled "Zonation and succession", and capture in a JSON structure, capturing the source community, the target communities or sub-communities, and the drivers of or reasons for succession.  Some source communities have multiple possible succession targets and drivers of succession - find them all. ",
+  "succession_pathways": [
+    {
+      "source_community": "W1 Salix cinerea-Galium palustre woodland",
+      "target_communities": [
+        {
+          "target": "Alnus-Urtica woodland",
+          "driver": "natural succession on drier ground"
+        }
+      ]
+    },
+    {
+      "source_community": "W2 Salix cinerea-Betula pubescens-Phragmites australis woodland",
+      "target_communities": [
+        {
+          "target": "mixed deciduous woodland",
+          "driver": "natural succession with tree invasion"
+        }
+      ]
+    },
+    {
+      "source_community": "W5 Alnus glutinosa-Carex paniculata woodland",
+      "target_communities": [
+        {
+          "target": "Betula-Molinia woodland",
+          "driver": "drainage and burning of margins"
+        }
+      ]
+    },
+    {
+      "source_community": "W10 Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+      "target_communities": [
+        {
+          "target": "grassland",
+          "driver": "grazing pressure and tree destruction"
+        }
+      ]
+    },
+    {
+      "source_community": "W14 Fagus sylvatica-Rubus fruticosus woodland",
+      "target_communities": [
+        {
+          "target": "Fagus-Mercurialis woodland",
+          "driver": "edaphic transitions on calcareous soils"
+        },
+        {
+          "target": "Fagus-Deschampsia woodland",
+          "driver": "edaphic transitions on acidic soils"
+        }
+      ]
+    },
+    {
+      "source_community": "W15 Fagus sylvatica-Deschampsia flexuosa woodland",
+      "target_communities": [
+        {
+          "target": "Calluna sub-community",
+          "driver": "canopy gaps and natural regeneration cycles"
+        }
+      ]
+    },
+    {
+      "source_community": "W16 Quercus spp.-Betula spp.-Deschampsia flexuosa woodland",
+      "target_communities": [
+        {
+          "target": "grassland",
+          "driver": "grazing and browsing pressure"
+        },
+        {
+          "target": "heath",
+          "driver": "grazing and burning"
+        }
+      ]
+    },
+    {
+      "source_community": "Calluna-Deschampsia heath",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "neglect of traditional treatments and tree invasion"
+        },
+        {
+          "target": "agricultural land",
+          "driver": "reclamation"
+        }
+      ]
+    },
+    {
+      "source_community": "Calluna-Erica heath",
+      "target_communities": [
+        {
+          "target": "scrub and woodland",
+          "driver": "absence of burning and grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Calluna-Vaccinium heath",
+      "target_communities": [
+        {
+          "target": "scrub and woodland",
+          "driver": "absence of burning and grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Vaccinium-Rubus heath",
+      "target_communities": [
+        {
+          "target": "climax vegetation",
+          "driver": "natural succession under climatic control"
+        }
+      ]
+    },
+    {
+      "source_community": "Calluna-Racomitrium heath",
+      "target_communities": [
+        {
+          "target": "stable climax",
+          "driver": "climatic control - no succession expected"
+        }
+      ]
+    },
+    {
+      "source_community": "Narthecio-Sphagnetum mire",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "continued autogenic accumulation of peats"
+        },
+        {
+          "target": "degraded vegetation",
+          "driver": "draining, burning and grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Hyperico-Potametum",
+      "target_communities": [
+        {
+          "target": "bog, wet heath, poor fen",
+          "driver": "continuing autogenic development"
+        }
+      ]
+    },
+    {
+      "source_community": "Juncus-Cirsium fen-meadow",
+      "target_communities": [
+        {
+          "target": "improved grassland",
+          "driver": "agricultural improvement and drainage"
+        }
+      ]
+    },
+    {
+      "source_community": "Filipendulo-Iridetum",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "natural succession (slow development)"
+        }
+      ]
+    },
+    {
+      "source_community": "Sphagno-Anthelietum julaceae spring",
+      "target_communities": [
+        {
+          "target": "montane grasslands",
+          "driver": "variation in seepage intensity"
+        }
+      ]
+    },
+    {
+      "source_community": "Juncus-Cirsium rush-pasture",
+      "target_communities": [
+        {
+          "target": "improved grassland",
+          "driver": "drainage and agricultural improvement"
+        }
+      ]
+    },
+    {
+      "source_community": "Ranunculus-Montia community",
+      "target_communities": [
+        {
+          "target": "scrub woodland",
+          "driver": "prevention of serai progression by burning and grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Molinia-Potentilla mire",
+      "target_communities": [
+        {
+          "target": "scrub woodland",
+          "driver": "natural succession without burning and grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Cirsio-Molinietum",
+      "target_communities": [
+        {
+          "target": "improved grassland",
+          "driver": "drainage and reclamation"
+        }
+      ]
+    },
+    {
+      "source_community": "Cratoneuron-Festuca spring",
+      "target_communities": [
+        {
+          "target": "calcicolous grasslands",
+          "driver": "drying of ground water"
+        }
+      ]
+    },
+    {
+      "source_community": "Calluna-Festuca heath",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "neglect of traditional heathland management"
+        },
+        {
+          "target": "arable land or coniferous plantations",
+          "driver": "heathland improvement"
+        }
+      ]
+    },
+    {
+      "source_community": "Ulex minor-Agrostis heath",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "abandonment of traditional land use"
+        },
+        {
+          "target": "agricultural or forestry land",
+          "driver": "soil improvement"
+        }
+      ]
+    },
+    {
+      "source_community": "Calluna-U. gallii heath",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "absence of burning and grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Philonoto-Saxifragetum",
+      "target_communities": [
+        {
+          "target": "Nardo-Galion grasslands",
+          "driver": "gradual transitions where flushes occur within grassland tracts"
+        }
+      ]
+    },
+    {
+      "source_community": "Filipendula-Angelica mire",
+      "target_communities": [
+        {
+          "target": "grazed grassland",
+          "driver": "enclosure and grazing by stock"
+        }
+      ]
+    },
+    {
+      "source_community": "Eriophorum angustifolium community",
+      "target_communities": [
+        {
+          "target": "active mire vegetation",
+          "driver": "serai redevelopment following disruption"
+        }
+      ]
+    },
+    {
+      "source_community": "Carex rostrata-Sphagnum recurvum mire",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "natural succession in absence of disturbance"
+        }
+      ]
+    },
+    {
+      "source_community": "Carex-Sphagnum russowii mire",
+      "target_communities": [
+        {
+          "target": "Calluna-Eriophorum blanket mire",
+          "driver": "transitions around stands with Eriophorum vaginatum increase"
+        }
+      ]
+    },
+    {
+      "source_community": "Carex-Calliergon mire",
+      "target_communities": [
+        {
+          "target": "mire forest",
+          "driver": "natural succession with terrestrialisation"
+        },
+        {
+          "target": "ombrogenous bog",
+          "driver": "succession in oligotrophic situations"
+        }
+      ]
+    },
+    {
+      "source_community": "Caricetum saxatilis",
+      "target_communities": [
+        {
+          "target": "Arctic-Alpine willows",
+          "driver": "natural succession if grazing prevented"
+        }
+      ]
+    },
+    {
+      "source_community": "Schoenus-Narthecium mire",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "absence of burning or grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Schoenetum",
+      "target_communities": [
+        {
+          "target": "modified vegetation",
+          "driver": "drainage and eutrophication"
+        }
+      ]
+    },
+    {
+      "source_community": "Cryptogramma-Athyrium community",
+      "target_communities": [
+        {
+          "target": "chionophilous vegetation",
+          "driver": "natural zonation over snow-bound slopes"
+        }
+      ]
+    },
+    {
+      "source_community": "Pinguiculo-Caricetum",
+      "target_communities": [
+        {
+          "target": "various grasslands and mires",
+          "driver": "variation in base-enrichment and flushing strength"
+        }
+      ]
+    },
+    {
+      "source_community": "Thelypteris-Blechnum community",
+      "target_communities": [
+        {
+          "target": "oak-birch or pine forest",
+          "driver": "natural succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Eriophorum mire",
+      "target_communities": [
+        {
+          "target": "heaths and grasslands",
+          "driver": "treatments and degradation factors"
+        }
+      ]
+    },
+    {
+      "source_community": "Luzula-Vaccinium community",
+      "target_communities": [
+        {
+          "target": "climax vegetation",
+          "driver": "effective climax under topographic protection"
+        }
+      ]
+    },
+    {
+      "source_community": "Cryptogramma-Deschampsia community",
+      "target_communities": [
+        {
+          "target": "plagioclimax pasture or heath",
+          "driver": "grazing or burning preventing forest establishment"
+        }
+      ]
+    },
+    {
+      "source_community": "Erica-Sphagnum mire",
+      "target_communities": [
+        {
+          "target": "Scirpus-Erica wet heath",
+          "driver": "surface drying of peats with burning and drainage"
+        }
+      ]
+    },
+    {
+      "source_community": "Scirpus-Eriophorum mire",
+      "target_communities": [
+        {
+          "target": "fire-climax vegetation",
+          "driver": "burning imposing uniform dominance"
+        }
+      ]
+    },
+    {
+      "source_community": "Ericetum tetralicis",
+      "target_communities": [
+        {
+          "target": "improved grassland",
+          "driver": "drainage and reclamation"
+        }
+      ]
+    },
+    {
+      "source_community": "Luzula-Geum community",
+      "target_communities": [
+        {
+          "target": "sub-montane scrub",
+          "driver": "serai progression at lower altitudes in oceanic west Scotland"
+        },
+        {
+          "target": "heath",
+          "driver": "burning"
+        }
+      ]
+    },
+    {
+      "source_community": "Brachypodium grassland",
+      "target_communities": [
+        {
+          "target": "scrub",
+          "driver": "relaxation of grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Carlina grassland",
+      "target_communities": [
+        {
+          "target": "closed swards",
+          "driver": "reduced grazing intensity"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Hieracium-Thymus grassland",
+      "target_communities": [
+        {
+          "target": "Festuca-Avenula grassland",
+          "driver": "deeper, moister and richer soils"
+        },
+        {
+          "target": "coarse calcicolous grass swards",
+          "driver": "grazing relaxation"
+        }
+      ]
+    },
+    {
+      "source_community": "Dryas-Silene community",
+      "target_communities": [
+        {
+          "target": "grazed calcicolous vegetation",
+          "driver": "increased accessibility to grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Agrostis-Thymus grassland",
+      "target_communities": [
+        {
+          "target": "various calcicolous communities",
+          "driver": "geological and edaphic variation"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Agrostis-Alchemilla grass-heath",
+      "target_communities": [
+        {
+          "target": "scree communities",
+          "driver": "fragmentary lithomorphic soils"
+        },
+        {
+          "target": "pavement vegetation",
+          "driver": "fragmentary lithomorphic soils"
+        }
+      ]
+    },
+    {
+      "source_community": "Dryas-Carex heath",
+      "target_communities": [
+        {
+          "target": "calcicolous communities",
+          "driver": "edaphic variation dependent on topography and geology"
+        }
+      ]
+    },
+    {
+      "source_community": "Carex-Polytrichum sedge-heath",
+      "target_communities": [
+        {
+          "target": "heaths and grasslands",
+          "driver": "shift down into sub-alpine zone - increasingly anthropogenic"
+        }
+      ]
+    },
+    {
+      "source_community": "Deschampsia grassland",
+      "target_communities": [
+        {
+          "target": "wet heath",
+          "driver": "soil-related sequences"
+        },
+        {
+          "target": "ephemeral-rich grassland",
+          "driver": "soil-related sequences"
+        }
+      ]
+    },
+    {
+      "source_community": "Agrostis grassland",
+      "target_communities": [
+        {
+          "target": "valley mires",
+          "driver": "treatment-derived replacement sequences"
+        }
+      ]
+    },
+    {
+      "source_community": "Juncus-Festuca grassland",
+      "target_communities": [
+        {
+          "target": "other vegetation types",
+          "driver": "anthropogenic replacement - not true climax"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Agrostis-Rumex grassland",
+      "target_communities": [
+        {
+          "target": "sub-shrub vegetation, bracken, scrub and woodland",
+          "driver": "response to neglect on lowland heaths"
+        }
+      ]
+    },
+    {
+      "source_community": "Nardus-Carex grass-heath",
+      "target_communities": [
+        {
+          "target": "chionophilous sub-shrub vegetation",
+          "driver": "floristic continuity with adjacent communities"
+        }
+      ]
+    },
+    {
+      "source_community": "Polytrichum-Kiaeria community",
+      "target_communities": [
+        {
+          "target": "chionophilous vegetation types",
+          "driver": "duration of snow-lie and drainage conditions"
+        }
+      ]
+    },
+    {
+      "source_community": "Salix-Racomitrium community",
+      "target_communities": [
+        {
+          "target": "chionophilous vegetation",
+          "driver": "length of snow-lie and drainage conditions"
+        }
+      ]
+    },
+    {
+      "source_community": "Juncus-Racomitrium heath",
+      "target_communities": [
+        {
+          "target": "Nardus-Carex grass-heath",
+          "driver": "relief from wind and harsh frosts"
+        }
+      ]
+    },
+    {
+      "source_community": "Nardus-Galium grassland",
+      "target_communities": [
+        {
+          "target": "Festuca-Agrostis-Galium grassland",
+          "driver": "zonation over drier podzols"
+        }
+      ]
+    },
+    {
+      "source_community": "Alchemilla-Sibbaldia community",
+      "target_communities": [
+        {
+          "target": "Polytrichum-Kiaeria or Salix-Racomitrium late snow-beds",
+          "driver": "association with chionophilous vegetation"
+        }
+      ]
+    },
+    {
+      "source_community": "Deschampsia-Galium grassland",
+      "target_communities": [
+        {
+          "target": "tail-herb vegetation",
+          "driver": "mediation through grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Carex-Racomitrium heath",
+      "target_communities": [
+        {
+          "target": "stone fields",
+          "driver": "sorting processes over flatter ground"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Agrostis-Galium grassland",
+      "target_communities": [
+        {
+          "target": "scrub and woodland",
+          "driver": "cessation of treatment"
+        }
+      ]
+    },
+    {
+      "source_community": "Saxifraga-Alchemilla community",
+      "target_communities": [
+        {
+          "target": "climax community",
+          "driver": "climax under particular environmental conditions"
+        }
+      ]
+    },
+    {
+      "source_community": "Arrhenatheretum elatioris",
+      "target_communities": [
+        {
+          "target": "mixed deciduous woodland",
+          "driver": "absence or withdrawal of cutting/grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Anthoxanthum-Geranium community",
+      "target_communities": [
+        {
+          "target": "Arrhenatherum sub-community",
+          "driver": "neglect of corners and margins"
+        },
+        {
+          "target": "flush vegetation",
+          "driver": "impeded soil water drainage"
+        }
+      ]
+    },
+    {
+      "source_community": "Lolio-Cynosuretum",
+      "target_communities": [
+        {
+          "target": "Centaureo-Cynosuretum",
+          "driver": "remnants on steeper banks inaccessible to ploughing"
+        },
+        {
+          "target": "Holcus-Deschampsia community",
+          "driver": "hollows resistant to drainage"
+        }
+      ]
+    },
+    {
+      "source_community": "Cynosurus-Caltha community",
+      "target_communities": [
+        {
+          "target": "various grassland types",
+          "driver": "zonations around fragmentary spring and flush stands"
+        }
+      ]
+    },
+    {
+      "source_community": "Holcus-Deschampsia community",
+      "target_communities": [
+        {
+          "target": "various grassland types",
+          "driver": "differences in soil moisture status"
+        }
+      ]
+    },
+    {
+      "source_community": "Holco-Juncetum",
+      "target_communities": [
+        {
+          "target": "swamp, fen or inundation communities",
+          "driver": "water-table rise beside streams and pools"
+        }
+      ]
+    },
+    {
+      "source_community": "Centaureo-Cynosuretum",
+      "target_communities": [
+        {
+          "target": "various grassland types",
+          "driver": "related to differences in soil moisture and treatment"
+        }
+      ]
+    },
+    {
+      "source_community": "Potentillo-Festucetum",
+      "target_communities": [
+        {
+          "target": "Oenanthe sub-community",
+          "driver": "increased grazing pressure"
+        },
+        {
+          "target": "Juncus maritimus salt-marsh",
+          "driver": "more frequently submerged ground"
+        }
+      ]
+    },
+    {
+      "source_community": "Agrostis-Alopecurus community",
+      "target_communities": [
+        {
+          "target": "Lolio-Cynosuretum",
+          "driver": "drier ground conditions"
+        },
+        {
+          "target": "Glycerietum fluitantis",
+          "driver": "more frequent inundation"
+        }
+      ]
+    },
+    {
+      "source_community": "Bromus erectus grassland",
+      "target_communities": [
+        {
+          "target": "Festuca-Avenula grassland",
+          "driver": "irregular patchworks with surviving areas"
+        },
+        {
+          "target": "Brachypodium pinnatum grassland",
+          "driver": "demise of grazing"
+        },
+        {
+          "target": "scrub",
+          "driver": "demise of grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Lemnetum gibbae",
+      "target_communities": [
+        {
+          "target": "Lemnetum minoris",
+          "driver": "switch in dominance from L. gibba to L. minor"
+        },
+        {
+          "target": "Spirodela-Hydrocharis community",
+          "driver": "replacement in richer conditions"
+        },
+        {
+          "target": "Potamogeton natans community",
+          "driver": "regrowth of floating-leaved aquatics"
+        }
+      ]
+    },
+    {
+      "source_community": "Lemnetum minoris",
+      "target_communities": [
+        {
+          "target": "swampy woodland",
+          "driver": "persistence among encroaching emergents"
+        }
+      ]
+    },
+    {
+      "source_community": "Spirodela-Hydrocharis community",
+      "target_communities": [
+        {
+          "target": "swamp and fen",
+          "driver": "shading by macrophytes or emergents"
+        }
+      ]
+    },
+    {
+      "source_community": "Hydrocharis-Stratiotes community",
+      "target_communities": [
+        {
+          "target": "swamp and fen",
+          "driver": "passing landwards in fragmentary transitions"
+        }
+      ]
+    },
+    {
+      "source_community": "Ceratophylletum submersi",
+      "target_communities": [
+        {
+          "target": "swamp and fen",
+          "driver": "succession where pools and dykes not regularly cleaned"
+        }
+      ]
+    },
+    {
+      "source_community": "Nymphaeetum albae",
+      "target_communities": [
+        {
+          "target": "emergent vegetation",
+          "driver": "colonisation of margins of open waters"
+        }
+      ]
+    },
+    {
+      "source_community": "Nuphar lutea community",
+      "target_communities": [
+        {
+          "target": "free-floating vegetation",
+          "driver": "successor to Lemnetum minoris or Spirodela-Hydrocharis"
+        }
+      ]
+    },
+    {
+      "source_community": "Polygonum amphibium community",
+      "target_communities": [
+        {
+          "target": "inundation communities",
+          "driver": "periodically flooded ground with vegetation mosaics"
+        }
+      ]
+    },
+    {
+      "source_community": "Potamogeton natans community",
+      "target_communities": [
+        {
+          "target": "emergent vegetation",
+          "driver": "persistence among more open stands of colonising emergents"
+        }
+      ]
+    },
+    {
+      "source_community": "Potamogeton pectinatus community",
+      "target_communities": [
+        {
+          "target": "Potamogeton-M. spicatum vegetation",
+          "driver": "increase in frequency of associates in cleaner conditions"
+        }
+      ]
+    },
+    {
+      "source_community": "Potamogeton-M. alterniflorum community",
+      "target_communities": [
+        {
+          "target": "other aquatic vegetation",
+          "driver": "shifts to more calcareous or eutrophic conditions"
+        }
+      ]
+    },
+    {
+      "source_community": "Myriophylletum alterniflori",
+      "target_communities": [
+        {
+          "target": "other aquatic vegetation",
+          "driver": "where conditions become stiller and substrates more fertile"
+        }
+      ]
+    },
+    {
+      "source_community": "Elodea canadensis community",
+      "target_communities": [
+        {
+          "target": "shaded out",
+          "driver": "where colonising emergents become dense"
+        }
+      ]
+    },
+    {
+      "source_community": "Callitriche stagnalis community",
+      "target_communities": [
+        {
+          "target": "climax forest",
+          "driver": "reappear in rain-filled pools where forest is opened up"
+        }
+      ]
+    },
+    {
+      "source_community": "Ranunculetum fluitantis",
+      "target_communities": [
+        {
+          "target": "Potamogeton pectinatus stands",
+          "driver": "in highly eutrophic streams"
+        }
+      ]
+    },
+    {
+      "source_community": "Ranunculetum aquatilis",
+      "target_communities": [
+        {
+          "target": "Glycerio-Sparganion vegetation",
+          "driver": "transitions towards water margins"
+        },
+        {
+          "target": "swamp",
+          "driver": "overwhelmed by taller emergents"
+        }
+      ]
+    },
+    {
+      "source_community": "Ranunculetum peltati",
+      "target_communities": [
+        {
+          "target": "Glycerio-Sparganion herbs",
+          "driver": "zonations around water margins"
+        },
+        {
+          "target": "swamp",
+          "driver": "overwhelmed where colonisation by emergents advancing"
+        }
+      ]
+    },
+    {
+      "source_community": "Cladietum marisci",
+      "target_communities": [
+        {
+          "target": "no succession mentioned",
+          "driver": "thick litter accumulation excludes competitors"
+        }
+      ]
+    },
+    {
+      "source_community": "Caricetum paniculatae",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "serai development from open water"
+        }
+      ]
+    },
+    {
+      "source_community": "Scirpetum lacustris",
+      "target_communities": [
+        {
+          "target": "more permanent feature",
+          "driver": "represents deep-water limit of swamp vegetation"
+        }
+      ]
+    },
+    {
+      "source_community": "Caricetum ripariae",
+      "target_communities": [
+        {
+          "target": "surrounding vegetation",
+          "driver": "passes gradually within wet woodlands"
+        }
+      ]
+    },
+    {
+      "source_community": "Caricetum acutiformis",
+      "target_communities": [
+        {
+          "target": "swamp",
+          "driver": "around extensive open-water transitions"
+        }
+      ]
+    },
+    {
+      "source_community": "Caricetum rostratae",
+      "target_communities": [
+        {
+          "target": "represents limit",
+          "driver": "sometimes represents limit of swamp vegetation"
+        }
+      ]
+    },
+    {
+      "source_community": "Equisetetum fluviatilis",
+      "target_communities": [
+        {
+          "target": "Caricetum rostratae",
+          "driver": "lateral transitions with switch in dominance"
+        },
+        {
+          "target": "Cynosurion swards",
+          "driver": "where stock water on inorganic substrates"
+        }
+      ]
+    },
+    {
+      "source_community": "Caricetum vesicaria",
+      "target_communities": [
+        {
+          "target": "Caricetum rostratae",
+          "driver": "may grade through Carex rostrata sub-community"
+        }
+      ]
+    },
+    {
+      "source_community": "Typhetum angustifoliae",
+      "target_communities": [
+        {
+          "target": "Caricetum rostratae",
+          "driver": "transition in less eutrophic waters"
+        },
+        {
+          "target": "rich fen vegetation",
+          "driver": "towards drier ground"
+        }
+      ]
+    },
+    {
+      "source_community": "Typhetum latifoliae",
+      "target_communities": [
+        {
+          "target": "Phragmites-Eupatorium community",
+          "driver": "towards drier ground through Mentha sub-community"
+        },
+        {
+          "target": "carr woodland",
+          "driver": "may pass to carr woodland"
+        }
+      ]
+    },
+    {
+      "source_community": "Phragmitetum australis",
+      "target_communities": [
+        {
+          "target": "floating-leaved or submerged aquatic vegetation",
+          "driver": "gives way directly in deeper unpolluted waters"
+        }
+      ]
+    },
+    {
+      "source_community": "Acoretum calami",
+      "target_communities": [
+        {
+          "target": "no specific succession mentioned",
+          "driver": "community description focuses on habitat requirements"
+        }
+      ]
+    },
+    {
+      "source_community": "Sagittaria sagittifolia swamp",
+      "target_communities": [
+        {
+          "target": "no specific succession mentioned",
+          "driver": "most frequently encountered in zonations"
+        }
+      ]
+    },
+    {
+      "source_community": "Carex pseudocyperus swamp",
+      "target_communities": [
+        {
+          "target": "rich-fen vegetation",
+          "driver": "found in association with Peucedano-Phragmitetum"
+        }
+      ]
+    },
+    {
+      "source_community": "Caricetum otrubae",
+      "target_communities": [
+        {
+          "target": "damp mesotrophic grasslands",
+          "driver": "forms narrow zone between open water and grasslands"
+        }
+      ]
+    },
+    {
+      "source_community": "Scirpetum tabernaemontani",
+      "target_communities": [
+        {
+          "target": "well marked off",
+          "driver": "usually well marked off from surrounding vegetation"
+        }
+      ]
+    },
+    {
+      "source_community": "Scirpetum maritimi",
+      "target_communities": [
+        {
+          "target": "salt-marsh communities",
+          "driver": "forms mosaics with Puccinellietum maritimae, Juncetum gerardi, etc."
+        }
+      ]
+    },
+    {
+      "source_community": "Glycerietum maximae",
+      "target_communities": [
+        {
+          "target": "no specific succession mentioned",
+          "driver": "tolerant of wide range of water depth"
+        }
+      ]
+    },
+    {
+      "source_community": "Glycerietum fluitantis",
+      "target_communities": [
+        {
+          "target": "Agrostis-Alopecurus community",
+          "driver": "mosaics with other swamp communities"
+        }
+      ]
+    },
+    {
+      "source_community": "Eleocharitetum palustris",
+      "target_communities": [
+        {
+          "target": "submerged vegetation",
+          "driver": "grades in deeper water to submerged vegetation"
+        }
+      ]
+    },
+    {
+      "source_community": "Sparganietum erecti",
+      "target_communities": [
+        {
+          "target": "Potamogeton natans",
+          "driver": "give way in deeper water to floating-leaved vegetation"
+        },
+        {
+          "target": "Eleocharitetum palustris",
+          "driver": "grade to in shallower water on silty substrates"
+        }
+      ]
+    },
+    {
+      "source_community": "Oenanthetum aquaticae",
+      "target_communities": [
+        {
+          "target": "no specific succession mentioned",
+          "driver": "repeated summer cutting or heavy grazing controls growth"
+        }
+      ]
+    },
+    {
+      "source_community": "Peucedano-Phragmitetum",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "succession from open water with progressive lowering of water-table"
+        }
+      ]
+    },
+    {
+      "source_community": "Phragmites-Eupatorium fen",
+      "target_communities": [
+        {
+          "target": "Salix cinerea-Betula pubescens-Phragmites woodland",
+          "driver": "transition on drier ground"
+        },
+        {
+          "target": "Alnus glutinosa-Carex paniculata woodland",
+          "driver": "natural succession on alluvial deposits"
+        }
+      ]
+    },
+    {
+      "source_community": "Phragmites-Urtica fen",
+      "target_communities": [
+        {
+          "target": "no specific succession mentioned",
+          "driver": "community description focuses on habitat and management"
+        }
+      ]
+    },
+    {
+      "source_community": "Epilobium hirsutum community",
+      "target_communities": [
+        {
+          "target": "various vegetation types",
+          "driver": "occurs in zonations and mosaics determined by water table and grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Zostera communities",
+      "target_communities": [
+        {
+          "target": "no succession mentioned",
+          "driver": "marine/estuarine habitat - different succession dynamics"
+        }
+      ]
+    },
+    {
+      "source_community": "Ruppia maritima community",
+      "target_communities": [
+        {
+          "target": "no succession mentioned",
+          "driver": "brackish aquatic habitat"
+        }
+      ]
+    },
+    {
+      "source_community": "Spartinetum townsendii",
+      "target_communities": [
+        {
+          "target": "Puccinellietum maritimae",
+          "driver": "accretion progresses in low marsh"
+        },
+        {
+          "target": "Halimionetum portulacoidis",
+          "driver": "accretion progresses in low marsh"
+        }
+      ]
+    },
+    {
+      "source_community": "Salicornietum europaeae",
+      "target_communities": [
+        {
+          "target": "community appropriate for particular marsh level",
+          "driver": "increased stabilisation"
+        }
+      ]
+    },
+    {
+      "source_community": "Suaedetum maritimae",
+      "target_communities": [
+        {
+          "target": "community appropriate for particular marsh level",
+          "driver": "increased stabilisation"
+        }
+      ]
+    },
+    {
+      "source_community": "Puccinellietum maritimae",
+      "target_communities": [
+        {
+          "target": "Halimionetum portulacoidis",
+          "driver": "upwards succession with accretion"
+        }
+      ]
+    },
+    {
+      "source_community": "Asteretum tripolii",
+      "target_communities": [
+        {
+          "target": "Puccinellietum maritimae",
+          "driver": "upwards passes into"
+        },
+        {
+          "target": "Halimionetum portulacoidis",
+          "driver": "upwards passes into"
+        }
+      ]
+    },
+    {
+      "source_community": "Halimionetum portulacoidis",
+      "target_communities": [
+        {
+          "target": "Atriplici-Elymetum pycnanthi",
+          "driver": "may give way to on high marsh"
+        },
+        {
+          "target": "Artemisietum maritimae",
+          "driver": "sometimes with intervening zone"
+        }
+      ]
+    },
+    {
+      "source_community": "Artemisietum maritimae",
+      "target_communities": [
+        {
+          "target": "Atriplici-Elymetum pycnanthi",
+          "driver": "zonation may reflect succession with sediment accretion"
+        }
+      ]
+    },
+    {
+      "source_community": "Juncetum maritimi",
+      "target_communities": [
+        {
+          "target": "Atriplici-Elymetum pycnanthi",
+          "driver": "sometimes terminates zonation at upper limit"
+        }
+      ]
+    },
+    {
+      "source_community": "Juncetum gerardi",
+      "target_communities": [
+        {
+          "target": "Puccinellietum maritimae",
+          "driver": "heavy grazing can lead to poaching and appearance of"
+        },
+        {
+          "target": "Puccinellietum distantis",
+          "driver": "heavy grazing can lead to"
+        }
+      ]
+    },
+    {
+      "source_community": "Eleocharitetum uniglumis",
+      "target_communities": [
+        {
+          "target": "no major role in succession",
+          "driver": "occurs patchily within other upper-marsh associations"
+        }
+      ]
+    },
+    {
+      "source_community": "Atriplici-Elymetum pycnanthi",
+      "target_communities": [
+        {
+          "target": "terminates zonation",
+          "driver": "often terminates zonation at upper limit of salt-marshes"
+        }
+      ]
+    },
+    {
+      "source_community": "Limonio-Frankenietum laevis",
+      "target_communities": [
+        {
+          "target": "Elymo-Suaedetum verae",
+          "driver": "reduction of grazing may lead to development of"
+        }
+      ]
+    },
+    {
+      "source_community": "Elymo-Suaedetum verae",
+      "target_communities": [
+        {
+          "target": "stable position",
+          "driver": "occupies stable position at uppermost end of salt-marsh zonation"
+        }
+      ]
+    },
+    {
+      "source_community": "Inula crithmoides stands",
+      "target_communities": [
+        {
+          "target": "terminates zonation",
+          "driver": "often terminates zonation at upper limit of British salt-marshes"
+        }
+      ]
+    },
+    {
+      "source_community": "Honkenya-Cakile community",
+      "target_communities": [
+        {
+          "target": "foredunes with Ammophila",
+          "driver": "accretion of sand may initiate foredune development"
+        }
+      ]
+    },
+    {
+      "source_community": "Matricaria-Galium community",
+      "target_communities": [
+        {
+          "target": "upper salt-marsh vegetation",
+          "driver": "with shift to finer beach material"
+        }
+      ]
+    },
+    {
+      "source_community": "Rumex-Glaucium community",
+      "target_communities": [
+        {
+          "target": "no succession mentioned",
+          "driver": "essentially a repeatedly-renewed pioneer assemblage"
+        }
+      ]
+    },
+    {
+      "source_community": "Elymus farctus foredune community",
+      "target_communities": [
+        {
+          "target": "Ammophila community",
+          "driver": "natural succession as dunes build and stabilise"
+        }
+      ]
+    },
+    {
+      "source_community": "Leymus arenarius community",
+      "target_communities": [
+        {
+          "target": "other vegetation types on shifting or fixed dunes",
+          "driver": "backed by other vegetation types - not necessarily straightforward succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Ammophila arenaria community",
+      "target_communities": [
+        {
+          "target": "Ammophila-Festuca vegetation",
+          "driver": "as sand becomes more fixed"
+        }
+      ]
+    },
+    {
+      "source_community": "Ammophila-Festuca semi-fixed dune grassland",
+      "target_communities": [
+        {
+          "target": "dune grasslands and heath",
+          "driver": "inland over ridges and sand-plains"
+        }
+      ]
+    },
+    {
+      "source_community": "Ammophila-Arrhenatherum dune grassland",
+      "target_communities": [
+        {
+          "target": "scrub",
+          "driver": "invasion of shrubs and trees"
+        },
+        {
+          "target": "bracken",
+          "driver": "invasion of bracken"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Galium dune grassland",
+      "target_communities": [
+        {
+          "target": "Ammophila-Festuca vegetation",
+          "driver": "replaced on somewhat more mobile sand"
+        }
+      ]
+    },
+    {
+      "source_community": "Hippophae rhamnoides dune scrub",
+      "target_communities": [
+        {
+          "target": "unknown end product",
+          "driver": "many stands too young to know succession end product"
+        }
+      ]
+    },
+    {
+      "source_community": "Salix-Campylium community",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "any tendency to drying marked by progression to woodland"
+        },
+        {
+          "target": "Salix-Holcus community",
+          "driver": "drier stands can pass to"
+        }
+      ]
+    },
+    {
+      "source_community": "Salix-Calliergon community",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "in drier conditions, though grazing may set back succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Potentilla-Carex community",
+      "target_communities": [
+        {
+          "target": "shrubs and trees",
+          "driver": "where drying conditions combine with reduction in grazing"
+        }
+      ]
+    },
+    {
+      "source_community": "Carex arenaria community",
+      "target_communities": [
+        {
+          "target": "other communities",
+          "driver": "replaced as more aggressive plants dominate or with increased stability"
+        }
+      ]
+    },
+    {
+      "source_community": "Salix-Holcus community",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "invasion of bushy Salix spp. and Betula pubescens"
+        }
+      ]
+    },
+    {
+      "source_community": "Tortulo-Phleetum",
+      "target_communities": [
+        {
+          "target": "more stable dune grasslands",
+          "driver": "minor and local element within stretches of more stable grasslands"
+        }
+      ]
+    },
+    {
+      "source_community": "Sagina-Bryum community",
+      "target_communities": [
+        {
+          "target": "more complex herbaceous vegetation",
+          "driver": "successional developments, though Typical sub-community more resistant"
+        }
+      ]
+    },
+    {
+      "source_community": "Carex-Festuca-Agrostis community",
+      "target_communities": [
+        {
+          "target": "heath or woodland",
+          "driver": "without herbivore predation"
+        }
+      ]
+    },
+    {
+      "source_community": "Carex-Cornicularia community",
+      "target_communities": [
+        {
+          "target": "heath",
+          "driver": "where grazing relieved"
+        },
+        {
+          "target": "woodland",
+          "driver": "where ground less impoverished"
+        }
+      ]
+    },
+    {
+      "source_community": "Viola-Aphanes community",
+      "target_communities": [
+        {
+          "target": "Matricaria-Stellaria community",
+          "driver": "in more enriched situations"
+        }
+      ]
+    },
+    {
+      "source_community": "Briza-Silene community",
+      "target_communities": [
+        {
+          "target": "prevented by cultivation",
+          "driver": "repeated disturbance prevents succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Papaveretum argemones",
+      "target_communities": [
+        {
+          "target": "Papaveri-Sileneetum",
+          "driver": "on more calcareous soils"
+        },
+        {
+          "target": "other weed communities",
+          "driver": "where crops more heavily fertilised"
+        }
+      ]
+    },
+    {
+      "source_community": "Papaveri-Sileneetum",
+      "target_communities": [
+        {
+          "target": "other weed communities",
+          "driver": "where crops more heavily fertilised"
+        }
+      ]
+    },
+    {
+      "source_community": "Kickxietum spuriae",
+      "target_communities": [
+        {
+          "target": "Matricaria-Stellaria community",
+          "driver": "where crops more heavily fertilised"
+        }
+      ]
+    },
+    {
+      "source_community": "Digitaria-Erodium community",
+      "target_communities": [
+        {
+          "target": "prevented by cultivation",
+          "driver": "cultivation repeatedly sets back successional development"
+        }
+      ]
+    },
+    {
+      "source_community": "Cerastium-Fumaria community",
+      "target_communities": [
+        {
+          "target": "Briza-Silene assemblage",
+          "driver": "tends to replace it on drier soils"
+        },
+        {
+          "target": "Stellaria-Capsella community",
+          "driver": "more heavily fertilised areas"
+        }
+      ]
+    },
+    {
+      "source_community": "Veronico-Lamietum",
+      "target_communities": [
+        {
+          "target": "prevented by cultivation",
+          "driver": "renewed cultivation prevents succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Veronica-Lamium community",
+      "target_communities": [
+        {
+          "target": "Matricaria-Stellaria community",
+          "driver": "where crops more heavily fertilised"
+        }
+      ]
+    },
+    {
+      "source_community": "Alopecuro-Matricarietum",
+      "target_communities": [
+        {
+          "target": "prevented by cultivation",
+          "driver": "annual cycle of cultivation prevents succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Descurainio-Anchusetum",
+      "target_communities": [
+        {
+          "target": "Kickxietum",
+          "driver": "where soils more clayey and calcareous"
+        },
+        {
+          "target": "Matricaria-Stellaria community",
+          "driver": "more intensively fertilised fields"
+        }
+      ]
+    },
+    {
+      "source_community": "Stellaria-Capsella community",
+      "target_communities": [
+        {
+          "target": "prevented by cultivation",
+          "driver": "repeated cultivation sets back succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Matricaria-Stellaria community",
+      "target_communities": [
+        {
+          "target": "Stellaria-Polygonum assemblages",
+          "driver": "shift from gateway to crop in arable fields"
+        }
+      ]
+    },
+    {
+      "source_community": "Poa-Senecio community",
+      "target_communities": [
+        {
+          "target": "Lolium-Dactylis community",
+          "driver": "where swards close"
+        },
+        {
+          "target": "Arrhenatheretum",
+          "driver": "further succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Poa-Myosotis community",
+      "target_communities": [
+        {
+          "target": "Lolio-Plantaginion swards",
+          "driver": "with Polygonum-Chamomilla assemblage in moderately trampled places"
+        }
+      ]
+    },
+    {
+      "source_community": "Polygonum-Chamomilla community",
+      "target_communities": [
+        {
+          "target": "pasture, ley or verge grasslands",
+          "driver": "where treading not so severe but grazing/mowing maintain sward"
+        }
+      ]
+    },
+    {
+      "source_community": "Poa-Plantago community",
+      "target_communities": [
+        {
+          "target": "grasslands and other weed communities",
+          "driver": "zonations related to degree of disturbance and trampling"
+        }
+      ]
+    },
+    {
+      "source_community": "Poa-Matricaria community",
+      "target_communities": [
+        {
+          "target": "Polygonum-Chamomilla community",
+          "driver": "with increased trampling around gateways"
+        },
+        {
+          "target": "Poa-Plantago community",
+          "driver": "further increased trampling"
+        }
+      ]
+    },
+    {
+      "source_community": "Sagino-Bryetum argentii",
+      "target_communities": [
+        {
+          "target": "more complex herbaceous vegetation",
+          "driver": "successional developments from larger crevices"
+        },
+        {
+          "target": "trees and shrubs",
+          "driver": "direct colonisation can prise open cobbles and paving"
+        }
+      ]
+    },
+    {
+      "source_community": "Poa-Taraxacum community",
+      "target_communities": [
+        {
+          "target": "Lolio-Plantaginion grassland",
+          "driver": "where sward more intact"
+        },
+        {
+          "target": "Lolium-Dactylis community",
+          "driver": "on verges where management not so assiduous"
+        }
+      ]
+    },
+    {
+      "source_community": "Lolium-Dactylis community",
+      "target_communities": [
+        {
+          "target": "Poa-Plantago community",
+          "driver": "sharp transition along trampled strips through vegetation"
+        }
+      ]
+    },
+    {
+      "source_community": "Urtica-Cirsium community",
+      "target_communities": [
+        {
+          "target": "woodland",
+          "driver": "invasion by brambles, shrubs and trees can continue succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Ranunculo-Alopecuretum",
+      "target_communities": [
+        {
+          "target": "Rorippa-Filaginella community",
+          "driver": "on silts and clays subject to longer inundation"
+        },
+        {
+          "target": "Phalaridetum arundinaceae",
+          "driver": "upslope at limits of inundation"
+        }
+      ]
+    },
+    {
+      "source_community": "Polygono-Bidentetum",
+      "target_communities": [
+        {
+          "target": "Rorippa-Filaginella community",
+          "driver": "shifts in composition related to duration and depth of inundation"
+        }
+      ]
+    },
+    {
+      "source_community": "Epilobium hirsutum community",
+      "target_communities": [
+        {
+          "target": "various communities",
+          "driver": "zonations and mosaics determined by ground water table and grazing/mowing"
+        }
+      ]
+    },
+    {
+      "source_community": "Epilobium angustifolium community",
+      "target_communities": [
+        {
+          "target": "surrounding vegetation",
+          "driver": "sharply marked off by highly localised disturbance"
+        }
+      ]
+    },
+    {
+      "source_community": "Rorippa-Filaginella community",
+      "target_communities": [
+        {
+          "target": "wet grassland or rush pasture",
+          "driver": "repeated flooding helps maintain suitable habitats"
+        }
+      ]
+    },
+    {
+      "source_community": "Ranunculetum scelerati",
+      "target_communities": [
+        {
+          "target": "water-margin communities and wet grasslands",
+          "driver": "patterns related to extent of inundation, disturbance and enrichment"
+        }
+      ]
+    },
+    {
+      "source_community": "Polygonum-Poa community",
+      "target_communities": [
+        {
+          "target": "leys and pasture swards",
+          "driver": "degree of wetness, disturbance and enrichment controlling"
+        }
+      ]
+    },
+    {
+      "source_community": "Lythrum-Ranunculus community",
+      "target_communities": [
+        {
+          "target": "Eleocharitetum palustris",
+          "driver": "towards shallow open waters"
+        },
+        {
+          "target": "wet grassland or rush pasture",
+          "driver": "drainage leads to succession"
+        }
+      ]
+    },
+    {
+      "source_community": "Allium-Plantago community",
+      "target_communities": [
+        {
+          "target": "Calluna-Scilla heath",
+          "driver": "closer to cliff-tops with maritime influence increase"
+        }
+      ]
+    },
+    {
+      "source_community": "Minuartio-Thlaspietum",
+      "target_communities": [
+        {
+          "target": "rendzinas and brown calcareous earths",
+          "driver": "transitions to more stable material with better-developed profiles"
+        }
+      ]
+    },
+    {
+      "source_community": "Asplenietum trichomano-rutae-murariae",
+      "target_communities": [
+        {
+          "target": "calcicolous grasslands, scrub and woodland",
+          "driver": "zonations related to soil development, exposure and grazing intensity"
+        }
+      ]
+    },
+    {
+      "source_community": "Gymnocarpietum robertianae",
+      "target_communities": [
+        {
+          "target": "temporary feature",
+          "driver": "where invasion potential by shrubs and trees exists"
+        }
+      ]
+    },
+    {
+      "source_community": "Parietarietum judaicae",
+      "target_communities": [
+        {
+          "target": "no succession mentioned",
+          "driver": "wall vegetation - different dynamics"
+        }
+      ]
+    },
+    {
+      "source_community": "Cymbalarietum muralis",
+      "target_communities": [
+        {
+          "target": "no succession mentioned",
+          "driver": "crevice vegetation - different dynamics"
+        }
+      ]
+    },
+    {
+      "source_community": "Crithmo-Spergularietum",
+      "target_communities": [
+        {
+          "target": "Festuca-Armeria maritime grassland",
+          "driver": "gradual zonation over deeper, moister soils"
+        },
+        {
+          "target": "Armeria-Cerastium community",
+          "driver": "where excessively-drained soils occur above maritime zone"
+        }
+      ]
+    },
+    {
+      "source_community": "Armeria-Ligusticum community",
+      "target_communities": [
+        {
+          "target": "Festuca-Armeria maritime grassland",
+          "driver": "transition to more intact grassland above"
+        },
+        {
+          "target": "Rhodiola-Armeria community",
+          "driver": "on very tall cliffs with more sheltered ledges"
+        }
+      ]
+    },
+    {
+      "source_community": "Rhodiola-Armeria community",
+      "target_communities": [
+        {
+          "target": "Festuca-Armeria maritime grassland",
+          "driver": "transition up cliffs to more intact grassland"
+        },
+        {
+          "target": "maritime heath",
+          "driver": "transition up cliffs"
+        }
+      ]
+    },
+    {
+      "source_community": "Brassica oleracea community",
+      "target_communities": [
+        {
+          "target": "Festuca-Armeria maritime grassland",
+          "driver": "inland passes to"
+        },
+        {
+          "target": "Festuca-Daucus maritime grassland",
+          "driver": "inland passes to"
+        }
+      ]
+    },
+    {
+      "source_community": "Atriplici-Betetum",
+      "target_communities": [
+        {
+          "target": "surrounding communities",
+          "driver": "fragments may expand if sites abandoned by sea-birds"
+        }
+      ]
+    },
+    {
+      "source_community": "Stellaria-Rumex community",
+      "target_communities": [
+        {
+          "target": "surrounding communities",
+          "driver": "may be able to expand if sites abandoned by birds"
+        }
+      ]
+    },
+    {
+      "source_community": "Armeria-Cerastium community",
+      "target_communities": [
+        {
+          "target": "other crevice communities",
+          "driver": "occurs in mosaics with other maritime crevice communities"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Armeria maritime grassland",
+      "target_communities": [
+        {
+          "target": "Festuca-Holcus grassland",
+          "driver": "may pass into with increased inaccessibility to stock"
+        },
+        {
+          "target": "Festuca-Plantago grassland",
+          "driver": "may pass into with increased inaccessibility to stock"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Plantago maritime grassland",
+      "target_communities": [
+        {
+          "target": "Festuca-Armeria grassland",
+          "driver": "grazing mediates successional relationship"
+        },
+        {
+          "target": "Festuca-Holcus grassland",
+          "driver": "grazing mediates successional relationship"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Holcus maritime grassland",
+      "target_communities": [
+        {
+          "target": "maritime heaths",
+          "driver": "occurs at about same level as maritime heaths"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Daucus maritime grassland",
+      "target_communities": [
+        {
+          "target": "no specific succession mentioned",
+          "driver": "community description focuses on habitat relationships"
+        }
+      ]
+    },
+    {
+      "source_community": "Festuca-Hyacinthoides maritime grassland",
+      "target_communities": [
+        {
+          "target": "no succession mentioned",
+          "driver": "little evidence of succession from or to scrub/woodland communities"
+        }
+      ]
+    }
+  ]
+}
