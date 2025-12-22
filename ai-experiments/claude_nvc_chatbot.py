@@ -221,9 +221,9 @@ else:
                 analyzer.get_loaded_documents()
             )
         
-        question = st.text_input(
+        question = st.text_area(
             "Ask a question:",
-            type="default",
+            # type="default",
             width="stretch",
             placeholder="What are the main findings discussed in these documents?"
         )
