@@ -1,0 +1,3397 @@
+{
+  "prompt":"You are an expert plant ecologist. Prove to me that you have been able to access all the supplied NVC documentation for each of these NVC communities: a1, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a2, a20, a21, a22, a23, a24, a3, a4, a5, a6, a7, a8, a9, cg1, cg10, cg11, cg12, cg13, cg14, cg2, cg3, cg4, cg5, cg6, cg7, cg8, cg9, h1, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h2, h20, h21, h22, h3, h4, h5, h6, h7, h8, h9, m1, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19, m2, m20, m21, m22, m23, m24, m25, m26, m27, m28, m29, m3, m30, m31, m32, m33, m34, m35, m36, m37, m38, m4, m5, m6, m7, m8, m9, mc1, mc10, mc11, mc12, mc2, mc3, mc4, mc5, mc6, mc7, mc8, mc9, mg1, mg10, mg11, mg12, mg13, mg2, mg3, mg4, mg5, mg6, mg7, mg8, mg9, ov1, ov10, ov11, ov12, ov13, ov14, ov15, ov16, ov17, ov18, ov19, ov2, ov20, ov21, ov22, ov23, ov24, ov25, ov26, ov27, ov28, ov29, ov3, ov30, ov31, ov32, ov33, ov34, ov35, ov36, ov37, ov38, ov39, ov4, ov40, ov41, ov42, ov5, ov6, ov7, ov8, ov9, s1, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s2, s20, s21, s22, s23, s24, s25, s26, s27, s28, s3, s4, s5, s6, s7, s8, s9, sd1, sd10, sd11, sd12, sd13, sd14, sd15, sd16, sd17, sd18, sd19, sd2, sd3, sd4, sd5, sd6, sd7, sd8, sd9, sm1, sm10, sm11, sm12, sm13, sm14, sm15, sm16, sm17, sm18, sm19, sm2, sm20, sm21, sm22, sm23, sm24, sm25, sm26, sm27, sm28, sm3, sm4, sm5, sm6, sm7, sm8, sm9, u1, u10, u11, u12, u13, u14, u15, u16, u17, u18, u19, u2, u20, u21, u3, u4, u5, u6, u7, u8, u9, w1, w10, w11, w12, w13, w14, w15, w16, w17, w18, w19, w2, w20, w21, w22, w23, w24, w25, w3, w4, w5, w6, w7, w8, w9,  by creating a JSON structure listing all the NVC communities, with full community names, community codes, and other alternate names, and all of their sub-communities, and all of the species that constitute each community and their sub-communities, and include all succession pathways, target communities, and drivers of succession from the document sections entitled 'Zonation and succession'; assume the misspelled 'succesion' means 'succession'. ",
+  "nvc_communities": {
+    "aquatic_communities": {
+      "a1": {
+        "code": "A1",
+        "name": "Lemna gibba community",
+        "alternate_names": ["Lemnetum gibbae"],
+        "constant_species": ["Lemna gibba"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Lemna trisulca sub-community", 
+          "c": "Riccia fluitans-Ricciocarpus natans sub-community"
+        },
+        "associated_species": ["Lemna minor", "Spirodela polyrhiza", "Nasturtium officinale", "Lemna trisulca", "Callitriche obtusangula", "Ranunculus sceleratus", "Hydrocharis morsus-ranae"],
+        "zonation_succession": {
+          "successional_context": "Often temporary, can be replaced by other duckweed communities",
+          "associated_communities": ["Lemnetum minoris", "Spirodela-Hydrocharis community"]
+        }
+      },
+      "a2": {
+        "code": "A2", 
+        "name": "Lemna minor community",
+        "constant_species": ["Lemna minor"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Lemna trisulca sub-community",
+          "c": "Riccia fluitans-Ricciocarpus natans sub-community"
+        },
+        "associated_species": ["Bidens tripartita", "Apium nodiflorum", "Lemna trisulca", "Potamogeton lucens", "Potamogeton pectinatus", "Callitriche intermedia", "Myriophyllum spicatum", "Lemna gibba", "Ranunculus peltatus", "Ceratophyllum demersum", "Berula erecta", "Alisma plantago-aquatica", "Riccia fluitans", "Ricciocarpus natans", "Callitriche stagnalis", "Potamogeton natans"],
+        "zonation_succession": {
+          "successional_context": "Characteristic of eutrophic waters, can form extensive mats",
+          "transitions": "Often found with other floating communities"
+        }
+      },
+      "a3": {
+        "code": "A3",
+        "name": "Spirodela polyrhiza-Hydrocharis morsus-ranae community", 
+        "constant_species": ["Spirodela polyrhiza", "Hydrocharis morsus-ranae"],
+        "associated_species": ["Lemna minor", "Lemna trisulca", "Ceratophyllum demersum", "Berula erecta", "Glyceria fluitans", "Apium nodiflorum", "Agrostis stolonifera"],
+        "zonation_succession": {
+          "habitat": "Confined to unpolluted and unshaded, clear mesotrophic and eutrophic waters"
+        }
+      },
+      "a4": {
+        "code": "A4",
+        "name": "Hydrocharis morsus-ranae-Stratiotes aloides community",
+        "constant_species": ["Hydrocharis morsus-ranae", "Stratiotes aloides"],
+        "zonation_succession": {
+          "habitat": "Eutrophic waters, characteristic of base-rich conditions"
+        }
+      },
+      "a5": {
+        "code": "A5",
+        "name": "Ceratophyllum demersum community",
+        "alternate_names": ["Ceratophylletum demersi"],
+        "constant_species": ["Ceratophyllum demersum"],
+        "sub_communities": {
+          "a": "Ranunculus circinatus sub-community"
+        },
+        "associated_species": ["Ranunculus circinatus", "Lemna minor", "Lemna trisulca", "Callitriche platycarpa", "Callitriche obtusangula", "Zannichellia palustris", "Potamogeton crispus", "Potamogeton pectinatus", "Potamogeton berchtoldii"],
+        "zonation_succession": {
+          "habitat": "Sluggish, eutrophic waters",
+          "succession": "Can replace Myriophyllum spicatum after dredging"
+        }
+      },
+      "a6": {
+        "code": "A6",
+        "name": "Ceratophyllum submersum community",
+        "alternate_names": ["Ceratophylletum submersi Den Hartog & Segal 1964"],
+        "constant_species": ["Ceratophyllum submersum"],
+        "associated_species": ["Myriophyllum spicatum", "Zannichellia palustris", "Callitriche obtusangula", "Ranunculus trichophyllus"],
+        "zonation_succession": {
+          "habitat": "Standing or sluggish, eutrophic and generally brackish waters"
+        }
+      },
+      "a7": {
+        "code": "A7",
+        "name": "Nymphaea alba community",
+        "alternate_names": ["Nymphaeetum albae Oberdörfer & Mitarb. 1967"],
+        "constant_species": ["Nymphaea alba"],
+        "sub_communities": {
+          "a": "Nuphar lutea sub-community",
+          "b": "Potamogeton natans sub-community"
+        },
+        "associated_species": ["Nuphar lutea", "Nuphar pumila", "Elodea canadensis", "Nitella spp.", "Potamogeton natans", "Juncus bulbosus", "Potamogeton polygonifolius", "Myriophyllum alterniflorum", "Utricularia vulgaris", "Sparganium minimum"],
+        "zonation_succession": {
+          "habitat": "Mesotrophic to eutrophic standing waters"
+        }
+      },
+      "a8": {
+        "code": "A8",
+        "name": "Nuphar lutea community",
+        "constant_species": ["Nuphar lutea"],
+        "sub_communities": {
+          "a": "Polygonum amphibium sub-community",
+          "b": "Potamogeton sub-community", 
+          "c": "Sparganium emersum sub-community",
+          "d": "Glyceria maxima sub-community"
+        },
+        "associated_species": ["Mentha aquatica", "Veronica beccabunga", "Apium nodiflorum", "Callitriche stagnalis", "Lemna minor", "Polygonum amphibium", "Zannichellia palustris", "Potamogeton crispus", "Potamogeton berchtoldii", "Glyceria fluitans", "Potamogeton pectinatus", "Callitriche hermaphroditica", "Ranunculus hederaceus"],
+        "zonation_succession": {
+          "habitat": "Standing or sluggish mesotrophic to eutrophic waters"
+        }
+      },
+      "a9": {
+        "code": "A9",
+        "name": "Potamogeton natans community",
+        "constant_species": ["Potamogeton natans"],
+        "associated_species": ["Sparganium natans", "Sparganium angustifolium", "Utricularia vulgaris", "Juncus bulbosus", "Myriophyllum alterniflorum", "Nitella spp.", "Potamogeton polygonifolius"],
+        "zonation_succession": {
+          "habitat": "Mesotrophic to oligotrophic waters",
+          "succession": "Can form the only floating-leaved element in sequences"
+        }
+      },
+      "a10": {
+        "code": "A10",
+        "name": "Polygonum amphibium community",
+        "constant_species": ["Polygonum amphibium"],
+        "zonation_succession": {
+          "habitat": "Fluctuating water levels, margins of water bodies",
+          "succession": "Often among the first to return after disturbance"
+        }
+      },
+      "a11": {
+        "code": "A11",
+        "name": "Potamogeton pectinatus-Myriophyllum spicatum community",
+        "constant_species": ["Potamogeton pectinatus", "Myriophyllum spicatum"],
+        "sub_communities": {
+          "a": "Potamogeton pusillus sub-community",
+          "b": "Elodea canadensis sub-community", 
+          "c": "Potamogeton filiformis sub-community"
+        },
+        "associated_species": ["Potamogeton pusillus", "Elodea canadensis", "Potamogeton filiformis", "Hippuris vulgaris", "Zannichellia palustris", "Callitriche obtusangula", "Lemna trisulca", "Potamogeton lucens"],
+        "zonation_succession": {
+          "habitat": "Base-rich, eutrophic waters"
+        }
+      },
+      "a12": {
+        "code": "A12",
+        "name": "Potamogeton pectinatus community",
+        "constant_species": ["Potamogeton pectinatus"],
+        "associated_species": ["Lemna gibba", "Lemna minor", "Callitriche stagnalis", "Myriophyllum spicatum", "Ceratophyllum demersum", "Elodea canadensis", "Lemna trisulca", "Zannichellia palustris", "Ruppia maritima", "Elodea nuttallii", "Groenlandia densa", "Polygonum amphibium", "Potamogeton perfoliatus", "Ranunculus peltatus"],
+        "zonation_succession": {
+          "habitat": "Highly eutrophic waters, tolerant of pollution"
+        }
+      },
+      "a13": {
+        "code": "A13",
+        "name": "Potamogeton perfoliatus-Myriophyllum alterniflorum community",
+        "constant_species": ["Potamogeton perfoliatus", "Myriophyllum alterniflorum"],
+        "sub_communities": {
+          "a": "Littorella uniflora sub-community",
+          "b": "Potamogeton gramineus sub-community"
+        },
+        "associated_species": ["Myriophyllum alterniflorum", "Littorella uniflora", "Potamogeton perfoliatus", "Potamogeton gramineus", "Potamogeton berchtoldii", "Nitella spp.", "Elodea canadensis", "Potamogeton obtusifolius", "Nuphar lutea", "Callitriche hamulata", "Nymphaea alba", "Sparganium minimum", "Potamogeton crispus", "Nuphar pumila", "Elatine hydropiper", "Potamogeton x zizii", "Callitriche obtusangula", "Lemna trisulca", "Potamogeton lucens", "Potamogeton filiformis", "Hippuris vulgaris", "Potamogeton pectinatus"],
+        "zonation_succession": {
+          "habitat": "Base-poor to mesotrophic waters"
+        }
+      },
+      "a14": {
+        "code": "A14",
+        "name": "Myriophyllum alterniflorum community",
+        "alternate_names": ["Myriophylletum alterniflori Lemée 1937"],
+        "constant_species": ["Myriophyllum alterniflorum"],
+        "associated_species": ["Littorella uniflora", "Potamogeton gramineus", "Juncus bulbosus", "Nitella spp.", "Potamogeton berchtoldii"],
+        "zonation_succession": {
+          "habitat": "Oligotrophic to mesotrophic waters",
+          "succession": "Can be replaced by Potamogeton-M. alterniflorum community"
+        }
+      },
+      "a15": {
+        "code": "A15",
+        "name": "Elodea canadensis community",
+        "constant_species": ["Elodea canadensis"],
+        "associated_species": ["Potamogeton natans", "Callitriche stagnalis", "Lemna minor", "Myriophyllum spicatum", "Potamogeton crispus", "Zannichellia palustris"],
+        "zonation_succession": {
+          "habitat": "Mesotrophic to eutrophic waters",
+          "succession": "Can replace native pondweed vegetation"
+        }
+      },
+      "a16": {
+        "code": "A16",
+        "name": "Callitriche stagnalis community",
+        "constant_species": ["Callitriche stagnalis"],
+        "associated_species": ["Ranunculus aquatilis", "Glyceria fluitans", "Apium nodiflorum", "Myriophyllum spicatum", "Potamogeton natans", "Callitriche obtusangula", "Glyceria x pedicellata", "Callitriche hamulata"],
+        "zonation_succession": {
+          "habitat": "Shallow waters, ditches, ponds"
+        }
+      },
+      "a17": {
+        "code": "A17",
+        "name": "Ranunculus penicillatus ssp. pseudofluitans community",
+        "constant_species": ["Ranunculus penicillatus ssp. pseudofluitans"],
+        "associated_species": ["Callitriche stagnalis", "Glyceria fluitans", "Apium nodiflorum", "Nasturtium officinale", "Berula erecta"],
+        "zonation_succession": {
+          "habitat": "Fast-flowing calcareous streams",
+          "succession": "Can dominate whole stretches of streams"
+        }
+      },
+      "a18": {
+        "code": "A18",
+        "name": "Ranunculus fluitans community",
+        "alternate_names": ["Ranunculetum fluitantis Allorge 1922"],
+        "constant_species": ["Ranunculus fluitans"],
+        "associated_species": ["Callitriche stagnalis", "Glyceria fluitans", "Apium nodiflorum", "Nasturtium officinale", "Berula erecta"],
+        "zonation_succession": {
+          "habitat": "Fast-flowing base-rich streams"
+        }
+      },
+      "a19": {
+        "code": "A19",
+        "name": "Ranunculus aquatilis community",
+        "alternate_names": ["Ranunculetum aquatilis Géhu 1961"],
+        "constant_species": ["Ranunculus aquatilis"],
+        "associated_species": ["Glyceria fluitans", "Apium nodiflorum", "Myriophyllum spicatum", "Fontinalis antipyretica", "Potamogeton natans", "Callitriche stagnalis", "Callitriche obtusangula", "Glyceria x pedicellata", "Callitriche hamulata", "Lemna gibba", "Myriophyllum alterniflorum", "Ceratophyllum demersum", "Ranunculus fluitans", "Elodea canadensis", "Potamogeton pectinatus", "Lemna trisulca", "Polygonum amphibium"],
+        "zonation_succession": {
+          "habitat": "Shallow mesotrophic waters"
+        }
+      },
+      "a20": {
+        "code": "A20",
+        "name": "Ranunculus peltatus community",
+        "alternate_names": ["Ranunculetum peltati Sauer 1947"],
+        "constant_species": ["Ranunculus peltatus"],
+        "associated_species": ["Lemna minor", "Lemna gibba", "Lemna trisulca", "Callitriche platycarpa", "Potamogeton natans", "Polygonum amphibium", "Ranunculus sceleratus", "Ranunculus trichophyllus", "Ranunculus circinatus", "Nasturtium officinale", "Glyceria fluitans", "Glyceria plicata", "Apium nodiflorum", "Berula erecta"],
+        "zonation_succession": {
+          "habitat": "Shallow margins of mesotrophic to nutrient-rich waters"
+        }
+      },
+      "a21": {
+        "code": "A21",
+        "name": "Ranunculus baudotii community",
+        "alternate_names": ["Ranunculetum baudotii Br.-Bl. 1952"],
+        "constant_species": ["Ranunculus baudotii"],
+        "associated_species": ["Ceratophyllum submersum", "Potamogeton pectinatus", "Callitriche platycarpa", "Callitriche obtusangula", "Ranunculus circinatus", "Zannichellia palustris", "Potamogeton crispus", "Potamogeton berchtoldii"],
+        "zonation_succession": {
+          "habitat": "Brackish waters of ditches and pools"
+        }
+      },
+      "a22": {
+        "code": "A22",
+        "name": "Littorella uniflora-Lobelia dortmanna community",
+        "constant_species": ["Littorella uniflora", "Lobelia dortmanna"],
+        "associated_species": ["Myriophyllum alterniflorum", "Potamogeton perfoliatus", "Potamogeton gramineus", "Juncus bulbosus", "Nitella spp.", "Eleocharis acicularis"],
+        "zonation_succession": {
+          "habitat": "Oligotrophic, base-poor lake margins"
+        }
+      },
+      "a23": {
+        "code": "A23",
+        "name": "Isoetes lacustris/setacea community",
+        "constant_species": ["Isoetes lacustris", "Isoetes setacea"],
+        "associated_species": ["Littorella uniflora", "Lobelia dortmanna", "Myriophyllum alterniflorum", "Juncus bulbosus"],
+        "zonation_succession": {
+          "habitat": "Oligotrophic lake margins with stable substrates"
+        }
+      },
+      "a24": {
+        "code": "A24",
+        "name": "Juncus bulbosus community",
+        "constant_species": ["Juncus bulbosus"],
+        "sub_communities": {
+          "a": "Utricularia vulgaris sub-community",
+          "b": "Sphagnum auriculatum sub-community"
+        },
+        "associated_species": ["Juncus bulbosus", "Utricularia vulgaris agg.", "Potamogeton natans", "Sparganium angustifolium", "Myriophyllum alterniflorum", "Potamogeton obtusifolius", "Nitella spp.", "Lobelia dortmanna", "Sparganium minimum", "Callitriche hamulata", "Potamogeton berchtoldii"],
+        "zonation_succession": {
+          "habitat": "Oligotrophic to mesotrophic waters"
+        }
+      }
+    },
+    "calcicolous_grasslands": {
+      "cg1": {
+        "code": "CG1",
+        "name": "Festuca ovina-Carlina vulgaris grassland",
+        "constant_species": ["Festuca ovina", "Carlina vulgaris", "Hieracium pilosella", "Thymus praecox", "Lotus corniculatus", "Plantago lanceolata"],
+        "sub_communities": {
+          "a": "Bromus erectus sub-community",
+          "b": "Koeleria macrantha sub-community"
+        },
+        "associated_species": ["Bromus erectus", "Koeleria macrantha", "Centaurea scabiosa", "Silene nutans", "Aira caryophyllea", "Bryum capillare", "Squamaria crassa", "Carlina vulgaris", "Veronica arvensis", "Riccia sorocarpa"],
+        "zonation_succession": {
+          "habitat": "Shallow calcareous soils, often on steep slopes",
+          "succession": "Can develop from disturbed calcareous grassland"
+        }
+      },
+      "cg2": {
+        "code": "CG2",
+        "name": "Festuca ovina-Avenula pratensis grassland",
+        "constant_species": ["Festuca ovina", "Avenula pratensis", "Lotus corniculatus", "Plantago lanceolata", "Thymus praecox"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Succisa pratensis sub-community"
+        },
+        "associated_species": ["Succisa pratensis", "Centaurea nigra", "Leucanthemum vulgare", "Campanula glomerata", "Serratula tinctoria", "Stachys betonica"],
+        "zonation_succession": {
+          "habitat": "Calcareous grasslands with deeper soils"
+        }
+      },
+      "cg3": {
+        "code": "CG3",
+        "name": "Bromus erectus grassland",
+        "constant_species": ["Bromus erectus", "Festuca ovina", "Lotus corniculatus", "Prunella vulgaris", "Cirsium acaule", "Briza media", "Linum catharticum"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Knautia arvensis-Bellis perennis sub-community",
+          "c": "Centaurea nigra sub-community",
+          "d": "Festuca rubra-Festuca arundinacea sub-community"
+        },
+        "associated_species": ["Knautia arvensis", "Bellis perennis", "Centaurea nigra", "Festuca rubra", "Festuca arundinacea"],
+        "zonation_succession": {
+          "habitat": "Calcareous grasslands",
+          "succession": "Can invade Festuca-Avenula grassland"
+        }
+      },
+      "cg4": {
+        "code": "CG4",
+        "name": "Brachypodium pinnatum grassland",
+        "constant_species": ["Brachypodium pinnatum", "Bromus erectus", "Festuca ovina", "Lotus corniculatus"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Fragaria vesca sub-community"
+        },
+        "associated_species": ["Fragaria vesca", "Viola hirta", "Primula veris"],
+        "zonation_succession": {
+          "habitat": "Calcareous grasslands, often on slopes"
+        }
+      },
+      "cg5": {
+        "code": "CG5",
+        "name": "Bromus erectus-Brachypodium pinnatum grassland",
+        "constant_species": ["Bromus erectus", "Brachypodium pinnatum", "Festuca ovina", "Lotus corniculatus"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Hieracium spp. sub-community",
+          "c": "Cirsium acaule-Asperula cynanchica sub-community",
+          "d": "Centaurea nigra-Leontodon hispidus sub-community"
+        },
+        "associated_species": ["Hieracium spp.", "Cirsium acaule", "Asperula cynanchica", "Centaurea nigra", "Leontodon hispidus"],
+        "zonation_succession": {
+          "habitat": "Calcareous grasslands with variable soil depth"
+        }
+      },
+      "cg6": {
+        "code": "CG6",
+        "name": "Avenula pubescens grassland",
+        "constant_species": ["Avenula pubescens", "Festuca ovina", "Lotus corniculatus", "Plantago lanceolata"],
+        "associated_species": ["Centaurea nigra", "Leucanthemum vulgare", "Knautia arvensis"],
+        "zonation_succession": {
+          "habitat": "Mesotrophic calcareous grasslands"
+        }
+      },
+      "cg7": {
+        "code": "CG7",
+        "name": "Festuca ovina-Hieracium pilosella-Thymus praecox/pulegioides grassland",
+        "constant_species": ["Festuca ovina", "Hieracium pilosella", "Thymus praecox", "Lotus corniculatus", "Plantago lanceolata"],
+        "sub_communities": {
+          "a": "Ditrichum flexicaule-Diploschistes scruposus sub-community",
+          "b": "Cladonia furcata sub-community"
+        },
+        "associated_species": ["Ditrichum flexicaule", "Diploschistes scruposus", "Cladonia furcata", "Cladonia rangiformis"],
+        "zonation_succession": {
+          "habitat": "Shallow calcareous soils, often disturbed",
+          "succession": "Pioneer community on disturbed chalk"
+        }
+      },
+      "cg8": {
+        "code": "CG8",
+        "name": "Sesleria albicans-Scabiosa columbaria grassland",
+        "constant_species": ["Sesleria albicans", "Carex flacca", "Linum catharticum", "Sanguisorba minor", "Scabiosa columbaria", "Thymus praecox", "Helianthemum nummularium"],
+        "sub_communities": {
+          "a": "Carlina vulgaris-Hypericum perforatum sub-community",
+          "b": "Hieracium spp. sub-community",
+          "c": "Avenula pubescens sub-community"
+        },
+        "associated_species": ["Carlina vulgaris", "Hypericum perforatum", "Hieracium spp.", "Avenula pubescens"],
+        "zonation_succession": {
+          "habitat": "Carboniferous limestone grasslands"
+        }
+      },
+      "cg9": {
+        "code": "CG9",
+        "name": "Sesleria albicans-Galium sterneri grassland",
+        "constant_species": ["Sesleria albicans", "Galium sterneri", "Carex flacca", "Thymus praecox"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Carex pulicaris-Carex panicea sub-community"
+        },
+        "associated_species": ["Carex pulicaris", "Carex panicea", "Plantago maritima", "Primula farinosa"],
+        "zonation_succession": {
+          "habitat": "Base-rich montane grasslands"
+        }
+      },
+      "cg10": {
+        "code": "CG10",
+        "name": "Festuca ovina-Agrostis capillaris-Thymus praecox grassland",
+        "constant_species": ["Festuca ovina", "Agrostis capillaris", "Thymus praecox", "Lotus corniculatus", "Plantago lanceolata"],
+        "sub_communities": {
+          "a": "Trifolium repens-Luzula campestris sub-community",
+          "b": "Fragaria vesca sub-community"
+        },
+        "associated_species": ["Trifolium repens", "Luzula campestris", "Fragaria vesca", "Viola riviniana"],
+        "zonation_succession": {
+          "habitat": "Calcareous grasslands on deeper soils"
+        }
+      },
+      "cg11": {
+        "code": "CG11",
+        "name": "Festuca ovina-Agrostis capillaris-Alchemilla alpina grass-heath",
+        "constant_species": ["Festuca ovina", "Agrostis capillaris", "Alchemilla alpina", "Thymus praecox", "Lotus corniculatus"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Racomitrium lanuginosum sub-community"
+        },
+        "associated_species": ["Racomitrium lanuginosum", "Hylocomium splendens", "Rhytidiadelphus squarrosus"],
+        "zonation_succession": {
+          "habitat": "Montane calcareous grasslands"
+        }
+      },
+      "cg12": {
+        "code": "CG12",
+        "name": "Festuca ovina-Alchemilla alpina-Silene acaulis dwarf-herb community",
+        "constant_species": ["Festuca ovina", "Thymus praecox", "Alchemilla alpina", "Agrostis capillaris", "Luzula spicata", "Deschampsia cespitosa", "Sibbaldia procumbens", "Silene acaulis", "Selaginella selaginoides", "Hylocomium splendens", "Polytrichum alpinum", "Nardus stricta", "Racomitrium lanuginosum"],
+        "zonation_succession": {
+          "habitat": "High-altitude calcareous ledges and slopes"
+        }
+      },
+      "cg13": {
+        "code": "CG13",
+        "name": "Dryas octopetala-Carex flacca heath",
+        "constant_species": ["Dryas octopetala", "Carex flacca", "Festuca ovina", "Thymus praecox", "Lotus corniculatus"],
+        "sub_communities": {
+          "a": "Hieracium pilosella-Ctenidium molluscum sub-community",
+          "b": "Carex pulicaris-Carex panicea sub-community"
+        },
+        "associated_species": ["Hieracium pilosella", "Ctenidium molluscum", "Carex pulicaris", "Carex panicea"],
+        "zonation_succession": {
+          "habitat": "Montane calcareous heaths"
+        }
+      },
+      "cg14": {
+        "code": "CG14",
+        "name": "Dryas octopetala-Silene acaulis ledge community",
+        "constant_species": ["Dryas octopetala", "Silene acaulis", "Festuca ovina", "Thymus praecox"],
+        "associated_species": ["Saxifraga oppositifolia", "Minuartia verna", "Arabis petraea"],
+        "zonation_succession": {
+          "habitat": "Exposed calcareous rock ledges at high altitude"
+        }
+      }
+    },
+    "heaths": {
+      "h1": {
+        "code": "H1",
+        "name": "Calluna vulgaris-Festuca ovina heath",
+        "constant_species": ["Calluna vulgaris", "Festuca ovina", "Potentilla erecta", "Galium saxatile"],
+        "sub_communities": {
+          "a": "Festuca ovina sub-community",
+          "b": "Vaccinium myrtillus sub-community", 
+          "c": "Erica cinerea sub-community",
+          "d": "Deschampsia flexuosa sub-community",
+          "e": "Ulex gallii sub-community"
+        },
+        "associated_species": ["Vaccinium myrtillus", "Erica cinerea", "Deschampsia flexuosa", "Ulex gallii", "Agrostis capillaris", "Anthoxanthum odoratum"],
+        "zonation_succession": {
+          "habitat": "Acidic soils, heathlands",
+          "succession": "Can develop from grassland with reduced grazing"
+        }
+      },
+      "h2": {
+        "code": "H2",
+        "name": "Calluna vulgaris-Ulex minor heath",
+        "constant_species": ["Calluna vulgaris", "Ulex minor", "Erica cinerea", "Agrostis curtisii"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Vaccinium myrtillus sub-community",
+          "c": "Molinia caerulea sub-community"
+        },
+        "associated_species": ["Vaccinium myrtillus", "Molinia caerulea", "Erica tetralix", "Potentilla erecta"],
+        "zonation_succession": {
+          "habitat": "Lowland heaths on acidic soils"
+        }
+      },
+      "h3": {
+        "code": "H3",
+        "name": "Ulex minor-Agrostis curtisii heath",
+        "constant_species": ["Ulex minor", "Agrostis curtisii", "Molinia caerulea", "Erica cinerea", "Calluna vulgaris", "Erica tetralix", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Anthyllis vulneraria sub-community",
+          "b": "Aira praecox sub-community",
+          "c": "Arenaria serpyllifolia sub-community"
+        },
+        "associated_species": ["Erica ciliaris", "Betula spp. sapling", "Cuscuta epithymum", "Zygogonium ericetorum", "Danthonia decumbens", "Hypericum pulchrum", "Schoenus nigricans", "Campylopus brevipilus", "Cladonia impexa", "Cladonia floerkeana", "Polygala serpyllifolia", "Polytrichum juniperinum", "Kurzia sp.", "Cladonia coccifera", "Cladonia pyxidata", "Campylopus paradoxus"],
+        "zonation_succession": {
+          "habitat": "Lowland heaths, often coastal"
+        }
+      },
+      "h4": {
+        "code": "H4",
+        "name": "Ulex gallii-Agrostis curtisii heath",
+        "constant_species": ["Ulex gallii", "Agrostis curtisii", "Molinia caerulea", "Erica cinerea", "Calluna vulgaris"],
+        "sub_communities": {
+          "a": "Agrostis curtisii-Erica cinerea sub-community",
+          "b": "Festuca ovina-Holcus lanatus sub-community"
+        },
+        "associated_species": ["Festuca ovina", "Holcus lanatus", "Erica tetralix", "Potentilla erecta"],
+        "zonation_succession": {
+          "habitat": "Western heaths on acidic soils"
+        }
+      },
+      "h5": {
+        "code": "H5",
+        "name": "Erica vagans-Schoenus nigricans heath",
+        "constant_species": ["Erica vagans", "Schoenus nigricans", "Calluna vulgaris", "Molinia caerulea"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Erica tetralix sub-community"
+        },
+        "associated_species": ["Erica tetralix", "Erica cinerea", "Ulex gallii"],
+        "zonation_succession": {
+          "habitat": "Cornish heaths on serpentine soils"
+        }
+      },
+      "h6": {
+        "code": "H6",
+        "name": "Erica vagans-Ulex europaeus heath",
+        "constant_species": ["Erica vagans", "Ulex europaeus", "Calluna vulgaris", "Agrostis curtisii"],
+        "associated_species": ["Erica cinerea", "Molinia caerulea", "Pteridium aquilinum"],
+        "zonation_succession": {
+          "habitat": "Cornish heaths"
+        }
+      },
+      "h7": {
+        "code": "H7",
+        "name": "Calluna vulgaris-Scilla verna heath",
+        "constant_species": ["Calluna vulgaris", "Scilla verna", "Festuca ovina", "Plantago maritima"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Danthonia decumbens sub-community",
+          "c": "Sanguisorba minor sub-community", 
+          "d": "Scilla verna sub-community",
+          "e": "Vaccinium myrtillus sub-community"
+        },
+        "associated_species": ["Danthonia decumbens", "Sanguisorba minor", "Vaccinium myrtillus", "Erica cinerea", "Thymus praecox"],
+        "zonation_succession": {
+          "habitat": "Coastal heaths"
+        }
+      },
+      "h8": {
+        "code": "H8",
+        "name": "Calluna vulgaris-Ulex gallii heath",
+        "constant_species": ["Calluna vulgaris", "Ulex gallii", "Potentilla erecta", "Agrostis curtisii"],
+        "sub_communities": {
+          "a": "Species-poor sub-community",
+          "b": "Danthonia decumbens sub-community",
+          "c": "Sanguisorba minor sub-community",
+          "d": "Scilla verna sub-community", 
+          "e": "Vaccinium myrtillus sub-community"
+        },
+        "associated_species": ["Danthonia decumbens", "Sanguisorba minor", "Scilla verna", "Vaccinium myrtillus"],
+        "zonation_succession": {
+          "habitat": "Western coastal and upland heaths"
+        }
+      },
+      "h9": {
+        "code": "H9",
+        "name": "Calluna vulgaris-Deschampsia flexuosa heath",
+        "constant_species": ["Calluna vulgaris", "Deschampsia flexuosa", "Vaccinium myrtillus", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Cladonia arbuscula sub-community"
+        },
+        "associated_species": ["Cladonia arbuscula", "Cetraria islandica", "Pleurozium schreberi"],
+        "zonation_succession": {
+          "habitat": "Upland heaths on acidic soils"
+        }
+      },
+      "h10": {
+        "code": "H10",
+        "name": "Calluna vulgaris-Erica cinerea heath",
+        "constant_species": ["Calluna vulgaris", "Erica cinerea", "Potentilla erecta", "Deschampsia flexuosa"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Festuca ovina-Anthoxanthum odoratum sub-community",
+          "c": "Vaccinium myrtillus-Dicranum scoparium sub-community"
+        },
+        "associated_species": ["Festuca ovina", "Anthoxanthum odoratum", "Vaccinium myrtillus", "Dicranum scoparium"],
+        "zonation_succession": {
+          "habitat": "Lowland and upland heaths"
+        }
+      },
+      "h11": {
+        "code": "H11",
+        "name": "Calluna vulgaris-Carex arenaria heath",
+        "constant_species": ["Calluna vulgaris", "Carex arenaria", "Festuca ovina", "Galium saxatile"],
+        "sub_communities": {
+          "a": "Empetrum nigrum nigrum sub-community"
+        },
+        "associated_species": ["Empetrum nigrum ssp. nigrum", "Erica cinerea", "Festuca rubra", "Ammophila arenaria"],
+        "zonation_succession": {
+          "habitat": "Coastal dune heaths"
+        }
+      },
+      "h12": {
+        "code": "H12",
+        "name": "Calluna vulgaris-Vaccinium myrtillus heath",
+        "constant_species": ["Calluna vulgaris", "Vaccinium myrtillus", "Deschampsia flexuosa", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Viola riviniana-Oxalis acetosella sub-community"
+        },
+        "associated_species": ["Viola riviniana", "Oxalis acetosella", "Sorbus aucuparia", "Betula spp."],
+        "zonation_succession": {
+          "habitat": "Upland heaths, transitions to woodland"
+        }
+      },
+      "h13": {
+        "code": "H13",
+        "name": "Calluna vulgaris-Cladonia arbuscula heath",
+        "constant_species": ["Calluna vulgaris", "Cladonia arbuscula", "Cetraria islandica", "Cladonia uncialis", "Cornicularia aculeata", "Racomitrium lanuginosum", "Cladonia rangiferina", "Empetrum nigrum hermaphroditum", "Alectoria nigricans"],
+        "sub_communities": {
+          "a": "Festuca ovina-Galium saxatile sub-community",
+          "b": "Vaccinium myrtillus-Rubus chamaemorus sub-community"
+        },
+        "associated_species": ["Festuca ovina", "Galium saxatile", "Vaccinium myrtillus", "Rubus chamaemorus", "Scirpus cespitosus", "Cladonia impexa", "Agrostis canina", "Potentilla erecta", "Erica cinerea", "Molinia caerulea", "Nardus stricta", "Carex panicea", "Campylopus paradoxus", "Erica tetralix", "Deschampsia flexuosa"],
+        "zonation_succession": {
+          "habitat": "Montane heaths with extensive lichen cover"
+        }
+      },
+      "h14": {
+        "code": "H14",
+        "name": "Calluna vulgaris-Racomitrium lanuginosum heath",
+        "constant_species": ["Calluna vulgaris", "Racomitrium lanuginosum", "Festuca ovina", "Galium saxatile"],
+        "sub_communities": {
+          "a": "Sphagnum capillifolium sub-community",
+          "b": "Cladonia arbuscula sub-community"
+        },
+        "associated_species": ["Sphagnum capillifolium", "Cladonia arbuscula", "Cetraria islandica"],
+        "zonation_succession": {
+          "habitat": "Exposed montane heaths"
+        }
+      },
+      "h15": {
+        "code": "H15",
+        "name": "Calluna vulgaris-Juniperus communis ssp. nana heath",
+        "constant_species": ["Calluna vulgaris", "Juniperus communis ssp. nana", "Vaccinium myrtillus", "Empetrum nigrum hermaphroditum"],
+        "sub_communities": {
+          "a": "Loiseleuria procumbens-Cetraria glauca sub-community",
+          "b": "Empetrum nigrum nigrum sub-community"
+        },
+        "associated_species": ["Loiseleuria procumbens", "Cetraria glauca", "Empetrum nigrum ssp. nigrum"],
+        "zonation_succession": {
+          "habitat": "High-altitude montane heaths"
+        }
+      },
+      "h16": {
+        "code": "H16",
+        "name": "Calluna vulgaris-Arctostaphylos uva-ursi heath",
+        "constant_species": ["Calluna vulgaris", "Arctostaphylos uva-ursi", "Hypnum jutlandicum", "Cladonia impexa", "Pleurozium schreberi", "Erica cinerea", "Dicranum scoparium", "Vaccinium vitis-idaea"],
+        "sub_communities": {
+          "a": "Pyrola media-Lathyrus montanus sub-community",
+          "b": "Typical sub-community"
+        },
+        "associated_species": ["Pyrola media", "Lathyrus montanus", "Festuca ovina", "Potentilla erecta", "Viola riviniana", "Hypericumpulchrum", "Anemone nemorosa", "Trientalis europaeus", "Lotus corniculatus"],
+        "zonation_succession": {
+          "habitat": "Pine woodland clearings and edges"
+        }
+      },
+      "h17": {
+        "code": "H17",
+        "name": "Calluna vulgaris-Arctostaphylos alpinus heath",
+        "constant_species": ["Calluna vulgaris", "Arctostaphylos alpinus", "Vaccinium myrtillus", "Empetrum nigrum hermaphroditum"],
+        "sub_communities": {
+          "a": "Loiseleuria procumbens-Cetraria glauca sub-community",
+          "b": "Empetrum nigrum nigrum sub-community"
+        },
+        "associated_species": ["Loiseleuria procumbens", "Cetraria glauca", "Empetrum nigrum ssp. nigrum"],
+        "zonation_succession": {
+          "habitat": "High-altitude montane heaths"
+        }
+      },
+      "h18": {
+        "code": "H18",
+        "name": "Vaccinium myrtillus-Deschampsia flexuosa heath",
+        "constant_species": ["Vaccinium myrtillus", "Deschampsia flexuosa", "Galium saxatile", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Anemone nemorosa sub-community"
+        },
+        "associated_species": ["Anemone nemorosa", "Oxalis acetosella", "Sorbus aucuparia"],
+        "zonation_succession": {
+          "habitat": "Upland areas, often under light tree cover"
+        }
+      },
+      "h19": {
+        "code": "H19",
+        "name": "Vaccinium myrtillus-Cladonia arbuscula heath",
+        "constant_species": ["Vaccinium myrtillus", "Cladonia arbuscula", "Empetrum nigrum hermaphroditum", "Calluna vulgaris"],
+        "sub_communities": {
+          "a": "Festuca ovina-Galium saxatile sub-community",
+          "b": "Vaccinium uliginosum-Rubus chamaemorus sub-community"
+        },
+        "associated_species": ["Festuca ovina", "Galium saxatile", "Vaccinium uliginosum", "Rubus chamaemorus"],
+        "zonation_succession": {
+          "habitat": "Montane heaths with lichen dominance"
+        }
+      },
+      "h20": {
+        "code": "H20",
+        "name": "Vaccinium myrtillus-Racomitrium lanuginosum heath",
+        "constant_species": ["Vaccinium myrtillus", "Racomitrium lanuginosum", "Empetrum nigrum hermaphroditum", "Calluna vulgaris"],
+        "associated_species": ["Deschampsia flexuosa", "Festuca ovina", "Nardus stricta"],
+        "zonation_succession": {
+          "habitat": "Exposed montane situations"
+        }
+      },
+      "h21": {
+        "code": "H21",
+        "name": "Calluna vulgaris-Vaccinium myrtillus-Sphagnum capillifolium heath",
+        "constant_species": ["Calluna vulgaris", "Vaccinium myrtillus", "Sphagnum capillifolium", "Erica tetralix", "Molinia caerulea"],
+        "sub_communities": {
+          "a": "Calluna vulgaris-Pteridium aquilinum sub-community",
+          "b": "Mastigophora woodsii-Herbertus aduncus hutchinsiae sub-community"
+        },
+        "associated_species": ["Pteridium aquilinum", "Mastigophora woodsii", "Herbertus aduncus hutchinsiae"],
+        "zonation_succession": {
+          "habitat": "Wet heaths on peaty soils"
+        }
+      },
+      "h22": {
+        "code": "H22",
+        "name": "Vaccinium myrtillus-Rubus chamaemorus heath",
+        "constant_species": ["Vaccinium myrtillus", "Rubus chamaemorus", "Calluna vulgaris", "Empetrum nigrum hermaphroditum"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Vaccinium uliginosum sub-community"
+        },
+        "associated_species": ["Vaccinium uliginosum", "Deschampsia flexuosa", "Sphagnum capillifolium"],
+        "zonation_succession": {
+          "habitat": "Montane heaths on moist peaty soils"
+        }
+      }
+    },
+    "mires": {
+      "m1": {
+        "code": "M1",
+        "name": "Sphagnum auriculatum bog pool community",
+        "constant_species": ["Sphagnum auriculatum"],
+        "associated_species": ["Drosera rotundifolia", "Rhynchospora alba", "Eriophorum angustifolium"],
+        "zonation_succession": {
+          "habitat": "Bog pools and wet hollows",
+          "succession": "Part of bog pool-hummock complex"
+        }
+      },
+      "m2": {
+        "code": "M2",
+        "name": "Sphagnum cuspidatum/recurvum bog pool community",
+        "constant_species": ["Sphagnum cuspidatum", "Sphagnum recurvum"],
+        "associated_species": ["Drosera rotundifolia", "Rhynchospora alba", "Eriophorum angustifolium"],
+        "zonation_succession": {
+          "habitat": "Bog pools and wet depressions"
+        }
+      },
+      "m3": {
+        "code": "M3",
+        "name": "Eriophorum angustifolium bog pool community",
+        "constant_species": ["Eriophorum angustifolium"],
+        "associated_species": ["Sphagnum cuspidatum", "Drosera rotundifolia", "Molinia caerulea", "Empetrum nigrum nigrum", "Agrostis canina canina"],
+        "zonation_succession": {
+          "habitat": "Bog pools and wet areas"
+        }
+      },
+      "m4": {
+        "code": "M4",
+        "name": "Carex rostrata-Sphagnum recurvum mire",
+        "constant_species": ["Carex rostrata", "Sphagnum recurvum"],
+        "associated_species": ["Anthoxanthum odoratum", "Hypnum jutlandicum", "Iris pseudacorus", "Epilobium anagallidifolium", "Montia fontana", "Saxifraga stellaris", "Carex limosa", "Lysimachia thyrsiflora", "Hypericum elodes", "Glyceria fluitans", "Sphagnum papillosum", "Eriophorum vaginatum"],
+        "zonation_succession": {
+          "habitat": "Poor fens and bog margins"
+        }
+      },
+      "m5": {
+        "code": "M5",
+        "name": "Carex rostrata-Sphagnum squarrosum mire",
+        "constant_species": ["Carex rostrata", "Sphagnum squarrosum"],
+        "associated_species": ["Potentilla palustris", "Menyanthes trifoliata", "Galium palustre"],
+        "zonation_succession": {
+          "habitat": "Moderately base-rich mires"
+        }
+      },
+      "m6": {
+        "code": "M6",
+        "name": "Carex echinata-Sphagnum recurvum/auriculatum mire",
+        "constant_species": ["Carex echinata", "Sphagnum recurvum", "Sphagnum auriculatum"],
+        "sub_communities": {
+          "a": "Carex panicea-Viola palustris sub-community",
+          "b": "Carex nigra-Nardus stricta sub-community",
+          "c": "Juncus effusus sub-community"
+        },
+        "associated_species": ["Carex panicea", "Viola palustris", "Carex nigra", "Nardus stricta", "Juncus effusus"],
+        "zonation_succession": {
+          "habitat": "Base-poor flushes and mires"
+        }
+      },
+      "m7": {
+        "code": "M7",
+        "name": "Carex curta-Sphagnum russowii mire",
+        "constant_species": ["Carex curta", "Sphagnum russowii"],
+        "associated_species": ["Carex rostrata", "Potentilla palustris", "Menyanthes trifoliata"],
+        "zonation_succession": {
+          "habitat": "Montane mires"
+        }
+      },
+      "m8": {
+        "code": "M8",
+        "name": "Carex rostrata-Sphagnum warnstorfii mire",
+        "constant_species": ["Carex rostrata", "Sphagnum warnstorfii"],
+        "associated_species": ["Sphagnum teres", "Aulacomnium palustre", "Rhizomnium pseudopunctatum", "Calliergon cuspidatum", "Calliergon stramineum"],
+        "zonation_succession": {
+          "habitat": "Base-rich montane mires"
+        }
+      },
+      "m9": {
+        "code": "M9",
+        "name": "Carex rostrata-Calliergon cuspidatum/giganteum mire",
+        "alternate_names": ["Acrocladio-Caricetum diandrae"],
+        "constant_species": ["Carex rostrata", "Calliergon cuspidatum"],
+        "sub_communities": {
+          "a": "Carex lasiocarpa sub-community",
+          "b": "Menyanthes trifoliata sub-community",
+          "c": "Sphagnum warnstorfii sub-community"
+        },
+        "associated_species": ["Carex lasiocarpa", "Menyanthes trifoliata", "Sphagnum warnstorfii", "Carex diandra", "Carex appropinquata", "Carex paniculata", "Carex laevigata", "Carex vesicaria", "Carex nigra", "Carex curta", "Juncus acutiflorus", "Juncus effusus"],
+        "zonation_succession": {
+          "habitat": "Base-rich fens and mires"
+        }
+      },
+      "m10": {
+        "code": "M10",
+        "name": "Carex dioica-Pinguicula vulgaris mire",
+        "alternate_names": ["Pinguiculo-Caricetum dioicae"],
+        "constant_species": ["Carex dioica", "Pinguicula vulgaris"],
+        "sub_communities": {
+          "a": "Briza media sub-community",
+          "b": "Carex viridula ssp. oedocarpa-Anagallis tenella sub-community"
+        },
+        "associated_species": ["Carex hostiana", "Carex pulicaris", "Carex lepidocarpa", "Carex flacca", "Sesleria albicans", "Briza media", "Eleocharis quinqueflora", "Eriophorum latifolium", "Linum catharticum", "Tofieldia pusilia", "Equisetum variegatum", "Kobresia simpliciuscula", "Aneura pinguis", "Drepanocladus revolvens", "Campylium stellatum", "Ctenidium molluscum", "Cratoneuron commutatum", "Gymnostomum recurvirostrum", "Catascopium nigritum"],
+        "zonation_succession": {
+          "habitat": "Calcareous flushes and springs"
+        }
+      },
+      "m11": {
+        "code": "M11",
+        "name": "Carex demissa-Saxifraga aizoides mire",
+        "alternate_names": ["Carici-Saxifragetum aizoidis"],
+        "constant_species": ["Carex demissa", "Saxifraga aizoides"],
+        "sub_communities": {
+          "a": "Thalictrum alpinum-Juncus triglumis sub-community",
+          "b": "Cratoneuron commutatum-Eleocharis quinqueflora sub-community"
+        },
+        "associated_species": ["Thalictrum alpinum", "Juncus triglumis", "Cratoneuron commutatum", "Eleocharis quinqueflora", "Polygonum viviparum", "Juncus bulbosus", "Saxifraga stellaris", "Carex nigra", "Cochlearia officinalis", "Euphrasia frigida", "Pinguicula vulgaris", "Ranunculus acris", "Dicranella palustris", "Drepanocladus revolvens", "Philonotis fontana", "Sphagnum auriculatum", "Marsupella emarginata", "Carex dioica", "Luzula spicata", "Racomitrium heterostichum"],
+        "zonation_succession": {
+          "habitat": "Base-rich montane flushes"
+        }
+      },
+      "m12": {
+        "code": "M12",
+        "name": "Carex saxatilis mire",
+        "alternate_names": ["Caricetum saxatilis"],
+        "constant_species": ["Carex saxatilis"],
+        "associated_species": ["Saxifraga aizoides", "Juncus triglumis", "Carex demissa"],
+        "zonation_succession": {
+          "habitat": "High-altitude irrigated ground"
+        }
+      },
+      "m13": {
+        "code": "M13",
+        "name": "Schoenus nigricans-Juncus subnodulosus mire",
+        "alternate_names": ["Schoenetum nigricantis"],
+        "constant_species": ["Schoenus nigricans", "Juncus subnodulosus"],
+        "sub_communities": {
+          "a": "Briza media-Pinguicula vulgaris sub-community",
+          "b": "Caltha palustris-Galium uliginosum sub-community"
+        },
+        "associated_species": ["Briza media", "Pinguicula vulgaris", "Caltha palustris", "Galium uliginosum", "Molinia caerulea", "Carex rostrata", "Carex diandra", "Carex elata", "Phragmites australis", "Cladium mariscus", "Menyanthes trifoliata", "Equisetum fluviatile", "Utricularia spp.", "Valeriana dioica", "Filipendula ulmaria", "Eupatorium cannabinum", "Lychnis flos-cuculi"],
+        "zonation_succession": {
+          "habitat": "Base-rich valley mires",
+          "succession": "Can develop raised bog nuclei or mixed woodland"
+        }
+      },
+      "m14": {
+        "code": "M14",
+        "name": "Schoenus nigricans-Narthecium ossifragum mire",
+        "constant_species": ["Schoenus nigricans", "Narthecium ossifragum"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Erica tetralix sub-community"
+        },
+        "associated_species": ["Erica tetralix", "Molinia caerulea", "Potentilla erecta"],
+        "zonation_succession": {
+          "habitat": "Base-poor oceanic mires"
+        }
+      },
+      "m15": {
+        "code": "M15",
+        "name": "Scirpus cespitosus-Erica tetralix wet heath",
+        "constant_species": ["Scirpus cespitosus", "Erica tetralix", "Molinia caerulea", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Carex panicea sub-community",
+          "b": "Typical sub-community"
+        },
+        "associated_species": ["Carex panicea", "Calluna vulgaris", "Narthecium ossifragum"],
+        "zonation_succession": {
+          "habitat": "Wet heaths on peaty soils"
+        }
+      },
+      "m16": {
+        "code": "M16",
+        "name": "Erica tetralix-Sphagnum compactum wet heath",
+        "constant_species": ["Erica tetralix", "Sphagnum compactum", "Calluna vulgaris", "Molinia caerulea"],
+        "sub_communities": {
+          "a": "Succisa pratensis-Carex panicea sub-community"
+        },
+        "associated_species": ["Succisa pratensis", "Carex panicea", "Narthecium ossifragum"],
+        "zonation_succession": {
+          "habitat": "Wet heaths with Sphagnum"
+        }
+      },
+      "m17": {
+        "code": "M17",
+        "name": "Scirpus cespitosus-Eriophorum vaginatum blanket mire",
+        "constant_species": ["Scirpus cespitosus", "Eriophorum vaginatum", "Calluna vulgaris", "Sphagnum capillifolium"],
+        "sub_communities": {
+          "a": "Drosera rotundifolia-Sphagnum auriculatum sub-community",
+          "b": "Cladonia arbuscula sub-community"
+        },
+        "associated_species": ["Drosera rotundifolia", "Sphagnum auriculatum", "Cladonia arbuscula", "Cetraria islandica"],
+        "zonation_succession": {
+          "habitat": "Blanket mires"
+        }
+      },
+      "m18": {
+        "code": "M18",
+        "name": "Erica tetralix-Sphagnum papillosum raised mire",
+        "constant_species": ["Erica tetralix", "Sphagnum papillosum", "Calluna vulgaris", "Eriophorum vaginatum"],
+        "sub_communities": {
+          "a": "Sphagnum magellanicum-Andromeda polifolia sub-community",
+          "b": "Empetrum nigrum-Cladonia arbuscula sub-community"
+        },
+        "associated_species": ["Sphagnum magellanicum", "Andromeda polifolia", "Empetrum nigrum", "Cladonia arbuscula"],
+        "zonation_succession": {
+          "habitat": "Raised bogs",
+          "succession": "Typical zonation from pools through flats to hummocks"
+        }
+      },
+      "m19": {
+        "code": "M19",
+        "name": "Calluna vulgaris-Eriophorum vaginatum blanket mire",
+        "constant_species": ["Calluna vulgaris", "Eriophorum vaginatum", "Sphagnum capillifolium", "Pleurozium schreberi"],
+        "sub_communities": {
+          "a": "Erica tetralix sub-community",
+          "b": "Empetrum nigrum nigrum sub-community",
+          "c": "Vaccinium vitis-idaea-Hylocomium splendens sub-community"
+        },
+        "associated_species": ["Erica tetralix", "Empetrum nigrum ssp. nigrum", "Vaccinium vitis-idaea", "Hylocomium splendens", "Rubus chamaemorus", "Vaccinium myrtillus", "Cladonia arbuscula", "Betula nana", "Hypnum cupressiforme", "Arctostaphylos alpinus", "Cladonia rangiferina", "Mylia anomala"],
+        "zonation_succession": {
+          "habitat": "Blanket mires, especially in uplands"
+        }
+      },
+      "m20": {
+        "code": "M20",
+        "name": "Eriophorum vaginatum blanket mire",
+        "constant_species": ["Eriophorum vaginatum", "Calluna vulgaris", "Sphagnum capillifolium"],
+        "sub_communities": {
+          "a": "Species-poor sub-community",
+          "b": "Calluna vulgaris-Cladonia sub-community"
+        },
+        "associated_species": ["Cladonia arbuscula", "Cetraria islandica", "Plagiothecium undulatum", "Polytrichum commune"],
+        "zonation_succession": {
+          "habitat": "Blanket mires, often degraded"
+        }
+      },
+      "m21": {
+        "code": "M21",
+        "name": "Narthecium ossifragum-Sphagnum papillosum valley mire",
+        "constant_species": ["Narthecium ossifragum", "Sphagnum papillosum", "Molinia caerulea", "Erica tetralix"],
+        "sub_communities": {
+          "a": "Sphagnum auriculatum-Rhynchospora alba sub-community",
+          "b": "Vaccinium oxycoccos-Sphagnum recurvum sub-community"
+        },
+        "associated_species": ["Sphagnum auriculatum", "Rhynchospora alba", "Vaccinium oxycoccos", "Sphagnum recurvum", "Myrica gale"],
+        "zonation_succession": {
+          "habitat": "Valley mires in oceanic areas"
+        }
+      },
+      "m22": {
+        "code": "M22",
+        "name": "Juncus subnodulosus-Cirsium palustre fen-meadow",
+        "constant_species": ["Juncus subnodulosus", "Cirsium palustre", "Holcus lanatus", "Angelica sylvestris"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Briza media-Trifolium pratense sub-community"
+        },
+        "associated_species": ["Briza media", "Trifolium pratense", "Centaurea nigra", "Deschampsia cespitosa"],
+        "zonation_succession": {
+          "habitat": "Fen-meadows on calcareous soils"
+        }
+      },
+      "m23": {
+        "code": "M23",
+        "name": "Juncus effusus/acutiflorus-Galium palustre rush-pasture",
+        "constant_species": ["Juncus effusus", "Juncus acutiflorus", "Galium palustre", "Holcus lanatus", "Agrostis stolonifera"],
+        "sub_communities": {
+          "a": "Juncus acutiflorus sub-community",
+          "b": "Juncus effusus sub-community"
+        },
+        "associated_species": ["Carex echinata", "Carex demissa", "Veronica scutellata", "Pellia epiphylla", "Polygonum hydropiper"],
+        "zonation_succession": {
+          "habitat": "Rush-pastures on damp acidic soils"
+        }
+      },
+      "m24": {
+        "code": "M24",
+        "name": "Molinia caerulea-Cirsium dissectum fen-meadow",
+        "constant_species": ["Molinia caerulea", "Cirsium dissectum", "Potentilla erecta", "Succisa pratensis"],
+        "sub_communities": {
+          "a": "Erica tetralix sub-community",
+          "b": "Eupatorium cannabinum sub-community"
+        },
+        "associated_species": ["Erica tetralix", "Eupatorium cannabinum", "Angelica sylvestris", "Filipendula ulmaria"],
+        "zonation_succession": {
+          "habitat": "Fen-meadows on peaty soils"
+        }
+      },
+      "m25": {
+        "code": "M25",
+        "name": "Molinia caerulea-Potentilla erecta mire",
+        "constant_species": ["Molinia caerulea", "Potentilla erecta", "Succisa pratensis", "Carex panicea"],
+        "sub_communities": {
+          "a": "Erica tetralix sub-community",
+          "b": "Crepis paludosa sub-community",
+          "c": "Festuca rubra sub-community"
+        },
+        "associated_species": ["Erica tetralix", "Crepis paludosa", "Festuca rubra", "Sanguisorba officinalis"],
+        "zonation_succession": {
+          "habitat": "Mires on moderately base-rich soils"
+        }
+      },
+      "m26": {
+        "code": "M26",
+        "name": "Molinia caerulea-Crepis paludosa mire",
+        "constant_species": ["Molinia caerulea", "Crepis paludosa", "Carex nigra", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Sanguisorba officinalis sub-community",
+          "b": "Festuca rubra sub-community"
+        },
+        "associated_species": ["Sanguisorba officinalis", "Festuca rubra", "Carex rostrata", "Carex appropinquata"],
+        "zonation_succession": {
+          "habitat": "Base-rich mires"
+        }
+      },
+      "m27": {
+        "code": "M27",
+        "name": "Filipendula ulmaria-Angelica sylvestris mire",
+        "constant_species": ["Filipendula ulmaria", "Angelica sylvestris", "Valeriana officinalis", "Cirsium palustre"],
+        "sub_communities": {
+          "a": "Lysimachia vulgaris sub-community",
+          "b": "Urtica dioica sub-community"
+        },
+        "associated_species": ["Lysimachia vulgaris", "Urtica dioica", "Epilobium hirsutum"],
+        "zonation_succession": {
+          "habitat": "Tall-herb fens"
+        }
+      },
+      "m28": {
+        "code": "M28",
+        "name": "Iris pseudacorus-Filipendula ulmaria mire",
+        "alternate_names": ["Filipendulo-Iridetum"],
+        "constant_species": ["Iris pseudacorus", "Filipendula ulmaria", "Oenanthe crocata", "Angelica sylvestris"],
+        "sub_communities": {
+          "a": "Juncus effusus-J. acutiflorus sub-community",
+          "b": "Juncus acutiflorus-Equisetum palustre sub-community",
+          "c": "Holcus lanatus-Deschampsia cespitosa sub-community"
+        },
+        "associated_species": ["Juncus effusus", "Juncus acutiflorus", "Equisetum palustre", "Holcus lanatus", "Deschampsia cespitosa", "Lycopus europaeus", "Rumex crispus", "Scutellaria galericulata", "Rumex acetosa", "Cirsium palustre", "Epilobium palustre", "Lychnis flos-cuculi", "Valeriana officinalis"],
+        "zonation_succession": {
+          "habitat": "Base-rich flushes and springs in western areas"
+        }
+      },
+      "m29": {
+        "code": "M29",
+        "name": "Hypericum elodes-Potamogeton polygonifolius soakway",
+        "alternate_names": ["Hyperico-Potametum"],
+        "constant_species": ["Hypericum elodes", "Potamogeton polygonifolius", "Ranunculus flammula", "Sphagnum auriculatum", "Juncus bulbosus", "Hydrocotyle vulgaris", "Molinia caerulea", "Eleocharis multicaulis", "Eriophorum angustifolium", "Agrostis canina"],
+        "associated_species": ["Anagallis tenella", "Juncus articulatus", "Carex demissa", "Carex echinata", "Carex panicea", "Drosera rotundifolia", "Juncus effusus", "Carex nigra", "Narthecium ossifragum", "Equisetum fluviatile", "Galium palustre", "Lotus uliginosus", "Drepanocladus exannulatus", "Erica tetralix", "Menyanthes trifoliata", "Viola palustris", "Holcus lanatus", "Scutellaria minor", "Polytrichum commune", "Agrostis stolonifera", "Scirpus fluitans", "Sphagnum cuspidatum", "Succisa pratensis"],
+        "zonation_succession": {
+          "habitat": "Seasonally-inundated habitats with base-poor waters"
+        }
+      },
+      "m30": {
+        "code": "M30",
+        "name": "Related vegetation of seasonally-inundated habitats",
+        "alternate_names": ["Hydrocotylo-Baldellion"],
+        "associated_species": ["Potamogeton polygonifolius", "Eriophorum angustifolium", "Juncus bulbosus", "Sphagnum auriculatum", "Eleocharis multicaulis"],
+        "zonation_succession": {
+          "habitat": "Seasonally-inundated habitats similar to Hyperico-Potametum"
+        }
+      },
+      "m31": {
+        "code": "M31",
+        "name": "Anthelia julacea-Sphagnum auriculatum spring",
+        "constant_species": ["Anthelia julacea", "Sphagnum auriculatum", "Philonotis fontana", "Dicranella palustris"],
+        "associated_species": ["Deschampsia cespitosa", "Nardus stricta", "Narthecium ossifragum", "Pinguicula vulgaris", "Carex demissa", "Saxifraga stellaris"],
+        "zonation_succession": {
+          "habitat": "Montane springs and rills"
+        }
+      },
+      "m32": {
+        "code": "M32",
+        "name": "Philonotis fontana-Saxifraga stellaris spring",
+        "alternate_names": ["Philonoto-Saxifragetum"],
+        "constant_species": ["Philonotis fontana", "Saxifraga stellaris", "Stellaria alsine", "Chrysosplenium oppositifolium"],
+        "sub_communities": {
+          "a": "Sphagnum auriculatum sub-community",
+          "b": "Pohlia wahlenbergii sub-community"
+        },
+        "associated_species": ["Sphagnum auriculatum", "Pohlia wahlenbergii", "Callitriche stagnalis", "Ranunculus flammula", "Myosotis secunda", "Stellaria alsine", "Ranunculus repens", "Equisetum palustre", "Hydrocotyle vulgaris", "Galium palustre", "Lotus uliginosus", "Juncus bufonius", "Scirpus setaceus"],
+        "zonation_succession": {
+          "habitat": "Spring-heads and rills at moderate altitudes"
+        }
+      },
+      "m33": {
+        "code": "M33",
+        "name": "Pohlia wahlenbergii var. glacialis spring",
+        "constant_species": ["Pohlia wahlenbergii var. glacialis", "Philonotis fontana", "Bryum pseudotriquetrum"],
+        "associated_species": ["Deschampsia cespitosa", "Stellaria alsine", "Chrysosplenium oppositifolium"],
+        "zonation_succession": {
+          "habitat": "High-altitude springs"
+        }
+      },
+      "m34": {
+        "code": "M34",
+        "name": "Carex demissa-Kobresia simpliciuscula damp heath",
+        "constant_species": ["Carex demissa", "Kobresia simpliciuscula", "Festuca ovina", "Thymus praecox"],
+        "associated_species": ["Selaginella selaginoides", "Pinguicula vulgaris", "Thalictrum alpinum"],
+        "zonation_succession": {
+          "habitat": "Montane calcareous flushes"
+        }
+      },
+      "m35": {
+        "code": "M35",
+        "name": "Ranunculus omiophyllus-Montia fontana rill",
+        "constant_species": ["Ranunculus omiophyllus", "Montia fontana", "Agrostis stolonifera"],
+        "associated_species": ["Callitriche stagnalis", "Stellaria alsine", "Hypericum elodes"],
+        "zonation_succession": {
+          "habitat": "Acidic rills and streams"
+        }
+      },
+      "m36": {
+        "code": "M36",
+        "name": "Lowland springs and streambanks of shaded situations",
+        "alternate_names": ["Cardaminion"],
+        "associated_species": ["Chrysosplenium oppositifolium", "Hookeria lucens", "Rhizomnium punctatum", "Trichocolea tomentella", "Pellia epiphylla", "Conocephalum conicum"],
+        "zonation_succession": {
+          "habitat": "Lowland shaded springs and flushes"
+        }
+      },
+      "m37": {
+        "code": "M37",
+        "name": "Cratoneuron commutatum-Festuca rubra spring",
+        "constant_species": ["Cratoneuron commutatum", "Festuca rubra", "Carex demissa", "Pinguicula vulgaris"],
+        "associated_species": ["Bryum pseudotriquetrum", "Philonotis fontana", "Aneura pinguis", "Plagiomnium elatum", "Fissidens adianthoides", "Philonotis calcarea", "Ctenidium molluscum", "Rhizomnium pseudopunctatum", "Campylium stellatum", "Drepanocladus revolvens", "Cinclidium stygium"],
+        "zonation_succession": {
+          "habitat": "Base-rich springs and flushes"
+        }
+      },
+      "m38": {
+        "code": "M38",
+        "name": "Cratoneuron commutatum-Carex nigra spring",
+        "constant_species": ["Cratoneuron commutatum", "Carex nigra", "Festuca rubra", "Agrostis stolonifera"],
+        "associated_species": ["Bryum pseudotriquetrum", "Philonotis fontana", "Aneura pinguis"],
+        "zonation_succession": {
+          "habitat": "Base-rich springs with more extensive herb cover"
+        }
+      }
+    },
+    "maritime_cliff_communities": {
+      "mc1": {
+        "code": "MC1",
+        "name": "Crithmum maritimum-Spergularia rupicola maritime rock-crevice community",
+        "alternate_names": ["Crithmo-Spergularietum rupicolae"],
+        "constant_species": ["Crithmum maritimum", "Spergularia rupicola", "Plantago maritima", "Plantago coronopus"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Inula crithmoides sub-community"
+        },
+        "associated_species": ["Inula crithmoides", "Schistidium maritimum", "Tortella flavovirens"],
+        "zonation_succession": {
+          "habitat": "Maritime rock crevices and cliff faces"
+        }
+      },
+      "mc2": {
+        "code": "MC2",
+        "name": "Armeria maritima-Ligusticum scoticum maritime rock-crevice community",
+        "constant_species": ["Armeria maritima", "Festuca rubra", "Ligusticum scoticum", "Schistidium maritimum", "Plantago maritima", "Rhodiola rosea", "Silene vulgaris maritima", "Agrostis stolonifera", "Cochlearia officinalis", "Matricaria maritima", "Plantago coronopus", "Leontodon autumnalis", "Cerastium fontanum", "Rumex crispus", "Atriplex hastata", "Spergularia rupicola", "Asplenium marinum"],
+        "zonation_succession": {
+          "habitat": "Northern maritime rock crevices"
+        }
+      },
+      "mc3": {
+        "code": "MC3",
+        "name": "Rhodiola rosea-Armeria maritima ledge community",
+        "constant_species": ["Rhodiola rosea", "Armeria maritima", "Festuca rubra", "Plantago maritima", "Silene vulgaris maritima", "Cochlearia officinalis", "Ligusticum scoticum", "Rumex acetosa", "Cerastium fontanum", "Agrostis stolonifera", "Schistidium maritimum", "Ramalina siliquosa", "Asplenium marinum"],
+        "zonation_succession": {
+          "habitat": "Maritime cliff ledges"
+        }
+      },
+      "mc4": {
+        "code": "MC4",
+        "name": "Brassica oleracea maritime cliff-ledge community",
+        "constant_species": ["Brassica oleracea", "Festuca rubra", "Plantago maritima", "Armeria maritima"],
+        "sub_communities": {
+          "a": "Beta vulgaris ssp. maritima sub-community",
+          "b": "Ononis repens sub-community"
+        },
+        "associated_species": ["Beta vulgaris ssp. maritima", "Ononis repens"],
+        "zonation_succession": {
+          "habitat": "Cliff ledges with deeper soils"
+        }
+      },
+      "mc5": {
+        "code": "MC5",
+        "name": "Armeria maritima-Cerastium diffusum ssp. diffusum maritime therophyte community",
+        "constant_species": ["Armeria maritima", "Cerastium diffusum ssp. diffusum", "Stellaria media", "Poa annua"],
+        "associated_species": ["Rumex crispus var. littoreus", "Silene vulgaris ssp. maritima", "Eryngium maritimum", "Sonchus arvensis", "Cirsium arvense"],
+        "zonation_succession": {
+          "habitat": "Disturbed maritime cliff-top soils"
+        }
+      },
+      "mc6": {
+        "code": "MC6",
+        "name": "Atriplex prostrata-Beta vulgaris ssp. maritima sea-bird cliff community",
+        "constant_species": ["Atriplex prostrata", "Beta vulgaris ssp. maritima", "Stellaria media", "Rumex acetosa"],
+        "associated_species": ["Urtica dioica", "Chenopodium album", "Plantago major"],
+        "zonation_succession": {
+          "habitat": "Sea-bird nesting cliffs"
+        }
+      },
+      "mc7": {
+        "code": "MC7",
+        "name": "Stellaria media-Rumex acetosa sea-bird cliff community",
+        "constant_species": ["Stellaria media", "Rumex acetosa", "Holcus lanatus", "Agrostis stolonifera", "Festuca rubra", "Armeria maritima", "Plantago maritima", "Leontodon autumnalis", "Poa subcaerulea", "Cochlearia officinalis", "Rumex crispus", "Atriplex prostrata", "Silene vulgaris maritima", "Matricaria maritima", "Polygonum aviculare agg.", "Cerastium glomeratum", "Poa annua", "Sedum anglicum", "Senecio vulgaris", "Cerastium fontanum", "Potentilla anserina", "Trifolium repens", "Juncus articulatus", "Spergula arvensis"],
+        "zonation_succession": {
+          "habitat": "Sea-bird cliff communities"
+        }
+      },
+      "mc8": {
+        "code": "MC8",
+        "name": "Festuca rubra-Armeria maritima maritime grassland",
+        "constant_species": ["Festuca rubra", "Armeria maritima", "Plantago maritima", "Holcus lanatus"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Anthyllis vulneraria sub-community",
+          "c": "Plantago coronopus sub-community"
+        },
+        "associated_species": ["Anthyllis vulneraria", "Plantago coronopus", "Lotus corniculatus", "Silene vulgaris ssp. maritima", "Sedum anglicum"],
+        "zonation_succession": {
+          "habitat": "Maritime cliff-top grasslands"
+        }
+      },
+      "mc9": {
+        "code": "MC9",
+        "name": "Festuca rubra-Holcus lanatus maritime grassland",
+        "constant_species": ["Festuca rubra", "Holcus lanatus", "Agrostis stolonifera", "Plantago lanceolata"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Hypochoeris radicata sub-community",
+          "c": "Anthoxanthum odoratum sub-community",
+          "d": "Primula vulgaris sub-community",
+          "e": "Anthoxanthum odoratum sub-community"
+        },
+        "associated_species": ["Hypochoeris radicata", "Anthoxanthum odoratum", "Primula vulgaris", "Trifolium repens", "Achillea millefolium", "Galium verum", "Lotus corniculatus", "Dactylis glomerata", "Rumex acetosa", "Potentilla erecta", "Centaurea nigra", "Campanula rotundifolia", "Helianthemum nummularium", "Festuca ovina", "Carex caryophyllea", "Hieracium pilosella", "Conopodium majus", "Genista tinctoria ssp. littoralis", "Geranium sanguineum"],
+        "zonation_succession": {
+          "habitat": "Maritime grasslands on deeper soils"
+        }
+      },
+      "mc10": {
+        "code": "MC10",
+        "name": "Festuca rubra-Plantago spp. maritime grassland",
+        "constant_species": ["Festuca rubra", "Plantago maritima", "Plantago coronopus", "Armeria maritima"],
+        "sub_communities": {
+          "a": "Armeria maritima sub-community",
+          "b": "Carex panicea sub-community",
+          "c": "Schoenus nigricans sub-community"
+        },
+        "associated_species": ["Carex panicea", "Schoenus nigricans", "Carex serotina", "Danthonia decumbens", "Potentilla erecta", "Molinia caerulea", "Lotus corniculatus"],
+        "zonation_succession": {
+          "habitat": "Maritime grasslands with varying moisture"
+        }
+      },
+      "mc11": {
+        "code": "MC11",
+        "name": "Festuca rubra-Daucus carota ssp. gummifer maritime grassland",
+        "constant_species": ["Festuca rubra", "Daucus carota ssp. gummifer", "Lotus corniculatus", "Plantago lanceolata"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Holcus lanatus sub-community",
+          "c": "Hypochoeris radicata sub-community"
+        },
+        "associated_species": ["Holcus lanatus", "Hypochoeris radicata", "Centaurea nigra", "Leucanthemum vulgare"],
+        "zonation_succession": {
+          "habitat": "Maritime grasslands on calcareous soils"
+        }
+      },
+      "mc12": {
+        "code": "MC12",
+        "name": "Festuca rubra-Hyacinthoides non-scripta maritime bluebell community",
+        "alternate_names": ["Pteridietum aquilini", "Endymio-Armerietum maritimae"],
+        "constant_species": ["Festuca rubra", "Hyacinthoides non-scripta", "Rumex acetosa", "Holcus lanatus"],
+        "sub_communities": {
+          "a": "Armeria maritima sub-community"
+        },
+        "associated_species": ["Armeria maritima", "Silene vulgaris ssp. maritima", "Daucus carota ssp. gummifer", "Scilla verna", "Sedum telephium"],
+        "zonation_succession": {
+          "habitat": "Maritime grasslands with bluebell"
+        }
+      }
+    },
+    "mesotrophic_grasslands": {
+      "mg1": {
+        "code": "MG1",
+        "name": "Arrhenatherum elatius grassland",
+        "alternate_names": ["Arrhenatheretum elatioris"],
+        "constant_species": ["Arrhenatherum elatius", "Dactylis glomerata", "Heracleum sphondylium"],
+        "sub_communities": {
+          "a": "Festuca rubra sub-community",
+          "b": "Urtica dioica sub-community",
+          "c": "Filipendula ulmaria sub-community",
+          "d": "Pastinaca sativa sub-community",
+          "e": "Centaurea nigra sub-community"
+        },
+        "associated_species": ["Festuca rubra", "Urtica dioica", "Filipendula ulmaria", "Pastinaca sativa", "Centaurea nigra", "Lotus corniculatus", "Leucanthemum vulgare", "Veronica chamaedrys", "Anthoxanthum odoratum", "Trisetum flavescens"],
+        "zonation_succession": {
+          "habitat": "Fertile grasslands, often on disturbed ground",
+          "succession": "Can develop from abandoned arable land"
+        }
+      },
+      "mg2": {
+        "code": "MG2",
+        "name": "Arrhenatherum elatius-Filipendula ulmaria tall-herb grassland",
+        "constant_species": ["Arrhenatherum elatius", "Filipendula ulmaria", "Heracleum sphondylium", "Urtica dioica"],
+        "associated_species": ["Angelica sylvestris", "Epilobium hirsutum", "Galium aparine"],
+        "zonation_succession": {
+          "habitat": "Tall-herb grasslands on fertile soils"
+        }
+      },
+      "mg3": {
+        "code": "MG3",
+        "name": "Anthoxanthum odoratum-Geranium sylvaticum grassland",
+        "constant_species": ["Anthoxanthum odoratum", "Geranium sylvaticum", "Alchemilla glabra", "Ranunculus acris"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Briza media sub-community"
+        },
+        "associated_species": ["Briza media", "Lotus corniculatus", "Luzula campestris", "Rhinanthus minor", "Centaurea nigra", "Leontodon hispidus"],
+        "zonation_succession": {
+          "habitat": "Upland hay meadows"
+        }
+      },
+      "mg4": {
+        "code": "MG4",
+        "name": "Alopecurus pratensis-Sanguisorba officinalis grassland",
+        "constant_species": ["Alopecurus pratensis", "Sanguisorba officinalis", "Silaum silaus", "Serratula tinctoria"],
+        "associated_species": ["Filipendula ulmaria", "Trifolium pratense", "Trifolium repens", "Ranunculus acris", "Rumex acetosa", "Rhinanthus minor", "Cerastium fontanum", "Lotus corniculatus", "Primula veris", "Luzula campestris", "Lathyrus pratensis", "Centaurea nigra", "Leontodon autumnalis", "Leontodon hispidus", "Leucanthemum vulgare", "Succisa pratensis"],
+        "zonation_succession": {
+          "habitat": "Flood-meadows on alluvial soils"
+        }
+      },
+      "mg5": {
+        "code": "MG5",
+        "name": "Cynosurus cristatus-Centaurea nigra grassland",
+        "constant_species": ["Cynosurus cristatus", "Centaurea nigra", "Rumex acetosa", "Lotus corniculatus", "Plantago lanceolata"],
+        "sub_communities": {
+          "a": "Lathyrus pratensis sub-community",
+          "b": "Galium verum sub-community",
+          "c": "Danthonia decumbens sub-community"
+        },
+        "associated_species": ["Lathyrus pratensis", "Galium verum", "Danthonia decumbens", "Leucanthemum vulgare", "Rhinanthus minor"],
+        "zonation_succession": {
+          "habitat": "Neutral grasslands, hay meadows"
+        }
+      },
+      "mg6": {
+        "code": "MG6",
+        "name": "Lolium perenne-Cynosurus cristatus grassland",
+        "alternate_names": ["Lolio-Cynosuretum"],
+        "constant_species": ["Lolium perenne", "Cynosurus cristatus", "Trifolium repens", "Plantago lanceolata"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Anthoxanthum odoratum sub-community"
+        },
+        "associated_species": ["Anthoxanthum odoratum", "Festuca rubra", "Agrostis capillaris", "Holcus lanatus", "Dactylis glomerata", "Poa pratensis", "Taraxacum officinale agg.", "Ranunculus repens", "Cerastium fontanum", "Rumex acetosa", "Hypochoeris radicata", "Luzula campestris"],
+        "zonation_succession": {
+          "habitat": "Managed grasslands, pastures"
+        }
+      },
+      "mg7": {
+        "code": "MG7",
+        "name": "Lolium perenne-Plantago major-Poa annua grassland",
+        "constant_species": ["Lolium perenne", "Plantago major", "Poa annua", "Trifolium repens"],
+        "associated_species": ["Taraxacum officinale agg.", "Ranunculus repens", "Cerastium fontanum"],
+        "zonation_succession": {
+          "habitat": "Heavily trampled grasslands"
+        }
+      },
+      "mg8": {
+        "code": "MG8",
+        "name": "Cynosurus cristatus-Caltha palustris grassland",
+        "constant_species": ["Cynosurus cristatus", "Caltha palustris", "Cardamine pratensis", "Ranunculus acris"],
+        "associated_species": ["Holcus lanatus", "Agrostis stolonifera", "Festuca rubra", "Juncus effusus"],
+        "zonation_succession": {
+          "habitat": "Wet meadows, flood-plains"
+        }
+      },
+      "mg9": {
+        "code": "MG9",
+        "name": "Holcus lanatus-Deschampsia cespitosa grassland",
+        "constant_species": ["Holcus lanatus", "Deschampsia cespitosa", "Ranunculus repens", "Cardamine pratensis"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Silverweed sub-community"
+        },
+        "associated_species": ["Potentilla anserina", "Pulicaria dysenterica", "Lotus uliginosus", "Achillea millefolium", "Phleum pratense pratense", "Ranunculus ficaria", "Lotus corniculatus", "Juncus articulatus", "Mentha aquatica", "Danthonia decumbens", "Succisa pratensis", "Achillea ptarmica", "Rhytidiadelphus squarrosus", "Cynosurus cristatus", "Prunella vulgaris", "Festuca arundinacea", "Galium verum", "Silaum silaus", "Leucanthemum vulgare", "Dactylorhiza fuchsii", "Agrimonia eupatoria", "Hordeum secalinum", "Heracleum sphondylium", "Phleum pratense bertolonii"],
+        "zonation_succession": {
+          "habitat": "Damp grasslands"
+        }
+      },
+      "mg10": {
+        "code": "MG10",
+        "name": "Holcus lanatus-Juncus effusus rush-pasture",
+        "alternate_names": ["Holco-Juncetum effusi"],
+        "constant_species": ["Holcus lanatus", "Juncus effusus", "Ranunculus repens", "Ranunculus acris"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Juncus inflexus sub-community",
+          "c": "Iris pseudacorus sub-community"
+        },
+        "associated_species": ["Juncus inflexus", "Iris pseudacorus", "Stellaria alsine", "Oenanthe crocata", "Eurhynchium praelongum", "Cynosurus cristatus", "Agrostis capillaris", "Taraxacum officinale agg.", "Plantago major", "Cirsium palustre", "Equisetum palustre", "Mentha aquatica", "Festulolium loliaceum", "Vicia cracca", "Senecio aquaticus"],
+        "zonation_succession": {
+          "habitat": "Rush-pastures on damp soils"
+        }
+      },
+      "mg11": {
+        "code": "MG11",
+        "name": "Festuca rubra-Agrostis stolonifera-Potentilla anserina grassland",
+        "constant_species": ["Festuca rubra", "Agrostis stolonifera", "Potentilla anserina", "Plantago major"],
+        "sub_communities": {
+          "a": "Lolium perenne sub-community",
+          "b": "Glaux maritima sub-community",
+          "c": "Oenanthe lachenalii sub-community"
+        },
+        "associated_species": ["Lolium perenne", "Glaux maritima", "Oenanthe lachenalii", "Holcus lanatus", "Festuca pratensis", "Dactylis glomerata", "Agrostis capillaris", "Phleum pratense ssp. pratense", "Ranunculus acris", "Lotus corniculatus", "Trifolium pratense", "Plantago lanceolata", "Cerastium fontanum", "Carex distans", "Carex otrubae", "Juncus gerardi", "Juncus maritimus", "Triglochin maritimus", "Sonchus arvensis", "Odontites verna", "Atriplex prostrata", "Leontodon autumnalis"],
+        "zonation_succession": {
+          "habitat": "Coastal and inland grasslands subject to periodic inundation"
+        }
+      },
+      "mg12": {
+        "code": "MG12",
+        "name": "Festuca arundinacea grassland",
+        "constant_species": ["Festuca arundinacea", "Agrostis stolonifera", "Potentilla anserina"],
+        "associated_species": ["Holcus lanatus", "Lolium perenne", "Trifolium repens"],
+        "zonation_succession": {
+          "habitat": "Grasslands on heavy, often waterlogged soils"
+        }
+      },
+      "mg13": {
+        "code": "MG13",
+        "name": "Agrostis stolonifera-Alopecurus geniculatus grassland",
+        "constant_species": ["Agrostis stolonifera", "Alopecurus geniculatus", "Ranunculus repens", "Holcus lanatus", "Poa trivialis", "Juncus effusus", "Glyceria fluitans", "Glyceria declinata", "Glyceria plicata", "Juncus bufonius"],
+        "zonation_succession": {
+          "habitat": "Periodically flooded grasslands",
+          "succession": "One of the more stable inundation communities"
+        }
+      }
+    },
+    "open_habitat_vegetation": {
+      "ov1": {
+        "code": "OV1",
+        "name": "Viola arvensis-Aphanes microcarpa community",
+        "alternate_names": ["Teesdalio-Arnoseridetum minimae"],
+        "constant_species": ["Aphanes microcarpa", "Poa annua", "Rumex acetosella", "Viola arvensis"],
+        "rare_species": ["Anthoxanthum aristatum", "Briza minor"],
+        "associated_species": ["Matricaria perforata", "Stellaria media", "Veronica arvensis", "Polygonum aviculare", "Bilderdykia convolvulus", "Trifolium dubium", "Spergula arvensis", "Ornithopus perpusillus", "Viola tricolor", "Chrysanthemum segetum", "Alopecurus myosuroides", "Scleranthus annuus", "Anagallis arvensis"],
+        "zonation_succession": {
+          "habitat": "Acidic arable fields and disturbed ground"
+        }
+      },
+      "ov2": {
+        "code": "OV2",
+        "name": "Briza minor-Silene gallica community",
+        "alternate_names": ["Airo multiculmis-Arnoseridetum minimae"],
+        "constant_species": ["Anagallis arvensis", "Briza minor", "Rumex acetosella", "Silene gallica", "Trifolium dubium"],
+        "rare_species": ["Briza minor", "Silene gallica", "Trifolium suffocatum"],
+        "associated_species": ["Aphanes microcarpa", "Vicia sativa ssp. nigra", "Bromus hordeaceus ssp. thominei", "Vulpia bromoides", "Vulpia myuros", "Aira caryophyllea", "Aira praecox"],
+        "zonation_succession": {
+          "habitat": "Sandy acidic soils, often coastal"
+        }
+      },
+      "ov3": {
+        "code": "OV3",
+        "name": "Papaver rhoeas-Viola arvensis community",
+        "alternate_names": ["Papaveretum argemones"],
+        "constant_species": ["Papaver rhoeas", "Viola arvensis", "Fallopia convolvulus", "Stellaria media"],
+        "associated_species": ["Veronica persica", "Veronica arvensis", "Anagallis arvensis", "Poa annua", "Medicago lupulina", "Polygonum aviculare", "Capsella bursa-pastoris", "Trifolium repens", "Elymus repens", "Agrostis stolonifera"],
+        "zonation_succession": {
+          "habitat": "Disturbed, light and friable soils in cereal fields"
+        }
+      },
+      "ov4": {
+        "code": "OV4",
+        "name": "Chrysanthemum segetum-Spergula arvensis community",
+        "constant_species": ["Chrysanthemum segetum", "Spergula arvensis", "Rumex acetosella", "Raphanus raphanistrum"],
+        "associated_species": ["Cirsium vulgare", "Trifolium dubium", "Veronica arvensis", "Cerastium glomeratum", "Brassica rapa", "Veronica agrestis", "Galeopsis tetrahit agg.", "Taraxacum officinale agg.", "Elymus repens", "Stellaria media", "Capsella bursa-pastoris"],
+        "zonation_succession": {
+          "habitat": "Acidic arable soils"
+        }
+      },
+      "ov5": {
+        "code": "OV5",
+        "name": "Digitaria ischaemum-Erodium cicutarium community",
+        "alternate_names": ["Echinochloo-Setarietum"],
+        "constant_species": ["Crepis capillaris", "Digitaria ischaemum", "Elymus repens", "Erodium cicutarium", "Geranium molle", "Poa annua", "Senecio vulgaris", "Spergula arvensis", "Stellaria media"],
+        "rare_species": ["Apera spica-venti"],
+        "associated_species": ["Bilderdykia convolvulus", "Capsella bursa-pastoris", "Rumex acetosella", "Papaver dubium", "Chenopodium album", "Taraxacum officinale agg."],
+        "zonation_succession": {
+          "habitat": "Light sandy soils"
+        }
+      },
+      "ov6": {
+        "code": "OV6",
+        "name": "Cerastium glomeratum-Fumaria muralis community",
+        "constant_species": ["Cerastium glomeratum", "Fumaria muralis", "Geranium molle", "Veronica arvensis"],
+        "sub_communities": {
+          "a": "Valerianella locusta-Polycarpon tetraphyllum sub-community",
+          "b": "Vicia hirsuta-Papaver dubium sub-community"
+        },
+        "associated_species": ["Valerianella locusta", "Urtica urens", "Polycarpon tetraphyllum", "Fumaria officinalis", "Barbula convoluta", "Riccia sorocarpa", "Capsella bursa-pastoris", "Rumex obtusifolius", "Heracleum sphondylium", "Chenopodium album", "Fumaria bastardii", "Allium babingtonii", "Arum italicum ssp. neglectum", "Vicia hirsuta", "Papaver dubium", "Trifolium dubium", "Vicia sativa ssp. nigra"],
+        "zonation_succession": {
+          "habitat": "Calcareous and neutral soils"
+        }
+      },
+      "ov7": {
+        "code": "OV7",
+        "name": "Veronica persica-Veronica polita community",
+        "alternate_names": ["Veronico-Lamietum hybridi"],
+        "constant_species": ["Veronica persica", "Veronica polita", "Lamium hybridum", "Geranium molle"],
+        "associated_species": ["Stellaria media", "Capsella bursa-pastoris", "Poa annua", "Senecio vulgaris"],
+        "zonation_succession": {
+          "habitat": "Calcareous arable soils"
+        }
+      },
+      "ov8": {
+        "code": "OV8",
+        "name": "Veronica persica-Alopecurus myosuroides community",
+        "alternate_names": ["Alopecuro-Chamomilletum recutitae"],
+        "constant_species": ["Alopecurus myosuroides", "Bilderdykia convolvulus", "Elymus repens", "Polygonum aviculare", "Stellaria media", "Veronica persica"],
+        "associated_species": ["Chamomilla recutita", "Matricaria perforata", "Chenopodium album", "Capsella bursa-pastoris", "Sinapis arvensis", "Sonchus asper", "Senecio vulgaris", "Avena fatua", "Poa annua", "Plantago major", "Polygonum persicaria", "Cirsium arvense"],
+        "zonation_succession": {
+          "habitat": "Heavy clay soils in arable fields"
+        }
+      },
+      "ov9": {
+        "code": "OV9",
+        "name": "Matricaria perforata-Stellaria media community",
+        "constant_species": ["Matricaria perforata", "Stellaria media", "Poa annua", "Senecio vulgaris"],
+        "sub_communities": {
+          "a": "Anagallis arvensis-Viola arvensis sub-community",
+          "b": "Poa annua-Galeopsis tetrahit sub-community",
+          "c": "Elymus repens-Potentilla anserina sub-community",
+          "d": "Bilderdykia convolvulus-Veronica persica sub-community"
+        },
+        "associated_species": ["Anagallis arvensis", "Viola arvensis", "Galeopsis tetrahit", "Cerastium fontanum", "Elymus repens", "Aphanes arvensis", "Juncus bufonius", "Agrostis stolonifera", "Potentilla anserina", "Equisetum arvense", "Bilderdykia convolvulus", "Chenopodium album", "Capsella bursa-pastoris", "Chamomilla suaveolens", "Trifolium repens", "Veronica persica", "Lamium purpureum", "Bromus sterilis", "Tussilago farfara", "Ranunculus arvensis"],
+        "zonation_succession": {
+          "habitat": "Disturbed ground, waste places"
+        }
+      },
+      "ov10": {
+        "code": "OV10",
+        "name": "Poa annua-Senecio vulgaris community",
+        "constant_species": ["Poa annua", "Senecio vulgaris", "Stellaria media", "Polygonum aviculare"],
+        "sub_communities": {
+          "a": "Polygonum persicaria-Ranunculus repens sub-community",
+          "b": "Polygonum aviculare-Matricaria perforata sub-community",
+          "c": "Agrostis stolonifera-Rumex crispus sub-community",
+          "d": "Dactylis glomerata-Agrostis capillaris sub-community"
+        },
+        "associated_species": ["Polygonum persicaria", "Ranunculus repens", "Matricaria perforata", "Agrostis stolonifera", "Rumex crispus", "Dactylis glomerata", "Agrostis capillaris", "Veronica polita", "Aphanes arvensis", "Veronica arvensis", "Leucanthemum vulgare", "Lamium hybridum", "Arctium minus agg.", "Veronica chamaedrys", "Atriplex prostrata"],
+        "zonation_succession": {
+          "habitat": "Disturbed and waste ground"
+        }
+      },
+      "ov11": {
+        "code": "OV11",
+        "name": "Poa annua-Stachys arvensis community",
+        "alternate_names": ["Stachys arvensis community"],
+        "constant_species": ["Anagallis arvensis", "Poa annua", "Polygonum aviculare", "Stachys arvensis"],
+        "rare_species": ["Fumaria bastardii"],
+        "associated_species": ["Spergula arvensis", "Stellaria media", "Plantago major", "Matricaria perforata", "Chamomilla suaveolens", "Ranunculus repens", "Elymus repens", "Agrostis stolonifera", "Capsella bursa-pastoris", "Bilderdykia convolvulus", "Fumaria muralis ssp. boraei", "Senecio vulgaris", "Taraxacum officinale agg.", "Trifolium repens", "Holcus lanatus", "Lolium perenne"],
+        "zonation_succession": {
+          "habitat": "Disturbed ground with high fertility"
+        }
+      },
+      "ov12": {
+        "code": "OV12",
+        "name": "Poa annua-Myosotis arvensis community",
+        "constant_species": ["Agrostis stolonifera", "Myosotis arvensis", "Poa annua", "Poa trivialis", "Polygonum aviculare"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Dicranella staphylina-Bryum sub-community"
+        },
+        "associated_species": ["Stellaria media", "Chamomilla suaveolens", "Ranunculus repens", "Veronica persica", "Anagallis arvensis", "Lamium purpureum", "Bilderdykia convolvulus", "Lolium perenne", "Polygonum persicaria", "Sonchus asper", "Urtica dioica", "Dactylis glomerata", "Lolium multiflorum", "Chenopodium album", "Atriplex patula", "Aphanes arvensis", "Veronica arvensis"],
+        "zonation_succession": {
+          "habitat": "Damp disturbed ground"
+        }
+      },
+      "ov13": {
+        "code": "OV13",
+        "name": "Stellaria media-Capsella bursa-pastoris community",
+        "alternate_names": ["Fumarietum officinalis", "Fumarietum bastardii"],
+        "constant_species": ["Capsella bursa-pastoris", "Chenopodium album", "Polygonum aviculare", "Senecio vulgaris", "Stellaria media"],
+        "rare_species": ["Fumaria bastardii"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Matricaria perforata-Poa annua sub-community"
+        },
+        "associated_species": ["Poa annua", "Elymus repens", "Chamomilla suaveolens", "Urtica urens", "Sonchus asper", "Cirsium arvense", "Polygonum persicaria", "Rumex obtusifolius", "Convolvulus arvensis", "Solanum nigrum", "Avena fatua", "Matricaria perforata", "Sinapis arvensis"],
+        "zonation_succession": {
+          "habitat": "Fertile disturbed soils"
+        }
+      },
+      "ov14": {
+        "code": "OV14",
+        "name": "Urtica urens-Lamium amplexicaule community",
+        "constant_species": ["Urtica urens", "Lamium amplexicaule", "Stellaria media", "Chenopodium album"],
+        "associated_species": ["Spergula arvensis", "Lamium purpureum", "Polygonum persicaria", "Sonchus oleraceus", "Atriplex patula"],
+        "zonation_succession": {
+          "habitat": "Very fertile disturbed soils"
+        }
+      },
+      "ov15": {
+        "code": "OV15",
+        "name": "Anagallis arvensis-Veronica persica community",
+        "alternate_names": ["Kickxietum spuriae"],
+        "constant_species": ["Anagallis arvensis", "Bilderdykia convolvulus", "Polygonum aviculare", "Veronica persica"],
+        "rare_species": ["Ajuga chamaepitys", "Scandix pecten-veneris"],
+        "associated_species": ["Kickxia elatine", "Kickxia spuria", "Euphorbia exigua", "Poa annua", "Matricaria perforata", "Sonchus asper", "Myosotis arvensis", "Elymus repens"],
+        "zonation_succession": {
+          "habitat": "Calcareous arable soils"
+        }
+      },
+      "ov16": {
+        "code": "OV16",
+        "name": "Papaver rhoeas-Silene noctiflora community",
+        "alternate_names": ["Papaveri-Sileneetum noctiflori"],
+        "constant_species": ["Papaver rhoeas", "Silene noctiflora", "Agrostemma githago", "Adonis annua"],
+        "associated_species": ["Legousia speculum-veneris", "Consolida ajacis", "Nigella damascena"],
+        "zonation_succession": {
+          "habitat": "Calcareous arable soils, now very rare"
+        }
+      },
+      "ov17": {
+        "code": "OV17",
+        "name": "Reseda lutea-Polygonum aviculare community",
+        "alternate_names": ["Descurainio-Anchusetum arvensis"],
+        "constant_species": ["Reseda lutea", "Polygonum aviculare", "Elymus repens", "Chenopodium album", "Bilderdykia convolvulus", "Descurainia sophia", "Anchusa arvensis", "Veronica persica", "Senecio vulgaris", "Stellaria media", "Silene alba", "Matricaria perforata", "Veronica polita", "Convolvulus arvensis", "Solanum nigrum", "Chamomilla suaveolens", "Poa annua", "Erodium cicutarium", "Conyza canadensis", "Agrostis capillaris", "Spergula arvensis", "Urtica urens", "Papaver rhoeas", "Capsella bursa-pastoris", "Agrostis stolonifera"],
+        "associated_species": ["Artemisia vulgaris", "Dactylis glomerata", "Medicago lupulina", "Anagallis arvensis", "Geranium dissectum", "Linaria vulgaris", "Sisymbrium orientale", "Diplotaxis muralis", "Bromus sterilis", "Malva neglecta", "Echium vulgare", "Papaver dubium", "Polygonum persicaria", "Polygonum nodosum"],
+        "zonation_succession": {
+          "habitat": "Disturbed calcareous soils, waste ground"
+        }
+      },
+      "ov18": {
+        "code": "OV18",
+        "name": "Polygonum aviculare-Chamomilla suaveolens community",
+        "constant_species": ["Polygonum aviculare", "Chamomilla suaveolens", "Plantago major"],
+        "sub_communities": {
+          "a": "Coronopus didymus sub-community",
+          "b": "Sagina procumbens sub-community"
+        },
+        "associated_species": ["Coronopus didymus", "Sagina procumbens", "Urtica urens", "Veronica persica", "Anagallis arvensis", "Plantago lanceolata", "Dactylis glomerata", "Agrostis stolonifera", "Taraxacum officinale agg.", "Lamium purpureum", "Medicago lupulina", "Rumex obtusifolius", "Papaver rhoeas", "Convolvulus arvensis", "Trifolium pratense", "Artemisia vulgaris", "Hordeum murinum", "Rumex crispus", "Fumaria officinalis", "Sonchus asper", "Plantago media", "Veronica chamaedrys", "Thlaspi arvense", "Galium aparine"],
+        "zonation_succession": {
+          "habitat": "Compacted and trampled ground"
+        }
+      },
+      "ov19": {
+        "code": "OV19",
+        "name": "Poa annua-Matricaria perforata community",
+        "constant_species": ["Elymus repens", "Matricaria perforata", "Poa annua"],
+        "associated_species": ["Agrostis stolonifera", "Lolium perenne", "Chamomilla suaveolens", "Polygonum aviculare", "Capsella bursa-pastoris", "Holcus lanatus", "Chenopodium album", "Rumex obtusifolius", "Rumex crispus", "Plantago lanceolata", "Taraxacum officinale agg.", "Stellaria media", "Sinapis arvensis", "Anagallis arvensis", "Pottia truncata", "Funaria hygrometrica"],
+        "zonation_succession": {
+          "habitat": "Disturbed ground, waste places"
+        }
+      },
+      "ov20": {
+        "code": "OV20",
+        "name": "Poa annua-Sagina procumbens community",
+        "alternate_names": ["Sagino-Bryetum argentii"],
+        "constant_species": ["Poa annua", "Sagina procumbens", "Bryum argenteum"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Lolium perenne-Chamomilla suaveolens sub-community"
+        },
+        "associated_species": ["Lolium perenne", "Chamomilla suaveolens", "Capsella bursa-pastoris", "Polygonum arenastrum", "Trifolium repens", "Ranunculus repens", "Agrostis stolonifera", "Taraxacum officinale agg.", "Potentilla anserina", "Matricaria maritima", "Cerastium fontanum", "Stellaria media", "Bryum bicolor", "Medicago lupulina", "Atriplex patula", "Schistidium apocarpum", "Rumex crispus", "Cirsium arvense", "Holcus lanatus", "Trifolium repens", "Rumex acetosella"],
+        "zonation_succession": {
+          "habitat": "Compacted paths and paved areas"
+        }
+      },
+      "ov21": {
+        "code": "OV21",
+        "name": "Poa annua-Plantago major community",
+        "constant_species": ["Poa annua", "Plantago major", "Lolium perenne", "Trifolium repens"],
+        "associated_species": ["Taraxacum officinale agg.", "Ranunculus repens", "Cerastium fontanum"],
+        "zonation_succession": {
+          "habitat": "Heavily trampled grasslands and paths"
+        }
+      },
+      "ov22": {
+        "code": "OV22",
+        "name": "Poa annua-Taraxacum officinale community",
+        "constant_species": ["Poa annua", "Taraxacum officinale agg."],
+        "sub_communities": {
+          "a": "Senecio vulgaris sub-community",
+          "b": "Cirsium vulgare-C. arvense sub-community"
+        },
+        "associated_species": ["Plantago major", "Senecio vulgaris", "Chamomilla suaveolens", "Lolium perenne", "Stellaria media", "Trifolium repens", "Senecio squalidus", "Cirsium vulgare", "Cirsium arvense", "Cerastium fontanum", "Matricaria maritima", "Holcus lanatus", "Veronica arvensis"],
+        "zonation_succession": {
+          "habitat": "Coarse weedy vegetation on disturbed ground"
+        }
+      },
+      "ov23": {
+        "code": "OV23",
+        "name": "Lolium perenne-Dactylis glomerata community",
+        "constant_species": ["Lolium perenne", "Dactylis glomerata", "Plantago lanceolata", "Taraxacum officinale agg."],
+        "associated_species": ["Trifolium repens", "Achillea millefolium", "Cerastium fontanum"],
+        "zonation_succession": {
+          "habitat": "Roadside verges and disturbed grassland"
+        }
+      },
+      "ov24": {
+        "code": "OV24",
+        "name": "Urtica dioica-Galium aparine community",
+        "constant_species": ["Galium aparine", "Urtica dioica"],
+        "rare_species": ["Allium triquetrum"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Poa trivialis sub-community"
+        },
+        "associated_species": ["Poa trivialis", "Cirsium arvense", "Bromus sterilis"],
+        "zonation_succession": {
+          "habitat": "Nutrient-rich disturbed ground"
+        }
+      },
+      "ov25": {
+        "code": "OV25",
+        "name": "Urtica dioica-Cirsium arvense community",
+        "constant_species": ["Urtica dioica", "Cirsium arvense", "Elymus repens"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Lolium perenne sub-community"
+        },
+        "associated_species": ["Lolium perenne", "Dactylis glomerata", "Cirsium vulgare"],
+        "zonation_succession": {
+          "habitat": "Disturbed fertile ground, often recolonising ploughed land"
+        }
+      },
+      "ov26": {
+        "code": "OV26",
+        "name": "Epilobium hirsutum community",
+        "constant_species": ["Epilobium hirsutum", "Urtica dioica", "Galium aparine"],
+        "sub_communities": {
+          "a": "Filipendula ulmaria sub-community",
+          "b": "Arrhenatherum elatius sub-community",
+          "c": "Carex paniculata sub-community",
+          "d": "Cladium mariscus sub-community"
+        },
+        "associated_species": ["Filipendula ulmaria", "Arrhenatherum elatius", "Carex paniculata", "Cladium mariscus", "Heracleum sphondylium", "Cirsium arvense", "Cirsium palustre", "Epilobium palustre", "Mentha aquatica", "Myosotis laxa ssp. caespitosa", "Caltha palustris", "Hydrocotyle vulgaris", "Veronica scutellata", "Angelica sylvestris", "Valeriana officinalis", "Scrophularia aquatica", "Phalaris arundinacea", "Salix cinerea"],
+        "zonation_succession": {
+          "habitat": "Tall-herb vegetation of fertile soils kept moist by ground water"
+        }
+      },
+      "ov27": {
+        "code": "OV27",
+        "name": "Epilobium angustifolium community",
+        "constant_species": ["Epilobium angustifolium"],
+        "sub_communities": {
+          "a": "Holcus lanatus-Festuca ovina sub-community",
+          "b": "Urtica dioica-Cirsium arvense sub-community"
+        },
+        "associated_species": ["Rubus fruticosus agg.", "Holcus lanatus", "Pteridium aquilinum", "Urtica dioica", "Holcus lanatus", "Festuca ovina", "Anthoxanthum odoratum", "Agrostis capillaris", "Potentilla erecta", "Galium saxatile", "Teucrium scorodonia", "Calluna vulgaris", "Erica cinerea", "Ulex europaeus", "Ulex gallii", "Cirsium arvense"],
+        "zonation_succession": {
+          "habitat": "Clearings and disturbed ground, often after fire"
+        }
+      },
+      "ov28": {
+        "code": "OV28",
+        "name": "Agrostis stolonifera-Ranunculus repens community",
+        "alternate_names": ["Agrostio-Ranunculetum repentis"],
+        "constant_species": ["Agrostis stolonifera", "Ranunculus repens"],
+        "sub_communities": {
+          "a": "Polygonum hydropiper-Rorippa sylvestris sub-community"
+        },
+        "associated_species": ["Poa trivialis", "Trifolium repens", "Urtica dioica", "Cirsium arvense", "Senecio vulgaris", "Atriplex prostrata", "Taraxacum officinale agg.", "Polygonum hydropiper", "Rorippa sylvestris", "Phalaris arundinacea", "Juncus effusus"],
+        "zonation_succession": {
+          "habitat": "Periodically flooded or waterlogged ground"
+        }
+      },
+      "ov29": {
+        "code": "OV29",
+        "name": "Alopecurus geniculatus-Rorippa palustris community",
+        "alternate_names": ["Ranunculo-Alopecuretum geniculati"],
+        "constant_species": ["Alopecurus geniculatus", "Rorippa palustris"],
+        "associated_species": ["Potentilla anserina", "Poa trivialis", "Ranunculus repens", "Polygonum lapathifolium", "Polygonum aviculare", "Polygonum hydropiper", "Rumex crispus", "Elymus repens", "Phalaris arundinacea"],
+        "zonation_succession": {
+          "habitat": "Periodically-flooded silts and sands in river valleys"
+        }
+      },
+      "ov30": {
+        "code": "OV30",
+        "name": "Bidens tripartita-Polygonum amphibium community",
+        "constant_species": ["Bidens tripartita", "Polygonum amphibium", "Rorippa amphibia"],
+        "associated_species": ["Alisma plantago-aquatica", "Rumex hydrolapathum", "Lycopus europaeus"],
+        "zonation_succession": {
+          "habitat": "Muddy margins of ponds and rivers"
+        }
+      },
+      "ov31": {
+        "code": "OV31",
+        "name": "Rorippa palustris-Filaginella uliginosa community",
+        "constant_species": ["Rorippa palustris", "Filaginella uliginosa", "Juncus bufonius"],
+        "associated_species": ["Gnaphalium luteoalbum", "Pulicaria vulgaris", "Limosella aquatica"],
+        "zonation_succession": {
+          "habitat": "Seasonally flooded ground"
+        }
+      },
+      "ov32": {
+        "code": "OV32",
+        "name": "Myosotis scorpioides-Ranunculus sceleratus community",
+        "constant_species": ["Myosotis scorpioides", "Ranunculus sceleratus", "Rorippa palustris"],
+        "associated_species": ["Alisma plantago-aquatica", "Veronica anagallis-aquatica", "Nasturtium officinale"],
+        "zonation_succession": {
+          "habitat": "Muddy pond and ditch margins"
+        }
+      },
+      "ov33": {
+        "code": "OV33",
+        "name": "Polygonum lapathifolium-Poa annua community",
+        "constant_species": ["Polygonum lapathifolium", "Poa annua", "Stellaria media"],
+        "associated_species": ["Chenopodium album", "Chamomilla suaveolens", "Elymus repens", "Cirsium arvense", "Urtica dioica", "Rumex spp.", "Lolium perenne", "Trifolium repens"],
+        "zonation_succession": {
+          "habitat": "Fertile damp disturbed ground"
+        }
+      },
+      "ov34": {
+        "code": "OV34",
+        "name": "Allium schoenoprasum-Plantago maritima community",
+        "constant_species": ["Allium schoenoprasum", "Plantago maritima", "Scilla verna", "Scilla autumnalis"],
+        "associated_species": ["Origanum vulgare", "Carex flacca", "Viola riviniana", "Senecio jacobaea", "Oxalis acetosella", "Arabis hirsuta", "Galium sterneri", "Rubus saxatilis"],
+        "zonation_succession": {
+          "habitat": "Calcareous exposures at lower altitudes"
+        }
+      },
+      "ov35": {
+        "code": "OV35",
+        "name": "Lythrum portula-Ranunculus flammula community",
+        "constant_species": ["Lythrum portula", "Ranunculus flammula", "Juncus bufonius"],
+        "associated_species": ["Pilularia globulifera", "Limosella aquatica", "Alopecurus aequalis"],
+        "zonation_succession": {
+          "habitat": "Silty or peaty soils wetted by fluctuating waters"
+        }
+      },
+      "ov36": {
+        "code": "OV36",
+        "name": "Lythrum hyssopifolia-Ranunculus parviflorus community",
+        "constant_species": ["Lythrum hyssopifolia", "Ranunculus parviflorus", "Juncus bufonius"],
+        "associated_species": ["Centaurium pulchellum", "Cicendia filiformis"],
+        "zonation_succession": {
+          "habitat": "Seasonally wet acidic ground"
+        }
+      },
+      "ov37": {
+        "code": "OV37",
+        "name": "Festuca ovina-Minuartia verna community",
+        "alternate_names": ["Minuartio-Thlaspietum"],
+        "constant_species": ["Festuca ovina", "Minuartia verna", "Thlaspi caerulescens", "Armeria maritima"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Avenula flexuosa sub-community"
+        },
+        "associated_species": ["Avenula flexuosa", "Rumex acetosa", "Senecio jacobaea", "Linum catharticum", "Lotus corniculatus", "Trifolium repens", "Agrostis stolonifera", "Viola lutea", "Pohlia nutans", "Weissia controversa", "Dicranum scoparium"],
+        "zonation_succession": {
+          "habitat": "Heavy metal contaminated soils"
+        }
+      },
+      "ov38": {
+        "code": "OV38",
+        "name": "Gymnostomum calcareum-Hymenostylium recurvirostrum community",
+        "constant_species": ["Gymnostomum calcareum", "Hymenostylium recurvirostrum", "Eucladium verticillatum"],
+        "associated_species": ["Barbula tophacea", "Didymodon tophaceus", "Fissidens cristatus"],
+        "zonation_succession": {
+          "habitat": "Calcareous rock faces and walls"
+        }
+      },
+      "ov39": {
+        "code": "OV39",
+        "name": "Asplenium trichomanes-Asplenium ruta-muraria community",
+        "alternate_names": ["Asplenietum trichomano-rutae-murariae"],
+        "constant_species": ["Asplenium trichomanes", "Asplenium ruta-muraria", "Cystopteris fragilis"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Ceterach officinarum sub-community"
+        },
+        "associated_species": ["Ceterach officinarum", "Sedum acre", "Umbilicus rupestris", "Polypodium vulgare", "Phyllitis scolopendrium"],
+        "zonation_succession": {
+          "habitat": "Limestone walls and rock crevices"
+        }
+      },
+      "ov40": {
+        "code": "OV40",
+        "name": "Asplenium viride-Cystopteris fragilis community",
+        "alternate_names": ["Asplenio-Cystopteridetum"],
+        "constant_species": ["Asplenium viride", "Cystopteris fragilis", "Asplenium trichomanes"],
+        "associated_species": ["Saxifraga oppositifolia", "Sedum rosea", "Silene acaulis", "Festuca ovina"],
+        "zonation_succession": {
+          "habitat": "Base-rich montane rock crevices"
+        }
+      },
+      "ov41": {
+        "code": "OV41",
+        "name": "Parietaria diffusa community",
+        "alternate_names": ["Asplenio-Parietarietum"],
+        "constant_species": ["Parietaria diffusa", "Homalothecium sericeum", "Tortula muralis"],
+        "associated_species": ["Poa trivialis", "Schistidium apocarpum", "Barbula sp.", "Solanum dulcamara"],
+        "zonation_succession": {
+          "habitat": "Base-rich walls and rock faces"
+        }
+      },
+      "ov42": {
+        "code": "OV42",
+        "name": "Cymbalaria muralis community",
+        "alternate_names": ["Cymbalarietum muralis"],
+        "constant_species": ["Cymbalaria muralis"],
+        "associated_species": ["Asplenium trichomanes", "Asplenium ruta-muraria", "Polypodium vulgare", "Sedum acre", "Hedera helix", "Poa annua", "Dactylis glomerata", "Agrostis capillaris", "Agrostis stolonifera", "Homalothecium sericeum", "Schistidium apocarpum", "Grimmia pulvinata", "Tortula muralis", "Bryum capillare", "Barbula unguiculata"],
+        "zonation_succession": {
+          "habitat": "Crevice vegetation in walls and rock faces"
+        }
+      }
+    },
+    "swamps_and_tall_herb_fens": {
+      "s1": {
+        "code": "S1",
+        "name": "Carex elata swamp",
+        "alternate_names": ["Association of Carex elata"],
+        "constant_species": ["Carex elata"],
+        "associated_species": ["Filipendula ulmaria", "Epilobium hirsutum", "Cardamine pratensis", "Salix cinerea", "Alnus glutinosa"],
+        "zonation_succession": {
+          "habitat": "Emergent vegetation in shallow pools and old peat cuttings"
+        }
+      },
+      "s2": {
+        "code": "S2",
+        "name": "Cladium mariscus swamp",
+        "alternate_names": ["Cladietum marisci"],
+        "constant_species": ["Cladium mariscus"],
+        "sub_communities": {
+          "a": "Cladium mariscus sub-community",
+          "b": "Phragmites australis sub-community"
+        },
+        "associated_species": ["Phragmites australis", "Juncus subnodulosus", "Solanum dulcamara"],
+        "zonation_succession": {
+          "habitat": "Base-rich swamps and fens"
+        }
+      },
+      "s3": {
+        "code": "S3",
+        "name": "Carex paniculata swamp",
+        "alternate_names": ["Caricetum paniculatae"],
+        "constant_species": ["Carex paniculata"],
+        "associated_species": ["Urtica dioica", "Solanum dulcamara", "Galium aparine"],
+        "zonation_succession": {
+          "habitat": "Swamps on organic soils"
+        }
+      },
+      "s4": {
+        "code": "S4",
+        "name": "Phragmites australis swamp and reed-beds",
+        "alternate_names": ["Phragmitetum australis"],
+        "constant_species": ["Phragmites australis"],
+        "sub_communities": {
+          "a": "Phragmites australis sub-community",
+          "b": "Galium palustre sub-community"
+        },
+        "associated_species": ["Galium palustre", "Mentha aquatica", "Epilobium hirsutum", "Iris pseudacorus", "Lythrum salicaria", "Calliergon cuspidatum", "Sparganium erectum", "Carex pseudocyperus", "Sium latifolium", "Rumex hydrolapathum", "Carex riparia", "Typha angustifolia", "Lemna minor", "Berula erecta", "Cicuta virosa", "Juncus subnodulosus", "Lotus uliginosus", "Angelica sylvestris", "Solanum dulcamara", "Lychnis flos-cuculi", "Equisetum palustre", "Lycopus europaeus", "Phalaris arundinacea", "Urtica dioica", "Poa trivialis", "Holcus lanatus", "Agrostis stolonifera", "Filipendula ulmaria", "Ranunculus lingua", "Brachythecium rutabulum", "Cardamine pratensis", "Equisetum fluviatile", "Myosotis laxa caespitosa", "Myosotis scorpioides"],
+        "zonation_succession": {
+          "habitat": "Swamps and reed-beds in standing and slow-moving waters"
+        }
+      },
+      "s5": {
+        "code": "S5",
+        "name": "Glyceria maxima swamp",
+        "alternate_names": ["Glycerietum maximae"],
+        "constant_species": ["Glyceria maxima"],
+        "sub_communities": {
+          "a": "Glyceria maxima sub-community",
+          "b": "Alisma plantago-aquatica-Sparganium erectum sub-community"
+        },
+        "associated_species": ["Lemna minor", "Nymphaea alba", "Solanum dulcamara", "Galium palustre", "Berula erecta", "Rumex hydrolapathum", "Alisma plantago-aquatica", "Sparganium erectum", "Iris pseudacorus", "Typha latifolia", "Epilobium hirsutum", "Mentha aquatica", "Myosotis scorpioides", "Typha angustifolia", "Cirsium palustre", "Rumex crispus", "Nasturtium officinale", "Carex elata", "Valeriana officinalis", "Cardamine pratensis", "Epilobium palustre", "Dryopteris dilatata", "Cirsium arvense", "Polygonum hydropiper"],
+        "zonation_succession": {
+          "habitat": "Swamps in eutrophic waters"
+        }
+      },
+      "s6": {
+        "code": "S6",
+        "name": "Carex riparia swamp",
+        "alternate_names": ["Caricetum ripariae"],
+        "constant_species": ["Carex riparia"],
+        "associated_species": ["Iris pseudacorus", "Filipendula ulmaria", "Epilobium hirsutum", "Galium palustre"],
+        "zonation_succession": {
+          "habitat": "Swamps on mineral soils by slow-moving waters"
+        }
+      },
+      "s7": {
+        "code": "S7",
+        "name": "Carex acutiformis swamp",
+        "alternate_names": ["Caricetum acutiformis"],
+        "constant_species": ["Carex acutiformis"],
+        "associated_species": ["Iris pseudacorus", "Filipendula ulmaria", "Epilobium hirsutum", "Galium palustre"],
+        "zonation_succession": {
+          "habitat": "Swamps on calcareous substrates"
+        }
+      },
+      "s8": {
+        "code": "S8",
+        "name": "Scirpus lacustris swamp",
+        "alternate_names": ["Scirpetum lacustris"],
+        "constant_species": ["Scirpus lacustris lacustris"],
+        "sub_communities": {
+          "a": "Scirpus lacustris lacustris sub-community",
+          "b": "Sparganium erectum sub-community",
+          "c": "Equisetum fluviatile sub-community"
+        },
+        "associated_species": ["Sparganium erectum", "Equisetum fluviatile", "Solanum dulcamara", "Glyceria fluitans", "Eleocharis palustris", "Iris pseudacorus", "Nuphar lutea"],
+        "zonation_succession": {
+          "habitat": "Swamps in mesotrophic to eutrophic waters"
+        }
+      },
+      "s9": {
+        "code": "S9",
+        "name": "Carex rostrata-Calliergon cuspidatum/giganteum mire",
+        "alternate_names": ["Potentillo-Caricetum rostratae"],
+        "constant_species": ["Carex rostrata", "Potentilla palustris", "Menyanthes trifoliata", "Equisetum fluviatile"],
+        "sub_communities": {
+          "a": "Carex rostrata-Equisetum fluviatile sub-community",
+          "b": "Lysimachia vulgaris sub-community"
+        },
+        "associated_species": ["Lysimachia vulgaris", "Lythrum salicaria", "Cladium mariscus", "Calamagrostis canescens"],
+        "zonation_succession": {
+          "habitat": "Poor fens and bog margins"
+        }
+      },
+      "s10": {
+        "code": "S10",
+        "name": "Equisetum fluviatile swamp",
+        "alternate_names": ["Equisetum fluviatile sociation"],
+        "constant_species": ["Equisetum fluviatile"],
+        "sub_communities": {
+          "a": "Equisetum fluviatile sub-community",
+          "b": "Carex rostrata sub-community"
+        },
+        "associated_species": ["Carex rostrata", "Menyanthes trifoliata", "Potentilla palustris", "Galium palustre", "Epilobium palustre", "Eriophorum angustifolium", "Calliergon cuspidatum", "Polygonum hydropiper", "Rorippa islandica", "Littorella uniflora"],
+        "zonation_succession": {
+          "habitat": "Swamps in oligotrophic to mesotrophic waters"
+        }
+      },
+      "s11": {
+        "code": "S11",
+        "name": "Carex vesicaria swamp",
+        "alternate_names": ["Caricetum vesicariae"],
+        "constant_species": ["Carex vesicaria"],
+        "sub_communities": {
+          "a": "Carex vesicaria sub-community",
+          "b": "Mentha aquatica sub-community",
+          "c": "Carex rostrata sub-community"
+        },
+        "associated_species": ["Mentha aquatica", "Myosotis scorpioides", "Galium palustre", "Veronica scutellata", "Equisetum fluviatile", "Juncus effusus", "Filipendula ulmaria", "Lythrum salicaria", "Phalaris arundinacea", "Carex rostrata", "Potentilla palustris", "Menyanthes trifoliata", "Carex aquatilis"],
+        "zonation_succession": {
+          "habitat": "Open-water transitions on organic substrates"
+        }
+      },
+      "s12": {
+        "code": "S12",
+        "name": "Typha latifolia swamp",
+        "alternate_names": ["Typhetum latifoliae"],
+        "constant_species": ["Typha latifolia"],
+        "sub_communities": {
+          "a": "Mentha aquatica sub-community",
+          "b": "Alisma plantago-aquatica sub-community",
+          "c": "Carex rostrata sub-community"
+        },
+        "associated_species": ["Mentha aquatica", "Myosotis scorpioides", "Galium palustre", "Alisma plantago-aquatica", "Sparganium erectum", "Eleocharis palustris", "Ranunculus sceleratus", "Glyceria fluitans", "Lemna minor", "Carex rostrata", "Menyanthes trifoliata", "Potentilla palustris"],
+        "zonation_succession": {
+          "habitat": "Swamps in mesotrophic to eutrophic waters"
+        }
+      },
+      "s13": {
+        "code": "S13",
+        "name": "Typha angustifolia swamp",
+        "alternate_names": ["Typhetum angustifoliae"],
+        "constant_species": ["Typha angustifolia"],
+        "associated_species": ["Solanum dulcamara", "Mentha aquatica", "Phalaris arundinacea", "Polygonum amphibium", "Calystegia sepium", "Lemna minor", "Juncus effusus", "Lemna trisulca", "Phragmites australis", "Elodea canadensis", "Myriophyllum spicatum"],
+        "zonation_succession": {
+          "habitat": "Swamps in eutrophic waters"
+        }
+      },
+      "s14": {
+        "code": "S14",
+        "name": "Sparganium erectum swamp",
+        "alternate_names": ["Sparganietum erecti"],
+        "constant_species": ["Sparganium erectum"],
+        "associated_species": ["Iris pseudacorus", "Glyceria maxima", "Alisma plantago-aquatica", "Mentha aquatica", "Myosotis scorpioides"],
+        "zonation_succession": {
+          "habitat": "Swamps in mesotrophic waters"
+        }
+      },
+      "s15": {
+        "code": "S15",
+        "name": "Acorus calamus swamp",
+        "alternate_names": ["Acoretum calami"],
+        "constant_species": ["Acorus calamus"],
+        "sub_communities": {
+          "a": "Lemna minor sub-community",
+          "b": "Juncus effusus sub-community"
+        },
+        "associated_species": ["Lemna minor", "Sparganium erectum", "Solanum dulcamara", "Typha latifolia", "Juncus effusus", "Lycopus europaeus", "Angelica sylvestris", "Galium palustre", "Rumex hydrolapathum", "Holcus lanatus", "Apium nodiflorum", "Alisma plantago-aquatica", "Polygonum persicaria", "Potamogeton natans", "Riccia fluitans", "Cirsium palustre", "Polygonum amphibium", "Salix cinerea sapling", "Urtica dioica", "Holcus mollis", "Brachythecium rutabulum", "Eurhynchium praelongum", "Mentha aquatica", "Ranunculus repens", "Eleocharis palustris", "Mimulus guttatus", "Epilobium adenocaulon", "Myosotis laxa caespitosa"],
+        "zonation_succession": {
+          "habitat": "Swamps in mesotrophic waters, often introduced"
+        }
+      },
+      "s16": {
+        "code": "S16",
+        "name": "Sagittaria sagittifolia swamp",
+        "constant_species": ["Sagittaria sagittifolia"],
+        "associated_species": ["Glyceria maxima", "Scirpus lacustris lacustris", "Mentha aquatica", "Sparganium erectum", "Glyceria fluitans", "Hydrocharis morsus-ranae", "Sparganium emersum", "Stachys palustris", "Galium palustre", "Ranunculus repens", "Equisetum palustre", "Callitriche hamulata"],
+        "zonation_succession": {
+          "habitat": "Swamps in base-rich waters"
+        }
+      },
+      "s17": {
+        "code": "S17",
+        "name": "Carex pseudocyperus swamp",
+        "constant_species": ["Carex pseudocyperus"],
+        "associated_species": ["Typha angustifolia", "Cicuta virosa", "Cladium mariscus"],
+        "zonation_succession": {
+          "habitat": "Swamps in base-rich waters"
+        }
+      },
+      "s18": {
+        "code": "S18",
+        "name": "Carex otrubae swamp",
+        "alternate_names": ["Caricetum otrubae"],
+        "constant_species": ["Carex otrubae"],
+        "sub_communities": {
+          "a": "Carex otrubae sub-community",
+          "b": "Atriplex prostrata sub-community"
+        },
+        "associated_species": ["Atriplex prostrata", "Agrostis stolonifera"],
+        "zonation_succession": {
+          "habitat": "Clayey margins of mesotrophic waters"
+        }
+      },
+      "s19": {
+        "code": "S19",
+        "name": "Eleocharis palustris swamp",
+        "alternate_names": ["Eleocharitetum palustris"],
+        "constant_species": ["Eleocharis palustris"],
+        "sub_communities": {
+          "a": "Eleocharis palustris sub-community",
+          "b": "Littorella uniflora sub-community",
+          "c": "Agrostis stolonifera sub-community"
+        },
+        "associated_species": ["Littorella uniflora", "Agrostis stolonifera", "Juncus articulatus", "Ranunculus acris", "Ranunculus flammula", "Polygonum amphibium", "Glyceria fluitans", "Carex rostrata", "Caltha palustris", "Hydrocotyle vulgaris", "Galium palustre", "Alopecurus geniculatus", "Poa trivialis", "Ranunculus repens", "Carex nigra"],
+        "zonation_succession": {
+          "habitat": "Shallow mesotrophic waters"
+        }
+      },
+      "s20": {
+        "code": "S20",
+        "name": "Scirpus lacustris ssp. tabernaemontani swamp",
+        "alternate_names": ["Scirpetum tabernaemontani"],
+        "constant_species": ["Scirpus lacustris tabernaemontani"],
+        "sub_communities": {
+          "a": "Scirpus lacustris tabernaemontani-dominated sub-community",
+          "b": "Agrostis stolonifera sub-community"
+        },
+        "associated_species": ["Agrostis stolonifera", "Triglochin maritima", "Glaux maritima", "Cochlearia anglica", "Typha latifolia", "Chenopodium rubrum", "Ranunculus sceleratus", "Juncus bufonius", "Spartina anglica", "Juncus gerardi"],
+        "zonation_succession": {
+          "habitat": "Brackish swamps and ditches"
+        }
+      },
+      "s21": {
+        "code": "S21",
+        "name": "Scirpus maritimus swamp",
+        "alternate_names": ["Scirpetum maritimi"],
+        "constant_species": ["Scirpus maritimus"],
+        "sub_communities": {
+          "a": "Atriplex prostrata sub-community",
+          "b": "Agrostis stolonifera sub-community",
+          "c": "Potentilla anserina sub-community"
+        },
+        "associated_species": ["Atriplex prostrata", "Agrostis stolonifera", "Triglochin maritima", "Glaux maritima", "Juncus gerardi", "Oenanthe lachenalii", "Potentilla anserina", "Rumex crispus", "Cochlearia officinalis", "Festuca arundinacea", "Juncus bufonius"],
+        "zonation_succession": {
+          "habitat": "Brackish marshes and ditches"
+        }
+      },
+      "s22": {
+        "code": "S22",
+        "name": "Glyceria fluitans water-margin vegetation",
+        "alternate_names": ["Sparganio-Glycerietum fluitantis"],
+        "constant_species": ["Glyceria fluitans"],
+        "sub_communities": {
+          "a": "Glyceria fluitans sub-community",
+          "b": "Sparganium erectum-Mentha aquatica sub-community",
+          "c": "Alopecurus geniculatus sub-community"
+        },
+        "associated_species": ["Nasturtium officinale", "Sparganium erectum", "Typha latifolia", "Carex otrubae", "Mentha aquatica", "Myosotis scorpioides", "Alisma plantago-aquatica", "Rumex crispus", "Alopecurus geniculatus", "Poa trivialis"],
+        "zonation_succession": {
+          "habitat": "Shallow mesotrophic waters and fine mineral substrates"
+        }
+      },
+      "s23": {
+        "code": "S23",
+        "name": "Other water-margin vegetation",
+        "alternate_names": ["Glycerio-Sparganion"],
+        "constant_species": ["Apium nodiflorum", "Nasturtium officinale", "Veronica beccabunga"],
+        "associated_species": ["Catabrosa aquatica", "Glyceria plicata"],
+        "zonation_succession": {
+          "habitat": "Water margins with small perennials"
+        }
+      },
+      "s24": {
+        "code": "S24",
+        "name": "Phragmites australis-Peucedanum palustre tall-herb fen",
+        "alternate_names": ["Peucedano-Phragmitetum"],
+        "constant_species": ["Phragmites australis", "Peucedanum palustre", "Thelypteris palustris", "Cladium mariscus"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Cicuta virosa sub-community"
+        },
+        "associated_species": ["Cicuta virosa", "Calamagrostis canescens", "Typha angustifolia", "Lysimachia vulgaris", "Lythrum salicaria", "Galium palustre", "Mentha aquatica", "Epilobium hirsutum", "Iris pseudacorus", "Calliergon cuspidatum", "Carex pseudocyperus", "Sium latifolium", "Rumex hydrolapathum", "Berula erecta", "Juncus subnodulosus", "Lotus uliginosus", "Angelica sylvestris", "Solanum dulcamara", "Lychnis flos-cuculi", "Equisetum palustre", "Lycopus europaeus", "Phalaris arundinacea", "Urtica dioica", "Poa trivialis", "Holcus lanatus", "Agrostis stolonifera", "Filipendula ulmaria", "Ranunculus lingua", "Brachythecium rutabulum", "Cardamine pratensis", "Equisetum fluviatile", "Myosotis laxa caespitosa", "Myosotis scorpioides"],
+        "zonation_succession": {
+          "habitat": "Base-rich tall-herb fens"
+        }
+      },
+      "s25": {
+        "code": "S25",
+        "name": "Phragmites australis-Eupatorium cannabinum tall-herb fen",
+        "alternate_names": ["Angelico-Phragmitetum"],
+        "constant_species": ["Phragmites australis", "Eupatorium cannabinum", "Filipendula ulmaria", "Angelica sylvestris"],
+        "sub_communities": {
+          "a": "Filipendula ulmaria sub-community",
+          "b": "Arrhenatherum elatius sub-community",
+          "c": "Carex paniculata sub-community",
+          "d": "Cladium mariscus sub-community"
+        },
+        "associated_species": ["Arrhenatherum elatius", "Carex paniculata", "Cladium mariscus", "Urtica dioica", "Galium aparine", "Cirsium arvense", "Heracleum sphondylium", "Scrophularia aquatica", "Phalaris arundinacea"],
+        "zonation_succession": {
+          "habitat": "Tall-herb fens on organic soils"
+        }
+      },
+      "s26": {
+        "code": "S26",
+        "name": "Phragmites australis-Urtica dioica tall-herb fen",
+        "constant_species": ["Phragmites australis", "Urtica dioica", "Galium aparine"],
+        "associated_species": ["Epilobium hirsutum", "Calystegia sepium", "Heracleum sphondylium"],
+        "zonation_succession": {
+          "habitat": "Eutrophic tall-herb fens"
+        }
+      },
+      "s27": {
+        "code": "S27",
+        "name": "Carex rostrata-Potentilla palustris tall-herb fen",
+        "alternate_names": ["Potentillo-Caricetum rostratae"],
+        "constant_species": ["Carex rostrata", "Potentilla palustris", "Menyanthes trifoliata", "Equisetum fluviatile"],
+        "sub_communities": {
+          "a": "Carex rostrata-Equisetum fluviatile sub-community",
+          "b": "Lysimachia vulgaris sub-community"
+        },
+        "associated_species": ["Lysimachia vulgaris", "Lythrum salicaria", "Cladium mariscus", "Calamagrostis canescens"],
+        "zonation_succession": {
+          "habitat": "Poor fens and oligotrophic situations"
+        }
+      },
+      "s28": {
+        "code": "S28",
+        "name": "Phalaris arundinacea tall-herb fen",
+        "alternate_names": ["Phalaridetum arundinaceae"],
+        "constant_species": ["Phalaris arundinacea"],
+        "sub_communities": {
+          "a": "Phalaris arundinacea sub-community",
+          "b": "Elymus caninus-Holcus mollis sub-community",
+          "c": "Epilobium hirsutum-Urtica dioica sub-community"
+        },
+        "associated_species": ["Elymus caninus", "Holcus mollis", "Epilobium hirsutum", "Urtica dioica", "Valeriana officinalis", "Agrostis capillaris", "Dactylis glomerata", "Myosotis scorpioides", "Carex riparia", "Phalaris arundinacea", "Lemna minor", "Apium nodiflorum", "Glyceria fluitans", "Galium aparine", "Carex nigra"],
+        "zonation_succession": {
+          "habitat": "Tall-herb fens on alluvial soils"
+        }
+      }
+    },
+    "sand_dune_communities": {
+      "sd1": {
+        "code": "SD1",
+        "name": "Rumex crispus-Glaucium flavum shingle community",
+        "constant_species": ["Rumex crispus", "Glaucium flavum"],
+        "associated_species": ["Silene vulgaris ssp. maritima", "Eryngium maritimum", "Sonchus arvensis", "Cirsium arvense"],
+        "zonation_succession": {
+          "habitat": "Shingle beaches and coastal waste ground"
+        }
+      },
+      "sd2": {
+        "code": "SD2",
+        "name": "Honkenya peploides-Cakile maritima strandline community",
+        "constant_species": ["Honkenya peploides", "Cakile maritima"],
+        "associated_species": ["Atriplex glabriuscula", "Salsola kali", "Polygonum oxyspermum", "Mertensia maritima"],
+        "zonation_succession": {
+          "habitat": "Sandy strandlines",
+          "succession": "Pioneer community of upper beach"
+        }
+      },
+      "sd3": {
+        "code": "SD3",
+        "name": "Matricaria maritima-Galium aparine strandline community",
+        "constant_species": ["Matricaria maritima", "Galium aparine", "Stellaria media", "Rumex crispus", "Atriplex glabriuscula", "Elymus repens", "Cakile maritima", "Atriplex patula", "Agrostis stolonifera", "Festuca rubra", "Atriplex prostrata", "Glaux maritima", "Armeria maritima", "Leymus arenarius", "Sonchus asper", "Cochlearia officinalis", "Holcus lanatus", "Honkenya peploides", "Juncus bufonius", "Mertensia maritima", "Poa annua", "Juncus gerardi", "Ligusticum scoticum", "Chamomilla suaveolens", "Plantago maritima"],
+        "zonation_succession": {
+          "habitat": "Strandlines with organic debris"
+        }
+      },
+      "sd4": {
+        "code": "SD4",
+        "name": "Elymus farctus foredune community",
+        "alternate_names": ["Agropyretum boreo-atlanticum"],
+        "constant_species": ["Elymus farctus"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Leymus arenarius sub-community"
+        },
+        "associated_species": ["Leymus arenarius", "Ammophila arenaria", "Festuca rubra", "Agrostis stolonifera"],
+        "zonation_succession": {
+          "habitat": "Embryo and foredunes",
+          "succession": "Pioneer dune community"
+        }
+      },
+      "sd5": {
+        "code": "SD5",
+        "name": "Leymus arenarius mobile dune community",
+        "constant_species": ["Leymus arenarius"],
+        "sub_communities": {
+          "a": "Elymus farctus sub-community",
+          "b": "Honkenya peploides sub-community",
+          "c": "Festuca rubra sub-community"
+        },
+        "associated_species": ["Elymus farctus", "Honkenya peploides", "Festuca rubra", "Sonchus arvensis", "Elymus repens", "Atriplex glabriuscula", "Cakile maritima", "Cirsium arvense", "Hypochoeris radicata", "Poa pratensis", "Bryum algovicum rutheanum", "Taraxacum officinale", "Epilobium angustifolium", "Holcus lanatus", "Sonchus asper", "Brachythecium rutabulum", "Ceratodon purpureus", "Tortula ruralis ruraliformis", "Atriplex prostrata", "Ammophila arenaria", "Cerastium fontanum", "Galium aparine", "Elymus pycnanthus", "Rumex crispus"],
+        "zonation_succession": {
+          "habitat": "Mobile dunes in northern Britain"
+        }
+      },
+      "sd6": {
+        "code": "SD6",
+        "name": "Ammophila arenaria mobile dune community",
+        "alternate_names": ["Ammophiletum arenariae"],
+        "constant_species": ["Ammophila arenaria"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Leymus arenarius sub-community",
+          "c": "Elymus farctus sub-community"
+        },
+        "associated_species": ["Leymus arenarius", "Elymus farctus", "Festuca rubra", "Carex arenaria"],
+        "zonation_succession": {
+          "habitat": "Mobile dunes",
+          "succession": "Main dune-building community"
+        }
+      },
+      "sd7": {
+        "code": "SD7",
+        "name": "Ammophila arenaria-Festuca rubra semi-fixed dune community",
+        "constant_species": ["Ammophila arenaria", "Festuca rubra", "Galium verum", "Lotus corniculatus"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Ononis repens sub-community",
+          "c": "Phleum arenarium sub-community"
+        },
+        "associated_species": ["Ononis repens", "Phleum arenarium", "Carex arenaria", "Hypochoeris radicata"],
+        "zonation_succession": {
+          "habitat": "Semi-fixed dunes",
+          "succession": "Transition from mobile to fixed dunes"
+        }
+      },
+      "sd8": {
+        "code": "SD8",
+        "name": "Festuca rubra-Galium verum fixed dune grassland",
+        "constant_species": ["Festuca rubra", "Galium verum", "Lotus corniculatus", "Plantago lanceolata"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Ononis repens sub-community",
+          "c": "Hypochoeris radicata sub-community"
+        },
+        "associated_species": ["Ononis repens", "Hypochoeris radicata", "Achillea millefolium", "Senecio jacobaea"],
+        "zonation_succession": {
+          "habitat": "Fixed dune grasslands"
+        }
+      },
+      "sd9": {
+        "code": "SD9",
+        "name": "Ammophila arenaria-Arrhenatherum elatius dune grassland",
+        "constant_species": ["Ammophila arenaria", "Arrhenatherum elatius", "Festuca rubra", "Dactylis glomerata"],
+        "associated_species": ["Heracleum sphondylium", "Cirsium arvense", "Senecio jacobaea"],
+        "zonation_succession": {
+          "habitat": "Dune grasslands with coarse grasses"
+        }
+      },
+      "sd10": {
+        "code": "SD10",
+        "name": "Carex arenaria dune community",
+        "constant_species": ["Carex arenaria", "Festuca rubra", "Ammophila arenaria"],
+        "associated_species": ["Elymus farctus", "Potentilla anserina", "Matricaria maritima", "Honkenya peploides", "Festuca ovina", "Senecio jacobaea", "Holcus lanatus", "Cerastium fontanum", "Rumex acetosella", "Koeleria macrantha", "Galium verum", "Astragalus danicus", "Ceratodon purpureus", "Plantago lanceolata", "Achillea millefolium", "Taraxacum officinale agg.", "Aira praecox", "Epilobium angustifolium", "Senecio vulgaris", "Agrostis capillaris", "Hypnum cupressiforme", "Dactylis glomerata"],
+        "zonation_succession": {
+          "habitat": "Dune communities dominated by Carex arenaria"
+        }
+      },
+      "sd11": {
+        "code": "SD11",
+        "name": "Carex arenaria-Cornicularia aculeata dune-heath",
+        "constant_species": ["Carex arenaria", "Festuca ovina", "Cornicularia aculeata", "Cladonia furcata"],
+        "sub_communities": {
+          "a": "Anthoxanthum odoratum sub-community",
+          "b": "Hypnum cupressiforme sub-community"
+        },
+        "associated_species": ["Anthoxanthum odoratum", "Luzula campestris", "Hypnum cupressiforme", "Hieracium pilosella", "Lotus corniculatus", "Galium verum", "Viola canina", "Acaena novae-zelandiae", "Arenaria serpyllifolia"],
+        "zonation_succession": {
+          "habitat": "Acidic dune heaths with lichen cover"
+        }
+      },
+      "sd12": {
+        "code": "SD12",
+        "name": "Carex arenaria-Festuca ovina-Agrostis capillaris dune grassland",
+        "constant_species": ["Carex arenaria", "Festuca ovina", "Agrostis capillaris", "Rumex acetosella"],
+        "sub_communities": {
+          "a": "Festuca ovina sub-community",
+          "b": "Corynephorus canescens sub-community"
+        },
+        "associated_species": ["Corynephorus canescens", "Hypochoeris radicata", "Sedum acre", "Viola tricolor", "Galium verum", "Thymus praecox", "Viola canina", "Erodium cicutarium", "Logfia minima", "Teesdalia nudicaulis"],
+        "zonation_succession": {
+          "habitat": "Acidic fixed dune grasslands"
+        }
+      },
+      "sd13": {
+        "code": "SD13",
+        "name": "Sagina nodosa-Bryum pseudotriquetrum dune-slack community",
+        "constant_species": ["Sagina nodosa", "Bryum pseudotriquetrum", "Carex nigra", "Hydrocotyle vulgaris"],
+        "sub_communities": {
+          "a": "Poa annua-Moerckia hibernica sub-community",
+          "b": "Holcus lanatus-Festuca rubra sub-community"
+        },
+        "associated_species": ["Poa annua", "Moerckia hibernica", "Blackstonia perfoliata", "Petalophyllum ralfsii", "Holcus lanatus", "Festuca rubra", "Lotus corniculatus", "Anthyllis vulneraria", "Agrostis stolonifera", "Poa pratensis"],
+        "zonation_succession": {
+          "habitat": "Dune slacks with bryophyte-rich vegetation"
+        }
+      },
+      "sd14": {
+        "code": "SD14",
+        "name": "Salix repens-Campylium stellatum dune-slack community",
+        "constant_species": ["Salix repens", "Campylium stellatum", "Hydrocotyle vulgaris", "Mentha aquatica"],
+        "sub_communities": {
+          "a": "Bryum pseudotriquetrum-Anagallis tenella sub-community",
+          "b": "Festuca rubra sub-community"
+        },
+        "associated_species": ["Equisetum variegatum", "Carex flacca", "Juncus articulatus", "Epipactis palustris", "Bryum pseudotriquetrum", "Anagallis tenella", "Lotus corniculatus", "Poa pratensis", "Prunella vulgaris", "Leontodon hispidus", "Euphrasia officinalis agg.", "Linum catharticum", "Pellia endiviifolia", "Aneura pinguis", "Moerckia hibernica", "Preissia quadrata", "Festuca rubra", "Holcus lanatus", "Trifolium repens", "Trifolium pratense", "Pulicaria dysenterica"],
+        "zonation_succession": {
+          "habitat": "Base-rich dune slacks"
+        }
+      },
+      "sd15": {
+        "code": "SD15",
+        "name": "Salix repens-Calliergon cuspidatum dune-slack community",
+        "alternate_names": ["Calliergon cuspidatum-Salix repens noda"],
+        "constant_species": ["Hydrocotyle vulgaris", "Mentha aquatica", "Salix repens", "Calliergon cuspidatum"],
+        "associated_species": ["Galium palustre", "Epilobium palustre", "Equisetum palustre", "Lotus uliginosus", "Festuca rubra", "Poa pratensis"],
+        "zonation_succession": {
+          "habitat": "Dune slacks with poor fen character"
+        }
+      },
+      "sd16": {
+        "code": "SD16",
+        "name": "Salix repens-Holcus lanatus dune-slack grassland",
+        "constant_species": ["Salix repens", "Holcus lanatus", "Festuca rubra", "Hydrocotyle vulgaris"],
+        "sub_communities": {
+          "a": "Ranunculus repens sub-community",
+          "b": "Ononis repens sub-community",
+          "c": "Rubus caesius sub-community",
+          "d": "Carex flacca sub-community"
+        },
+        "associated_species": ["Ranunculus repens", "Ononis repens", "Rubus caesius", "Carex flacca", "Carex nigra", "Pseudoscleropodium purum", "Cynosurus cristatus", "Epilobium palustre", "Ammophila arenaria", "Cerastium fontanum", "Epipactis helleborine", "Viola riviniana", "Taraxacum officinale agg.", "Hypnum cupressiforme", "Brachythecium albicans", "Gentianella amarella", "Equisetum palustre", "Equisetum arvense", "Agrostis capillaris", "Thymus praecox", "Poa annua", "Eupatorium cannabinum", "Phragmites australis", "Tortula ruralis ruraliformis", "Cirsium arvense", "Crepis capillaris", "Eleocharis quinqueflora"],
+        "zonation_succession": {
+          "habitat": "Dune-slack grasslands"
+        }
+      },
+      "sd17": {
+        "code": "SD17",
+        "name": "Potentilla anserina-Carex nigra dune-slack community",
+        "constant_species": ["Potentilla anserina", "Carex nigra", "Agrostis stolonifera", "Festuca rubra"],
+        "sub_communities": {
+          "a": "Caltha palustris sub-community",
+          "b": "Hydrocotyle vulgaris-Ranunculus flammula sub-community"
+        },
+        "associated_species": ["Holcus lanatus", "Cynosurus cristatus", "Poa trivialis", "Anthoxanthum odoratum", "Caltha palustris", "Rhinanthus minor", "Lychnis flos-cuculi", "Epilobium palustre", "Rumex acetosa", "Pedicularis palustris", "Leontodon autumnalis", "Plantago lanceolata", "Vicia cracca", "Cerastium fontanum", "Dactylorhiza fuchsii", "Equisetum fluviatile", "Hydrocotyle vulgaris", "Ranunculus flammula", "Eleocharis palustris", "Galium palustre", "Salix repens"],
+        "zonation_succession": {
+          "habitat": "Dune slacks with base-poor conditions"
+        }
+      },
+      "sd18": {
+        "code": "SD18",
+        "name": "Hippophae rhamnoides dune scrub",
+        "constant_species": ["Hippophae rhamnoides"],
+        "sub_communities": {
+          "a": "Festuca rubra sub-community",
+          "b": "Urtica dioica-Arrhenatherum elatius sub-community"
+        },
+        "associated_species": ["Festuca rubra", "Urtica dioica", "Arrhenatherum elatius", "Holcus lanatus", "Epilobium angustifolium", "Sonchus arvensis", "Agrostis stolonifera", "Heracleum sphondylium", "Carex arenaria", "Dactylis glomerata", "Galium verum", "Eurhynchium praelongum", "Lotus corniculatus", "Phragmites australis", "Convolvulus arvensis"],
+        "zonation_succession": {
+          "habitat": "Dune scrub vegetation"
+        }
+      },
+      "sd19": {
+        "code": "SD19",
+        "name": "Phleum arenarium-Vulpia bromoides dune annual community",
+        "constant_species": ["Phleum arenarium", "Vulpia bromoides", "Aira praecox"],
+        "associated_species": ["Cerastium diffusum", "Bromus hordeaceus", "Erodium cicutarium"],
+        "zonation_succession": {
+          "habitat": "Open sandy areas in dunes"
+        }
+      }
+    },
+    "salt_marsh_communities": {
+      "sm1": {
+        "code": "SM1",
+        "name": "Zostera communities",
+        "alternate_names": ["Zosterion"],
+        "constant_species": ["Zostera marina", "Zostera angustifolia", "Zostera noltii"],
+        "associated_species": ["Fucoids", "Green algae"],
+        "zonation_succession": {
+          "habitat": "Sub- or eu-littoral flats"
+        }
+      },
+      "sm2": {
+        "code": "SM2",
+        "name": "Ruppia maritima salt-marsh community",
+        "alternate_names": ["Ruppietum maritimae"],
+        "constant_species": ["Ruppia maritima"],
+        "associated_species": ["Potamogeton pectinatus", "Zannichellia palustris", "Ranunculus baudotii"],
+        "zonation_succession": {
+          "habitat": "Brackish pools and dried-up lagoons"
+        }
+      },
+      "sm3": {
+        "code": "SM3",
+        "name": "Eleocharis parvula salt-marsh community",
+        "alternate_names": ["Eleocharitetum parvulae"],
+        "constant_species": ["Eleocharis parvula"],
+        "associated_species": ["Ruppia maritima", "Zannichellia palustris"],
+        "zonation_succession": {
+          "habitat": "Upper-marsh pools and pans"
+        }
+      },
+      "sm4": {
+        "code": "SM4",
+        "name": "Spartina maritima salt-marsh",
+        "alternate_names": ["Spartinetum maritimae"],
+        "constant_species": ["Spartina maritima"],
+        "associated_species": ["Spartina anglica", "Puccinellia maritima", "Aster tripolium"],
+        "zonation_succession": {
+          "habitat": "Lower salt-marsh, now very rare"
+        }
+      },
+      "sm5": {
+        "code": "SM5",
+        "name": "Spartina alterniflora salt-marsh",
+        "alternate_names": ["Spartinetum alterniflorae"],
+        "constant_species": ["Spartina alterniflora"],
+        "associated_species": ["Spartina anglica", "Puccinellia maritima", "Aster tripolium"],
+        "zonation_succession": {
+          "habitat": "Lower salt-marsh with variable salinity"
+        }
+      },
+      "sm6": {
+        "code": "SM6",
+        "name": "Spartina anglica salt-marsh",
+        "alternate_names": ["Spartinetum anglicae"],
+        "constant_species": ["Spartina anglica"],
+        "associated_species": ["Algal mat", "Puccinellia maritima", "Salicornia agg.", "Suaeda maritima", "Aster tripolium var. discoideus", "Aster tripolium (rayed)", "Atriplex prostrata", "Limonium cf. L. vulgare", "Plantago maritima", "Fucus vesiculosus ecad caespitosus", "Fucus vesiculosus ecad volubilis", "Catenella repens", "Cochlearia anglica", "Spergularia media", "Halimione portulacoides"],
+        "zonation_succession": {
+          "habitat": "Pioneer salt-marsh community"
+        }
+      },
+      "sm7": {
+        "code": "SM7",
+        "name": "Arthrocnemum perenne stands",
+        "constant_species": ["Arthrocnemum perenne"],
+        "associated_species": ["Halimione portulacoides", "Limonium cf. L. vulgare"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh"
+        }
+      },
+      "sm8": {
+        "code": "SM8",
+        "name": "Annual Salicornia salt-marsh",
+        "alternate_names": ["Salicornietum europaeae"],
+        "constant_species": ["Salicornia agg."],
+        "associated_species": ["Algal mat", "Puccinellia maritima", "Suaeda maritima", "Spartina anglica", "Halimione portulacoides", "Aster tripolium var. discoideus", "Aster tripolium (rayed)"],
+        "zonation_succession": {
+          "habitat": "Pioneer salt-marsh on muddy substrates"
+        }
+      },
+      "sm9": {
+        "code": "SM9",
+        "name": "Suaeda maritima salt-marsh",
+        "alternate_names": ["Suaedetum maritimae"],
+        "constant_species": ["Suaeda maritima"],
+        "associated_species": ["Salicornia agg.", "Puccinellia maritima", "Aster tripolium"],
+        "zonation_succession": {
+          "habitat": "Disturbed salt-marsh areas"
+        }
+      },
+      "sm10": {
+        "code": "SM10",
+        "name": "Transitional low-marsh vegetation with Puccinellia maritima, Salicornia agg. and Suaeda maritima",
+        "constant_species": ["Puccinellia maritima", "Salicornia agg.", "Suaeda maritima"],
+        "associated_species": ["Aster tripolium var. discoideus", "Aster tripolium (rayed)", "Algal mat", "Spartina anglica", "Halimione portulacoides", "Triglochin maritima", "Spergularia media", "Limonium cf. L. vulgare", "Armeria maritima"],
+        "zonation_succession": {
+          "habitat": "Transitional low-marsh vegetation"
+        }
+      },
+      "sm11": {
+        "code": "SM11",
+        "name": "Aster tripolium var. discoideus salt-marsh",
+        "constant_species": ["Aster tripolium var. discoideus"],
+        "associated_species": ["Puccinellia maritima", "Salicornia agg.", "Suaeda maritima", "Algal mat", "Halimione portulacoides", "Arthrocnemum perenne", "Fucus vesiculosus ecad caespitosus", "Pelvetia canaliculata", "Bostrychia scorpioides", "Aster tripolium (rayed)", "Spartina anglica", "Plantago maritima", "Spergularia media", "Triglochin maritima", "Puccinellia distans", "Spergularia marina", "Atriplex prostrata", "Scirpus lacustris tabernaemontani", "Juncus bufonius"],
+        "zonation_succession": {
+          "habitat": "Mid to upper salt-marsh"
+        }
+      },
+      "sm12": {
+        "code": "SM12",
+        "name": "Rayed Aster tripolium on salt-marshes",
+        "constant_species": ["Aster tripolium (rayed)"],
+        "sub_communities": {
+          "a": "Puccinellia maritima sub-community",
+          "b": "Halimione portulacoides sub-community"
+        },
+        "associated_species": ["Puccinellia maritima", "Halimione portulacoides", "Spartina anglica", "Spergularia marina", "Puccinellia distans"],
+        "zonation_succession": {
+          "habitat": "Brackish ditches and freshwater-influenced areas"
+        }
+      },
+      "sm13": {
+        "code": "SM13",
+        "name": "Puccinellia maritima salt-marsh",
+        "alternate_names": ["Puccinellietum maritimae"],
+        "constant_species": ["Puccinellia maritima"],
+        "sub_communities": {
+          "a": "Salicornia agg. sub-community",
+          "b": "Glaux maritima sub-community",
+          "c": "Spergularia marina-Plantago maritima sub-community",
+          "d": "Festuca rubra sub-community"
+        },
+        "associated_species": ["Salicornia agg.", "Glaux maritima", "Spergularia marina", "Plantago maritima", "Festuca rubra", "Armeria maritima", "Triglochin maritima", "Limonium cf. L. vulgare"],
+        "zonation_succession": {
+          "habitat": "Mid salt-marsh"
+        }
+      },
+      "sm14": {
+        "code": "SM14",
+        "name": "Halimione portulacoides salt-marsh",
+        "alternate_names": ["Halimionetum portulacoidis"],
+        "constant_species": ["Halimione portulacoides"],
+        "sub_communities": {
+          "a": "Puccinellia maritima sub-community",
+          "b": "Juncus maritimus sub-community",
+          "c": "Limonium vulgare sub-community"
+        },
+        "associated_species": ["Puccinellia maritima", "Juncus maritimus", "Plantago maritima", "Limonium cf. L. vulgare", "Suaeda maritima", "Triglochin maritima", "Algal mat", "Aster tripolium (rayed)", "Salicornia agg.", "Aster tripolium", "Armeria maritima", "Artemisia maritima", "Arthrocnemum perenne", "Spartina anglica", "Spergularia media", "Inula crithmoides", "Elymus pycnanthus", "Aster tripolium var. discoideus"],
+        "zonation_succession": {
+          "habitat": "Mid to upper salt-marsh"
+        }
+      },
+      "sm15": {
+        "code": "SM15",
+        "name": "Juncus maritimus-Triglochin maritima salt-marsh",
+        "alternate_names": ["Junco-Caricetum extensae"],
+        "constant_species": ["Juncus maritimus", "Triglochin maritima", "Plantago maritima", "Glaux maritima"],
+        "associated_species": ["Festuca rubra", "Armeria maritima", "Puccinellia maritima", "Carex extensa", "Oenanthe lachenalii"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh"
+        }
+      },
+      "sm16": {
+        "code": "SM16",
+        "name": "Festuca rubra salt-marsh",
+        "alternate_names": ["Juncetum gerardi"],
+        "constant_species": ["Festuca rubra", "Juncus gerardi", "Glaux maritima", "Plantago maritima"],
+        "sub_communities": {
+          "a": "Puccinellia maritima sub-community",
+          "b": "Sub-community with Juncus gerardi dominant",
+          "c": "Festuca rubra-Glaux maritima sub-community",
+          "d": "Sub-community with tall Festuca rubra dominant",
+          "e": "Leontodon autumnalis sub-community",
+          "f": "Carex flacca sub-community"
+        },
+        "associated_species": ["Puccinellia maritima", "Leontodon autumnalis", "Carex flacca", "Armeria maritima", "Triglochin maritima", "Potentilla anserina", "Agrostis stolonifera", "Trifolium repens", "Holcus lanatus", "Lotus corniculatus", "Ranunculus acris", "Vicia cracca", "Cynosurus cristatus"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh grasslands"
+        }
+      },
+      "sm17": {
+        "code": "SM17",
+        "name": "Artemisia maritima salt-marsh",
+        "alternate_names": ["Artemisietum maritimae"],
+        "constant_species": ["Artemisia maritima", "Festuca rubra", "Halimione portulacoides", "Plantago maritima", "Limonium cf. L. vulgare", "Puccinellia maritima", "Armeria maritima", "Glaux maritima", "Triglochin maritima", "Aster tripolium (rayed)", "Aster tripolium", "Cochlearia anglica", "Juncus gerardi", "Agrostis stolonifera", "Atriplex prostrata", "Elymus pycnanthus", "Suaeda vera", "Spergularia media", "Plantago coronopus", "Cochlearia officinalis", "Elymus repens", "Juncus maritimus", "Suaeda maritima", "Salicornia agg.", "Parapholis strigosa", "Hordeum marinum"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh"
+        }
+      },
+      "sm18": {
+        "code": "SM18",
+        "name": "Juncus maritimus salt-marsh",
+        "alternate_names": ["Juncetum maritimi"],
+        "constant_species": ["Juncus maritimus", "Festuca rubra", "Glaux maritima", "Triglochin maritima"],
+        "sub_communities": {
+          "a": "Plantago maritima sub-community",
+          "b": "Oenanthe lachenalii sub-community",
+          "c": "Festuca arundinacea sub-community"
+        },
+        "associated_species": ["Plantago maritima", "Oenanthe lachenalii", "Festuca arundinacea", "Leontodon autumnalis", "Potentilla anserina", "Trifolium repens", "Holcus lanatus", "Lotus corniculatus", "Ranunculus acris", "Vicia cracca"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh"
+        }
+      },
+      "sm19": {
+        "code": "SM19",
+        "name": "Blysmus rufus salt-marsh",
+        "alternate_names": ["Blysmetum rufi"],
+        "constant_species": ["Blysmus rufus", "Glaux maritima", "Plantago maritima", "Armeria maritima"],
+        "associated_species": ["Juncus gerardi", "Festuca rubra", "Carex nigra", "Potentilla anserina"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh in Scotland"
+        }
+      },
+      "sm20": {
+        "code": "SM20",
+        "name": "Eleocharis uniglumis salt-marsh",
+        "alternate_names": ["Eleocharitetum uniglumis"],
+        "constant_species": ["Eleocharis uniglumis", "Agrostis stolonifera", "Glaux maritima", "Juncus gerardi", "Festuca rubra", "Triglochin maritima", "Alopecurus geniculatus", "Potentilla anserina", "Aster tripolium (rayed)", "Plantago maritima", "Armeria maritima", "Algal mat", "Carex extensa", "Trifolium repens", "Leontodon autumnalis", "Juncus articulatus", "Eleocharis quinqueflora", "Triglochin palustris", "Amblystegium riparium", "Carex nigra", "Hydrocotyle vulgaris", "Atriplex prostrata", "Samolus valerandi", "Carex distans", "Galium palustre", "Oenanthe lachenalii", "Scirpus maritimus"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh in pools and depressions"
+        }
+      },
+      "sm21": {
+        "code": "SM21",
+        "name": "Suaeda vera-Limonium binervosum salt-marsh",
+        "alternate_names": ["Frankenio-Armerion"],
+        "constant_species": ["Suaeda vera", "Puccinellia maritima", "Armeria maritima", "Halimione portulacoides", "Limonium binervosum"],
+        "sub_communities": {
+          "a": "Stands with Puccinellia maritima, Armeria maritima and Halimione portulacoides",
+          "b": "Stands with Frankenia laevis"
+        },
+        "associated_species": ["Suaeda maritima", "Artemisia maritima", "Festuca rubra", "Plantago maritima", "Elymus pycnanthus", "Limonium cf. L. vulgare", "Sagina maritima", "Spergularia marina", "Glaux maritima", "Spergularia media", "Frankenia laevis", "Limonium bellidifolium", "Cochlearia anglica", "Cochlearia danica", "Salicornia agg.", "Cochlearia officinalis"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh in southern England"
+        }
+      },
+      "sm22": {
+        "code": "SM22",
+        "name": "Halimione portulacoides-Frankenia laevis salt-marsh",
+        "alternate_names": ["Limonio vulgaris-Frankenietum laevis"],
+        "constant_species": ["Halimione portulacoides", "Frankenia laevis", "Limonium vulgare"],
+        "associated_species": ["Suaeda vera", "Armeria maritima", "Puccinellia maritima"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh, very rare"
+        }
+      },
+      "sm23": {
+        "code": "SM23",
+        "name": "Spergularia marina-Puccinellia distans salt-marsh",
+        "alternate_names": ["Puccinellietum distantis"],
+        "constant_species": ["Spergularia marina", "Puccinellia distans", "Plantago maritima"],
+        "associated_species": ["Polygonum aviculare", "Parapholis strigosa", "Atriplex hastata", "Juncus ambiguus"],
+        "zonation_succession": {
+          "habitat": "Disturbed saline habitats"
+        }
+      },
+      "sm24": {
+        "code": "SM24",
+        "name": "Elymus pycnanthus salt-marsh",
+        "alternate_names": ["Atriplici-Elymetum pycnanthi"],
+        "constant_species": ["Elymus pycnanthus", "Halimione portulacoides", "Festuca rubra", "Atriplex prostrata", "Glaux maritima", "Puccinellia maritima", "Juncus maritimus", "Agrostis stolonifera", "Artemisia maritima", "Suaeda vera", "Juncus gerardi", "Limonium cf. L. vulgare", "Plantago maritima", "Armeria maritima", "Beta maritima", "Atriplex littoralis", "Sonchus arvensis", "Parapholis strigosa", "Potentilla anserina", "Aster tripolium var. discoideus", "Aster tripolium (rayed)", "Galium aparine", "Phragmites australis", "Ammophila arenaria", "Hypnum cupressiforme var. lacunosum"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh and drift-lines"
+        }
+      },
+      "sm25": {
+        "code": "SM25",
+        "name": "Suaeda vera drift-line community",
+        "alternate_names": ["Elymo pycnanthi-Suaedetum verae"],
+        "constant_species": ["Suaeda vera", "Halimione portulacoides", "Elymus pycnanthus"],
+        "sub_communities": {
+          "a": "Stands with Festuca rubra and Artemisia maritima",
+          "b": "Stands with Cochlearia anglica and Cochlearia danica"
+        },
+        "associated_species": ["Festuca rubra", "Artemisia maritima", "Cochlearia anglica", "Cochlearia danica", "Glaux maritima", "Plantago maritima", "Atriplex littoralis", "Puccinellia maritima", "Limonium cf. L. vulgare", "Suaeda maritima", "Aster tripolium", "Bostrychia scorpioides", "Salicornia agg.", "Spergularia media", "Arthrocnemum perenne", "Cochlearia officinalis", "Pelvetia canaliculata", "Triglochin maritima", "Algal mat"],
+        "zonation_succession": {
+          "habitat": "Drift-lines and upper salt-marsh"
+        }
+      },
+      "sm26": {
+        "code": "SM26",
+        "name": "Inula crithmoides stands",
+        "constant_species": ["Inula crithmoides", "Halimione portulacoides"],
+        "sub_communities": {
+          "a": "Stands with Puccinellia maritima, Salicornia agg. and Limonium cf. L. vulgare",
+          "b": "Stands with Elymus pycnanthus"
+        },
+        "associated_species": ["Puccinellia maritima", "Salicornia agg.", "Limonium cf. L. vulgare", "Plantago maritima", "Armeria maritima", "Suaeda maritima", "Arthrocnemum perenne", "Algal mat", "Spergularia media", "Spartina anglica", "Festuca rubra", "Aster tripolium (rayed)", "Elymus pycnanthus", "Bostrychia scorpioides"],
+        "zonation_succession": {
+          "habitat": "Upper salt-marsh in south-west England"
+        }
+      },
+      "sm27": {
+        "code": "SM27",
+        "name": "Ephemeral salt-marsh vegetation with Sagina maritima",
+        "alternate_names": ["Saginion maritimae"],
+        "constant_species": ["Sagina maritima", "Cochlearia danica", "Spergularia marina"],
+        "associated_species": ["Plantago coronopus", "Catapodium marinum", "Parapholis strigosa", "Cochlearia anglica"],
+        "zonation_succession": {
+          "habitat": "Disturbed upper salt-marsh"
+        }
+      },
+      "sm28": {
+        "code": "SM28",
+        "name": "Puccinellia distans salt-marsh",
+        "alternate_names": ["Puccinellietum distantis"],
+        "constant_species": ["Puccinellia distans", "Spergularia marina", "Plantago maritima"],
+        "associated_species": ["Agrostis stolonifera", "Festuca rubra", "Juncus gerardi", "Glaux maritima", "Trifolium repens", "Potentilla anserina", "Leontodon autumnalis", "Carex distans", "Plantago major", "Cirsium vulgare", "Scirpus maritimus", "Beta vulgaris ssp. maritima", "Holcus lanatus", "Taraxacum sp.", "Plantago lanceolata", "Algal mat", "Anthriscus sylvestris", "Aster tripolium", "Torilis japonica", "Odontites verna", "Alopecurus geniculatus", "Eleocharis uniglumis", "Rumex conglomeratus", "Dactylis glomerata", "Medicago lupulina", "Silene vulgaris ssp. maritima", "Centaurea nigra", "Heracleum sphondylium", "Apium graveolens", "Calystegia sepium"],
+        "zonation_succession": {
+          "habitat": "Inland saline habitats and disturbed coastal areas"
+        }
+      }
+    },
+    "calcifugous_grasslands_and_montane_communities": {
+      "u1": {
+        "code": "U1",
+        "name": "Festuca ovina-Agrostis capillaris-Rumex acetosella grassland",
+        "constant_species": ["Festuca ovina", "Agrostis capillaris", "Rumex acetosella", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Dicranum scoparium sub-community",
+          "c": "Anthoxanthum odoratum-Lotus corniculatus sub-community"
+        },
+        "associated_species": ["Dicranum scoparium", "Anthoxanthum odoratum", "Lotus corniculatus", "Astragalus danicus", "Thymus serpyllum ssp. serpyllum", "Sedum acre", "Sedum album", "Brachythecium albicans", "Hypnum cupressiforme s.l.", "Pseudoscleropodium purum"],
+        "zonation_succession": {
+          "habitat": "Acidic grasslands on shallow soils"
+        }
+      },
+      "u2": {
+        "code": "U2",
+        "name": "Deschampsia flexuosa grassland",
+        "constant_species": ["Deschampsia flexuosa", "Galium saxatile"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Polytrichum commune sub-community"
+        },
+        "associated_species": ["Polytrichum commune", "Calluna vulgaris", "Vaccinium myrtillus", "Empetrum nigrum ssp. nigrum"],
+        "zonation_succession": {
+          "habitat": "Acidic grasslands, often at higher altitudes"
+        }
+      },
+      "u3": {
+        "code": "U3",
+        "name": "Agrostis curtisii grassland",
+        "constant_species": ["Agrostis curtisii", "Potentilla erecta", "Molinia caerulea"],
+        "associated_species": ["Erica cinerea", "Calluna vulgaris", "Ulex gallii"],
+        "zonation_succession": {
+          "habitat": "Acidic grasslands in south-western Britain"
+        }
+      },
+      "u4": {
+        "code": "U4",
+        "name": "Festuca ovina-Agrostis capillaris-Galium saxatile grassland",
+        "constant_species": ["Festuca ovina", "Agrostis capillaris", "Galium saxatile", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Holcus lanatus-Trifolium repens sub-community",
+          "c": "Anthoxanthum odoratum-Trisetum flavescens sub-community",
+          "d": "Luzula campestris-Rhytidiadelphus squarrosus sub-community"
+        },
+        "associated_species": ["Holcus lanatus", "Trifolium repens", "Anthoxanthum odoratum", "Trisetum flavescens", "Luzula campestris", "Rhytidiadelphus squarrosus"],
+        "zonation_succession": {
+          "habitat": "Acidic grasslands, widely distributed"
+        }
+      },
+      "u5": {
+        "code": "U5",
+        "name": "Nardus stricta-Galium saxatile grassland",
+        "constant_species": ["Nardus stricta", "Galium saxatile", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Species-poor sub-community",
+          "b": "Agrostis canina-Polytrichum commune sub-community",
+          "c": "Carex panicea-Viola riviniana sub-community",
+          "d": "Calluna vulgaris-Danthonia decumbens sub-community",
+          "e": "Racomitrium lanuginosum sub-community"
+        },
+        "associated_species": ["Agrostis canina", "Polytrichum commune", "Carex panicea", "Viola riviniana", "Calluna vulgaris", "Danthonia decumbens", "Racomitrium lanuginosum"],
+        "zonation_succession": {
+          "habitat": "Acidic grasslands dominated by Nardus"
+        }
+      },
+      "u6": {
+        "code": "U6",
+        "name": "Juncus squarrosus-Festuca ovina grassland",
+        "constant_species": ["Juncus squarrosus", "Festuca ovina", "Galium saxatile", "Potentilla erecta"],
+        "sub_communities": {
+          "a": "Sphagnum sub-community",
+          "b": "Carex nigra-Calypogeia trichomanis sub-community",
+          "c": "Vaccinium myrtillus sub-community",
+          "d": "Agrostis capillaris-Luzula multiflora sub-community"
+        },
+        "associated_species": ["Sphagnum capillifolium", "Carex nigra", "Calypogeia trichomanis", "Vaccinium myrtillus", "Agrostis capillaris", "Luzula multiflora", "Trifolium repens", "Achillea millefolium", "Equisetum palustre", "Pohlia nutans", "Calluna vulgaris"],
+        "zonation_succession": {
+          "habitat": "Acidic grasslands on peaty soils"
+        }
+      },
+      "u7": {
+        "code": "U7",
+        "name": "Nardus stricta-Carex bigelowii grass-heath",
+        "constant_species": ["Nardus stricta", "Carex bigelowii", "Vaccinium myrtillus", "Racomitrium lanuginosum", "Cladonia uncialis", "Galium saxatile", "Cetraria islandica"],
+        "sub_communities": {
+          "a": "Empetrum nigrum hermaphroditum sub-community",
+          "b": "Alchemilla alpina sub-community",
+          "c": "Rhytidiadelphus loreus sub-community"
+        },
+        "associated_species": ["Empetrum nigrum ssp. hermaphroditum", "Cladonia bellidiflora", "Scirpus cespitosus", "Vaccinium uliginosum", "Cladonia gracilis", "Juncus squarrosus", "Anastrepta orcadensis", "Diplophyllum albicans", "Narthecium ossifragum", "Cladonia pyxidata", "Solidago virgaurea", "Anastrophyllum donianum", "Alchemilla alpina", "Rhytidiadelphus loreus"],
+        "zonation_succession": {
+          "habitat": "Montane grass-heaths"
+        }
+      },
+      "u8": {
+        "code": "U8",
+        "name": "Carex bigelowii-Polytrichum alpinum sedge-heath",
+        "constant_species": ["Carex bigelowii", "Polytrichum alpinum", "Racomitrium lanuginosum", "Vaccinium myrtillus"],
+        "sub_communities": {
+          "a": "Polytrichum-Ptilidium sub-community",
+          "b": "Deschampsia cespitosa sub-community"
+        },
+        "associated_species": ["Ptilidium ciliare", "Deschampsia cespitosa", "Empetrum nigrum ssp. hermaphroditum", "Cladonia uncialis"],
+        "zonation_succession": {
+          "habitat": "Late snow-bed vegetation"
+        }
+      },
+      "u9": {
+        "code": "U9",
+        "name": "Juncus trifidus-Racomitrium lanuginosum rush-heath",
+        "constant_species": ["Juncus trifidus", "Racomitrium lanuginosum", "Carex bigelowii", "Festuca vivipara"],
+        "associated_species": ["Vaccinium myrtillus", "Empetrum nigrum ssp. hermaphroditum", "Cladonia uncialis"],
+        "zonation_succession": {
+          "habitat": "Exposed montane situations at the limit of vegetation"
+        }
+      },
+      "u10": {
+        "code": "U10",
+        "name": "Carex bigelowii-Racomitrium lanuginosum moss-heath",
+        "constant_species": ["Carex bigelowii", "Racomitrium lanuginosum", "Festuca ovina", "Galium saxatile"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Cladonia arbuscula sub-community"
+        },
+        "associated_species": ["Cladonia arbuscula", "Cetraria islandica", "Vaccinium myrtillus", "Empetrum nigrum ssp. hermaphroditum"],
+        "zonation_succession": {
+          "habitat": "Montane moss-heaths"
+        }
+      },
+      "u11": {
+        "code": "U11",
+        "name": "Polytrichum sexangulare-Kiaeria starkei snow-bed",
+        "constant_species": ["Polytrichum sexangulare", "Kiaeria starkei", "Pohlia ludwigii", "Anthelia juratzkana"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Species-poor sub-community"
+        },
+        "associated_species": ["Pleurocladula albescens", "Cerastium cerastoides", "Athyrium distentifolium"],
+        "zonation_succession": {
+          "habitat": "Late snow-bed communities"
+        }
+      },
+      "u12": {
+        "code": "U12",
+        "name": "Salix herbacea-Racomitrium heterostichum snow-bed",
+        "constant_species": ["Salix herbacea", "Racomitrium heterostichum", "Anthelia juratzkana", "Kiaeria starkei"],
+        "sub_communities": {
+          "a": "Silene acaulis-Luzula spicata sub-community",
+          "b": "Gymnomitrion concinnatum sub-community",
+          "c": "Marsupella brevissima sub-community"
+        },
+        "associated_species": ["Silene acaulis", "Luzula spicata", "Gymnomitrion concinnatum", "Marsupella brevissima"],
+        "zonation_succession": {
+          "habitat": "Snow-bed communities with Salix herbacea"
+        }
+      },
+      "u13": {
+        "code": "U13",
+        "name": "Deschampsia cespitosa-Galium saxatile grassland",
+        "constant_species": ["Deschampsia cespitosa", "Galium saxatile", "Agrostis capillaris", "Holcus lanatus"],
+        "sub_communities": {
+          "a": "Anthoxanthum odoratum-Alchemilla alpina sub-community",
+          "b": "Rhytidiadelphus loreus sub-community"
+        },
+        "associated_species": ["Anthoxanthum odoratum", "Alchemilla alpina", "Rhytidiadelphus loreus", "Armeria maritima", "Vaccinium vitis-idaea", "Polygonum viviparum", "Silene acaulis", "Kiaeria starkei", "Selaginella selaginoides", "Omalotheca supina"],
+        "zonation_succession": {
+          "habitat": "Montane grasslands"
+        }
+      },
+      "u14": {
+        "code": "U14",
+        "name": "Alchemilla alpina-Sibbaldia procumbens dwarf-herb community",
+        "constant_species": ["Alchemilla alpina", "Sibbaldia procumbens", "Agrostis capillaris", "Festuca vivipara"],
+        "associated_species": ["Pogonatum urnigerum", "Racomitrium lanuginosum", "Rhytidiadelphus triquetrus", "Ctenidium molluscum", "Dicranum scoparium", "Pohlia nutans", "Hypnum hamulosum", "Aulacomnium turgidum", "Nardia scalaris", "Barbilophozia floerkii", "Ptilidium ciliare", "Diplophyllum albicans", "Cetraria islandica", "Cladonia pyxidata", "Cladonia arbuscula"],
+        "zonation_succession": {
+          "habitat": "Intermittently irrigated ground at high altitudes"
+        }
+      },
+      "u15": {
+        "code": "U15",
+        "name": "Saxifraga aizoides-Alchemilla glabra banks",
+        "constant_species": ["Saxifraga aizoides", "Alchemilla glabra", "Poa alpina", "Deschampsia cespitosa"],
+        "associated_species": ["Carex demissa", "Carex panicea", "Carex flacca", "Carex dioica", "Carex pulicaris", "Juncus triglumis", "Juncus articulatus", "Campylium stellatum", "Drepanocladus revolvens", "Blindia acuta", "Aneura pinguis", "Bryum pseudotriquetrum"],
+        "zonation_succession": {
+          "habitat": "Base-rich irrigated banks and ledges"
+        }
+      },
+      "u16": {
+        "code": "U16",
+        "name": "Luzula sylvatica-Vaccinium myrtillus tall-herb community",
+        "constant_species": ["Luzula sylvatica", "Vaccinium myrtillus", "Oxalis acetosella", "Galium saxatile"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Anthoxanthum odoratum sub-community"
+        },
+        "associated_species": ["Anthoxanthum odoratum", "Festuca ovina", "Agrostis capillaris", "Potentilla erecta", "Mnium hornum", "Dicranum scoparium", "Hylocomium splendens", "Diplophyllum albicans", "Pseudoscleropodium purum"],
+        "zonation_succession": {
+          "habitat": "Tall-herb vegetation on acidic soils"
+        }
+      },
+      "u17": {
+        "code": "U17",
+        "name": "Luzula sylvatica-Geum rivale tall-herb community",
+        "constant_species": ["Luzula sylvatica", "Geum rivale", "Oxalis acetosella", "Galium saxatile"],
+        "associated_species": ["Angelica sylvestris", "Rhodiola rosea", "Alchemilla glabra", "Viola riviniana", "Ranunculus acris", "Filipendula ulmaria", "Succisa pratensis", "Crepis paludosa", "Selaginella selaginoides", "Thymus praecox"],
+        "zonation_succession": {
+          "habitat": "Base-rich tall-herb vegetation"
+        }
+      },
+      "u18": {
+        "code": "U18",
+        "name": "Cryptogramma crispa-Athyrium distentifolium snow-bed",
+        "constant_species": ["Cryptogramma crispa", "Athyrium distentifolium", "Deschampsia cespitosa"],
+        "associated_species": ["Alchemilla alpina", "Sedum rosea", "Geum rivale"],
+        "zonation_succession": {
+          "habitat": "Montane snow-bed vegetation with ferns"
+        }
+      },
+      "u19": {
+        "code": "U19",
+        "name": "Thelypteris limbosperma-Blechnum spicant community",
+        "constant_species": ["Thelypteris limbosperma", "Blechnum spicant", "Vaccinium myrtillus", "Deschampsia flexuosa"],
+        "associated_species": ["Calluna vulgaris", "Erica cinerea", "Potentilla erecta", "Galium saxatile"],
+        "zonation_succession": {
+          "habitat": "Acidic fern communities"
+        }
+      },
+      "u20": {
+        "code": "U20",
+        "name": "Pteridium aquilinum-Galium saxatile community",
+        "constant_species": ["Pteridium aquilinum", "Galium saxatile", "Potentilla erecta", "Anthoxanthum odoratum"],
+        "sub_communities": {
+          "a": "Species-poor sub-community",
+          "b": "Anthoxanthum odoratum sub-community",
+          "c": "Vaccinium myrtillus-Dicranum scoparium sub-community"
+        },
+        "associated_species": ["Vaccinium myrtillus", "Dicranum scoparium", "Festuca ovina", "Agrostis capillaris", "Holcus mollis", "Luzula pilosa", "Rubus fruticosus", "Lonicera periclymenum", "Dryopteris dilatata", "Holcus lanatus", "Epilobium angustifolium", "Mnium hornum", "Dicranella heteromalla", "Polytrichum commune", "Isopterygium elegans", "Hypnum cupressiforme", "Leucobryum glaucum"],
+        "zonation_succession": {
+          "habitat": "Bracken communities on acidic soils"
+        }
+      },
+      "u21": {
+        "code": "U21",
+        "name": "Narthecium ossifragum-Sphagnum papillosum valley mire",
+        "constant_species": ["Narthecium ossifragum", "Sphagnum papillosum", "Molinia caerulea", "Erica tetralix"],
+        "sub_communities": {
+          "a": "Sphagnum auriculatum-Rhynchospora alba sub-community",
+          "b": "Vaccinium oxycoccos-Sphagnum recurvum sub-community"
+        },
+        "associated_species": ["Sphagnum auriculatum", "Rhynchospora alba", "Vaccinium oxycoccos", "Sphagnum recurvum", "Myrica gale"],
+        "zonation_succession": {
+          "habitat": "Valley mires in oceanic areas"
+        }
+      }
+    },
+    "woodlands_and_scrub": {
+      "w1": {
+        "code": "W1",
+        "name": "Salix cinerea-Galium palustre woodland",
+        "constant_species": ["Salix cinerea", "Galium palustre", "Urtica dioica"],
+        "associated_species": ["Filipendula ulmaria", "Epilobium hirsutum", "Iris pseudacorus"],
+        "zonation_succession": {
+          "habitat": "Wet woodland on organic soils"
+        }
+      },
+      "w2": {
+        "code": "W2",
+        "name": "Salix cinerea-Betula pubescens-Phragmites australis woodland",
+        "constant_species": ["Salix cinerea", "Betula pubescens", "Phragmites australis"],
+        "associated_species": ["Molinia caerulea", "Sphagnum spp.", "Dryopteris dilatata"],
+        "zonation_succession": {
+          "habitat": "Wet woodland on peaty soils"
+        }
+      },
+      "w3": {
+        "code": "W3",
+        "name": "Salix pentandra-Carex rostrata woodland",
+        "constant_species": ["Salix pentandra", "Carex rostrata", "Equisetum fluviatile"],
+        "associated_species": ["Menyanthes trifoliata", "Potentilla palustris", "Calliergon cuspidatum"],
+        "zonation_succession": {
+          "habitat": "Wet woodland in northern Britain"
+        }
+      },
+      "w4": {
+        "code": "W4",
+        "name": "Betula pubescens-Molinia caerulea woodland",
+        "constant_species": ["Betula pubescens", "Molinia caerulea", "Potentilla erecta", "Agrostis canina"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Juncus effusus sub-community",
+          "c": "Sphagnum sub-community"
+        },
+        "associated_species": ["Juncus effusus", "Sphagnum palustre", "Sphagnum fimbriatum", "Dryopteris dilatata"],
+        "zonation_succession": {
+          "habitat": "Wet woodland on acidic soils"
+        }
+      },
+      "w5": {
+        "code": "W5",
+        "name": "Alnus glutinosa-Carex paniculata woodland",
+        "constant_species": ["Alnus glutinosa", "Carex paniculata", "Urtica dioica"],
+        "sub_communities": {
+          "a": "Phragmites australis sub-community",
+          "b": "Sphagnum squarrosum-Chrysosplenium oppositifolium sub-community"
+        },
+        "associated_species": ["Phragmites australis", "Sphagnum squarrosum", "Chrysosplenium oppositifolium", "Solanum dulcamara", "Galium aparine"],
+        "zonation_succession": {
+          "habitat": "Wet woodland on organic soils"
+        }
+      },
+      "w6": {
+        "code": "W6",
+        "name": "Alnus glutinosa-Urtica dioica woodland",
+        "constant_species": ["Alnus glutinosa", "Urtica dioica", "Galium aparine"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Salix fragilis sub-community",
+          "c": "Salix viminalis/triandra sub-community",
+          "d": "Sambucus nigra sub-community",
+          "e": "Betula pubescens sub-community"
+        },
+        "associated_species": ["Salix fragilis", "Salix viminalis", "Salix triandra", "Sambucus nigra", "Betula pubescens", "Filipendula ulmaria", "Epilobium hirsutum", "Cardamine pratensis", "Carex remota", "Carex pendula", "Carex laevigata", "Juncus effusus", "Rubus fruticosus agg."],
+        "zonation_succession": {
+          "habitat": "Wet woodland on mineral soils"
+        }
+      },
+      "w7": {
+        "code": "W7",
+        "name": "Alnus glutinosa-Fraxinus excelsior-Lysimachia nemorum woodland",
+        "constant_species": ["Alnus glutinosa", "Fraxinus excelsior", "Lysimachia nemorum", "Urtica dioica"],
+        "sub_communities": {
+          "a": "Urtica dioica sub-community",
+          "b": "Carex remota-Conopodium majus sub-community"
+        },
+        "associated_species": ["Carex remota", "Conopodium majus", "Galium aparine", "Filipendula ulmaria", "Epilobium hirsutum"],
+        "zonation_succession": {
+          "habitat": "Wet woodland on base-rich soils"
+        }
+      },
+      "w8": {
+        "code": "W8",
+        "name": "Fraxinus excelsior-Acer campestre-Mercurialis perennis woodland",
+        "constant_species": ["Fraxinus excelsior", "Acer campestre", "Mercurialis perennis", "Urtica dioica"],
+        "sub_communities": {
+          "a": "Primula vulgaris-Glechoma hederacea sub-community",
+          "b": "Anemone nemorosa sub-community",
+          "c": "Deschampsia cespitosa sub-community",
+          "d": "Hedera helix sub-community",
+          "e": "Geranium robertianum sub-community",
+          "f": "Allium ursinum sub-community",
+          "g": "Teucrium scorodonia sub-community"
+        },
+        "associated_species": ["Primula vulgaris", "Glechoma hederacea", "Anemone nemorosa", "Deschampsia cespitosa", "Hedera helix", "Geranium robertianum", "Allium ursinum", "Teucrium scorodonia", "Corylus avellana", "Crataegus monogyna", "Sambucus nigra", "Viburnum opulus", "Hyacinthoides non-scripta", "Galium aparine", "Brachypodium sylvaticum", "Geum urbanum", "Viola reichenbachiana"],
+        "zonation_succession": {
+          "habitat": "Lowland mixed deciduous woodland on calcareous soils"
+        }
+      },
+      "w9": {
+        "code": "W9",
+        "name": "Fraxinus excelsior-Sorbus aucuparia-Mercurialis perennis woodland",
+        "constant_species": ["Fraxinus excelsior", "Sorbus aucuparia", "Mercurialis perennis", "Urtica dioica"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Crepis paludosa sub-community"
+        },
+        "associated_species": ["Crepis paludosa", "Geranium sylvaticum", "Geum rivale", "Filipendula ulmaria"],
+        "zonation_succession": {
+          "habitat": "Upland mixed deciduous woodland"
+        }
+      },
+      "w10": {
+        "code": "W10",
+        "name": "Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+        "constant_species": ["Quercus robur", "Pteridium aquilinum", "Rubus fruticosus agg."],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Anemone nemorosa sub-community",
+          "c": "Holcus lanatus sub-community"
+        },
+        "associated_species": ["Anemone nemorosa", "Holcus lanatus", "Betula pendula", "Sorbus aucuparia", "Lonicera periclymenum", "Hedera helix"],
+        "zonation_succession": {
+          "habitat": "Lowland oak woodland on acidic soils"
+        }
+      },
+      "w11": {
+        "code": "W11",
+        "name": "Quercus petraea-Betula pubescens-Oxalis acetosella woodland",
+        "constant_species": ["Betula pubescens", "Quercus petraea", "Betula pendula", "Quercus robur", "Betula hybrids", "Larix spp.", "Fagus sylvatica", "Fraxinus excelsior", "Sorbus aucuparia", "Quercus hybrids", "Corylus avellana", "Betula pubescens sapling", "Crataegus monogyna", "Juniperus communis communis", "Betula pendula sapling", "Quercus robur sapling", "Anthoxanthum odoratum", "Oxalis acetosella"],
+        "sub_communities": {
+          "a": "Dryopteris dilatata sub-community",
+          "b": "Anemone nemorosa sub-community",
+          "c": "Blechnum spicant-Leucobryum glaucum sub-community",
+          "d": "Hedera helix sub-community"
+        },
+        "associated_species": ["Dryopteris dilatata", "Anemone nemorosa", "Blechnum spicant", "Leucobryum glaucum", "Hedera helix", "Stellaria holostea", "Hypericum pulchrum", "Luzula multiflora", "Ajuga reptans", "Festuca rubra", "Veronica officinalis", "Cerastium fontanum", "Plagiomnium undulatum", "Lophocolea bidentata s.l."],
+        "zonation_succession": {
+          "habitat": "Upland oak-birch woodland"
+        }
+      },
+      "w12": {
+        "code": "W12",
+        "name": "Fagus sylvatica-Mercurialis perennis woodland",
+        "constant_species": ["Fagus sylvatica", "Mercurialis perennis", "Fraxinus excelsior"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Taxus baccata sub-community",
+          "c": "Sanicula europaea sub-community"
+        },
+        "associated_species": ["Taxus baccata", "Sanicula europaea", "Acer campestre", "Corylus avellana", "Ilex aquifolium", "Hedera helix", "Brachypodium sylvaticum", "Geum urbanum"],
+        "zonation_succession": {
+          "habitat": "Beech woodland on calcareous soils"
+        }
+      },
+      "w13": {
+        "code": "W13",
+        "name": "Taxus baccata woodland",
+        "constant_species": ["Taxus baccata"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Mercurialis perennis sub-community"
+        },
+        "associated_species": ["Mercurialis perennis", "Fagus sylvatica", "Fraxinus excelsior", "Brachypodium sylvaticum", "Hedera helix"],
+        "zonation_succession": {
+          "habitat": "Yew woodland on chalk downs"
+        }
+      },
+      "w14": {
+        "code": "W14",
+        "name": "Fagus sylvatica-Rubus fruticosus woodland",
+        "constant_species": ["Fagus sylvatica", "Rubus fruticosus agg.", "Oxalis acetosella"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Ilex aquifolium sub-community",
+          "c": "Vaccinium myrtillus sub-community"
+        },
+        "associated_species": ["Ilex aquifolium", "Vaccinium myrtillus", "Quercus robur", "Betula pendula", "Sorbus aucuparia"],
+        "zonation_succession": {
+          "habitat": "Beech woodland on acidic soils"
+        }
+      },
+      "w15": {
+        "code": "W15",
+        "name": "Fagus sylvatica-Deschampsia flexuosa woodland",
+        "constant_species": ["Fagus sylvatica", "Deschampsia flexuosa", "Oxalis acetosella"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Quercus robur sub-community",
+          "c": "Vaccinium myrtillus sub-community"
+        },
+        "associated_species": ["Quercus robur", "Vaccinium myrtillus", "Betula pendula", "Sorbus aucuparia", "Agrostis capillaris", "Holcus mollis", "Luzula pilosa", "Dryopteris dilatata", "Holcus lanatus", "Epilobium angustifolium", "Mnium hornum", "Dicranella heteromalla", "Polytrichum commune", "Dicranum scoparium", "Isopterygium elegans", "Hypnum cupressiforme", "Leucobryum glaucum"],
+        "zonation_succession": {
+          "habitat": "Beech woodland on acidic soils"
+        }
+      },
+      "w16": {
+        "code": "W16",
+        "name": "Quercus spp.-Betula spp.-Deschampsia flexuosa woodland",
+        "constant_species": ["Quercus petraea", "Quercus robur", "Betula pubescens", "Betula pendula", "Deschampsia flexuosa"],
+        "sub_communities": {
+          "a": "Vaccinium myrtillus sub-community",
+          "b": "Holcus lanatus sub-community",
+          "c": "Pteridium aquilinum sub-community"
+        },
+        "associated_species": ["Vaccinium myrtillus", "Holcus lanatus", "Pteridium aquilinum", "Sorbus aucuparia", "Lonicera periclymenum", "Rubus fruticosus agg."],
+        "zonation_succession": {
+          "habitat": "Oak-birch woodland on acidic soils"
+        }
+      },
+      "w17": {
+        "code": "W17",
+        "name": "Quercus petraea-Betula pubescens-Dicranum majus woodland",
+        "constant_species": ["Quercus petraea", "Betula pubescens", "Dicranum majus", "Vaccinium myrtillus"],
+        "sub_communities": {
+          "a": "Typical sub-community",
+          "b": "Anthoxanthum odoratum-Agrostis capillaris sub-community"
+        },
+        "associated_species": ["Anthoxanthum odoratum", "Agrostis capillaris", "Potentilla erecta", "Galium saxatile", "Oxalis acetosella", "Sorbus aucuparia"],
+        "zonation_succession": {
+          "habitat": "Upland oak-birch woodland with bryophytes"
+        }
+      },
+      "w18": {
+        "code": "W18",
+        "name": "Pinus sylvestris-Hylocomium splendens woodland",
+        "constant_species": ["Pinus sylvestris", "Hylocomium splendens", "Vaccinium myrtillus"],
+        "sub_communities": {
+          "a": "Erica cinerea-Goodyera repens sub-community",
+          "b": "Vaccinium vitis-idaea-Pteridium aquilinum sub-community"
+        },
+        "associated_species": ["Erica cinerea", "Goodyera repens", "Vaccinium vitis-idaea", "Pteridium aquilinum", "Calluna vulgaris", "Empetrum nigrum", "Betula pendula", "Juniperus communis"],
+        "zonation_succession": {
+          "habitat": "Native pine woodland"
+        }
+      },
+      "w19": {
+        "code": "W19",
+        "name": "Juniperus communis ssp. communis-Oxalis acetosella woodland",
+        "constant_species": ["Juniperus communis ssp. communis", "Oxalis acetosella"],
+        "sub_communities": {
+          "a": "Vaccinium myrtillus-Deschampsia flexuosa sub-community",
+          "b": "Viola riviniana-Anemone nemorosa sub-community"
+        },
+        "associated_species": ["Vaccinium myrtillus", "Deschampsia flexuosa", "Viola riviniana", "Anemone nemorosa", "Calluna vulgaris", "Erica cinerea", "Arctostaphylos uva-ursi", "Arctostaphylos alpinus", "Empetrum nigrum ssp. hermaphroditum", "Loiseleuria procumbens"],
+        "zonation_succession": {
+          "habitat": "Juniper woodland"
+        }
+      },
+      "w20": {
+        "code": "W20",
+        "name": "Salix lapponum-Luzula sylvatica scrub",
+        "constant_species": ["Salix lapponum", "Luzula sylvatica", "Vaccinium myrtillus"],
+        "associated_species": ["Alchemilla alpina", "Sedum rosea", "Geum rivale", "Angelica sylvestris", "Rhodiola rosea", "Viola riviniana", "Ranunculus acris", "Filipendula ulmaria", "Succisa pratensis", "Crepis paludosa", "Selaginella selaginoides", "Thymus praecox"],
+        "zonation_succession": {
+          "habitat": "Montane willow scrub"
+        }
+      },
+      "w21": {
+        "code": "W21",
+        "name": "Crataegus monogyna-Hedera helix scrub",
+        "constant_species": ["Crataegus monogyna", "Hedera helix"],
+        "sub_communities": {
+          "a": "Viburnum opulus sub-community",
+          "b": "Urtica dioica sub-community"
+        },
+        "associated_species": ["Viburnum opulus", "Urtica dioica", "Sambucus nigra", "Corylus avellana", "Fraxinus excelsior", "Rubus fruticosus agg.", "Galium aparine"],
+        "zonation_succession": {
+          "habitat": "Scrubland on calcareous soils"
+        }
+      },
+      "w22":{}
+    }}}
