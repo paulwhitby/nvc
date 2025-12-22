@@ -48,20 +48,17 @@ logging.getLogger('streamlit.runtime.scriptrunner.script_runner').setLevel(loggi
 
 load_dotenv()
 
-
 class ContactInfo(BaseModel):
     """Contact information extracted from document."""
     names: List[str] = Field(description="Names mentioned in the document")
     emails: List[str] = Field(description="Email addresses found")
     phone_numbers: List[str] = Field(description="Phone numbers found")
 
-
 class DocumentMetadata(BaseModel):
     """Metadata about the document."""
     title: str = Field(description="Document title")
     author: str = Field(description="Document author or organization")
     document_type: str = Field(description="Type of document")
-
 
 class MultiPDFAnalyzer:
     """Multi-PDF Capabilities:
@@ -97,7 +94,7 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
         self.combined_vectorstore = None
         self._lock = Lock()  # Thread lock for safe dictionary access
         self.vectorstore_path = vectorstore_path  # Path for persistent storage
-
+        
     def load_single_pdf(self, pdf_path: str, progress_callback=None, original_filename=None) -> Dict:
         """Load and process a single PDF."""
         filename = original_filename or os.path.basename(pdf_path)
@@ -155,7 +152,7 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
                 'status': 'error',
                 'error': str(e)
             }
-
+    
     def load_multiple_pdfs(self, pdf_paths: List[str], filename_mapping=None, progress_callback=None, max_workers=None) -> List[Dict]:
         """Load multiple PDFs in parallel.
 
@@ -199,7 +196,7 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
                 # Get all documents from all vectorstores
                 all_docs = []
                 for filename, vs in self.vectorstores.items():
-                    docs = vs.docstore._dict.values() if hasattr(vs.docstore, '_dict') else []  # pylint: disable=protected-access
+                    docs = vs.docstore._dict.values() if hasattr(vs.docstore, '_dict') else []
                     print(f"[PDF LOADER] Extracting {len(docs)} docs from {filename}")
                     all_docs.extend(docs)
 
@@ -294,7 +291,7 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
         """Query a specific document."""
         if filename not in self.vectorstores:
             return {'error': f'Document {filename} not found'}
-
+        
         qa_chain = RetrievalQA.from_chain_type(
             llm=self.llm,
             chain_type="stuff",
@@ -303,14 +300,14 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
             ),
             return_source_documents=True
         )
-
+        
         result = qa_chain.invoke({"query": question})
-
+        
         return {
             'answer': result['result'],
             'source_documents': result['source_documents']
         }
-
+    
     def query_all_documents(self, question: str, max_chunks=20) -> Dict:
         """Query across all loaded documents using a contextual compression retriever
         to maximize accuracy and completeness.
@@ -375,42 +372,42 @@ Answer:"""
             'answer': answer,
             'sources_by_document': sources_by_doc
         }
-
+    
     def summarize_document(self, filename: str) -> str:
         """Summarize a specific document."""
         if filename not in self.vectorstores:
             return f'Error: Document {filename} not found'
-
+        
         docs = self.vectorstores[filename].similarity_search("", k=50)
-
+        
         prompt_template = """Write a concise summary of the following text:
 
 {text}
 
 SUMMARY:"""
-
+        
         chain = load_summarize_chain(
             self.llm,
             chain_type="map_reduce",
             map_prompt=PromptTemplate.from_template(prompt_template),
             combine_prompt=PromptTemplate.from_template(prompt_template)
         )
-
+        
         summary = chain.invoke(docs)
         return summary['output_text']
-
+    
     def summarize_all_documents(self) -> Dict[str, str]:
         """Generate summaries for all documents."""
         summaries = {}
         for filename in self.documents.keys():
             summaries[filename] = self.summarize_document(filename)
         return summaries
-
+    
     def compare_documents(self, topic: str) -> str:
         """Compare how different documents address a topic."""
         if not self.combined_vectorstore:
             return "No documents loaded"
-
+        
         prompt = f"""Compare how the following documents address the topic: {topic}
 
 Analyze the different perspectives, approaches, or information provided by each source.
@@ -419,9 +416,9 @@ Documents:
 {{text}}
 
 COMPARISON:"""
-
+        
         docs = self.combined_vectorstore.similarity_search(topic, k=8)
-
+        
         # Group by source
         docs_by_source = {}
         for doc in docs:
@@ -429,26 +426,26 @@ COMPARISON:"""
             if source not in docs_by_source:
                 docs_by_source[source] = []
             docs_by_source[source].append(doc.page_content)
-
+        
         # Create structured input
         structured_text = ""
         for source, contents in docs_by_source.items():
             structured_text += f"\n\n--- {source} ---\n"
             structured_text += "\n\n".join(contents[:2])
-
+        
         response = self.llm.invoke(prompt.format(text=structured_text))
         return response.content
-
+    
     def extract_contacts_from_document(self, filename: str) -> Optional[ContactInfo]:
         """Extract contact information from a specific document."""
         if filename not in self.vectorstores:
             return None
-
+        
         parser = PydanticOutputParser(pydantic_object=ContactInfo)
-
+        
         prompt = PromptTemplate(
             template="""Extract all contact information from the following text.
-
+            
 {format_instructions}
 
 Text: {text}
@@ -457,29 +454,28 @@ Output:""",
             input_variables=["text"],
             partial_variables={"format_instructions": parser.get_format_instructions()}
         )
-
+        
         docs = self.vectorstores[filename].similarity_search("contact email phone name", k=10)
         combined_text = "\n\n".join([doc.page_content for doc in docs])
-
+        
         try:
             chain = prompt | self.llm | parser
             result = chain.invoke({"text": combined_text})
             return result
-        except Exception as e:  # pylint: disable=broad-exception-caught
-            print(f"[ERROR] Exception occurred: {e}")
+        except:
             return None
-
+    
     def get_loaded_documents(self) -> List[str]:
         """Get list of loaded document filenames."""
         return list(self.documents.keys())
-
+    
     def get_document_info(self, filename: str) -> Dict:
         """Get information about a specific document."""
         if filename not in self.documents:
             return {'error': 'Document not found'}
-
+        
         return {
             'filename': filename,
             'pages': len(self.documents[filename]),
-            'chunks': len(self.vectorstores[filename].docstore._dict)  # pylint: disable=protected-access
+            'chunks': len(self.vectorstores[filename].docstore._dict)
         }

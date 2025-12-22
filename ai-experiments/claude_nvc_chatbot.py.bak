@@ -58,17 +58,17 @@ st.markdown("""
     .success-box {
         padding: 1rem;
         border-radius: 0.5rem;
-        background-color:  #d4edda;
-        border: 1px solid  #c3e6cb;
-        color:  #155724;
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
         margin: 1rem 0;
     }
     .info-box {
         padding: 1rem;
         border-radius: 0.5rem;
-        background-color:  #d1ecf1;
-        border: 1px solid  #bee5eb;
-        color:  #0c5460;
+        background-color: #d1ecf1;
+        border: 1px solid #bee5eb;
+        color: #0c5460;
         margin: 1rem 0;
     }
     </style>
@@ -81,16 +81,16 @@ st.markdown("Analyze multiple PDF documents simultaneously using Claude AI")
 # Sidebar for API key and file upload
 with st.sidebar:
     st.header("⚙️ Configuration")
-
+    
     api_key = st.text_input(
         "Anthropic API Key",
         type="password",
         value=os.getenv("ANTHROPIC_API_KEY", ""),
         help="Enter your Anthropic API key"
     )
-
+    
     st.divider()
-
+    
     st.header("📁 Upload PDFs")
     uploaded_files = st.file_uploader(
         "Choose PDF files",
@@ -98,7 +98,7 @@ with st.sidebar:
         accept_multiple_files=True,
         help="Upload one or more PDF files to analyze"
     )
-
+    
     if uploaded_files and api_key:
         if st.button("🚀 Process PDFs", type="primary", use_container_width=True):
             st.session_state.processing = True
@@ -153,7 +153,7 @@ with st.sidebar:
                 st.error(f"Error: {str(e)}")
                 st.error(traceback.format_exc())
                 st.session_state.processing = False
-
+    
     # Show loaded documents
     if st.session_state.loaded_files:
         st.divider()
@@ -184,18 +184,18 @@ with st.sidebar:
 
 if not analyzer:
     st.info("👈 Upload PDF files using the sidebar to get started")
-
+    
     # Feature showcase
     col1, col2, col3 = st.columns(3)
-
+    
     with col1:
         st.markdown("### 🔍 Query Documents")
         st.write("Ask questions across all documents or query specific files")
-
+    
     with col2:
         st.markdown("### 📊 Compare & Analyze")
         st.write("Compare how different documents address the same topics")
-
+    
     with col3:
         st.markdown("### 📝 Summarize")
         st.write("Generate concise summaries of individual or all documents")
@@ -203,41 +203,41 @@ if not analyzer:
 else:
     # Create tabs for different functionalities
     tab1, tab2, tab3, tab4 = st.tabs(["🔍 Query", "📝 Summarize", "📊 Compare", "📇 Extract"])
-
+    
     # Query Tab
     with tab1:
         st.header("Query Documents")
-
+        
         query_scope = st.radio(
             "Query scope:",
             ["All Documents", "Specific Document"],
             horizontal=True
         )
-
+        
         selected_doc = None
         if query_scope == "Specific Document":
             selected_doc = st.selectbox(
                 "Select document:",
                 analyzer.get_loaded_documents()
             )
-
+        
         question = st.text_area(
             "Ask a question:",
             # type="default",
             width="stretch",
             placeholder="What are the main findings discussed in these documents?"
         )
-
+        
         if st.button("🔍 Search", type="primary"):
             if question:
                 with st.spinner("Searching documents..."):
                     if query_scope == "All Documents":
                         result = analyzer.query_all_documents(question)
-
+                        
                         if 'error' not in result:
                             st.markdown("### 💬 Answer")
                             st.write(result['answer'])
-
+                            
                             st.markdown("### 📚 Sources")
                             for doc_name, excerpts in result['sources_by_document'].items():
                                 with st.expander(f"📄 {doc_name}"):
@@ -252,11 +252,11 @@ else:
                             selected_doc,
                             question
                         )
-
+                        
                         if 'error' not in result:
                             st.markdown("### 💬 Answer")
                             st.write(result['answer'])
-
+                            
                             st.markdown("### 📚 Source Excerpts")
                             for i, doc in enumerate(result['source_documents'], 1):
                                 with st.expander(f"Source {i} - Page {doc.metadata.get('page', 'Unknown')}"):
@@ -265,79 +265,79 @@ else:
                             st.error(result['error'])
             else:
                 st.warning("Please enter a question")
-
+    
     # Summarize Tab
     with tab2:
         st.header("Document Summaries")
-
+        
         summary_option = st.radio(
             "Summarize:",
             ["All Documents", "Specific Document"],
             horizontal=True
         )
-
+        
         if summary_option == "Specific Document":
             doc_to_summarize = st.selectbox(
                 "Select document:",
                 analyzer.get_loaded_documents(),
                 key="summarize_select"
             )
-
+            
             if st.button("📝 Generate Summary", type="primary"):
                 with st.spinner(f"Summarizing {doc_to_summarize}..."):
                     summary = analyzer.summarize_document(doc_to_summarize)
-
+                    
                     st.markdown(f"### Summary of {doc_to_summarize}")
                     st.write(summary)
         else:
             if st.button("📝 Generate All Summaries", type="primary"):
                 with st.spinner("Generating summaries for all documents..."):
                     summaries = analyzer.summarize_all_documents()
-
+                    
                     for filename, summary in summaries.items():
                         with st.expander(f"📄 {filename}", expanded=True):
                             st.write(summary)
-
+    
     # Compare Tab
     with tab3:
         st.header("Compare Documents")
-
+        
         st.write("Compare how different documents address a specific topic or question")
-
+        
         comparison_topic = st.text_input(
             "Enter topic or question to compare:",
             placeholder="e.g., What are the proposed solutions to climate change?"
         )
-
+        
         if st.button("🔄 Compare", type="primary"):
             if comparison_topic:
                 with st.spinner("Analyzing and comparing documents..."):
                     comparison = analyzer.compare_documents(comparison_topic)
-
+                    
                     st.markdown("### 📊 Comparison Results")
                     st.write(comparison)
             else:
                 st.warning("Please enter a topic to compare")
-
+    
     # Extract Tab
     with tab4:
         st.header("Extract Information")
-
+        
         st.write("Extract structured information like contact details from documents")
-
+        
         extract_doc = st.selectbox(
             "Select document:",
             analyzer.get_loaded_documents(),
             key="extract_select"
         )
-
+        
         if st.button("📇 Extract Contacts", type="primary"):
             with st.spinner(f"Extracting contacts from {extract_doc}..."):
                 contacts = analyzer.extract_contacts_from_document(extract_doc)
-
+                
                 if contacts:
                     col1, col2 = st.columns(2)
-
+                    
                     with col1:
                         st.markdown("### 👤 Names")
                         if contacts.names:
@@ -345,14 +345,14 @@ else:
                                 st.write(f"• {name}")
                         else:
                             st.write("No names found")
-
+                        
                         st.markdown("### 📞 Phone Numbers")
                         if contacts.phone_numbers:
                             for phone in contacts.phone_numbers:
                                 st.write(f"• {phone}")
                         else:
                             st.write("No phone numbers found")
-
+                    
                     with col2:
                         st.markdown("### 📧 Emails")
                         if contacts.emails:
