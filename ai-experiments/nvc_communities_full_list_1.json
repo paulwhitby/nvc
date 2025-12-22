@@ -1,0 +1,2265 @@
+{
+  "prompt":"You are an expert plant ecologist. Prove to me that you have been able to access all the supplied NVC documentation by creating a JSON structure listing all of the NVC communities, with their full community names, community codes, and other alternate names, and all of their sub-communities. ",
+  "nvc_communities": {
+    "aquatic_communities": {
+      "A1": {
+        "code": "A1",
+        "name": "Lemna gibba community",
+        "alternate_names": ["Lemnetum gibbae"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Spirodela polyrhiza sub-community"
+        ]
+      },
+      "A2": {
+        "code": "A2",
+        "name": "Lemna minor community",
+        "alternate_names": ["Lemnetum minoris"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Lemna trisulca sub-community",
+          "Riccia fluitans-Ricciocarpus natans sub-community"
+        ]
+      },
+      "A3": {
+        "code": "A3",
+        "name": "Spirodela polyrhiza-Hydrocharis morsus-ranae community",
+        "alternate_names": ["Hydrocharito-Stratiotetum"],
+        "sub_communities": []
+      },
+      "A4": {
+        "code": "A4",
+        "name": "Hydrocharis morsus-ranae-Stratiotes aloides community",
+        "alternate_names": ["Hydrocharito-Stratiotetum"],
+        "sub_communities": []
+      },
+      "A5": {
+        "code": "A5",
+        "name": "Ceratophyllum demersum community",
+        "alternate_names": ["Ceratophylletum demersi"],
+        "sub_communities": []
+      },
+      "A6": {
+        "code": "A6",
+        "name": "Ceratophyllum submersum community",
+        "alternate_names": ["Ceratophylletum submersi"],
+        "sub_communities": []
+      },
+      "A7": {
+        "code": "A7",
+        "name": "Nymphaea alba community",
+        "alternate_names": ["Nymphaeetum albae"],
+        "sub_communities": [
+          "Species-poor sub-community",
+          "Potamogeton natans sub-community"
+        ]
+      },
+      "A8": {
+        "code": "A8",
+        "name": "Nuphar lutea community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Potamogeton natans sub-community",
+          "Sparganium emersum sub-community",
+          "Potamogeton obtusifolius sub-community"
+        ]
+      },
+      "A9": {
+        "code": "A9",
+        "name": "Potamogeton natans community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Species-poor sub-community",
+          "Elodea canadensis sub-community"
+        ]
+      },
+      "A10": {
+        "code": "A10",
+        "name": "Polygonum amphibium community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "A11": {
+        "code": "A11",
+        "name": "Potamogeton pectinatus-Myriophyllum spicatum community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Potamogeton pusillus sub-community",
+          "Elodea canadensis sub-community",
+          "Potamogeton filiformis sub-community"
+        ]
+      },
+      "A12": {
+        "code": "A12",
+        "name": "Potamogeton pectinatus community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "A13": {
+        "code": "A13",
+        "name": "Potamogeton perfoliatus-Myriophyllum alterniflorum community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Potamogeton filiformis sub-community"
+        ]
+      },
+      "A14": {
+        "code": "A14",
+        "name": "Myriophyllum alterniflorum community",
+        "alternate_names": ["Myriophylletum alterniflori"],
+        "sub_communities": []
+      },
+      "A15": {
+        "code": "A15",
+        "name": "Elodea canadensis community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "A16": {
+        "code": "A16",
+        "name": "Callitriche stagnalis community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "A17": {
+        "code": "A17",
+        "name": "Ranunculus penicillatus ssp. pseudofluitans community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "A18": {
+        "code": "A18",
+        "name": "Ranunculus fluitans community",
+        "alternate_names": ["Ranunculetum fluitantis"],
+        "sub_communities": []
+      },
+      "A19": {
+        "code": "A19",
+        "name": "Ranunculus aquatilis community",
+        "alternate_names": ["Ranunculetum aquatilis"],
+        "sub_communities": []
+      },
+      "A20": {
+        "code": "A20",
+        "name": "Ranunculus peltatus community",
+        "alternate_names": ["Ranunculetum peltati"],
+        "sub_communities": []
+      },
+      "A21": {
+        "code": "A21",
+        "name": "Ranunculus baudotii community",
+        "alternate_names": ["Ranunculetum baudotii"],
+        "sub_communities": []
+      },
+      "A22": {
+        "code": "A22",
+        "name": "Littorella uniflora-Lobelia dortmanna community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Littorella uniflora sub-community",
+          "Myriophyllum alterniflorum sub-community"
+        ]
+      },
+      "A23": {
+        "code": "A23",
+        "name": "Isoetes lacustris-Lobelia dortmanna community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "A24": {
+        "code": "A24",
+        "name": "Juncus bulbosus community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Juncus bulbosus sub-community",
+          "Sphagnum auriculatum sub-community"
+        ]
+      }
+    },
+    "swamps_and_tall_herb_fens": {
+      "S1": {
+        "code": "S1",
+        "name": "Carex elata swamp",
+        "alternate_names": ["Caricetum elatae"],
+        "sub_communities": []
+      },
+      "S2": {
+        "code": "S2",
+        "name": "Cladium mariscus swamp and sedge-beds",
+        "alternate_names": ["Cladietum marisci"],
+        "sub_communities": [
+          "Phragmites australis sub-community",
+          "Peucedanum palustre sub-community",
+          "Nymphaea alba sub-community"
+        ]
+      },
+      "S3": {
+        "code": "S3",
+        "name": "Carex paniculata swamp",
+        "alternate_names": ["Caricetum paniculatae"],
+        "sub_communities": []
+      },
+      "S4": {
+        "code": "S4",
+        "name": "Phragmites australis swamp and reed-beds",
+        "alternate_names": ["Phragmitetum australis"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Eupatorium cannabinum sub-community",
+          "Urtica dioica sub-community"
+        ]
+      },
+      "S5": {
+        "code": "S5",
+        "name": "Glyceria maxima swamp",
+        "alternate_names": ["Glycerietum maximae"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Alisma plantago-aquatica-Sparganium erectum sub-community"
+        ]
+      },
+      "S6": {
+        "code": "S6",
+        "name": "Carex riparia swamp",
+        "alternate_names": ["Caricetum ripariae"],
+        "sub_communities": []
+      },
+      "S7": {
+        "code": "S7",
+        "name": "Carex acutiformis swamp",
+        "alternate_names": ["Caricetum acutiformis"],
+        "sub_communities": []
+      },
+      "S8": {
+        "code": "S8",
+        "name": "Scirpus lacustris ssp. lacustris swamp",
+        "alternate_names": ["Scirpetum lacustris"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Equisetum fluviatile sub-community",
+          "Sparganium erectum sub-community"
+        ]
+      },
+      "S9": {
+        "code": "S9",
+        "name": "Carex rostrata-Calliergon cuspidatum/giganteum swamp",
+        "alternate_names": [],
+        "sub_communities": [
+          "Carex rostrata sub-community",
+          "Menyanthes trifoliata sub-community"
+        ]
+      },
+      "S10": {
+        "code": "S10",
+        "name": "Equisetum fluviatile swamp",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "S11": {
+        "code": "S11",
+        "name": "Carex vesicaria swamp",
+        "alternate_names": ["Caricetum vesicariae"],
+        "sub_communities": [
+          "Carex vesicaria sub-community",
+          "Veronica scutellata sub-community",
+          "Carex rostrata sub-community"
+        ]
+      },
+      "S12": {
+        "code": "S12",
+        "name": "Typha latifolia swamp",
+        "alternate_names": ["Typhetum latifoliae"],
+        "sub_communities": [
+          "Mentha aquatica sub-community",
+          "Alisma plantago-aquatica sub-community",
+          "Carex rostrata sub-community"
+        ]
+      },
+      "S13": {
+        "code": "S13",
+        "name": "Typha angustifolia swamp",
+        "alternate_names": ["Typhetum angustifoliae"],
+        "sub_communities": []
+      },
+      "S14": {
+        "code": "S14",
+        "name": "Sparganium erectum swamp",
+        "alternate_names": ["Sparganietum erecti"],
+        "sub_communities": [
+          "Sparganium erectum sub-community",
+          "Alisma plantago-aquatica sub-community"
+        ]
+      },
+      "S15": {
+        "code": "S15",
+        "name": "Acorus calamus swamp",
+        "alternate_names": ["Acoretum calami"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Juncus effusus sub-community"
+        ]
+      },
+      "S16": {
+        "code": "S16",
+        "name": "Scirpus lacustris ssp. tabernaemontani swamp",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "S17": {
+        "code": "S17",
+        "name": "Carex pseudocyperus swamp",
+        "alternate_names": [],
+        "sub_communities": [
+          "Carex otrubae sub-community",
+          "Atriplex prostrata sub-community"
+        ]
+      },
+      "S18": {
+        "code": "S18",
+        "name": "Carex otrubae swamp",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "S19": {
+        "code": "S19",
+        "name": "Eleocharis palustris swamp",
+        "alternate_names": ["Eleocharitetum palustris"],
+        "sub_communities": [
+          "Eleocharis palustris sub-community",
+          "Littorella uniflora sub-community",
+          "Agrostis stolonifera sub-community"
+        ]
+      },
+      "S20": {
+        "code": "S20",
+        "name": "Scirpus lacustris ssp. tabernaemontani-Phragmites australis swamp",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "S21": {
+        "code": "S21",
+        "name": "Scirpus maritimus swamp",
+        "alternate_names": ["Scirpetum maritimi"],
+        "sub_communities": []
+      },
+      "S22": {
+        "code": "S22",
+        "name": "Glyceria fluitans water-margin vegetation",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "S23": {
+        "code": "S23",
+        "name": "Other water-margin vegetation",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "S24": {
+        "code": "S24",
+        "name": "Phragmites australis-Peucedanum palustre tall-herb fen",
+        "alternate_names": ["Peucedano-Phragmitetum australis"],
+        "sub_communities": [
+          "Carex paniculata sub-community",
+          "Glyceria maxima sub-community",
+          "Typical sub-community",
+          "Cicuta virosa sub-community",
+          "Lysimachia vulgaris sub-community",
+          "Juncus subnodulosus sub-community",
+          "Cladium mariscus sub-community"
+        ]
+      },
+      "S25": {
+        "code": "S25",
+        "name": "Phragmites australis-Eupatorium cannabinum tall-herb fen",
+        "alternate_names": [],
+        "sub_communities": [
+          "Angelica sylvestris sub-community",
+          "Urtica dioica sub-community"
+        ]
+      },
+      "S26": {
+        "code": "S26",
+        "name": "Phragmites australis-Urtica dioica tall-herb fen",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "S27": {
+        "code": "S27",
+        "name": "Carex rostrata-Potentilla palustris tall-herb fen",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "S28": {
+        "code": "S28",
+        "name": "Phalaris arundinacea tall-herb fen",
+        "alternate_names": ["Phalaridietum arundinaceae"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Epilobium hirsutum-Urtica dioica sub-community",
+          "Elymus repens-Holcus lanatus sub-community"
+        ]
+      }
+    },
+    "salt_marsh_communities": {
+      "SM1": {
+        "code": "SM1",
+        "name": "Zostera angustifolia salt-marsh community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SM2": {
+        "code": "SM2",
+        "name": "Ruppia maritima salt-marsh community",
+        "alternate_names": ["Ruppietum maritimae"],
+        "sub_communities": []
+      },
+      "SM3": {
+        "code": "SM3",
+        "name": "Eleocharis parvula salt-marsh community",
+        "alternate_names": ["Eleocharitetum parvulae"],
+        "sub_communities": []
+      },
+      "SM4": {
+        "code": "SM4",
+        "name": "Spartina maritima salt-marsh community",
+        "alternate_names": ["Spartinetum maritimae"],
+        "sub_communities": []
+      },
+      "SM5": {
+        "code": "SM5",
+        "name": "Spartina alterniflora salt-marsh community",
+        "alternate_names": ["Spartinetum alterniflorae"],
+        "sub_communities": []
+      },
+      "SM6": {
+        "code": "SM6",
+        "name": "Spartina anglica salt-marsh community",
+        "alternate_names": ["Spartinetum townsendii"],
+        "sub_communities": []
+      },
+      "SM7": {
+        "code": "SM7",
+        "name": "Arthrocnemum perenne stands",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SM8": {
+        "code": "SM8",
+        "name": "Annual Salicornia salt-marsh community",
+        "alternate_names": ["Salicornietum europaeae"],
+        "sub_communities": []
+      },
+      "SM9": {
+        "code": "SM9",
+        "name": "Suaeda maritima salt-marsh community",
+        "alternate_names": ["Suaedetum maritimae"],
+        "sub_communities": []
+      },
+      "SM10": {
+        "code": "SM10",
+        "name": "Transitional low-marsh vegetation with Puccinellia maritima, annual Salicornia species and Suaeda maritima",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SM11": {
+        "code": "SM11",
+        "name": "Aster tripolium var. discoideus salt-marsh community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SM12": {
+        "code": "SM12",
+        "name": "Rayed Aster tripolium salt-marsh community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SM13": {
+        "code": "SM13",
+        "name": "Puccinellia maritima salt-marsh community",
+        "alternate_names": ["Puccinellietum maritimae"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Glaux maritima sub-community",
+          "Spergularia marina sub-community"
+        ]
+      },
+      "SM14": {
+        "code": "SM14",
+        "name": "Halimione portulacoides salt-marsh community",
+        "alternate_names": ["Halimionetum portulacoidis"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Juncus maritimus sub-community",
+          "Limonium vulgare sub-community"
+        ]
+      },
+      "SM15": {
+        "code": "SM15",
+        "name": "Juncus maritimus-Triglochin maritima salt-marsh community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SM16": {
+        "code": "SM16",
+        "name": "Festuca rubra salt-marsh community",
+        "alternate_names": ["Juncetum gerardi"],
+        "sub_communities": [
+          "Puccinellia maritima sub-community",
+          "Glaux maritima sub-community",
+          "Carex flacca sub-community"
+        ]
+      },
+      "SM17": {
+        "code": "SM17",
+        "name": "Artemisia maritima salt-marsh community",
+        "alternate_names": ["Artemisietum maritimae"],
+        "sub_communities": []
+      },
+      "SM18": {
+        "code": "SM18",
+        "name": "Juncus maritimus salt-marsh community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Festuca arundinacea sub-community",
+          "Oenanthe lachenalii sub-community",
+          "Plantago maritima sub-community"
+        ]
+      },
+      "SM19": {
+        "code": "SM19",
+        "name": "Blysmus rufus salt-marsh community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SM20": {
+        "code": "SM20",
+        "name": "Eleocharis uniglumis salt-marsh community",
+        "alternate_names": ["Eleocharitetum uniglumis"],
+        "sub_communities": []
+      },
+      "SM21": {
+        "code": "SM21",
+        "name": "Suaeda vera-Limonium binervosum salt-marsh community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SM22": {
+        "code": "SM22",
+        "name": "Limonium vulgare-Frankenia laevis salt-marsh community",
+        "alternate_names": ["Limonio vulgaris-Frankenietum laevis"],
+        "sub_communities": []
+      },
+      "SM23": {
+        "code": "SM23",
+        "name": "Spergularia marina-Puccinellia distans salt-marsh community",
+        "alternate_names": ["Puccinellietum distantis"],
+        "sub_communities": []
+      },
+      "SM24": {
+        "code": "SM24",
+        "name": "Elymus pycnanthus salt-marsh community",
+        "alternate_names": ["Atriplici-Elymetum pycnanthi"],
+        "sub_communities": []
+      },
+      "SM25": {
+        "code": "SM25",
+        "name": "Suaeda vera salt-marsh community",
+        "alternate_names": ["Elymo pycnanthi-Suaedetum verae"],
+        "sub_communities": []
+      },
+      "SM26": {
+        "code": "SM26",
+        "name": "Inula crithmoides stands",
+        "alternate_names": [],
+        "sub_communities": [
+          "Stands with Puccinellia maritima, Salicornia agg. and Limonium cf. L. vulgare",
+          "Stands with Elymus pycnanthus"
+        ]
+      },
+      "SM27": {
+        "code": "SM27",
+        "name": "Ephemeral salt-marsh vegetation with Sagina maritima",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SM28": {
+        "code": "SM28",
+        "name": "Elymus repens salt-marsh community",
+        "alternate_names": ["Elymetum repentis"],
+        "sub_communities": []
+      }
+    },
+    "shingle_strandline_and_sand_dune_communities": {
+      "SD1": {
+        "code": "SD1",
+        "name": "Rumex crispus-Glaucium flavum shingle community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SD2": {
+        "code": "SD2",
+        "name": "Honkenya peploides-Cakile maritima strandline community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Polygonum raii sub-community"
+        ]
+      },
+      "SD3": {
+        "code": "SD3",
+        "name": "Matricaria maritima-Galium aparine strandline community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SD4": {
+        "code": "SD4",
+        "name": "Elymus farctus ssp. boreali-atlanticus foredune community",
+        "alternate_names": ["Agropyretum boreo-atlanticum"],
+        "sub_communities": []
+      },
+      "SD5": {
+        "code": "SD5",
+        "name": "Leymus arenarius mobile dune community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SD6": {
+        "code": "SD6",
+        "name": "Ammophila arenaria mobile dune community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SD7": {
+        "code": "SD7",
+        "name": "Ammophila arenaria-Festuca rubra semi-fixed dune community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SD8": {
+        "code": "SD8",
+        "name": "Festuca rubra-Galium verum fixed dune grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Ononis repens sub-community",
+          "Phleum arenarium sub-community"
+        ]
+      },
+      "SD9": {
+        "code": "SD9",
+        "name": "Ammophila arenaria-Arrhenatherum elatius dune grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Geranium sanguineum sub-community"
+        ]
+      },
+      "SD10": {
+        "code": "SD10",
+        "name": "Carex arenaria-Cornicularia aculeata dune community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Hieracium pilosella-Hypochoeris radicata sub-community"
+        ]
+      },
+      "SD11": {
+        "code": "SD11",
+        "name": "Carex arenaria-Cornicularia aculeata-Polytrichum piliferum dune community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Anthoxanthum odoratum sub-community"
+        ]
+      },
+      "SD12": {
+        "code": "SD12",
+        "name": "Carex arenaria-Festuca ovina-Agrostis capillaris dune grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Anthoxanthum odoratum sub-community",
+          "Holcus lanatus sub-community"
+        ]
+      },
+      "SD13": {
+        "code": "SD13",
+        "name": "Sagina nodosa-Bryum pseudotriquetrum dune-slack community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Poa annua-Moerckia hibernica sub-community",
+          "Holcus lanatus-Festuca rubra sub-community"
+        ]
+      },
+      "SD14": {
+        "code": "SD14",
+        "name": "Salix repens-Campylium stellatum dune-slack community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SD15": {
+        "code": "SD15",
+        "name": "Salix repens-Calliergon cuspidatum dune-slack community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Equisetum variegatum sub-community",
+          "Carex flacca-Pulicaria dysenterica sub-community"
+        ]
+      },
+      "SD16": {
+        "code": "SD16",
+        "name": "Salix repens-Holcus lanatus dune-slack community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SD17": {
+        "code": "SD17",
+        "name": "Potentilla anserina-Carex nigra dune-slack community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "SD18": {
+        "code": "SD18",
+        "name": "Hippophae rhamnoides dune scrub",
+        "alternate_names": [],
+        "sub_communities": [
+          "Festuca rubra sub-community",
+          "Urtica dioica-Arrhenatherum elatius sub-community"
+        ]
+      },
+      "SD19": {
+        "code": "SD19",
+        "name": "Phleum arenarium-Arenaria serpyllifolia dune annual community",
+        "alternate_names": ["Tortulo-Phleetum arenariae"],
+        "sub_communities": []
+      }
+    },
+    "maritime_cliff_communities": {
+      "MC1": {
+        "code": "MC1",
+        "name": "Crithmum maritimum-Spergularia rupicola maritime rock-crevice community",
+        "alternate_names": ["Crithmo-Spergularietum rupicolae"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Inula crithmoides sub-community"
+        ]
+      },
+      "MC2": {
+        "code": "MC2",
+        "name": "Armeria maritima-Ligusticum scoticum maritime rock-crevice community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MC3": {
+        "code": "MC3",
+        "name": "Rhodiola rosea-Armeria maritima maritime cliff-ledge community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MC4": {
+        "code": "MC4",
+        "name": "Brassica oleracea maritime cliff-ledge community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Beta vulgaris ssp. maritima sub-community",
+          "Ononis repens sub-community"
+        ]
+      },
+      "MC5": {
+        "code": "MC5",
+        "name": "Armeria maritima-Cerastium diffusum ssp. diffusum maritime therophyte community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MC6": {
+        "code": "MC6",
+        "name": "Atriplex prostrata-Beta vulgaris ssp. maritima sea-bird cliff community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MC7": {
+        "code": "MC7",
+        "name": "Stellaria media-Rumex acetosa sea-bird cliff community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MC8": {
+        "code": "MC8",
+        "name": "Festuca rubra-Armeria maritima maritime grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Plantago spp. sub-community",
+          "Daucus carota ssp. gummifer sub-community"
+        ]
+      },
+      "MC9": {
+        "code": "MC9",
+        "name": "Festuca rubra-Holcus lanatus maritime grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Agrostis stolonifera-Leontodon autumnalis sub-community",
+          "Juncus effusus-Holcus lanatus sub-community",
+          "Primula vulgaris sub-community",
+          "Anthoxanthum odoratum sub-community"
+        ]
+      },
+      "MC10": {
+        "code": "MC10",
+        "name": "Festuca rubra-Plantago spp. maritime grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Armeria maritima sub-community",
+          "Carex panicea sub-community",
+          "Schoenus nigricans sub-community"
+        ]
+      },
+      "MC11": {
+        "code": "MC11",
+        "name": "Festuca rubra-Daucus carota ssp. gummifer maritime grassland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MC12": {
+        "code": "MC12",
+        "name": "Festuca rubra-Hyacinthoides non-scripta maritime bluebell community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Ranunculus ficaria sub-community",
+          "Armeria maritima sub-community"
+        ]
+      }
+    },
+    "vegetation_of_open_habitats": {
+      "OV1": {
+        "code": "OV1",
+        "name": "Viola arvensis-Aphanes microcarpa community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV2": {
+        "code": "OV2",
+        "name": "Briza minor-Silene gallica community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV3": {
+        "code": "OV3",
+        "name": "Papaver rhoeas-Viola arvensis community",
+        "alternate_names": ["Papaveretum argemones"],
+        "sub_communities": []
+      },
+      "OV4": {
+        "code": "OV4",
+        "name": "Chrysanthemum segetum-Spergula arvensis community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Galeopsis tetrahit-Stellaria media sub-community"
+        ]
+      },
+      "OV5": {
+        "code": "OV5",
+        "name": "Digitaria ischaemum-Erodium cicutarium community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV6": {
+        "code": "OV6",
+        "name": "Cerastium glomeratum-Fumaria muralis ssp. boraei community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV7": {
+        "code": "OV7",
+        "name": "Veronica persica-Veronica polita community",
+        "alternate_names": ["Veronico-Lamietum hybridi"],
+        "sub_communities": []
+      },
+      "OV8": {
+        "code": "OV8",
+        "name": "Veronica persica-Alopecurus myosuroides community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV9": {
+        "code": "OV9",
+        "name": "Matricaria perforata-Stellaria media community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Elymus repens-Potentilla anserina sub-community",
+          "Bilderdykia convolvulus-Veronica persica sub-community"
+        ]
+      },
+      "OV10": {
+        "code": "OV10",
+        "name": "Poa annua-Senecio vulgaris community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Polygonum persicaria-Ranunculus repens sub-community"
+        ]
+      },
+      "OV11": {
+        "code": "OV11",
+        "name": "Poa annua-Stachys arvensis community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV12": {
+        "code": "OV12",
+        "name": "Poa annua-Myosotis arvensis community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Dicranella staphylina-Bryum sub-community"
+        ]
+      },
+      "OV13": {
+        "code": "OV13",
+        "name": "Stellaria media-Capsella bursa-pastoris community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Matricaria perforata-Poa annua sub-community",
+          "Fumaria officinalis-Euphorbia helioscopa sub-community"
+        ]
+      },
+      "OV14": {
+        "code": "OV14",
+        "name": "Urtica urens-Lamium amplexicaule community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV15": {
+        "code": "OV15",
+        "name": "Anagallis arvensis-Veronica persica community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV16": {
+        "code": "OV16",
+        "name": "Papaver rhoeas-Silene noctiflora community",
+        "alternate_names": ["Papaveri-Sileneetum noctiflori"],
+        "sub_communities": []
+      },
+      "OV17": {
+        "code": "OV17",
+        "name": "Reseda lutea-Polygonum aviculare community",
+        "alternate_names": ["Descurainio-Anchusetum arvensis"],
+        "sub_communities": []
+      },
+      "OV18": {
+        "code": "OV18",
+        "name": "Polygonum aviculare-Chamomilla suaveolens community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV19": {
+        "code": "OV19",
+        "name": "Poa annua-Matricaria perforata community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Plantago major-Trifolium repens sub-community",
+          "Arrhenatherum elatius-Medicago lupulina sub-community"
+        ]
+      },
+      "OV20": {
+        "code": "OV20",
+        "name": "Poa annua-Sagina procumbens community",
+        "alternate_names": ["Sagino-Bryetum argentii"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Lolium perenne-Chamomilla suaveolens sub-community"
+        ]
+      },
+      "OV21": {
+        "code": "OV21",
+        "name": "Poa annua-Plantago major community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV22": {
+        "code": "OV22",
+        "name": "Poa annua-Taraxacum officinale community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Senecio vulgaris sub-community",
+          "Cirsium vulgare-C. arvense sub-community"
+        ]
+      },
+      "OV23": {
+        "code": "OV23",
+        "name": "Lolium perenne-Dactylis glomerata community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV24": {
+        "code": "OV24",
+        "name": "Urtica dioica-Galium aparine community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV25": {
+        "code": "OV25",
+        "name": "Urtica dioica-Cirsium arvense community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Holcus lanatus-Poa annua sub-community",
+          "Rumex obtusifolius-Artemisia vulgaris sub-community",
+          "Lolium perenne-Papaver rhoeas sub-community"
+        ]
+      },
+      "OV26": {
+        "code": "OV26",
+        "name": "Epilobium hirsutum community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Juncus effusus-Ranunculus repens sub-community",
+          "Phragmites australis-Iris pseudacorus sub-community"
+        ]
+      },
+      "OV27": {
+        "code": "OV27",
+        "name": "Epilobium angustifolium community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV28": {
+        "code": "OV28",
+        "name": "Agrostis stolonifera-Ranunculus repens community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV29": {
+        "code": "OV29",
+        "name": "Alopecurus geniculatus-Rorippa palustris community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV30": {
+        "code": "OV30",
+        "name": "Bidens tripartita-Polygonum amphibium community",
+        "alternate_names": ["Polygono-Bidentetum tripartiti"],
+        "sub_communities": []
+      },
+      "OV31": {
+        "code": "OV31",
+        "name": "Rorippa palustris-Filaginella uliginosa community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV32": {
+        "code": "OV32",
+        "name": "Myosotis scorpioides-Ranunculus sceleratus community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV33": {
+        "code": "OV33",
+        "name": "Polygonum lapathifolium-Poa annua community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV34": {
+        "code": "OV34",
+        "name": "Allium schoenoprasum-Plantago maritima community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV35": {
+        "code": "OV35",
+        "name": "Lythrum portula-Ranunculus flammula community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV36": {
+        "code": "OV36",
+        "name": "Lowland springs and streambanks of shaded situations",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV37": {
+        "code": "OV37",
+        "name": "Festuca ovina-Minuartia verna community",
+        "alternate_names": ["Minuartio-Thlaspietum alpestris"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Cladonia subcervicornis sub-community"
+        ]
+      },
+      "OV38": {
+        "code": "OV38",
+        "name": "Gymnocarpium robertianum-Arrhenatherum elatius community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV39": {
+        "code": "OV39",
+        "name": "Asplenium trichomanes-Asplenium ruta-muraria community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV40": {
+        "code": "OV40",
+        "name": "Asplenium viride-Cystopteris fragilis community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "OV41": {
+        "code": "OV41",
+        "name": "Parietaria diffusa community",
+        "alternate_names": ["Asplenio-Parietarietum"],
+        "sub_communities": []
+      },
+      "OV42": {
+        "code": "OV42",
+        "name": "Cymbalaria muralis community",
+        "alternate_names": ["Cymbalarietum muralis"],
+        "sub_communities": []
+      }
+    },
+    "mesotrophic_grasslands": {
+      "MG1": {
+        "code": "MG1",
+        "name": "Arrhenatherum elatius grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Festuca rubra sub-community",
+          "Urtica dioica sub-community"
+        ]
+      },
+      "MG2": {
+        "code": "MG2",
+        "name": "Arrhenatherum elatius-Filipendula ulmaria grassland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MG3": {
+        "code": "MG3",
+        "name": "Anthoxanthum odoratum-Geranium sylvaticum grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Bromus hordeaceus sub-community"
+        ]
+      },
+      "MG4": {
+        "code": "MG4",
+        "name": "Alopecurus pratensis-Sanguisorba officinalis grassland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MG5": {
+        "code": "MG5",
+        "name": "Centaurea nigra-Cynosurus cristatus grassland",
+        "alternate_names": ["Lolio-Cynosuretum"],
+        "sub_communities": [
+          "Lathyrus pratensis sub-community",
+          "Galium verum sub-community",
+          "Danthonia decumbens sub-community"
+        ]
+      },
+      "MG6": {
+        "code": "MG6",
+        "name": "Lolium perenne-Cynosurus cristatus grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Anthoxanthum odoratum sub-community"
+        ]
+      },
+      "MG7": {
+        "code": "MG7",
+        "name": "Lolium perenne leys and related grasslands",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MG8": {
+        "code": "MG8",
+        "name": "Cynosurus cristatus-Caltha palustris grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Filipendula ulmaria sub-community",
+          "Alopecurus geniculatus variant"
+        ]
+      },
+      "MG9": {
+        "code": "MG9",
+        "name": "Holcus lanatus-Deschampsia cespitosa grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Poa trivialis sub-community",
+          "Arrhenatherum elatius sub-community"
+        ]
+      },
+      "MG10": {
+        "code": "MG10",
+        "name": "Holcus lanatus-Juncus effusus rush-pasture",
+        "alternate_names": ["Holco-Juncetum effusi"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Juncus inflexus sub-community",
+          "Iris pseudacorus sub-community"
+        ]
+      },
+      "MG11": {
+        "code": "MG11",
+        "name": "Festuca rubra-Agrostis stolonifera-Potentilla anserina grassland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MG12": {
+        "code": "MG12",
+        "name": "Festuca arundinacea grassland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "MG13": {
+        "code": "MG13",
+        "name": "Agrostis stolonifera-Alopecurus geniculatus grassland",
+        "alternate_names": [],
+        "sub_communities": []
+      }
+    },
+    "calcicolous_grasslands": {
+      "CG1": {
+        "code": "CG1",
+        "name": "Festuca ovina-Carlina vulgaris grassland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "CG2": {
+        "code": "CG2",
+        "name": "Festuca ovina-Avenula pratensis grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Succisa pratensis-Leucanthemum vulgare sub-community",
+          "Holcus lanatus-Trifolium repens sub-community",
+          "Dicranum scoparium sub-community"
+        ]
+      },
+      "CG3": {
+        "code": "CG3",
+        "name": "Bromus erectus grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Centaurea scabiosa sub-community",
+          "Knautia arvensis sub-community"
+        ]
+      },
+      "CG4": {
+        "code": "CG4",
+        "name": "Brachypodium pinnatum grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Cirsium acaule-Asperula cynanchica sub-community",
+          "Centaurea nigra-Leontodon hispidus sub-community"
+        ]
+      },
+      "CG5": {
+        "code": "CG5",
+        "name": "Bromus erectus-Brachypodium pinnatum grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Hieracium spp. sub-community"
+        ]
+      },
+      "CG6": {
+        "code": "CG6",
+        "name": "Avenula pubescens grassland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "CG7": {
+        "code": "CG7",
+        "name": "Festuca ovina-Hieracium pilosella-Thymus praecox/pulegioides grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Medicago lupulina-Rumex acetosa sub-community"
+        ]
+      },
+      "CG8": {
+        "code": "CG8",
+        "name": "Sesleria albicans-Scabiosa columbaria grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Hieracium spp. sub-community",
+          "Avenula pratensis sub-community"
+        ]
+      },
+      "CG9": {
+        "code": "CG9",
+        "name": "Sesleria albicans-Galium sterneri grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Carex ornithopoda sub-community"
+        ]
+      },
+      "CG10": {
+        "code": "CG10",
+        "name": "Festuca ovina-Agrostis capillaris-Thymus praecox grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Trifolium repens-Luzula campestris sub-community",
+          "Avenula pratensis sub-community",
+          "Ctenidium molluscum sub-community",
+          "Racomitrium canescens sub-community"
+        ]
+      },
+      "CG11": {
+        "code": "CG11",
+        "name": "Festuca ovina-Agrostis capillaris-Alchemilla alpina grass-heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Racomitrium lanuginosum sub-community"
+        ]
+      },
+      "CG12": {
+        "code": "CG12",
+        "name": "Festuca ovina-Alchemilla alpina-Silene acaulis dwarf-herb community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "CG13": {
+        "code": "CG13",
+        "name": "Dryas octopetala-Carex flacca heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Hieracium pilosella-Ctenidium molluscum sub-community",
+          "Salix repens-Empetrum nigrum ssp. nigrum sub-community"
+        ]
+      },
+      "CG14": {
+        "code": "CG14",
+        "name": "Dryas octopetala-Silene acaulis ledge community",
+        "alternate_names": [],
+        "sub_communities": []
+      }
+    },
+    "calcifugous_grasslands_and_montane_communities": {
+      "U1": {
+        "code": "U1",
+        "name": "Festuca ovina-Agrostis capillaris-Rumex acetosella grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Galium saxatile sub-community",
+          "Dicranum scoparium-Rhytidiadelphus squarrosus sub-community"
+        ]
+      },
+      "U2": {
+        "code": "U2",
+        "name": "Deschampsia flexuosa grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Species-poor sub-community",
+          "Polytrichum commune sub-community"
+        ]
+      },
+      "U3": {
+        "code": "U3",
+        "name": "Agrostis curtisii grassland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "U4": {
+        "code": "U4",
+        "name": "Festuca ovina-Agrostis capillaris-Galium saxatile grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Holcus lanatus-Trifolium repens sub-community",
+          "Anthoxanthum odoratum-Geranium sylvaticum sub-community",
+          "Luzula multiflora-Rhytidiadelphus squarrosus sub-community"
+        ]
+      },
+      "U5": {
+        "code": "U5",
+        "name": "Nardus stricta-Galium saxatile grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Species-poor sub-community",
+          "Agrostis canina-Polytrichum commune sub-community",
+          "Carex panicea-Viola riviniana sub-community",
+          "Calluna vulgaris-Danthonia decumbens sub-community",
+          "Racomitrium lanuginosum sub-community"
+        ]
+      },
+      "U6": {
+        "code": "U6",
+        "name": "Juncus squarrosus-Festuca ovina grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Sphagnum capillifolium-Polytrichum commune sub-community"
+        ]
+      },
+      "U7": {
+        "code": "U7",
+        "name": "Nardus stricta-Carex bigelowii grass-heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Alchemilla alpina sub-community",
+          "Cladonia arbuscula sub-community"
+        ]
+      },
+      "U8": {
+        "code": "U8",
+        "name": "Carex bigelowii-Polytrichum alpinum sedge-heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Polytrichum-Ptilidium sub-community",
+          "Empetrum nigrum ssp. hermaphroditum sub-community"
+        ]
+      },
+      "U9": {
+        "code": "U9",
+        "name": "Juncus trifidus-Racomitrium lanuginosum rush-heath",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "U10": {
+        "code": "U10",
+        "name": "Carex bigelowii-Racomitrium lanuginosum moss-heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Silene acaulis-Luzula spicata sub-community"
+        ]
+      },
+      "U11": {
+        "code": "U11",
+        "name": "Polytrichum sexangulare-Kiaeria starkei snow-bed",
+        "alternate_names": [],
+        "sub_communities": [
+          "Species-rich sub-community",
+          "Species-poor sub-community"
+        ]
+      },
+      "U12": {
+        "code": "U12",
+        "name": "Salix herbacea-Racomitrium heterostichum snow-bed",
+        "alternate_names": [],
+        "sub_communities": [
+          "Silene acaulis-Luzula spicata sub-community",
+          "Gymnomitrion concinnatum sub-community",
+          "Marsupella brevissima sub-community"
+        ]
+      },
+      "U13": {
+        "code": "U13",
+        "name": "Deschampsia cespitosa-Galium saxatile grassland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Alchemilla alpina sub-community"
+        ]
+      },
+      "U14": {
+        "code": "U14",
+        "name": "Alchemilla alpina-Sibbaldia procumbens dwarf-herb community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "U15": {
+        "code": "U15",
+        "name": "Saxifraga aizoides-Alchemilla glabra banks",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "U16": {
+        "code": "U16",
+        "name": "Luzula sylvatica-Vaccinium myrtillus tall-herb community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "U17": {
+        "code": "U17",
+        "name": "Luzula sylvatica-Geum urbanum tall-herb community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Primula vulgaris-Hypericum pulchrum sub-community"
+        ]
+      },
+      "U18": {
+        "code": "U18",
+        "name": "Cryptogramma crispa-Athyrium distentifolium snow-bed",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "U19": {
+        "code": "U19",
+        "name": "Thelypteris limbosperma-Blechnum spicant community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "U20": {
+        "code": "U20",
+        "name": "Pteridium aquilinum-Galium saxatile community",
+        "alternate_names": [],
+        "sub_communities": [
+          "Species-poor sub-community",
+          "Anthoxanthum odoratum sub-community",
+          "Vaccinium myrtillus-Dicranum scoparium sub-community"
+        ]
+      },
+      "U21": {
+        "code": "U21",
+        "name": "Calluna vulgaris-Deschampsia flexuosa heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Cladonia arbuscula sub-community"
+        ]
+      }
+    },
+    "mires": {
+      "M1": {
+        "code": "M1",
+        "name": "Sphagnum auriculatum bog pool community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M2": {
+        "code": "M2",
+        "name": "Sphagnum cuspidatum/recurvum bog pool community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M3": {
+        "code": "M3",
+        "name": "Eriophorum angustifolium bog pool community",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M4": {
+        "code": "M4",
+        "name": "Carex rostrata-Sphagnum recurvum mire",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M5": {
+        "code": "M5",
+        "name": "Carex rostrata-Sphagnum squarrosum mire",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M6": {
+        "code": "M6",
+        "name": "Carex echinata-Sphagnum recurvum/auriculatum mire",
+        "alternate_names": [],
+        "sub_communities": [
+          "Sphagnum denticulatum sub-community",
+          "Carex panicea-Campylium stellatum sub-community"
+        ]
+      },
+      "M7": {
+        "code": "M7",
+        "name": "Carex curta-Sphagnum russowii mire",
+        "alternate_names": [],
+        "sub_communities": [
+          "Sphagnum lindbergii-Sphagnum papillosum sub-community",
+          "Carex aquatilis-Sphagnum recurvum sub-community"
+        ]
+      },
+      "M8": {
+        "code": "M8",
+        "name": "Carex rostrata-Sphagnum warnstorfii mire",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M9": {
+        "code": "M9",
+        "name": "Carex rostrata-Calliergon cuspidatum/giganteum mire",
+        "alternate_names": ["Acrocladio-Caricetum diandrae"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Potentilla palustris sub-community",
+          "Menyanthes trifoliata sub-community",
+          "Sphagnum warnstorfii sub-community",
+          "Juncus subnodulosus sub-community",
+          "Cicuta virosa sub-community",
+          "Crepis paludosa sub-community"
+        ]
+      },
+      "M10": {
+        "code": "M10",
+        "name": "Carex dioica-Pinguicula vulgaris mire",
+        "alternate_names": ["Pinguiculo-Caricetum"],
+        "sub_communities": [
+          "Carex demissa-Saxifraga aizoides sub-community",
+          "Carex viridula ssp. brachyrrhyncha sub-community",
+          "Briza media-Primula farinosa sub-community",
+          "Carex lepidocarpa-Thalictrum alpinum sub-community"
+        ]
+      },
+      "M11": {
+        "code": "M11",
+        "name": "Carex demissa-Saxifraga aizoides mire",
+        "alternate_names": ["Caricetum demissae-Saxifragetum aizoidis"],
+        "sub_communities": [
+          "Thalictrum alpinum-Juncus triglumis sub-community",
+          "Carex capillaris-Campylium stellatum sub-community"
+        ]
+      },
+      "M12": {
+        "code": "M12",
+        "name": "Carex saxatilis mire",
+        "alternate_names": ["Caricetum saxatilis"],
+        "sub_communities": []
+      },
+      "M13": {
+        "code": "M13",
+        "name": "Schoenus nigricans-Juncus subnodulosus mire",
+        "alternate_names": ["Schoenetum nigricantis"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Carex lepidocarpa-Campylium stellatum sub-community",
+          "Carex hostiana-Campylium stellatum sub-community"
+        ]
+      },
+      "M14": {
+        "code": "M14",
+        "name": "Schoenus nigricans-Narthecium ossifragum mire",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M15": {
+        "code": "M15",
+        "name": "Scirpus cespitosus-Erica tetralix wet heath",
+        "alternate_names": ["Ericetum tetralicis"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Succisa pratensis-Carex panicea sub-community"
+        ]
+      },
+      "M16": {
+        "code": "M16",
+        "name": "Erica tetralix-Sphagnum compactum wet heath",
+        "alternate_names": ["Ericetum tetralicis"],
+        "sub_communities": [
+          "Typical sub-community",
+          "Succisa pratensis-Carex panicea sub-community"
+        ]
+      },
+      "M17": {
+        "code": "M17",
+        "name": "Scirpus cespitosus-Eriophorum vaginatum blanket mire",
+        "alternate_names": [],
+        "sub_communities": [
+          "Drosera rotundifolia-Sphagnum auriculatum sub-community",
+          "Cladonia spp. sub-community"
+        ]
+      },
+      "M18": {
+        "code": "M18",
+        "name": "Erica tetralix-Sphagnum papillosum raised and blanket mire",
+        "alternate_names": ["Erico-Sphagnetum papillosi"],
+        "sub_communities": [
+          "Sphagnum magellanicum-Andromeda polifolia sub-community",
+          "Empetrum nigrum ssp. nigrum sub-community",
+          "Vaccinium oxycoccus-Sphagnum tenellum sub-community"
+        ]
+      },
+      "M19": {
+        "code": "M19",
+        "name": "Calluna vulgaris-Eriophorum vaginatum blanket mire",
+        "alternate_names": [],
+        "sub_communities": [
+          "Empetrum nigrum ssp. nigrum sub-community",
+          "Vaccinium myrtillus-Cladonia spp. sub-community"
+        ]
+      },
+      "M20": {
+        "code": "M20",
+        "name": "Eriophorum vaginatum blanket and raised mire",
+        "alternate_names": [],
+        "sub_communities": [
+          "Empetrum nigrum ssp. nigrum sub-community",
+          "Calluna vulgaris-Cladonia spp. sub-community"
+        ]
+      },
+      "M21": {
+        "code": "M21",
+        "name": "Narthecium ossifragum-Sphagnum papillosum valley mire",
+        "alternate_names": ["Narthecio-Sphagnetum"],
+        "sub_communities": [
+          "Sphagnum auriculatum-Rhynchospora alba sub-community",
+          "Leucobryum glaucum-Campylopus brevipilus sub-community"
+        ]
+      },
+      "M22": {
+        "code": "M22",
+        "name": "Juncus subnodulosus-Cirsium palustre fen-meadow",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Juncus acutiflorus sub-community",
+          "Briza media-Trifolium pratense sub-community"
+        ]
+      },
+      "M23": {
+        "code": "M23",
+        "name": "Juncus effusus/acutiflorus-Galium palustre rush-pasture",
+        "alternate_names": [],
+        "sub_communities": [
+          "Juncus effusus sub-community",
+          "Juncus acutiflorus sub-community"
+        ]
+      },
+      "M24": {
+        "code": "M24",
+        "name": "Molinia caerulea-Cirsium dissectum fen-meadow",
+        "alternate_names": ["Cirsio-Molinietum"],
+        "sub_communities": [
+          "Eupatorium cannabinum sub-community",
+          "Juncus acutiflorus sub-community",
+          "Crepis paludosa sub-community",
+          "Typical sub-community"
+        ]
+      },
+      "M25": {
+        "code": "M25",
+        "name": "Molinia caerulea-Potentilla erecta mire",
+        "alternate_names": [],
+        "sub_communities": [
+          "Erica tetralix sub-community",
+          "Anthoxanthum odoratum-Danthonia decumbens sub-community"
+        ]
+      },
+      "M26": {
+        "code": "M26",
+        "name": "Molinia caerulea-Crepis paludosa mire",
+        "alternate_names": [],
+        "sub_communities": [
+          "Sanguisorba officinalis sub-community",
+          "Festuca rubra sub-community"
+        ]
+      },
+      "M27": {
+        "code": "M27",
+        "name": "Filipendula ulmaria-Angelica sylvestris mire",
+        "alternate_names": [],
+        "sub_communities": [
+          "Valeriana officinalis sub-community",
+          "Urtica dioica sub-community",
+          "Iris pseudacorus sub-community"
+        ]
+      },
+      "M28": {
+        "code": "M28",
+        "name": "Iris pseudacorus-Filipendula ulmaria mire",
+        "alternate_names": ["Filipendulo-Iridetum"],
+        "sub_communities": [
+          "Lythrum salicaria sub-community",
+          "Juncus acutiflorus sub-community",
+          "Galium palustre sub-community"
+        ]
+      },
+      "M29": {
+        "code": "M29",
+        "name": "Hypericum elodes-Potamogeton polygonifolius soakway",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M30": {
+        "code": "M30",
+        "name": "Related vegetation of seasonally-inundated habitats",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M31": {
+        "code": "M31",
+        "name": "Anthelia julacea-Sphagnum auriculatum spring",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M32": {
+        "code": "M32",
+        "name": "Philonotis fontana-Saxifraga stellaris spring",
+        "alternate_names": ["Philonoto-Saxifragetum stellaris"],
+        "sub_communities": []
+      },
+      "M33": {
+        "code": "M33",
+        "name": "Pohlia wahlenbergii var. glacialis spring",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M34": {
+        "code": "M34",
+        "name": "Carex demissa-Kobresia simpliciuscula flush",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M35": {
+        "code": "M35",
+        "name": "Ranunculus omiophyllus-Montia fontana rill",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M36": {
+        "code": "M36",
+        "name": "Lowland springs and streambanks of shaded situations",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "M37": {
+        "code": "M37",
+        "name": "Cratoneuron commutatum-Carex nigra spring",
+        "alternate_names": [],
+        "sub_communities": [
+          "Carex viridula ssp. brachyrrhyncha-Blindia acuta sub-community",
+          "Carex panicea-Campylium stellatum sub-community"
+        ]
+      },
+      "M38": {
+        "code": "M38",
+        "name": "Cratoneuron commutatum-Carex dioica spring",
+        "alternate_names": [],
+        "sub_communities": []
+      }
+    },
+    "heaths": {
+      "H1": {
+        "code": "H1",
+        "name": "Calluna vulgaris-Festuca ovina heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Vaccinium myrtillus sub-community",
+          "Cladonia arbuscula sub-community"
+        ]
+      },
+      "H2": {
+        "code": "H2",
+        "name": "Calluna vulgaris-Ulex minor heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Erica cinerea sub-community",
+          "Agrostis curtisii sub-community"
+        ]
+      },
+      "H3": {
+        "code": "H3",
+        "name": "Ulex minor-Agrostis curtisii heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Agrostis curtisii-Erica cinerea sub-community",
+          "Festuca ovina-Hypochoeris radicata sub-community"
+        ]
+      },
+      "H4": {
+        "code": "H4",
+        "name": "Ulex gallii-Agrostis curtisii heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Agrostis curtisii-Erica cinerea sub-community",
+          "Festuca ovina-Hypochoeris radicata sub-community"
+        ]
+      },
+      "H5": {
+        "code": "H5",
+        "name": "Erica vagans-Schoenus nigricans heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community"
+        ]
+      },
+      "H6": {
+        "code": "H6",
+        "name": "Erica vagans-Ulex europaeus heath",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "H7": {
+        "code": "H7",
+        "name": "Calluna vulgaris-Scilla verna heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Viola riviniana sub-community",
+          "Erica tetralix sub-community",
+          "Empetrum nigrum ssp. nigrum sub-community",
+          "Armeria maritima sub-community"
+        ]
+      },
+      "H8": {
+        "code": "H8",
+        "name": "Calluna vulgaris-Ulex gallii heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Erica cinerea sub-community",
+          "Pseudoscleropodium purum sub-community"
+        ]
+      },
+      "H9": {
+        "code": "H9",
+        "name": "Calluna vulgaris-Deschampsia flexuosa heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Vaccinium myrtillus sub-community"
+        ]
+      },
+      "H10": {
+        "code": "H10",
+        "name": "Calluna vulgaris-Erica cinerea heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Racomitrium lanuginosum sub-community",
+          "Cladonia spp. sub-community"
+        ]
+      },
+      "H11": {
+        "code": "H11",
+        "name": "Calluna vulgaris-Carex arenaria heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Erica cinerea sub-community",
+          "Empetrum nigrum nigrum sub-community",
+          "Species-poor sub-community"
+        ]
+      },
+      "H12": {
+        "code": "H12",
+        "name": "Calluna vulgaris-Vaccinium myrtillus heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Cladonia arbuscula sub-community",
+          "Racomitrium lanuginosum sub-community"
+        ]
+      },
+      "H13": {
+        "code": "H13",
+        "name": "Calluna vulgaris-Cladonia arbuscula heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Festuca ovina-Galium saxatile sub-community",
+          "Carex bigelowii-Empetrum nigrum ssp. hermaphroditum sub-community"
+        ]
+      },
+      "H14": {
+        "code": "H14",
+        "name": "Calluna vulgaris-Racomitrium lanuginosum heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Festuca ovina sub-community",
+          "Empetrum nigrum ssp. hermaphroditum sub-community"
+        ]
+      },
+      "H15": {
+        "code": "H15",
+        "name": "Calluna vulgaris-Juniperus communis ssp. nana heath",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "H16": {
+        "code": "H16",
+        "name": "Calluna vulgaris-Arctostaphylos uva-ursi heath",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "H17": {
+        "code": "H17",
+        "name": "Calluna vulgaris-Arctostaphylos alpinus heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Loiseleuria procumbens-Cetraria glauca sub-community",
+          "Empetrum nigrum nigrum sub-community"
+        ]
+      },
+      "H18": {
+        "code": "H18",
+        "name": "Vaccinium myrtillus-Deschampsia flexuosa heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Galium saxatile sub-community",
+          "Alchemilla alpina-Carex bigelowii sub-community",
+          "Racomitrium lanuginosum-Cladonia arbuscula sub-community"
+        ]
+      },
+      "H19": {
+        "code": "H19",
+        "name": "Vaccinium myrtillus-Cladonia arbuscula heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Festuca ovina-Galium saxatile sub-community",
+          "Dicranum fuscescens sub-community"
+        ]
+      },
+      "H20": {
+        "code": "H20",
+        "name": "Vaccinium myrtillus-Racomitrium lanuginosum heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Viola riviniana-Thymus praecox sub-community",
+          "Cetraria islandica sub-community",
+          "Bazzania trilobata-Mylia taylori sub-community",
+          "Rhytidiadelphus loreus-Hylocomium splendens sub-community"
+        ]
+      },
+      "H21": {
+        "code": "H21",
+        "name": "Calluna vulgaris-Vaccinium myrtillus-Sphagnum capillifolium heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Calluna vulgaris-Pteridium aquilinum sub-community",
+          "Erica cinerea-Pleurozia purpurea sub-community",
+          "Molinia caerulea-Potentilla erecta sub-community"
+        ]
+      },
+      "H22": {
+        "code": "H22",
+        "name": "Vaccinium myrtillus-Rubus chamaemorus heath",
+        "alternate_names": [],
+        "sub_communities": [
+          "Empetrum nigrum ssp. hermaphroditum sub-community",
+          "Cladonia arbuscula sub-community"
+        ]
+      }
+    },
+    "woodlands_and_scrub": {
+      "W1": {
+        "code": "W1",
+        "name": "Salix cinerea-Galium palustre woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Sphagnum sub-community",
+          "Urtica dioica sub-community"
+        ]
+      },
+      "W2": {
+        "code": "W2",
+        "name": "Salix cinerea-Betula pubescens-Phragmites australis woodland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "W3": {
+        "code": "W3",
+        "name": "Salix pentandra-Carex rostrata woodland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "W4": {
+        "code": "W4",
+        "name": "Betula pubescens-Molinia caerulea woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Dryopteris dilatata-Rubus fruticosus sub-community",
+          "Sphagnum sub-community"
+        ]
+      },
+      "W5": {
+        "code": "W5",
+        "name": "Alnus glutinosa-Carex paniculata woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Phragmites australis sub-community",
+          "Dryopteris dilatata sub-community",
+          "Lysmachia vulgaris sub-community"
+        ]
+      },
+      "W6": {
+        "code": "W6",
+        "name": "Alnus glutinosa-Urtica dioica woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Salix fragilis sub-community"
+        ]
+      },
+      "W7": {
+        "code": "W7",
+        "name": "Alnus glutinosa-Fraxinus excelsior-Lysimachia nemorum woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Urtica dioica sub-community",
+          "Carex remota-Cirsium palustre sub-community"
+        ]
+      },
+      "W8": {
+        "code": "W8",
+        "name": "Fraxinus excelsior-Acer campestre-Mercurialis perennis woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Primula vulgaris-Glechoma hederacea sub-community",
+          "Arum maculatum sub-community",
+          "Deschampsia cespitosa sub-community",
+          "Hedera helix sub-community",
+          "Geranium robertianum sub-community",
+          "Allium ursinum sub-community",
+          "Teucrium scorodonia sub-community"
+        ]
+      },
+      "W9": {
+        "code": "W9",
+        "name": "Fraxinus excelsior-Sorbus aucuparia-Mercurialis perennis woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Crepis paludosa sub-community"
+        ]
+      },
+      "W10": {
+        "code": "W10",
+        "name": "Quercus robur-Pteridium aquilinum-Rubus fruticosus woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Acer campestre sub-community",
+          "Anemone nemorosa sub-community",
+          "Holcus lanatus sub-community",
+          "Hedera helix sub-community"
+        ]
+      },
+      "W11": {
+        "code": "W11",
+        "name": "Quercus petraea-Betula pubescens-Oxalis acetosella woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Dryopteris dilatata sub-community",
+          "Anemone nemorosa sub-community",
+          "Acer pseudoplatanus sub-community"
+        ]
+      },
+      "W12": {
+        "code": "W12",
+        "name": "Fagus sylvatica-Mercurialis perennis woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Mercurialis perennis sub-community",
+          "Sanicula europaea sub-community",
+          "Taxus baccata sub-community"
+        ]
+      },
+      "W13": {
+        "code": "W13",
+        "name": "Taxus baccata woodland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "W14": {
+        "code": "W14",
+        "name": "Fagus sylvatica-Rubus fruticosus woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Typical sub-community",
+          "Hedera helix sub-community"
+        ]
+      },
+      "W15": {
+        "code": "W15",
+        "name": "Fagus sylvatica-Deschampsia flexuosa woodland",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "W16": {
+        "code": "W16",
+        "name": "Quercus spp.-Betula spp.-Deschampsia flexuosa woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Vaccinium myrtillus sub-community",
+          "Holcus mollis sub-community"
+        ]
+      },
+      "W17": {
+        "code": "W17",
+        "name": "Quercus petraea-Betula pubescens-Dicranum majus woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Isothecium myosuroides sub-community",
+          "Rhytidiadelphus loreus sub-community"
+        ]
+      },
+      "W18": {
+        "code": "W18",
+        "name": "Pinus sylvestris-Hylocomium splendens woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Vaccinium myrtillus sub-community",
+          "Luzula pilosa sub-community"
+        ]
+      },
+      "W19": {
+        "code": "W19",
+        "name": "Juniperus communis-Oxalis acetosella woodland",
+        "alternate_names": [],
+        "sub_communities": [
+          "Vaccinium myrtillus-Deschampsia flexuosa sub-community",
+          "Viola riviniana-Anemone nemorosa sub-community"
+        ]
+      },
+      "W20": {
+        "code": "W20",
+        "name": "Salix lapponum-Luzula sylvatica scrub",
+        "alternate_names": [],
+        "sub_communities": []
+      },
+      "W21": {
+        "code": "W21",
+        "name": "Crataegus monogyna-Hedera helix scrub",
+        "alternate_names": [],
+        "sub_communities": [
+          "Viburnum opulus sub-community",
+          "Urtica dioica sub-community",
+          "Mercurialis perennis sub-community"
+        ]
+      },
+      "W22": {
+        "code": "W22",
+        "name": "Prunus spinosa-Rubus fruticosus scrub",
+        "alternate_names": [],
+        "sub_communities": [
+          "Hedera helix sub-community",
+          "Viola riviniana-Veronica chamaedrys sub-community"
+        ]
+      },
+      "W23": {
+        "code": "W23",
+        "name": "Ulex europaeus-Rubus fruticosus scrub",
+        "alternate_names": [],
+        "sub_communities": [
+          "Anthoxanthum odoratum sub-community",
+          "Rumex acetosella sub-community",
+          "Teucrium scorodonia sub-community"
+        ]
+      },
+      "W24": {
+        "code": "W24",
+        "name": "Rubus fruticosus-Holcus lanatus underscrub",
+        "alternate_names": [],
+        "sub_communities": [
+          "Cirsium arvense-Cirsium vulgare sub-community",
+          "Arrhenatherum elatius sub-community"
+        ]
+      },
+      "W25": {
+        "code": "W25",
+        "name": "Pteridium aquilinum-Rubus fruticosus underscrub",
+        "alternate_names": [],
+        "sub_communities": [
+          "Hyacinthoides non-scripta sub-community",
+          "Teucrium scorodonia sub-community"
+        ]
+      }
+    }
+  }
+}
