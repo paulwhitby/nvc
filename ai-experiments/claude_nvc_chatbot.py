@@ -5,25 +5,25 @@
 # pylint: disable=no-name-in-module
 # pylint: disable=trailing-whitespace
 # pylint: disable=broad-exception-caught
+# pylint: disable=unused-import
 
 # app.py
 import os
 import sys
+import warnings
+import logging
+import tempfile
+import time
+import streamlit as st
+from claude_multi_pdf_analyzer import MultiPDFAnalyzer
 
 # Set environment variables before any imports
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
-
-import warnings
-import logging
 
 # Suppress all warnings
 warnings.filterwarnings('ignore')
 logging.getLogger('streamlit.runtime.scriptrunner.script_runner').setLevel(logging.ERROR)
 
-import tempfile
-import time
-import streamlit as st
-from claude_multi_pdf_analyzer import MultiPDFAnalyzer
 
 # Page configuration
 st.set_page_config(

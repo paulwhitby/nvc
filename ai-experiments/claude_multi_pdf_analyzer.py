@@ -5,26 +5,17 @@
 # pylint: disable=no-name-in-module
 # pylint: disable=trailing-whitespace
 # pylint: disable=broad-exception-caught
+# pylint: disable=unused-import
 
 # multi_pdf_analyzer.py
 import os
 import sys
-
-# Set environment variables before any torch/transformers imports
-os.environ['TOKENIZERS_PARALLELISM'] = 'false'
-
+import traceback
 import warnings
 import logging
-
-# Suppress all warnings before imports
-warnings.filterwarnings('ignore', category=UserWarning)
-warnings.filterwarnings('ignore', category=FutureWarning)
-warnings.filterwarnings('ignore', category=DeprecationWarning)
-
-# Suppress Streamlit threading warnings
-logging.getLogger('streamlit.runtime.scriptrunner.script_runner').setLevel(logging.ERROR)
-
 import time
+import multiprocessing
+import json
 from typing import List, Dict, Optional
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
@@ -39,6 +30,19 @@ from langchain_classic.chains.summarize import load_summarize_chain
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
+
+
+# Set environment variables before any torch/transformers imports
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
+
+
+# Suppress all warnings before imports
+warnings.filterwarnings('ignore', category=UserWarning)
+warnings.filterwarnings('ignore', category=FutureWarning)
+warnings.filterwarnings('ignore', category=DeprecationWarning)
+
+# Suppress Streamlit threading warnings
+logging.getLogger('streamlit.runtime.scriptrunner.script_runner').setLevel(logging.ERROR)
 
 load_dotenv()
 
@@ -140,7 +144,6 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
 
         except Exception as e:
             print(f"[PDF LOADER ERROR] {filename}: {str(e)}")
-            import traceback
             traceback.print_exc()
             return {
                 'filename': filename,
@@ -162,7 +165,6 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
 
         # Scale workers based on collection size
         if max_workers is None:
-            import multiprocessing
             max_workers = min(10, multiprocessing.cpu_count(), len(pdf_paths))
 
         print(f"[PDF LOADER] Loading {len(pdf_paths)} PDFs with {max_workers} workers")
@@ -231,7 +233,6 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
             print(f"[PERSISTENCE] Saved combined vectorstore")
 
         # Save document metadata
-        import json
         metadata_path = os.path.join(save_path, "_metadata.json")
         with open(metadata_path, 'w') as f:
             json.dump({
@@ -250,7 +251,6 @@ Persistent Storage - Save and load vectorstores to disk for large collections"""
         print(f"[PERSISTENCE] Loading vectorstores from {load_path}")
 
         # Load metadata
-        import json
         metadata_path = os.path.join(load_path, "_metadata.json")
         if not os.path.exists(metadata_path):
             print(f"[PERSISTENCE] No metadata file found")
