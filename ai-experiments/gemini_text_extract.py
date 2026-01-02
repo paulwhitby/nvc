@@ -28,7 +28,7 @@ if "GOOGLE_API_KEY" not in os.environ:
 
 
 # Replace 'your_document.pdf' with the path to your actual PDF file
-PDF_PATH = "pdfs/mg9.pdf"
+PDF_PATH = "pdfs/u4.pdf"
 
 loader = PyPDFLoader(PDF_PATH)
 docs = loader.load()
@@ -155,6 +155,6 @@ print("--- Answer ---")
 print(response["answer"])
 
 # Optional: Print the sources used to generate the answer
-# print("\n--- Sources ---")
-# for doc in response["context"]:
-#     print(f"Page {doc.metadata['page']}: {doc.page_content[:50]}...")
+print("\n--- Sources ---")
+for doc in response["context"]:
+    print(f"Page {doc.metadata['page']}: {doc.page_content[:50]}...")
