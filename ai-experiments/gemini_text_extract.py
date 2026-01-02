@@ -69,7 +69,7 @@ vectorstore = FAISS.from_documents(documents=splits, embedding=embeddings)
 
 # Initialize LLM (needed for compression retriever)
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-pro",
+    model="gemini-3-pro-preview",  # "gemini-2.5-pro",  # Use Gemini Pro for best results
     temperature=0, # 0 means strictly factual, 1 means creative
     max_tokens=None,
     timeout=None,
@@ -120,6 +120,8 @@ SYSTEM_PROMPT = (
     "- Cite specific page numbers for each piece of information\n"
     "- If information is ambiguous or contradictory, note it explicitly\n"
     "- If information is missing, state what is missing\n"
+    "- Compensate and correct for any potential retrieval omissions or Optical Character Recognition errors or hyphenation in the source text by being EXTRA VIGILANT\n"
+    "- Note common OCR errors such as misread characters (e.g., '1' vs 'I', '0' vs 'O', 'i' vs 'l', 'Alope- curus' vs 'Alopecurus') and hyphenated words split across lines\n"
     "\n"
     "COMPLETENESS:\n"
     "- If the query asks for 'all X', extract EVERY instance found\n"
@@ -144,8 +146,7 @@ question_answer_chain = create_stuff_documents_chain(llm, prompt)
 rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
 
-QUERY = """What are the main conclusions of this document? 
-The document describes a vegetation community, and describes other communities that it might success to. 
+QUERY = """The document describes a vegetation community, and describes other communities that it might success to. 
 Extract all the possible succession pathways, drivers of or reasons for succession, and communities successed to, from the section titled 'Zonation and Succession' and capture them in a JSON structure. """
 
 response = rag_chain.invoke({"input": QUERY})
@@ -154,6 +155,6 @@ print("--- Answer ---")
 print(response["answer"])
 
 # Optional: Print the sources used to generate the answer
-print("\n--- Sources ---")
-for doc in response["context"]:
-    print(f"Page {doc.metadata['page']}: {doc.page_content[:50]}...")
+# print("\n--- Sources ---")
+# for doc in response["context"]:
+#     print(f"Page {doc.metadata['page']}: {doc.page_content[:50]}...")
