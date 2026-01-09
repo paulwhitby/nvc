@@ -22,13 +22,20 @@ from langchain_community.retrievers import BM25Retriever
 from langchain_classic.retrievers.document_compressors import LLMChainExtractor
 
 
+EMBEDDING_MODEL = "models/text-embedding-004"  # "BAAI/bge-large-en-v1.5"  #"sentence-transformers/all-MiniLM-L6-v2"
+DOCUMENT_CHUNK_SIZE = 200
+DOCUMENT_CHUNK_OVERLAP = 50
+CHUNKS = 1500
+GEMINI_MODEL = "gemini-2.5-pro" # "gemini-3-pro-preview"  # 
+
+
 # Set your API Key securely
 if "GOOGLE_API_KEY" not in os.environ:
     os.environ["GOOGLE_API_KEY"] = getpass.getpass("Enter your Google API Key: ")
 
 
 # Replace 'your_document.pdf' with the path to your actual PDF file
-PDF_PATH = "pdfs/u4.pdf"
+PDF_PATH = "pdfs/_all_nvc_community_pdfs.pdf"
 
 loader = PyPDFLoader(PDF_PATH)
 docs = loader.load()
@@ -37,8 +44,8 @@ print(f"Loaded {len(docs)} pages from the PDF.")
 
 
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=2500,        # 2.5x larger: captures complete concepts
-    chunk_overlap=500,      # 2.5x larger overlap: ensures no context loss
+    chunk_size=DOCUMENT_CHUNK_SIZE,        # 2.5x larger: captures complete concepts
+    chunk_overlap=DOCUMENT_CHUNK_OVERLAP,      # 2.5x larger overlap: ensures no context loss
     separators=[
         "\n\n\n",           # First: Split on section breaks (triple newline)
         "\n\n",             # Second: Split on paragraph breaks
@@ -58,7 +65,7 @@ print(f"Split document into {len(splits)} chunks.")
 
 # Initialize Google's embedding model
 embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/text-embedding-004",  # Latest model (if available)
+    model=EMBEDDING_MODEL, #"models/text-embedding-004",  # Latest model (if available)
     # Or use OpenAI's best model:
     # from langchain_openai import OpenAIEmbeddings
     # embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
@@ -69,7 +76,7 @@ vectorstore = FAISS.from_documents(documents=splits, embedding=embeddings)
 
 # Initialize LLM (needed for compression retriever)
 llm = ChatGoogleGenerativeAI(
-    model="gemini-3-pro-preview",  # "gemini-2.5-pro",  # Use Gemini Pro for best results
+    model=GEMINI_MODEL,  # "gemini-2.5-pro",  # Use Gemini Pro for best results
     temperature=0, # 0 means strictly factual, 1 means creative
     max_tokens=None,
     timeout=None,
@@ -83,16 +90,16 @@ print("  - Configuring semantic search with diversity (MMR)...")
 vector_retriever = vectorstore.as_retriever(
     search_type="mmr",  # Maximal Marginal Relevance for diversity
     search_kwargs={
-        "k": 15,         # Retrieve 15 chunks (3x more than basic)
-        "fetch_k": 50,   # Consider 50 candidates before selecting 15
-        "lambda_mult": 0.3  # 0.3 = favor diversity, 0.7 = favor relevance
+        "k": CHUNKS,         # Retrieve 15 chunks (3x more than basic)
+        "fetch_k": 5000,   # Consider 50 candidates before selecting 15
+        "lambda_mult": 0.7  # 0.3 = favor diversity, 0.7 = favor relevance
     }
 )
 
 # Step 2: Keyword retriever (BM25) for exact term matching
 print("  - Adding keyword-based search (BM25)...")
 bm25_retriever = BM25Retriever.from_documents(splits)
-bm25_retriever.k = 15  # Also retrieve 15 chunks
+bm25_retriever.k = CHUNKS  # Also retrieve 15 chunks
 
 # Step 3: LLM-based contextual compression (re-rank for true relevance)
 print("  - Enabling LLM-based re-ranking and compression...")
@@ -103,7 +110,7 @@ retriever = ContextualCompressionRetriever(
 )
 
 print("✓ Advanced retrieval pipeline ready")
-print("  → Will retrieve 15 diverse chunks")
+print(f"  → Will retrieve {CHUNKS} diverse chunks")
 print("  → LLM will re-rank and compress to most relevant portions")
 print("  → Optimized for completeness and accuracy\n")
 
@@ -146,8 +153,20 @@ question_answer_chain = create_stuff_documents_chain(llm, prompt)
 rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
 
-QUERY = """The document describes a vegetation community, and describes other communities that it might success to. 
-Extract all the possible succession pathways, drivers of or reasons for succession, and communities successed to, from the section titled 'Zonation and Succession' and capture them in a JSON structure. """
+# QUERY = """The document describes a vegetation community, and describes other communities that it might success to. 
+# Extract all the possible succession pathways, drivers of or reasons for succession, and communities successed to, from the section titled 'Zonation and Succession' and capture them in a JSON structure. """
+
+QUERY = """ 
+Find and list all the succession pathways described for each of the NVC communities, focusing on content in the 'Zonation and succession' sections for each community. 
+-Use full community names, community codes, and other alternate names. Include all of their sub-communities. 
+-For each community include all succession pathways, and the drivers of or reasons for succession. 
+-For each succession pathway name the source community, the target communities and sub-communities, and the drivers of or reasons for succession to each target community or sub-community. 
+-Some source communities have multiple possible succession targets and drivers of succession - find them all.  
+-Ensure that all community names extracted are correctly represented by reference to that community's description.
+-Include the NVC Community Code (e.g., W8) and the full community name in each reference to a community or sub-community.
+-If a succession pathway cannot be found, say 'No Succession Pathway Found'.
+-The misspelled word 'succesion' means 'succession'.
+"""
 
 response = rag_chain.invoke({"input": QUERY})
 
