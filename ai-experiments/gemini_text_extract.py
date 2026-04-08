@@ -22,11 +22,11 @@ from langchain_community.retrievers import BM25Retriever
 from langchain_classic.retrievers.document_compressors import LLMChainExtractor
 
 
-EMBEDDING_MODEL = "models/text-embedding-004"  # "BAAI/bge-large-en-v1.5"  #"sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL = "models/gemini-embedding-001" # "models/text-embedding-004"  # "BAAI/bge-large-en-v1.5"  #"sentence-transformers/all-MiniLM-L6-v2"
 DOCUMENT_CHUNK_SIZE = 200
 DOCUMENT_CHUNK_OVERLAP = 50
 CHUNKS = 1500
-GEMINI_MODEL = "gemini-2.5-pro" # "gemini-3-pro-preview"  # 
+GEMINI_MODEL = "gemini-2.5-flash" # "gemini-3-pro-preview"  # 
 
 
 # Set your API Key securely
@@ -35,7 +35,7 @@ if "GOOGLE_API_KEY" not in os.environ:
 
 
 # Replace 'your_document.pdf' with the path to your actual PDF file
-PDF_PATH = "pdfs/_all_nvc_community_pdfs.pdf"
+PDF_PATH = "pdfs/u4.pdf" # "pdfs/_all_nvc_community_pdfs.pdf"
 
 loader = PyPDFLoader(PDF_PATH)
 docs = loader.load()
