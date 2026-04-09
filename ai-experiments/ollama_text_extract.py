@@ -1,4 +1,4 @@
-"""sample code written by qwen3-coder:30b run from Ollama for RAG pattern application"""
+"""sample code written by qwen3:30b run from Ollama for RAG pattern application"""
 # Sample Python program to interact with Ollama using RAG pattern
 # import os
 # import json
@@ -10,7 +10,7 @@ import faiss
 
 class OllamaRAG:
     """OllamaRAG class to handle retrieval-augmented generation using Ollama and sentence-transformers"""
-    def __init__(self, model_name: str = "qwen3-coder:30b", embedding_model: str = "all-MiniLM-L6-v2"):
+    def __init__(self, model_name: str = "qwen3:30b", embedding_model: str = "all-MiniLM-L6-v2"):
         """
         Initialize Ollama RAG system
         """
